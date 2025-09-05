@@ -409,8 +409,8 @@ const AssemblyInnovation = () => {
     }
   };
 
-  const content = innovationContent[language];
-  const activeTimelineItem = content.timeline[activeTimeline];
+  const content = innovationContent[language] || innovationContent['en'];
+  const activeTimelineItem = content?.timeline?.[activeTimeline] || content?.timeline?.[0] || {};
 
   const containerVariants = {
     hidden: {},

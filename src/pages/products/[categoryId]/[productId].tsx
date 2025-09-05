@@ -96,3 +96,5 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ product, similarP
     </ProductLayout>
   );
 }
+
+export default ProductDetailPage;

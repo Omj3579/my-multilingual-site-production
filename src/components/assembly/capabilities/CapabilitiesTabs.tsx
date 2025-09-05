@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { capabilitiesContent } from './capabilitiesContent';
+import { capabilitiesContent } from './capabilitiesData';
 
 interface CapabilitiesTabsProps {
   variants?: any;

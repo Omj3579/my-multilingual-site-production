@@ -2,7 +2,7 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, Activity } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { capabilitiesContent } from './capabilitiesContent';
+import { capabilitiesContent } from './capabilitiesData';
 
 interface CapabilitiesContentProps {
   variants?: any;

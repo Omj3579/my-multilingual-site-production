@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Settings } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { capabilitiesContent } from './capabilitiesContent';
+import { capabilitiesContent } from './capabilitiesData';
 
 interface CapabilitiesHeaderProps {
   variants?: any;

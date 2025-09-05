@@ -12,7 +12,6 @@ import {
   CTA
 } from './components';
 import { containerVariants, itemVariants } from './constants/animations';
-import './styles.css';
 
 const AssemblySolutions = () => {
   const { language } = useLanguage();
