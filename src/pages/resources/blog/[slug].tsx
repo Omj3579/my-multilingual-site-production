@@ -6,7 +6,7 @@ import { ChevronLeft, AlertTriangle } from 'lucide-react';
 
 // Components
 import ResourcesLayout from '@/components/layouts/ResourcesLayout';
-import BlogPostTemplate from '@/components/posts/templates/BlogPostTemplate';
+import PostTemplateFactory from '@/components/posts/PostTemplateFactory';
 
 // Types
 import { BlogPost } from '@/data/blogPostsData';
@@ -18,6 +18,233 @@ const DynamicBlogPage = () => {
   const router = useRouter();
   const { slug } = router.query;
   const { language } = useLanguage();
+
+  const [postData, setPostData] = useState<any>(null);
+  const [relatedPosts, setRelatedPosts] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (slug && typeof slug === 'string') {
+      fetchPostData(slug);
+    }
+  }, [slug, language]);
+
+  const fetchPostData = async (slugParam: string) => {
+    try {
+      setIsLoading(true);
+      setError(null);
+
+      // Simple mock data for now
+      const mockPost = {
+        slug: slugParam,
+        title: slugParam.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '),
+        summary: `This is a blog post about ${slugParam.replace('-', ' ')}`,
+        content: `<h2>Welcome to our blog</h2><p>This is the content for ${slugParam}</p>`,
+        author: { name: 'Flair Plastic Team', role: 'Content Team' },
+        readTime: 5,
+        tags: ['manufacturing', 'plastic', 'innovation'],
+        image: '/images/blog-default.jpg'
+      };
+
+      setPostData(mockPost);
+      setRelatedPosts([]);
+    } catch (err) {
+      console.error('Error fetching blog post:', err);
+      setError('Failed to load blog post');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  if (isLoading) {
+    return (
+      <ResourcesLayout>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+            <p className="text-gray-600">Loading blog...</p>
+          </div>
+        </div>
+      </ResourcesLayout>
+    );
+  }
+
+  if (error || !postData) {
+    return (
+      <ResourcesLayout>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center max-w-md mx-auto p-6">
+            <AlertTriangle className="h-16 w-16 text-red-500 mx-auto mb-4" />
+            <h1 className="text-2xl font-bold text-gray-900 mb-2">
+              {error || 'Blog Not Found'}
+            </h1>
+            <p className="text-gray-600 mb-6">
+              The requested blog could not be found or may have been moved.
+            </p>
+            <Link
+              href="/resources/blog"
+              className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              <ChevronLeft className="h-4 w-4" />
+              Back to Blog
+            </Link>
+          </div>
+        </div>
+      </ResourcesLayout>
+    );
+  }
+
+  const pageTitle = postData.title || 'Blog Post';
+  const pageDescription = postData.summary || postData.description || 'Read our latest blog post';
+  const category = 'blog';
+
+  return (
+    <ResourcesLayout>
+      <Head>
+        <title>{`${pageTitle} | Flair-Plastic`}</title>
+        <meta name="description" content={pageDescription} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:type" content="article" />
+        {postData.image && <meta property="og:image" content={postData.image} />}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        {postData.image && <meta name="twitter:image" content={postData.image} />}
+      </Head>
+
+      <article className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+        {/* Navigation Breadcrumb */}
+        <div className="bg-white border-b border-gray-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <nav className="flex items-center space-x-2 text-sm">
+              <Link href="/resources" className="text-gray-500 hover:text-gray-700">
+                Resources
+              </Link>
+              <span className="text-gray-400">/</span>
+              <Link href={`/resources/blog`} className="text-gray-500 hover:text-gray-700 capitalize">
+                {category.replace('-', ' ')}
+              </Link>
+              <span className="text-gray-400">/</span>
+              <span className="text-gray-900 font-medium truncate max-w-md">
+                {postData.title}
+              </span>
+            </nav>
+          </div>
+        </div>
+
+        {/* Main Content */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            {/* Main Content Area */}
+            <div className="lg:col-span-8">
+              <PostTemplateFactory
+                postData={postData}
+                language={language as 'en' | 'hu' | 'de'}
+              />
+            </div>
+
+            {/* Sidebar */}
+            <div className="lg:col-span-4">
+              <div className="sticky top-8 space-y-6">
+                {/* Back Navigation */}
+                <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                  <Link
+                    href={`/resources/blog`}
+                    className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors"
+                  >
+                    <ChevronLeft className="h-4 w-4" />
+                    Back to {category.charAt(0).toUpperCase() + category.slice(1).replace('-', ' ')}
+                  </Link>
+                </div>
+
+                {/* Post Meta */}
+                {(postData.tags || postData.author || postData.readTime) && (
+                  <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                    <h3 className="font-semibold text-gray-900 mb-4">Post Information</h3>
+
+                    {postData.author && (
+                      <div className="mb-4">
+                        <p className="text-sm text-gray-600 mb-1">Author</p>
+                        <p className="font-medium text-gray-900">{postData.author.name}</p>
+                        {postData.author.role && (
+                          <p className="text-sm text-gray-600">{postData.author.role}</p>
+                        )}
+                      </div>
+                    )}
+
+                    {postData.readTime && (
+                      <div className="mb-4">
+                        <p className="text-sm text-gray-600 mb-1">Reading Time</p>
+                        <p className="font-medium text-gray-900">{postData.readTime} min read</p>
+                      </div>
+                    )}
+
+                    {postData.tags && postData.tags.length > 0 && (
+                      <div>
+                        <p className="text-sm text-gray-600 mb-2">Tags</p>
+                        <div className="flex flex-wrap gap-2">
+                          {postData.tags.map((tag: string) => (
+                            <Link
+                              key={tag}
+                              href={`/resources/tags/${tag}`}
+                              className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full hover:bg-blue-200 transition-colors"
+                            >
+                              {tag}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Related Posts */}
+                {relatedPosts.length > 0 && (
+                  <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                    <h3 className="font-semibold text-gray-900 mb-4">Related Posts</h3>
+                    <div className="space-y-4">
+                      {relatedPosts.map((post: any) => (
+                        <Link
+                          key={post.slug}
+                          href={`/resources/blog/${post.slug}`}
+                          className="block group"
+                        >
+                          <div className="flex gap-3">
+                            {post.image && (
+                              <div className="flex-shrink-0 w-16 h-16 bg-gray-200 rounded-lg overflow-hidden">
+                                <img
+                                  src={post.image}
+                                  alt={post.title}
+                                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                                />
+                              </div>
+                            )}
+                            <div className="flex-grow min-w-0">
+                              <h4 className="font-medium text-gray-900 text-sm line-clamp-2 group-hover:text-blue-600 transition-colors">
+                                {post.title}
+                              </h4>
+                              <p className="text-xs text-gray-500 mt-1">
+                                {post.readTime} min read
+                              </p>
+                            </div>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </ResourcesLayout>
+  );
+};
+
+export default DynamicBlogPage;
   
   const [blogPost, setBlogPost] = useState<BlogPost | null>(null);
   const [isLoading, setIsLoading] = useState(true);

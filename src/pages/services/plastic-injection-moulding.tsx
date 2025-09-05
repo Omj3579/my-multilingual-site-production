@@ -1,9 +1,9 @@
 import React from 'react';
 import ServicesLayout from '@/components/layouts/ServicesLayout';
 import { motion } from 'framer-motion';
-import ModernServicesHero from '@/components/services/ModernServicesHero';
-import ModernServicesOverview from '@/components/services/ModernServicesOverview';
-import ModernCTA from '@/components/services/ModernCTA';
+import ModernServicesHero from '@/components/capabilities/ModernServicesHero';
+import ModernCapabilitiesOverview from '@/components/capabilities/ModernCapabilitiesOverview';
+import ModernCTA from '@/components/capabilities/ModernCTA';
 
 // Error boundary component
 class ErrorBoundary extends React.Component<
