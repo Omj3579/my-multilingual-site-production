@@ -7,6 +7,22 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   output: 'standalone',
+  // Memory optimization
+  experimental: {
+    esmExternals: 'loose',
+  },
+  webpack: (config, { dev, isServer }) => {
+    if (!dev && !isServer) {
+      config.optimization = {
+        ...config.optimization,
+        splitChunks: {
+          chunks: 'all',
+          maxSize: 244000,
+        },
+      }
+    }
+    return config
+  },
   i18n: {
     locales: ['en', 'hu', 'de'],
     defaultLocale: 'en',
