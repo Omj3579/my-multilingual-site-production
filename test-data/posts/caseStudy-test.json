@@ -1,0 +1,65 @@
+{
+  "slug": "test-case-study",
+  "title": "Test Case Study",
+  "summary": "A test case study to verify the CaseStudyTemplate is working correctly",
+  "postType": "case-study",
+  "content": {
+    "client": {
+      "name": "Test Client Ltd.",
+      "industry": "Manufacturing",
+      "size": "Enterprise",
+      "logo": "/test/client-logo.jpg"
+    },
+    "challenge": "The client needed to improve their manufacturing efficiency.",
+    "solution": "We implemented a comprehensive solution using our expertise.",
+    "implementation": {
+      "steps": [
+        "Initial analysis and consultation",
+        "Solution design and prototyping",
+        "Implementation and testing",
+        "Deployment and training"
+      ],
+      "timeline": "6 months",
+      "technologies": [
+        "Injection Molding",
+        "Quality Control",
+        "Automation"
+      ]
+    },
+    "results": {
+      "metrics": [
+        {
+          "label": "Efficiency Improvement",
+          "value": "35%",
+          "improvement": "+35%"
+        },
+        {
+          "label": "Cost Reduction",
+          "value": "20%",
+          "improvement": "+20%"
+        },
+        {
+          "label": "Quality Score",
+          "value": "98%",
+          "improvement": "+15%"
+        }
+      ],
+      "testimonial": {
+        "quote": "Working with Flair-Plastic transformed our manufacturing process.",
+        "author": "John Doe",
+        "position": "Operations Manager"
+      }
+    }
+  },
+  "category": "case-studies",
+  "author": {
+    "name": "Test Author",
+    "role": "Case Study Analyst"
+  },
+  "tags": [
+    "test",
+    "case-study",
+    "manufacturing"
+  ],
+  "readTime": 8
+}

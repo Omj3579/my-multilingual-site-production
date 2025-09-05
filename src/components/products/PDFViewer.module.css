@@ -1,0 +1,29 @@
+.wrapper{
+  display:flex;
+  justify-content:center;
+}
+.container{
+  background:#f8fafc;
+  border-radius:1rem;
+  box-shadow:0 2px 16px rgba(0,0,0,0.08);
+  overflow:hidden;
+  /* Allow the viewer to expand almost full viewport width while respecting the passed --pdf-width.
+     Using min() lets callers pass percentages like '95%' while still capping at viewport width. */
+  width: min(var(--pdf-width, 95%), 98vw);
+  max-width: 98vw;
+  height: var(--pdf-height, 120vh);
+  box-sizing: border-box;
+}
+.pageSpacing .rpv-core__page {
+  margin-bottom:1.25rem;
+}
+
+/* Make the internal viewer occupy full width of the container to avoid extra gutters */
+.container .rpv-core__viewer, .container .rpv-core__innerViewer {
+  width: 100% !important;
+}
+
+/* If the default layout inserts side panels, ensure viewer area uses available width */
+.container .rpv-default-layout__body {
+  width: 100% !important;
+}

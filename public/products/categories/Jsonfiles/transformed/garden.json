@@ -1,0 +1,706 @@
+[
+  {
+    "id": "menuet-chair",
+    "category": "Garden",
+    "name": {
+      "en": "Low Back Garden Chair",
+      "hu": "Alacsony támlás kerti szék",
+      "de": "Gartenstuhl mit niedriger Rückenlehne"
+    },
+    "desc": {
+      "en": "Comfortable plastic Garden chair with low backrest.",
+      "hu": "Kényelmes műanyag kerti szék alacsony háttámlával.",
+      "de": "Bequemer Gartenstuhl mit niedriger Rückenlehne aus Kunststoff."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "57×59×74 cm",
+      "material": "PP",
+      "pallet": "20"
+    }
+  },
+  {
+    "id": "chorus-chair",
+    "category": "Garden",
+    "name": {
+      "en": "High Back Garden Chair",
+      "hu": "Magas támlás kerti szék",
+      "de": "Gartenstuhl mit hoher Rückenlehne"
+    },
+    "desc": {
+      "en": "Classic high-back Garden chair made of plastic.",
+      "hu": "Klasszikus magas háttámlás műanyag kerti szék.",
+      "de": "Klassischer Gartenstuhl mit hoher Rückenlehne aus Kunststoff."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "57×67×92 cm",
+      "material": "PP",
+      "pallet": "20"
+    }
+  },
+  {
+    "id": "playa-chair",
+    "category": "Garden",
+    "name": {
+      "en": "Fishing Chair",
+      "hu": "Horgásztu00e9k",
+      "de": "Angelstuhl"
+    },
+    "desc": {
+      "en": "Reclined fishing chair ideal for outdoor relaxation.",
+      "hu": "Hátradönthető horgásztu00e9k kültéri pihenéshez.",
+      "de": "Zurücklehnbarer Angelstuhl für Outdoor-Entspannung."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "42×57×61 cm",
+      "material": "PP",
+      "pallet": "25"
+    }
+  },
+  {
+    "id": "musette-chair",
+    "category": "Garden",
+    "name": {
+      "en": "Garden Chair",
+      "hu": "Kerti szék",
+      "de": "Gartenstuhl"
+    },
+    "desc": {
+      "en": "Standard plastic Garden chair, durable and lightweight.",
+      "hu": "Standard műanyag kerti szék, tartós és könnyű.",
+      "de": "Standard-Gartenstuhl aus Kunststoff, langlebig und leicht."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "44×55×89 cm",
+      "material": "PP",
+      "pallet": "16"
+    }
+  },
+  {
+    "id": "opus-chair",
+    "category": "Garden",
+    "name": {
+      "en": "Low Back Garden Chair",
+      "hu": "Alacsony támlás kerti szék",
+      "de": "Gartenstuhl mit niedriger Rückenlehne"
+    },
+    "desc": {
+      "en": "Classic Garden chair with a low backrest.",
+      "hu": "Klasszikus alacsony háttámlás kerti szék.",
+      "de": "Klassischer Gartenstuhl mit niedriger Rückenlehne."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "57×59×74 cm",
+      "material": "PP",
+      "pallet": "20"
+    }
+  },
+  {
+    "id": "chicago-low-chair",
+    "category": "Garden",
+    "name": {
+      "en": "Low Back Garden Chair",
+      "hu": "Alacsony támlás kerti szék",
+      "de": "Gartenstuhl mit niedriger Rückenlehne"
+    },
+    "desc": {
+      "en": "Low back Garden chair with contoured design.",
+      "hu": "Kényelmes, formázott alacsony háttámlás kerti szék.",
+      "de": "Bequemer, geformter Gartenstuhl mit niedriger Rückenlehne."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "52×57×80 cm",
+      "material": "PP",
+      "pallet": "40"
+    }
+  },
+  {
+    "id": "chicago-high-chair",
+    "category": "Garden",
+    "name": {
+      "en": "High Back Garden Chair",
+      "hu": "Magas támlás kerti szék",
+      "de": "Gartenstuhl mit hoher Rückenlehne"
+    },
+    "desc": {
+      "en": "Garden chair with a supportive high back.",
+      "hu": "Támogató magas háttámlás kerti szék.",
+      "de": "Gartenstuhl mit stützender hoher Rückenlehne."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "52×57×90 cm",
+      "material": "PP",
+      "pallet": "36"
+    }
+  },
+  {
+    "id": "bolero-chair",
+    "category": "Garden",
+    "name": {
+      "en": "Garden Chair with Adjustable Backrest",
+      "hu": "Állítható támlájú kerti szék",
+      "de": "Gartenstuhl mit verstellbarer Rückenlehne"
+    },
+    "desc": {
+      "en": "Adjustable backrest chair for maximum outdoor comfort.",
+      "hu": "Kültéri kényelmet nyújtó állítható háttámlás szék.",
+      "de": "Verstellbarer Gartenstuhl für höchsten Komfort im Freien."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "62×70×107 cm",
+      "material": "PP",
+      "pallet": "20"
+    }
+  },
+  {
+    "id": "prelude-chair",
+    "category": "Garden",
+    "name": {
+      "en": "Garden Chair with Adjustable Backrest",
+      "hu": "Állítható támlájú kerti szék",
+      "de": "Gartenstuhl mit verstellbarer Rückenlehne"
+    },
+    "desc": {
+      "en": "Stylish reclining chair for Gardens and patios.",
+      "hu": "Stílusos dönthető kerti szék teraszra és kertbe.",
+      "de": "Stilvoller, verstellbarer Gartenstuhl für Terrasse und Garten."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "62×66×107 cm",
+      "material": "PP",
+      "pallet": "26"
+    }
+  },
+  {
+    "id": "romance-sunbed",
+    "category": "Garden",
+    "name": {
+      "en": "Sun Bed on Wheels",
+      "hu": "Kerekes napozóágy",
+      "de": "Sonnenliege mit Rollen"
+    },
+    "desc": {
+      "en": "Rolling sun bed for comfort and mobility.",
+      "hu": "Gurulós napozóágy kényelemhez és mobilitáshoz.",
+      "de": "Rollbare Sonnenliege für Komfort und Mobilität."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "80×163×108 cm",
+      "material": "PP",
+      "pallet": "12"
+    }
+  },
+  {
+    "id": "duna-table",
+    "category": "Garden",
+    "name": {
+      "en": "Oval Garden Table",
+      "hu": "Ovális kerti asztal",
+      "de": "Ovaler Gartentisch"
+    },
+    "desc": {
+      "en": "Spacious oval table ideal for outdoor meals.",
+      "hu": "Tágas ovális asztal kültéri étkezésekhez.",
+      "de": "Geräumiger ovaler Tisch für Mahlzeiten im Freien."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "140×80×72 cm",
+      "material": "PP",
+      "pallet": "40"
+    }
+  },
+  {
+    "id": "tenuto-base",
+    "category": "Garden",
+    "name": {
+      "en": "Parasol Base",
+      "hu": "Napernyőtalp",
+      "de": "Sonnenschirmständer"
+    },
+    "desc": {
+      "en": "Sturdy parasol base with 20 l and 50 l capacity.",
+      "hu": "Masszív napernyőtalp 20 l és 50 l kapacitással.",
+      "de": "Stabiler Sonnenschirmständer mit 20 l und 50 l Fassungsvermögen."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "20 l / 50 l",
+      "material": "PP",
+      "pallet": "90 / 36"
+    }
+  },
+  {
+    "id": "paris-chair",
+    "category": "Garden",
+    "name": {
+      "en": "Low Back Garden Chair",
+      "hu": "Alacsony támlás kerti szék",
+      "de": "Gartenstuhl mit niedriger Rückenlehne"
+    },
+    "desc": {
+      "en": "Elegant low back chair for patio or Garden.",
+      "hu": "Elegáns alacsony támlás szék teraszra vagy kertbe.",
+      "de": "Eleganter Gartenstuhl mit niedriger Rückenlehne für Terrasse oder Garten."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "56×61×78 cm",
+      "material": "PP",
+      "pallet": "24"
+    }
+  },
+  {
+    "id": "toronto-low-chair",
+    "category": "Garden",
+    "name": {
+      "en": "Low Back Garden Chair",
+      "hu": "Alacsony támlás kerti szék",
+      "de": "Gartenstuhl mit niedriger Rückenlehne"
+    },
+    "desc": {
+      "en": "Simple and reliable Garden chair with low backrest.",
+      "hu": "Egyszerű és megbízható kerti szék alacsony háttámlával.",
+      "de": "Einfacher, zuverlässiger Gartenstuhl mit niedriger Rückenlehne."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "52×57×80 cm",
+      "material": "PP",
+      "pallet": "40"
+    }
+  },
+  {
+    "id": "toronto-high-chair",
+    "category": "Garden",
+    "name": {
+      "en": "High Back Garden Chair",
+      "hu": "Magas támlás kerti szék",
+      "de": "Gartenstuhl mit hoher Rückenlehne"
+    },
+    "desc": {
+      "en": "High back Garden chair with comfort and stability.",
+      "hu": "Kényelmes, stabil magas háttámlás kerti szék.",
+      "de": "Komfortabler, stabiler Gartenstuhl mit hoher Rückenlehne."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "52×57×90 cm",
+      "material": "PP",
+      "pallet": "36"
+    }
+  },
+  {
+    "id": "pizzicato-chair",
+    "category": "Garden",
+    "name": {
+      "en": "Foldable Camping Chair",
+      "hu": "Összecsukható kempingszék",
+      "de": "Faltbarer Campingstuhl"
+    },
+    "desc": {
+      "en": "Lightweight foldable chair, perfect for camping or picnics.",
+      "hu": "Könnyű összecsukható szék kempingezéshez vagy piknikhez.",
+      "de": "Leichter, faltbarer Stuhl, ideal für Camping oder Picknick."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "47×51×76 cm",
+      "material": "PP",
+      "pallet": "40"
+    }
+  },
+  {
+    "id": "picknick-set",
+    "category": "Garden",
+    "name": {
+      "en": "Picknick Set",
+      "hu": "Picknick szett",
+      "de": "Picknick Set"
+    },
+    "desc": {
+      "en": "2 foldable camping chairs with a foldable table.",
+      "hu": "2 db összecsukható kempingszék, összecsukható asztallal.",
+      "de": "2 faltbare Campingstühle mit Klapptisch."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "47×51×76 cm & Ø65×72 cm",
+      "material": "PP",
+      "pallet": "12"
+    }
+  },
+  {
+    "id": "gamma-pot",
+    "category": "Garden",
+    "name": {
+      "en": "Indoor Plant Pot",
+      "hu": "Beltéri kaspó",
+      "de": "Übertopf für Innenbereich"
+    },
+    "desc": {
+      "en": "Compact indoor plant pot in 3 sizes: 13×13 cm, 15×15 cm, 17×17 cm.",
+      "hu": "Kompakt beltéri kaspó 3 méretben: 13×13 cm, 15×15 cm, 17×17 cm.",
+      "de": "Kompakter Indoor-Pflanzentopf in 3 Größen: 13×13 cm, 15×15 cm, 17×17 cm."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "13×13 cm / 15×15 cm / 17×17 cm",
+      "material": "PP",
+      "pallet": "1056 / 840 / 558"
+    }
+  },
+  {
+    "id": "sydney-flower-pot-round",
+    "category": "Garden",
+    "name": {
+      "en": "Flower Pot",
+      "hu": "Virágcserép",
+      "de": "Blumentopf"
+    },
+    "desc": {
+      "en": "Round flower pot in multiple sizes.",
+      "hu": "Kerek virágcserép több méretben.",
+      "de": "Runder Blumentopf in verschiedenen Größen."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "Ø13×11 cm, Ø16×12.5 cm, Ø20×16 cm, Ø23×18.5 cm, Ø28×21.5 cm, Ø32×25 cm, Ø38×29 cm, Ø45×32.5 cm, Ø54×38.5 cm, Ø60×44.5 cm, Ø70×52 cm",
+      "material": "PP",
+      "pallet": "7560, 5440, 3120, 1650, 990, 640, 360, 150, 100, 80, 60"
+    }
+  },
+  {
+    "id": "sydney-bottom-tray",
+    "category": "Garden",
+    "name": {
+      "en": "Flower Pot Bottom Tray",
+      "hu": "Virágalátét",
+      "de": "Blumentopf Untersetzer"
+    },
+    "desc": {
+      "en": "Bottom trays matching the Sydney flower pots.",
+      "hu": "Sydney virágcserepekhez illeszkedő alátétek.",
+      "de": "Untersetzer passend zu den Sydney Blumentöpfen."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "Ø10, Ø12, Ø15, Ø18, Ø21, Ø25, Ø30, Ø36, Ø41, Ø48, Ø56",
+      "material": "PP",
+      "pallet": "53760, 28800, 12960, 11520, 6480, 4800, 3200, 2160, 1560, 1110, 780"
+    }
+  },
+  {
+    "id": "sydney-dekor-flower-pot",
+    "category": "Garden",
+    "name": {
+      "en": "Flower Pot",
+      "hu": "Virágcserép",
+      "de": "Blumentopf"
+    },
+    "desc": {
+      "en": "Sydney decorative round flower pot.",
+      "hu": "Dekoratív Sydney virágcserép.",
+      "de": "Dekorativer Sydney Blumentopf."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "Ø23×18.5 cm, Ø32×25 cm, Ø38×29 cm",
+      "material": "PP",
+      "pallet": "1650, 640, 360"
+    }
+  },
+  {
+    "id": "sydney-flower-pot-square",
+    "category": "Garden",
+    "name": {
+      "en": "Square Flower Pot with Bottom Tray",
+      "hu": "Szögletes virágcserép, alátéttel",
+      "de": "Eckiger Blumentopf mit Untersetzer"
+    },
+    "desc": {
+      "en": "Square flower pots in various sizes with matching trays.",
+      "hu": "Szögletes virágcserepek különböző méretekben, hozzáillő alátéttel.",
+      "de": "Eckige Blumentöpfe in verschiedenen Größen mit passenden Untersetzern."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "15×15×11.5 cm, 20×20×15 cm, 30×30×22.5 cm, 40×40×30 cm",
+      "material": "PP",
+      "pallet": "4800, 1920, 640, 240"
+    }
+  },
+  {
+    "id": "cilindro-flower-pot",
+    "category": "Garden",
+    "name": {
+      "en": "Flower Pot",
+      "hu": "Virágcserép",
+      "de": "Blumentopf"
+    },
+    "desc": {
+      "en": "Cylindrical flower pot in classic terracotta and grey tones.",
+      "hu": "Hengeres virágcserép klasszikus terrakotta és szürke színben.",
+      "de": "Zylindrischer Blumentopf in klassischem Terrakotta und Grau."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "Ø15×10.5 cm, Ø20×14 cm, Ø25×17.5 cm, Ø30×21 cm, Ø40×28 cm, Ø50×35.5 cm",
+      "material": "PP",
+      "pallet": "4920, 2160, 1170, 770, 360, 120"
+    }
+  },
+  {
+    "id": "cilindro-bottom-tray",
+    "category": "Garden",
+    "name": {
+      "en": "Flower Pot Bottom Tray",
+      "hu": "Virágalátét",
+      "de": "Blumentopf Untersetzer"
+    },
+    "desc": {
+      "en": "Bottom trays that fit Cilindro flower pots.",
+      "hu": "A Cilindro virágcserepekhez illeszkedő alátétek.",
+      "de": "Untersetzer passend zu den Cilindro Blumentöpfen."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "Ø15, Ø20, Ø30, Ø40, Ø50",
+      "material": "PP",
+      "pallet": "12960, 6720, 2970, 1380, 570"
+    }
+  },
+  {
+    "id": "polka-flower-box-round",
+    "category": "Garden",
+    "name": {
+      "en": "Round Flower Box",
+      "hu": "Kerek virágláda",
+      "de": "Runder Blumenkasten"
+    },
+    "desc": {
+      "en": "Round flower boxes with raised base.",
+      "hu": "Kerek virágládák emelt aljjal.",
+      "de": "Runde Blumenkästen mit erhöhtem Boden."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "Ø34×24 cm, Ø42×30 cm",
+      "material": "PP",
+      "pallet": "360, 250"
+    }
+  },
+  {
+    "id": "polka-flower-box-square",
+    "category": "Garden",
+    "name": {
+      "en": "Square Flower Box",
+      "hu": "Szögletes virágláda",
+      "de": "Eckiger Blumenkasten"
+    },
+    "desc": {
+      "en": "Square flower boxes suitable for balconies and patios.",
+      "hu": "Szögletes virágládák erkélyre és teraszra.",
+      "de": "Eckige Blumenkästen für Balkon und Terrasse."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "30×30×22 cm, 40×40×30 cm, 50×30×23 cm",
+      "material": "PP",
+      "pallet": "560, 300, 360"
+    }
+  },
+  {
+    "id": "flora-balcony-box-tray",
+    "category": "Garden",
+    "name": {
+      "en": "Balcony Box with Tray",
+      "hu": "Balkonláda alátéttel",
+      "de": "Balkonkasten mit Untersetzer"
+    },
+    "desc": {
+      "en": "Balcony box with integrated bottom tray.",
+      "hu": "Balkonláda beépített alátéttel.",
+      "de": "Balkonkasten mit integriertem Untersetzer."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "45×20×18 cm, 60×20×18 cm, 80×20×18 cm",
+      "material": "PP",
+      "pallet": "630, 580, 420"
+    }
+  },
+  {
+    "id": "foxtrot-balcony-box",
+    "category": "Garden",
+    "name": {
+      "en": "Balcony Box",
+      "hu": "Balkonláda",
+      "de": "Balkonkasten"
+    },
+    "desc": {
+      "en": "Classic rectangular balcony flower box.",
+      "hu": "Klasszikus téglalap alakú balkonláda.",
+      "de": "Klassischer rechteckiger Balkonkasten."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "40×16×14 cm, 50×16×14 cm, 60×16×14 cm, 80×16×14 cm, 100×16×14 cm",
+      "material": "PP",
+      "pallet": "1400, 990, 810, 630, 360"
+    }
+  },
+  {
+    "id": "foxtrot-balcony-tray",
+    "category": "Garden",
+    "name": {
+      "en": "Balcony Box Tray",
+      "hu": "Balkonláda alátét",
+      "de": "Balkonkasten Untersetzer"
+    },
+    "desc": {
+      "en": "Matching tray for Foxtrot balcony boxes.",
+      "hu": "Foxtrot balkonládákhoz illő alátét.",
+      "de": "Passender Untersetzer für Foxtrot Balkonkasten."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "40×16 cm, 50×16 cm, 60×16 cm, 80×16 cm, 100×16 cm",
+      "material": "PP",
+      "pallet": "5320, 3420, 3510, 2730, 1560"
+    }
+  },
+  {
+    "id": "w5-watering-can",
+    "category": "Garden",
+    "name": {
+      "en": "Watering Can",
+      "hu": "Locsolókanna",
+      "de": "Gießkanne"
+    },
+    "desc": {
+      "en": "Sturdy 5L watering can for Garden use.",
+      "hu": "Masszív, 5 literes locsolókanna kerti használatra.",
+      "de": "Robuste 5L Gießkanne für den Gartengebrauch."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "5 L",
+      "material": "PP + HDPE",
+      "pallet": "120"
+    }
+  },
+  {
+    "id": "w10-watering-can",
+    "category": "Garden",
+    "name": {
+      "en": "Watering Can",
+      "hu": "Locsolókanna",
+      "de": "Gießkanne"
+    },
+    "desc": {
+      "en": "Large 10L watering can with comfortable grip.",
+      "hu": "Nagy méretű, 10 literes locsolókanna kényelmes fogantyúval.",
+      "de": "Große 10L Gießkanne mit komfortablem Griff."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": null,
+      "size": "10 L",
+      "material": "PP",
+      "pallet": "60"
+    }
+  },
+  {
+    "id": "compo-composter",
+    "category": "Garden",
+    "name": {
+      "en": "Composter",
+      "hu": "Komposztáló",
+      "de": "Komposter"
+    },
+    "desc": {
+      "en": "Durable plastic composter for Garden waste.",
+      "hu": "Tartós műanyag komposztáló kerti hulladékhoz.",
+      "de": "Robuster Kunststoff-Komposter für Gartenabfälle."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": "340 l",
+      "size": "30×30×22 cm, 40×40×30 cm, 50×30×23 cm",
+      "material": "PP / ABS",
+      "pallet": "560, 300, 360"
+    }
+  }
+]

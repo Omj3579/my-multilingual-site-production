@@ -1,0 +1,175 @@
+// Small edit to fix footer.tsx by removing the unused idx parameter
+import React, { useState, useEffect } from 'react';
+import Link from "next/link";
+import Image from "next/image";
+import { 
+  ArrowUp, Package, Wrench, Lightbulb, Factory, 
+  Recycle, Shield
+} from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import CookieSettingsDialog from './policies/CookieSettingsDialog';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { Separator } from "@/components/ui/separator";
+
+// Import new subcomponents
+import FooterColumn from './footer/FooterColumn';
+import SocialIcons from './footer/SocialIcons';
+import NewsletterForm from './footer/NewsletterForm';
+import ContactInfo from './footer/ContactInfo';
+import LanguageSwitcher from './footer/LanguageSwitcher';
+
+// Safely get translation with fallback
+const getTranslation = (translations: Record<string, Record<string, string>> | null, key: string, language: string, fallback: string): string => {
+  return translations?.[key]?.[language] || fallback;
+};
+
+const Footer: React.FC = () => {
+  const { translations, language } = useLanguage();
+  const [cookieDialogOpen, setCookieDialogOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [activeTab, setActiveTab] = useState('explore');
+  const { scrollYProgress } = useScroll();
+  const opacity = useTransform(scrollYProgress, [0.7, 1], [0.3, 1]);
+
+  // Add ref for contact info to handle hiding/showing
+  const contactInfoRef = React.useRef<HTMLDivElement>(null);
+
+  // Handle tab switching and contact card visibility
+  const handleTabSwitch = (tab: string) => {
+    setActiveTab(tab);
+    
+    // Animate contact card when switching tabs
+    if (contactInfoRef.current) {
+      if (tab !== 'explore') {
+        // Slide contact info out of view when viewing other tabs
+        contactInfoRef.current.style.transition = 'all 0.4s ease';
+        contactInfoRef.current.style.transform = 'translateX(100px)';
+        contactInfoRef.current.style.opacity = '0';
+        contactInfoRef.current.style.pointerEvents = 'none';
+      } else {
+        // Return contact info to view when returning to explore tab
+        contactInfoRef.current.style.transition = 'all 0.4s ease';
+        contactInfoRef.current.style.transform = 'translateX(0)';
+        contactInfoRef.current.style.opacity = '1';
+        contactInfoRef.current.style.pointerEvents = 'auto';
+      }
+    }
+  };
+
+  // Initialize the contact card visibility when component mounts
+  useEffect(() => {
+    if (contactInfoRef.current) {
+      contactInfoRef.current.style.transition = 'all 0.4s ease';
+      
+      // Ensure initial visibility matches the active tab
+      if (activeTab !== 'explore') {
+        contactInfoRef.current.style.transform = 'translateX(100px)';
+        contactInfoRef.current.style.opacity = '0';
+        contactInfoRef.current.style.pointerEvents = 'none';
+      } else {
+        contactInfoRef.current.style.transform = 'translateX(0)';
+        contactInfoRef.current.style.opacity = '1';
+        contactInfoRef.current.style.pointerEvents = 'auto';
+      }
+    }
+  }, [activeTab]);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  // Footer navigation data
+  const footerNavigation = {
+    explore: {
+      title: getTranslation(translations, 'footer.explore', language, 
+        language === 'en' ? 'Explore' : 'Felfedezés'),
+      links: [
+        { 
+          href: '/capabilities', 
+          label: getTranslation(translations, 'nav.capabilities', language, 
+            language === 'en' ? 'Capabilities' : 'Képességek') 
+        },
+        { 
+          href: '/sustainability', 
+          label: getTranslation(translations, 'nav.sustainability', language, 
+            language === 'en' ? 'Sustainability' : 'Fenntarthatóság') 
+        },
+        { 
+          href: '/company', 
+          label: getTranslation(translations, 'nav.company', language, 
+            language === 'en' ? 'Company' : 'Cég') 
+        },
+        { 
+          href: '/resources', 
+          label: getTranslation(translations, 'nav.resources', language, 
+            language === 'en' ? 'Resources' : 'Források') 
+        }
+      ]
+    },
+    capabilities: {
+      title: getTranslation(translations, 'footer.capabilities', language, 
+        language === 'en' ? 'Manufacturing' : 'Gyártás'),
+      links: [
+        { 
+          href: '/capabilities/injection-moulding', 
+          label: language === 'en' ? 'Injection Moulding' : 'Fröccsöntés' 
+        },
+        { 
+          href: '/capabilities/blow-moulding', 
+          label: language === 'en' ? 'Blow Moulding' : 'Fúvásos Formázás' 
+        },
+        { 
+          href: '/capabilities/contract-manufacturing', 
+          label: language === 'en' ? 'Contract Manufacturing' : 'Szerződéses Gyártás' 
+        },
+        { 
+          href: '/capabilities/material-selection', 
+          label: language === 'en' ? 'Material Selection' : 'Anyagválasztás' 
+        }
+      ]    },    
+    shop: {
+      title: language === 'en' ? 'Shop' : 'Bolt',
+      links: [
+        { 
+          href: '/shop/home', 
+          label: language === 'en' ? 'Home' : 'Otthon' 
+        },
+        { 
+          href: '/shop/kitchen', 
+          label: language === 'en' ? 'Kitchen' : 'Konyha' 
+        },
+        { 
+          href: '/shop/garden', 
+          label: language === 'en' ? 'Garden' : 'Kert' 
+        },
+        { 
+          href: '/shop/kids', 
+          label: language === 'en' ? 'Kids' : 'Gyerekek' 
+        },
+        { 
+          href: '/shop/active', 
+          label: language === 'en' ? 'Active' : 'Aktív' 
+        },
+        { 
+          href: '/shop/pallets', 
+          label: language === 'en' ? 'Pallets' : 'Raklapok' 
+        }
+      ]    }
+  };
+  
+  return (
+    <motion.footer 
+      style={{ opacity }}
+      className="relative bg-gradient-to-b from-blue-50/30 via-slate-50/70 to-white text-gray-700 font-sans border-t border-blue-100/30 overflow-hidden"
+      role="contentinfo"
+      aria-label="Site footer"
+    >
+      {/* Rest of the footer component */}
+    </motion.footer>
+  );
+};
+
+export default Footer;

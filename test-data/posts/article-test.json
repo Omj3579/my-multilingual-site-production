@@ -1,0 +1,33 @@
+{
+  "slug": "test-article",
+  "title": "Test Article Post",
+  "summary": "A test article to verify the ArticleTemplate is working correctly",
+  "postType": "article",
+  "content": {
+    "introduction": "This is a test introduction for our article template.",
+    "sections": [
+      {
+        "title": "Section 1",
+        "content": "<p>This is the first section of our test article.</p>",
+        "type": "text"
+      },
+      {
+        "title": "Section 2",
+        "content": "<p>This is the second section with more content.</p>",
+        "image": "/test/section-image.jpg",
+        "type": "image-text"
+      }
+    ],
+    "conclusion": "This concludes our test article."
+  },
+  "category": "test",
+  "author": {
+    "name": "Test Author",
+    "role": "Test Role"
+  },
+  "tags": [
+    "test",
+    "article"
+  ],
+  "readTime": 5
+}

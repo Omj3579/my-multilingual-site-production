@@ -1,0 +1,158 @@
+{
+    "productsPage": {
+        "labels": {
+            "en": "Products",
+            "hu": "Termékek",
+            "de": "Produkte"
+        },
+        "content": {
+            "en": {
+                "title": "Discover Premium Products for Every Lifestyle",
+                "description": "Browse our extensive selection of high-quality household, kitchen, garden, kids, and lifestyle products. Find innovative solutions designed to enhance your home, simplify daily routines, and inspire joyful living."
+            },
+            "hu": {
+                "title": "Fedezze fel prémium termékeinket minden életstílushoz",
+                "description": "Válogasson kiváló minőségű háztartási, konyhai, kerti, gyermek és életmód termékeink közül. Innovatív megoldások otthona kényelméért és mindennapjai egyszerűsítéséért."
+            },
+            "de": {
+                "title": "Entdecken Sie Premium-Produkte für jeden Lebensstil",
+                "description": "Durchstöbern Sie unser umfangreiches Sortiment an hochwertigen Haushalts-, Küchen-, Garten-, Kinder- und Lifestyle-Produkten. Innovative Lösungen für mehr Komfort und Freude im Alltag."
+            }
+        }
+    },
+    "categories": {
+        "home": {
+            "labels": {
+                "en": "Home",
+                "hu": "Főoldal",
+                "de": "Startseite"
+            },
+            "content": {
+                "en": {
+                    "title": "Essential Household Solutions for Modern Living",
+                    "description": "Upgrade your home with durable bins, versatile baskets, and smart organizers. Our household essentials are crafted for everyday convenience, helping you create a tidy, efficient, and welcoming space."
+                },
+                "hu": {
+                    "title": "Alapvető háztartási megoldások a modern otthonhoz",
+                    "description": "Tartós szemetesek, sokoldalú kosarak és okos rendszerezők a rendezett, hatékony és barátságos otthonért."
+                },
+                "de": {
+                    "title": "Essenzielle Haushaltslösungen für modernes Wohnen",
+                    "description": "Robuste Mülleimer, vielseitige Körbe und clevere Organizer für ein ordentliches, effizientes und einladendes Zuhause."
+                }
+            },
+            "image": "/products/categories/home.webp"
+
+        },
+        "kitchen": {
+            "labels": {
+                "en": "Kitchen",
+                "hu": "Konyha",
+                "de": "Küche"
+            },
+            "content": {
+                "en": {
+                    "title": "Innovative Kitchen Tools & Accessories",
+                    "description": "Discover smart kitchen storage, airtight containers, measuring jugs, and time-saving gadgets. Transform your cooking experience with products designed for organization, efficiency, and culinary creativity."
+                },
+                "hu": {
+                    "title": "Innovatív konyhai eszközök és kiegészítők",
+                    "description": "Okos tárolók, légmentes edények, mérőkancsók és praktikus segédeszközök a rendezett és hatékony konyháért."
+                },
+                "de": {
+                    "title": "Innovative Küchenhelfer & Zubehör",
+                    "description": "Intelligente Aufbewahrung, luftdichte Behälter, Messkannen und praktische Küchenhelfer für mehr Ordnung und Effizienz."
+                }
+            },
+            "image": "/products/categories/kitchen.webp"
+        },
+        "garden": {
+            "labels": {
+                "en": "Garden",
+                "hu": "Kert",
+                "de": "Garten"
+            },
+            "content": {
+                "en": {
+                    "title": "Stylish & Functional Garden Essentials",
+                    "description": "Enhance your outdoor spaces with elegant plant pots, comfortable seating, and practical garden accessories. Our products combine style and durability for beautiful, functional gardens."
+                },
+                "hu": {
+                    "title": "Stílusos és praktikus kerti kiegészítők",
+                    "description": "Elegáns növénycserepek, kényelmes ülőalkalmatosságok és praktikus kerti eszközök a szép és funkcionális kertért."
+                },
+                "de": {
+                    "title": "Stilvolle & praktische Gartenzubehör",
+                    "description": "Elegante Pflanzgefäße, bequeme Sitzgelegenheiten und praktische Gartenaccessoires für stilvolle und funktionale Außenbereiche."
+                }
+            },
+            "image": "/products/categories/garden.webp"
+        },
+        "kids": {
+            "labels": {
+                "en": "Kids",
+                "hu": "Gyerekek",
+                "de": "Kinder"
+            },
+            "content": {
+                "en": {
+                    "title": "Safe & Fun Products for Kids",
+                    "description": "Explore our range of toys and kid-sized furniture designed for safety, creativity, and endless fun. Perfect for playrooms, bedrooms, and outdoor adventures."
+                },
+                "hu": {
+                    "title": "Biztonságos és szórakoztató termékek gyerekeknek",
+                    "description": "Játékok és gyermekbútorok a kreatív, biztonságos és örömteli játékhoz, beltérre és kültérre egyaránt."
+                },
+                "de": {
+                    "title": "Sichere & unterhaltsame Produkte für Kinder",
+                    "description": "Spielzeuge und kindgerechte Möbel für kreatives, sicheres und fröhliches Spielen drinnen und draußen."
+                }
+            },
+            "image": "/products/categories/kids.webp"
+        },
+        "active": {
+            "labels": {
+                "en": "Active",
+                "hu": "Aktív",
+                "de": "Aktiv"
+            },
+            "content": {
+                "en": {
+                    "title": "Gear Up for an Active Lifestyle",
+                    "description": "Shop cooler bags, outdoor storage, and adventure-ready gear. Our active living essentials are built for durability and convenience, supporting your on-the-go lifestyle."
+                },
+                "hu": {
+                    "title": "Felszerelés az aktív életmódhoz",
+                    "description": "Hűtőtáskák, kültéri tárolók és strapabíró felszerelések az aktív, mozgásban lévő élethez."
+                },
+                "de": {
+                    "title": "Ausrüstung für einen aktiven Lebensstil",
+                    "description": "Kühltaschen, Outdoor-Aufbewahrung und robustes Zubehör für Abenteuer und unterwegs."
+                }
+            },
+            "image": "/products/categories/active.webp"
+        },
+        "pallets": {
+            "labels": {
+                "en": "Pallets",
+                "hu": "Raklapok",
+                "de": "Paletten"
+            },
+            "content": {
+                "en": {
+                    "title": "Industrial-Grade Pallets & Storage Solutions",
+                    "description": "Discover heavy-duty pallets, crates, and storage containers engineered for industrial use. Ensure reliability, safety, and efficiency in your warehouse or logistics operations."
+                },
+                "hu": {
+                    "title": "Ipari minőségű raklapok és tárolók",
+                    "description": "Erős raklapok, ládák és tárolók ipari felhasználásra, megbízhatóság és hatékonyság a logisztikában."
+                },
+                "de": {
+                    "title": "Industrielle Paletten & Lagerlösungen",
+                    "description": "Robuste Paletten, Kisten und Lagerbehälter für zuverlässige und effiziente industrielle Anwendungen."
+                }
+            },
+            "image": "/products/categories/pallets.webp"
+        }
+    }
+}

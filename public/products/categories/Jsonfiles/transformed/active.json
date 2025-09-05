@@ -1,0 +1,399 @@
+[
+  {
+    "id": "new-star-24",
+    "category": "Active",
+    "name": {
+      "en": "New Star 24 – Compact Cooler Box",
+      "hu": "New Star 24 – Kompakt Hűtőtáska",
+      "de": "New Star 24 – Kompakte Kühlbox"
+    },
+    "desc": {
+      "en": "Compact and lightweight cooler box, perfect for picnics or day trips.",
+      "hu": "Kompakt és könnyű hűtőtáska, tökéletes piknikekhez és kirándulásokhoz.",
+      "de": "Kompakte, leichte Kühlbox – ideal für Picknicks oder Tagesausflüge."
+    },
+    "images": [
+      "/Products/Product creatives/images/New_Star_24.webp"
+    ],
+    "badges": [],
+    "specs": {
+      "volume": "24 l",
+      "size": "",
+      "material": "PP+EPS",
+      "pallet": "60"
+    }
+  },
+  {
+    "id": "new-star-30",
+    "category": "Active",
+    "name": {
+      "en": "New Star 30 – Large Capacity Cooler",
+      "hu": "New Star 30 – Nagy Kapacitású Hűtőtáska",
+      "de": "New Star 30 – Kühlbox mit hoher Kapazität"
+    },
+    "desc": {
+      "en": "Spacious cooler with advanced insulation for long-lasting freshness.",
+      "hu": "Tágas hűtőtáska fejlett szigeteléssel a hosszan tartó frissességért.",
+      "de": "Geräumige Kühlbox mit fortschrittlicher Isolierung für langanhaltende Frische."
+    },
+    "images": [
+      "/Products/Product creatives/images/New_Star_30.webp"
+    ],
+    "badges": [],
+    "specs": {
+      "volume": "30 l",
+      "size": "",
+      "material": "PP+EPS",
+      "pallet": "48"
+    }
+  },
+  {
+    "id": "coolie-4000",
+    "category": "Active",
+    "name": {
+      "en": "Coolie 4000 – Heavy-Duty Outdoor Cooler",
+      "hu": "Coolie 4000 – Erős Kültéri Hűtőtáska",
+      "de": "Coolie 4000 – Robuste Outdoor-Kühlbox"
+    },
+    "desc": {
+      "en": "Engineered for durability and performance during long outdoor adventures.",
+      "hu": "Hosszú kültéri kalandokhoz tervezve, kiemelkedő tartóssággal és teljesítménnyel.",
+      "de": "Für Langlebigkeit und Leistung bei Outdoor-Abenteuern konzipiert."
+    },
+    "images": [
+      "/Products/Product creatives/images/Coolie_4000.webp"
+    ],
+    "badges": [],
+    "specs": {
+      "volume": "",
+      "size": "",
+      "material": "PP + PE + ABS",
+      "pallet": "3840"
+    }
+  },
+  {
+    "id": "ice-pack-small",
+    "category": "Active",
+    "name": {
+      "en": "Ice Pack – Small Size",
+      "hu": "Jégakku – Kisméretű",
+      "de": "Kühlakku – Klein"
+    },
+    "desc": {
+      "en": "Compact ice pack for keeping your food and drinks fresh.",
+      "hu": "Kisméretű jégakku étel és ital frissen tartásához.",
+      "de": "Kompakter Kühlakku für frische Speisen und Getränke."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": "",
+      "size": "16.5×7.5×2 cm",
+      "material": "PE",
+      "pallet": "64"
+    }
+  },
+  {
+    "id": "ice-pack-medium",
+    "category": "Active",
+    "name": {
+      "en": "Ice Pack – Medium Size",
+      "hu": "Jégakku – Közepes Méretű",
+      "de": "Kühlakku – Mittelgroß"
+    },
+    "desc": {
+      "en": "Reusable medium-sized ice pack for everyday cooling needs.",
+      "hu": "Újrahasználható közepes méretű jégakku a mindennapos hűtéshez.",
+      "de": "Wiederverwendbarer mittelgroßer Kühlakku für den täglichen Bedarf."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": "",
+      "size": "18×9.5×4 cm",
+      "material": "PE",
+      "pallet": "96"
+    }
+  },
+  {
+    "id": "t-500",
+    "category": "Active",
+    "name": {
+      "en": "T-500 Ice Pack",
+      "hu": "T-500 Jégakku",
+      "de": "T-500 Kühlakku"
+    },
+    "desc": {
+      "en": "High-efficiency cooling element for extended freshness.",
+      "hu": "Nagy hatékonyságú hűtőelem a hosszan tartó frissességért.",
+      "de": "Hocheffizienter Kühlakku für langanhaltende Frische."
+    },
+    "images": [
+      "/Products/Product creatives/images/T-500.webp"
+    ],
+    "badges": [],
+    "specs": {
+      "volume": "",
+      "size": "",
+      "material": "PE",
+      "pallet": "96"
+    }
+  },
+  {
+    "id": "t-1000",
+    "category": "Active",
+    "name": {
+      "en": "T-1000 Ice Pack",
+      "hu": "T-1000 Jégakku",
+      "de": "T-1000 Kühlakku"
+    },
+    "desc": {
+      "en": "Larger format cooling pack for more demanding storage.",
+      "hu": "Nagyobb formátumú hűtőakku a komolyabb tárolási igényekhez.",
+      "de": "Größeres Kühlakku für anspruchsvolle Lageranforderungen."
+    },
+    "images": [
+      "/Products/Product creatives/images/T-1000.webp"
+    ],
+    "badges": [],
+    "specs": {
+      "volume": "",
+      "size": "",
+      "material": "PE",
+      "pallet": "96"
+    }
+  },
+  {
+    "id": "big-box",
+    "category": "Active",
+    "name": {
+      "en": "Big Box – Extra Capacity Storage Crate",
+      "hu": "Big Box – Nagy Kapacitású Tárolóláda",
+      "de": "Big Box – Lagerbox mit großem Fassungsvermögen"
+    },
+    "desc": {
+      "en": "Large-volume storage solution ideal for bulk organization and warehouse use.",
+      "hu": "Nagy térfogatú tárolásra alkalmas megoldás tömeges rendszerezéshez és raktárhoz.",
+      "de": "Großvolumige Aufbewahrungslösung, ideal zur Organisation im Lager."
+    },
+    "images": [
+      "/Products/Product creatives/images/Big_Box.webp"
+    ],
+    "badges": [],
+    "specs": {
+      "volume": "25 l",
+      "size": "",
+      "material": "PP",
+      "pallet": "512"
+    }
+  },
+  {
+    "id": "uni-box-300",
+    "category": "Active",
+    "name": {
+      "en": "Uni-Box 300 – Small Storage Box with Lid",
+      "hu": "Uni-Box 300 – Kisméretű Fedeles Tárolódoboz",
+      "de": "Uni-Box 300 – Kleine Aufbewahrungsbox mit Deckel"
+    },
+    "desc": {
+      "en": "Compact and stackable design for versatile household use.",
+      "hu": "Kompakt, egymásra rakható kivitel sokoldalú otthoni használatra.",
+      "de": "Kompaktes, stapelbares Design für vielseitige Anwendungen im Haushalt."
+    },
+    "images": [
+      "/Products/Product creatives/images/UNI-BOX_300.webp"
+    ],
+    "badges": [],
+    "specs": {
+      "volume": "9 l",
+      "size": "30×19×16 cm",
+      "material": "PP",
+      "pallet": "864"
+    }
+  },
+  {
+    "id": "uni-box-400",
+    "category": "Active",
+    "name": {
+      "en": "Uni-Box 400 – Medium Storage Box with Lid",
+      "hu": "Uni-Box 400 – Közepes Fedeles Tárolódoboz",
+      "de": "Uni-Box 400 – Mittlere Aufbewahrungsbox mit Deckel"
+    },
+    "desc": {
+      "en": "Reliable and easy to carry – the perfect all-purpose storage companion.",
+      "hu": "Megbízható és könnyen hordozható – tökéletes univerzális tároló.",
+      "de": "Zuverlässig und leicht tragbar – der perfekte Allzweckaufbewahrer."
+    },
+    "images": [
+      "/Products/Product creatives/images/UNI-BOX_400.webp"
+    ],
+    "badges": [],
+    "specs": {
+      "volume": "",
+      "size": "40×28×21 cm",
+      "material": "PP",
+      "pallet": "192"
+    }
+  },
+  {
+    "id": "uni-box-600g",
+    "category": "Active",
+    "name": {
+      "en": "Uni-Box 600G – Large Stackable Storage Box",
+      "hu": "Uni-Box 600G – Nagy, Egymásra Rakható Tárolódoboz",
+      "de": "Uni-Box 600G – Große Stapelbare Aufbewahrungsbox"
+    },
+    "desc": {
+      "en": "Sturdy and spacious – ideal for storing tools, toys, or supplies.",
+      "hu": "Masszív és tágas – tökéletes szerszámok, játékok vagy kellékek tárolására.",
+      "de": "Stabil und geräumig – ideal zur Aufbewahrung von Werkzeug, Spielzeug oder Vorräten."
+    },
+    "images": [
+      "/Products/Product creatives/images/Uni-Box_600G.webp"
+    ],
+    "badges": [],
+    "specs": {
+      "volume": "60 l",
+      "size": "48×35×24 cm",
+      "material": "PP",
+      "pallet": "192"
+    }
+  },
+  {
+    "id": "uni-box-600",
+    "category": "Active",
+    "name": {
+      "en": "Uni-Box 600 – Rolling Storage Box with Lid",
+      "hu": "Uni-Box 600 – Fedeles, Gurulós Tárolódoboz",
+      "de": "Uni-Box 600 – Rollende Aufbewahrungsbox mit Deckel"
+    },
+    "desc": {
+      "en": "Built-in rollers provide easy mobility – even when fully loaded.",
+      "hu": "Beépített kerekekkel az egyszerű mozgatáshoz – még megtöltve is.",
+      "de": "Mit integrierten Rollen für einfaches Bewegen – auch bei voller Beladung."
+    },
+    "images": [
+      "/Products/Product creatives/images/UNI-BOX_600.webp",
+      "/Products/Product creatives/images/Uni-Box_600G.webp"
+    ],
+    "badges": [],
+    "specs": {
+      "volume": "",
+      "size": "60×40×55 cm",
+      "material": "PP",
+      "pallet": "192"
+    }
+  },
+  {
+    "id": "collapsible-crate",
+    "category": "Active",
+    "name": {
+      "en": "Collapsible Crate – Foldable Storage Solution",
+      "hu": "Összecsukható Rekesz – Hajtható Tárolóláda",
+      "de": "Klappkiste – Faltbare Aufbewahrungslösung"
+    },
+    "desc": {
+      "en": "Space-saving collapsible crate – perfect for transport and temporary use.",
+      "hu": "Helytakarékos, összecsukható láda – ideális szállításhoz és ideiglenes tároláshoz.",
+      "de": "Platzsparende Klappbox – ideal für Transport und temporäre Nutzung."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": "",
+      "size": "",
+      "material": "PP",
+      "pallet": "1680"
+    }
+  },
+  {
+    "id": "jumbo",
+    "category": "Active",
+    "name": {
+      "en": "Jumbo – Oversized Utility Tray",
+      "hu": "Jumbo – Nagyméretű Műanyag Tálca",
+      "de": "Jumbo – Große Mehrzweckschale"
+    },
+    "desc": {
+      "en": "Oversized design for versatile indoor or outdoor use.",
+      "hu": "Nagyméretű kialakítás sokoldalú beltéri és kültéri használatra.",
+      "de": "Großformatiges Design für vielseitigen Innen- oder Außeneinsatz."
+    },
+    "images": [
+      "/Products/Product creatives/images/Jumbo.webp"
+    ],
+    "badges": [],
+    "specs": {
+      "volume": "",
+      "size": "60×40 cm",
+      "material": "PP",
+      "pallet": "3120"
+    }
+  },
+  {
+    "id": "dog-bowl",
+    "category": "Active",
+    "name": {
+      "en": "Dog Bowl – Large Pet Feeding Dish",
+      "hu": "Kutyatál – Nagy Etetőtál",
+      "de": "Hundenapf – Großer Futternapf"
+    },
+    "desc": {
+      "en": "Stable and easy-to-clean bowl for everyday pet feeding.",
+      "hu": "Stabil és könnyen tisztítható tál a mindennapi etetéshez.",
+      "de": "Stabiler, leicht zu reinigender Napf für die tägliche Fütterung."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": "",
+      "size": "50×50 cm",
+      "material": "PP",
+      "pallet": "945"
+    }
+  },
+  {
+    "id": "cat-bowl",
+    "category": "Active",
+    "name": {
+      "en": "Cat Bowl – Flat Profile Dish",
+      "hu": "Macskatál – Lapostál",
+      "de": "Katzennapf – Flacher Napf"
+    },
+    "desc": {
+      "en": "Shallow feeding bowl designed for cats' comfort and accessibility.",
+      "hu": "Lapos kialakítású tál, macskák számára kényelmes és hozzáférhető.",
+      "de": "Flacher Napf, speziell für Katzenkomfort und einfache Erreichbarkeit."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": "",
+      "size": "50×30 cm",
+      "material": "PP",
+      "pallet": "4500"
+    }
+  },
+  {
+    "id": "cat-bowl-double",
+    "category": "Active",
+    "name": {
+      "en": "Cat Bowl Duo – Two-Part Feeding Set",
+      "hu": "Macskatál Duó – Két Részes Etetőtál",
+      "de": "Doppelter Katzennapf – Zweiteiliges Futterschalenset"
+    },
+    "desc": {
+      "en": "Double bowl set – perfect for food and water combination.",
+      "hu": "Két részes tál – ideális étel és víz együttes használatához.",
+      "de": "Zweiteiliges Set – ideal für Futter und Wasser."
+    },
+    "images": [],
+    "badges": [],
+    "specs": {
+      "volume": "",
+      "size": "53×36×29 cm",
+      "material": "PP",
+      "pallet": "9120"
+    }
+  }
+]

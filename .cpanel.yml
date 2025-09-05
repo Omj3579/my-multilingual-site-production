@@ -1,0 +1,17 @@
+---
+deployment:
+  tasks:
+    # Set deployment path to flair-plastic.com domain
+    - export DEPLOYPATH=/home2/flairpla/flair-plastic.com/
+    # Copy all files to flair-plastic.com directory
+    - /bin/cp -R * $DEPLOYPATH
+    # Navigate to domain directory
+    - cd $DEPLOYPATH
+    # Install production dependencies
+    - /opt/cpanel/ea-nodejs20/bin/npm install --production
+    # Build the Next.js application
+    - /opt/cpanel/ea-nodejs20/bin/npm run build
+    # Create tmp directory for Passenger restart
+    - mkdir -p tmp
+    # Touch restart file to restart the application
+    - touch tmp/restart.txt

@@ -1,0 +1,580 @@
+{
+  "category": "Home Essentials",
+  "source": "screenshot",
+  "products": [
+    {
+      "id": "linette",
+      "name": {
+        "en": "Linette – Laundry Hamper",
+        "hu": "Linette – Szennyestartó",
+        "de": "Linette – Wäschebox"
+      },
+      "description": {
+        "en": "Stylish and ventilated laundry hamper designed for daily family use.",
+        "hu": "Stílusos és szellőző szennyestartó a mindennapi használatra.",
+        "de": "Stilvoller, belüfteter Wäschekorb für den täglichen Gebrauch."
+      },
+      "material": "PP",
+      "size": null,
+      "tonnage": "55 l",
+      "pallet": "90",
+      "image": "linette.jpeg"
+    },
+    {
+      "id": "handy",
+      "name": {
+        "en": "Handy – Utility Basket",
+        "hu": "Handy – Háztartási Kosár",
+        "de": "Handy – Haushaltskorb"
+      },
+      "description": {
+        "en": "Compact storage basket perfect for organizing household items.",
+        "hu": "Kompakt tárolókosár a háztartási tárgyak rendszerezéséhez.",
+        "de": "Kompakter Aufbewahrungskorb zur Organisation im Haushalt."
+      },
+      "material": "PP",
+      "size": "39×28×11 cm",
+      "tonnage": null,
+      "pallet": "1280",
+      "image": "handy.jpeg"
+    },
+    {
+      "id": "basket",
+      "name": {
+        "en": "Classic Storage Basket",
+        "hu": "Kosár – Klasszikus Tároló",
+        "de": "Korb – Klassischer Aufbewahrungskorb"
+      },
+      "description": {
+        "en": "Durable basket for multipurpose storage – stackable and versatile.",
+        "hu": "Strapabíró, többcélú tárolókosár – egymásra rakható és sokoldalú.",
+        "de": "Robuster Mehrzweckkorb – stapelbar und vielseitig einsetzbar."
+      },
+      "material": "PP",
+      "size": [
+        "29,5×19,5×12,5 cm",
+        "39,5×25,5×15 cm"
+      ],
+      "tonnage": null,
+      "pallet": [
+        "1280",
+        "900"
+      ],
+      "image": "basket.jpeg"
+    },
+    {
+      "id": "underbed-storage",
+      "name": {
+        "en": "Under Bed Storage Box with Rolls",
+        "hu": "Ágy Alatti Gurulós Tároló",
+        "de": "Unterbettbox mit Rollen"
+      },
+      "description": {
+        "en": "Smart storage with wheels – maximize space under your bed.",
+        "hu": "Okos gurulós tároló – használd ki az ágy alatti helyet.",
+        "de": "Praktische Rollbox – ideal für die Nutzung unter dem Bett."
+      },
+      "material": "PP",
+      "size": "80×40×18 cm",
+      "tonnage": null,
+      "pallet": "90",
+      "image": "underbed-storage.jpeg"
+    },
+    {
+      "id": "soap-dish",
+      "name": {
+        "en": "Soap Dish",
+        "hu": "Szappantartó",
+        "de": "Seifenschale"
+      },
+      "description": {
+        "en": "Compact soap holder with drainage to keep soap dry and clean.",
+        "hu": "Kompakt szappantartó lefolyóval, hogy a szappan mindig száraz maradjon.",
+        "de": "Kompakte Seifenschale mit Ablauf für trockene, saubere Seife."
+      },
+      "material": "PP",
+      "size": "11.5×8×5 cm",
+      "tonnage": null,
+      "pallet": "3780",
+      "image": "soap-dish.jpeg"
+    },
+    {
+      "id": "toilet-seat",
+      "name": {
+        "en": "Toilet Seat",
+        "hu": "WC ülőke",
+        "de": "Toilettensitz"
+      },
+      "description": {
+        "en": "Classic PP toilet seat with smooth surface and reliable fit.",
+        "hu": "Klasszikus WC ülőke sima felülettel és megbízható illeszkedéssel.",
+        "de": "Klassischer Toilettensitz mit glatter Oberfläche und sicherem Sitz."
+      },
+      "material": "PP",
+      "size": "46×38.5×4 cm",
+      "tonnage": null,
+      "pallet": "210",
+      "image": "toilet-seat.jpeg"
+    },
+    {
+      "id": "rectangular-laundry-basket",
+      "name": {
+        "en": "Laundry Basket – Rectangular",
+        "hu": "Szögletes Ruháskosár",
+        "de": "Wäschekorb – Rechteckig"
+      },
+      "description": {
+        "en": "Durable and ventilated laundry basket for everyday family needs.",
+        "hu": "Tartós, szellőző ruháskosár a mindennapokra.",
+        "de": "Robuster, belüfteter Wäschekorb für den täglichen Gebrauch."
+      },
+      "material": "PP",
+      "size": null,
+      "tonnage": "30 l",
+      "pallet": "200",
+      "image": "rectangular-laundry-basket.jpeg"
+    },
+    {
+      "id": "laundry-bowl",
+      "name": {
+        "en": "Laundry Bowl",
+        "hu": "Mosdótál",
+        "de": "Lavor"
+      },
+      "description": {
+        "en": "Multipurpose bowl for washing and cleaning tasks.",
+        "hu": "Sokoldalú tál mosási és tisztítási feladatokhoz.",
+        "de": "Vielseitige Schüssel zum Waschen und Reinigen."
+      },
+      "material": "PP",
+      "size": null,
+      "tonnage": [
+        "12 l",
+        "20 l"
+      ],
+      "pallet": [
+        "1200",
+        "600"
+      ],
+      "image": "laundry-bowl.jpeg"
+    },
+    {
+      "id": "duo-bin",
+      "name": {
+        "en": "Duo Bin – 2 Compartments",
+        "hu": "2 részes szemetes",
+        "de": "Abfallbehälter, zweiteilig"
+      },
+      "description": {
+        "en": "Smart double-compartment bin for separating recyclables and waste.",
+        "hu": "Okos, kétrekeszes szemetes a szelektív hulladékgyűjtéshez.",
+        "de": "Cleverer Doppelmülleimer zur Mülltrennung."
+      },
+      "material": "PP",
+      "size": null,
+      "tonnage": "2×25 l",
+      "pallet": "30",
+      "image": "duo-bin.jpeg"
+    },
+    {
+      "id": "cleaning-set",
+      "name": {
+        "en": "Cleaning Set with Bucket",
+        "hu": "Gyorsfelmosó garnitúra, csőrös vödörrel",
+        "de": "Wischmop-Set mit Schnabeleimer"
+      },
+      "description": {
+        "en": "Quick mop set with ergonomic spout bucket for efficient cleaning.",
+        "hu": "Gyorsfelmosó készlet ergonomikus csőrös vödörrel a hatékony takarításhoz.",
+        "de": "Wischset mit ergonomischem Schnabel-Eimer für effektives Reinigen."
+      },
+      "material": "PP",
+      "size": null,
+      "tonnage": "12 l",
+      "pallet": "560",
+      "image": "cleaning-set.jpeg"
+    },
+    {
+      "id": "pedal-bin-square",
+      "name": {
+        "en": "Pedal Bin – Square (6 L)",
+        "hu": "Pedálos szemetes – Szögletes (6 l)",
+        "de": "Treteimer – Quadratisch (6 l)"
+      },
+      "description": {
+        "en": "Compact pedal bin ideal for bathrooms or small spaces.",
+        "hu": "Kompakt pedálos szemetes fürdőszobába vagy kisebb terekbe.",
+        "de": "Kompakter Treteimer für Badezimmer oder kleine Räume."
+      },
+      "material": "PP",
+      "size": null,
+      "tonnage": "6 l",
+      "pallet": "84",
+      "image": "pedal-bin-square.jpeg"
+    },
+    {
+      "id": "pedal-bin-round",
+      "name": {
+        "en": "Pedal Bin – Round (10 L)",
+        "hu": "Pedálos szemetes – Kerek (10 l)",
+        "de": "Treteimer – Rund (10 l)"
+      },
+      "description": {
+        "en": "Rounded design pedal bin with ample capacity and style.",
+        "hu": "Kerek kialakítású pedálos szemetes nagy kapacitással és stílussal.",
+        "de": "Runder Treteimer mit großem Fassungsvermögen und Stil."
+      },
+      "material": "PP",
+      "size": null,
+      "tonnage": "10 l",
+      "pallet": "100",
+      "image": "pedal-bin-round.jpeg"
+    },
+    {
+      "id": "flip-bin-small",
+      "name": {
+        "en": "Flip Bin – 9/16 L",
+        "hu": "Billenős szemetes – 9/16 l",
+        "de": "Abfalleimer mit Flip-Deckel – 9/16 l"
+      },
+      "description": {
+        "en": "Compact flip-lid bin – ideal for bathroom or office use.",
+        "hu": "Kompakt billenős szemetes – ideális fürdőszobába vagy irodába.",
+        "de": "Kompakter Abfalleimer mit Klappdeckel – ideal für Bad oder Büro."
+      },
+      "material": "PP + ABS",
+      "size": null,
+      "tonnage": [
+        "9 l",
+        "16 l"
+      ],
+      "pallet": [
+        "216",
+        "180"
+      ],
+      "image": "flip-bin-small.jpeg"
+    },
+    {
+      "id": "flip-bin-large",
+      "name": {
+        "en": "Flip Bin – 22/45 L",
+        "hu": "Billenős szemetes – 22/45 l",
+        "de": "Abfalleimer mit Flip-Deckel – 22/45 l"
+      },
+      "description": {
+        "en": "Spacious flip-lid bin with modern look and generous capacity.",
+        "hu": "Tágas billenős szemetes modern megjelenéssel és nagy kapacitással.",
+        "de": "Geräumiger Klappdeckel-Abfalleimer mit modernem Design."
+      },
+      "material": "PP + ABS",
+      "size": null,
+      "tonnage": [
+        "22 l",
+        "45 l"
+      ],
+      "pallet": [
+        "168",
+        "40"
+      ],
+      "image": "flip-bin-large.jpeg"
+    },
+    {
+      "id": "wastepaper-basket",
+      "name": {
+        "en": "Wastepaper Basket",
+        "hu": "Papírkosár",
+        "de": "Papierkorb"
+      },
+      "description": {
+        "en": "Lightweight and ventilated basket for paper or dry waste.",
+        "hu": "Könnyű és szellőző kosár papír vagy száraz hulladék számára.",
+        "de": "Leichter, belüfteter Korb für Papier oder trockenen Abfall."
+      },
+      "material": "PP",
+      "size": "Ø27 cm",
+      "tonnage": null,
+      "pallet": null,
+      "image": "wastepaper-basket.jpeg"
+    },
+    {
+      "id": "oval-tub",
+      "name": {
+        "en": "Oval Tub – 60 L",
+        "hu": "Ovális kád – 60 l",
+        "de": "Ovale Wanne – 60 l"
+      },
+      "description": {
+        "en": "Sturdy and large oval tub – perfect for cleaning, storage, or laundry.",
+        "hu": "Erős, nagy méretű ovális kád – takarításhoz, tároláshoz vagy mosáshoz.",
+        "de": "Stabile, große Wanne – ideal für Reinigung, Lagerung oder Wäsche."
+      },
+      "material": "PP",
+      "size": null,
+      "tonnage": "60 l",
+      "pallet": "80",
+      "image": "oval-tub.jpeg"
+    },
+    {
+      "id": "stool-midi",
+      "name": {
+        "en": "Stool – Midi",
+        "hu": "Sámi – Midi",
+        "de": "Stockerl – Midi"
+      },
+      "description": {
+        "en": "Medium-sized stool for kitchen, bathroom, or everyday use.",
+        "hu": "Közepes méretű sámi a konyhába, fürdőbe vagy általános használatra.",
+        "de": "Mittelgroßer Hocker für Küche, Bad oder den täglichen Gebrauch."
+      },
+      "material": "PP + rubber",
+      "size": "35×26.5×25 cm",
+      "tonnage": null,
+      "pallet": "320",
+      "image": "stool-midi.jpeg"
+    },
+    {
+      "id": "stool-maxi",
+      "name": {
+        "en": "Stool – Maxi",
+        "hu": "Sámi – Maxi",
+        "de": "Stockerl – Maxi"
+      },
+      "description": {
+        "en": "Large sturdy stool for comfortable seating or elevated tasks.",
+        "hu": "Nagy, stabil sámi kényelmes üléshez vagy emelt munkákhoz.",
+        "de": "Großer, stabiler Hocker für bequemes Sitzen oder erhöhte Tätigkeiten."
+      },
+      "material": "PP",
+      "size": "35×26.5×29 cm",
+      "tonnage": null,
+      "pallet": "280",
+      "image": "stool-maxi.jpeg"
+    },
+    {
+      "id": "stool-mini",
+      "name": {
+        "en": "Stool – Mini",
+        "hu": "Sámi – Mini",
+        "de": "Stockerl – Mini"
+      },
+      "description": {
+        "en": "Compact stool for kids or low-step tasks, lightweight and stable.",
+        "hu": "Kompakt sámi gyerekeknek vagy alacsony lépésekhez – könnyű és stabil.",
+        "de": "Kleiner Hocker für Kinder oder niedrige Arbeiten – leicht und stabil."
+      },
+      "material": "PP",
+      "size": "24.5×19.5×17.5 cm",
+      "tonnage": null,
+      "pallet": "840",
+      "image": "stool-mini.jpeg"
+    },
+    {
+      "id": "stool-stabilo",
+      "name": {
+        "en": "Stool – Stabilo",
+        "hu": "Sámi – Stabilo",
+        "de": "Stockerl – Stabilo"
+      },
+      "description": {
+        "en": "High-leg stool with strong legs and vibrant colors.",
+        "hu": "Magas lábú sámi erős lábakkal és élénk színekkel.",
+        "de": "Hocker mit hohen Beinen und kräftigen Farben."
+      },
+      "material": "PP",
+      "size": "40×40×40 cm",
+      "tonnage": null,
+      "pallet": "360",
+      "image": "stool-stabilo.jpeg"
+    },
+    {
+      "id": "shoe-tray",
+      "name": {
+        "en": "Shoe Tray",
+        "hu": "Cipőtálca",
+        "de": "Schuhablage"
+      },
+      "description": {
+        "en": "Protect your floors with a multi-size tray for shoes and boots.",
+        "hu": "Védd meg padlód a különféle méretű cipő- és csizmatálcával.",
+        "de": "Schützen Sie Ihren Boden mit praktischer Schuhablage in mehreren Größen."
+      },
+      "material": "PP",
+      "size": [
+        "79×39 cm",
+        "60×40 cm",
+        "45×30 cm"
+      ],
+      "tonnage": null,
+      "pallet": [
+        "1380",
+        "2000",
+        "2040"
+      ],
+      "image": "shoe-tray.jpeg"
+    },
+    {
+      "id": "metal-bucket",
+      "name": {
+        "en": "Bucket with Metal Handle – 12 L",
+        "hu": "Fémfüles vödör – 12 l",
+        "de": "Eimer mit Metallgriff – 12 l"
+      },
+      "description": {
+        "en": "Durable plastic bucket with reinforced metal handle.",
+        "hu": "Tartós műanyag vödör megerősített fém füllel.",
+        "de": "Robuster Kunststoffeimer mit verstärktem Metallgriff."
+      },
+      "material": "PP + metal",
+      "size": null,
+      "tonnage": "12 l",
+      "pallet": "400",
+      "image": "metal-bucket.jpeg"
+    },
+    {
+      "id": "shopper-basket-small",
+      "name": {
+        "en": "Shopper Basket with Handles – Small",
+        "hu": "Füles Bevásárlókosár – Kicsi",
+        "de": "Tragekorb mit Griffen – Klein"
+      },
+      "description": {
+        "en": "Compact shopper basket with sturdy handles for easy carrying.",
+        "hu": "Kompakt bevásárlókosár erős fogantyúval a kényelmes hordozáshoz.",
+        "de": "Kleiner Einkaufskorb mit stabilen Griffen für bequemes Tragen."
+      },
+      "material": "PP",
+      "size": "28.5×22.5×22.5 cm",
+      "tonnage": null,
+      "pallet": "430",
+      "image": "shopper-basket-small.jpeg"
+    },
+    {
+      "id": "shopper-basket-large",
+      "name": {
+        "en": "Shopper Basket with Handles – Large",
+        "hu": "Füles Bevásárlókosár – Nagy",
+        "de": "Tragekorb mit Griffen – Groß"
+      },
+      "description": {
+        "en": "Spacious shopper basket perfect for groceries or bulk items.",
+        "hu": "Tágas bevásárlókosár élelmiszerekhez vagy nagyobb dolgokhoz.",
+        "de": "Geräumiger Einkaufskorb für Lebensmittel oder größere Artikel."
+      },
+      "material": "PP",
+      "size": null,
+      "tonnage": [
+        "45 l",
+        "60 l"
+      ],
+      "pallet": [
+        "360",
+        "60"
+      ],
+      "image": "shopper-basket-large.jpeg"
+    },
+    {
+      "id": "potato-bucket",
+      "name": {
+        "en": "Potato Bucket",
+        "hu": "Burgonyatároló",
+        "de": "Kartoffeleimer"
+      },
+      "description": {
+        "en": "Storage bucket for potatoes and root vegetables with a sealed lid.",
+        "hu": "Tároló burgonyának és gyökérzöldségeknek, zárható fedéllel.",
+        "de": "Eimer zur Lagerung von Kartoffeln und Wurzelgemüse mit Deckel."
+      },
+      "material": "PP",
+      "size": "36×27×22 cm",
+      "tonnage": null,
+      "pallet": "240",
+      "image": "potato-bucket.jpeg"
+    },
+    {
+      "id": "binny",
+      "name": {
+        "en": "Binny – Waste Bin with Lid",
+        "hu": "Binny – Szemetes fedéllel",
+        "de": "Binny – Abfalleimer mit Deckel"
+      },
+      "description": {
+        "en": "Colorful waste bin with secure-fitting lid, ideal for home or office.",
+        "hu": "Színes szemetes jól záródó fedéllel, otthonra vagy irodába.",
+        "de": "Farbenfroher Mülleimer mit gut schließendem Deckel für Zuhause oder Büro."
+      },
+      "material": "PP",
+      "size": null,
+      "tonnage": [
+        "9 l",
+        "25 l",
+        "50 l"
+      ],
+      "pallet": [
+        "396",
+        "186",
+        "100"
+      ],
+      "image": "binny.jpeg"
+    },
+    {
+      "id": "clothespin-24",
+      "name": {
+        "en": "Clothespins – Set of 24",
+        "hu": "Ruhacsipesz – 24 db-os",
+        "de": "Wäscheklammer – 24 Stück"
+      },
+      "description": {
+        "en": "24-piece clothespin set in assorted colors for secure drying.",
+        "hu": "24 db ruhacsipesz színes kivitelben a biztos szárításhoz.",
+        "de": "24er Set bunte Wäscheklammern für sicheres Trocknen."
+      },
+      "material": "PP",
+      "size": [
+        "8 cm",
+        "10 cm"
+      ],
+      "tonnage": null,
+      "pallet": [
+        "2040",
+        "2000"
+      ],
+      "image": "clothespin-24.jpeg"
+    },
+    {
+      "id": "clothespin-10",
+      "name": {
+        "en": "Clothespins – Set of 10",
+        "hu": "Ruhacsipesz – 10 db-os",
+        "de": "Wäscheklammer – 10 Stück"
+      },
+      "description": {
+        "en": "Set of 10 durable plastic clothespins for everyday laundry.",
+        "hu": "10 db strapabíró műanyag ruhacsipesz mindennapos mosáshoz.",
+        "de": "10 stabile Kunststoff-Wäscheklammern für den Alltag."
+      },
+      "material": "PP",
+      "size": "7.2 cm",
+      "tonnage": null,
+      "pallet": null,
+      "image": "clothespin-10.jpeg"
+    },
+    {
+      "id": "clothespin-20",
+      "name": {
+        "en": "Clothespins – Set of 20",
+        "hu": "Ruhacsipesz – 20 db-os",
+        "de": "Wäscheklammer – 20 Stück"
+      },
+      "description": {
+        "en": "Multipack of 20 clothespins for efficient and organized drying.",
+        "hu": "20 db-os ruhacsipesz készlet hatékony és rendezett szárításhoz.",
+        "de": "20er Set Wäscheklammern für effizientes, ordentliches Trocknen."
+      },
+      "material": "PP",
+      "size": "7.2 cm",
+      "tonnage": null,
+      "pallet": "3600",
+      "image": "clothespin-20.jpeg"
+    }
+  ]
+}

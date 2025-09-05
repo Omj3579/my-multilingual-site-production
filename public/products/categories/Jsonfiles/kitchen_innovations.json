@@ -1,0 +1,1247 @@
+{
+  "category": "Kitchen Innovations",
+  "products": [
+    {
+      "id": "take-n-go-yoghurt-container",
+      "name": {
+        "en": "Take 'n' Go Yoghurt Container",
+        "hu": "Praktikus joghurt pohár kiskanállal",
+        "de": "Praktischer Joghurtbecher mit Löffel"
+      },
+      "description": {
+        "en": "Practical 600ml yoghurt container with spoon – ideal for on-the-go snacking.",
+        "hu": "Praktikus 600 ml-es joghurtos pohár kanállal – ideális útközbeni nassoláshoz.",
+        "de": "Praktischer 600 ml Joghurtbecher mit Löffel – ideal für unterwegs."
+      },
+      "material": "PS, PP",
+      "size": "600 ml",
+      "tonnage": null,
+      "pallet": "864",
+      "image": "take-n-go-yoghurt-container.jpeg"
+    },
+    {
+      "id": "water-bottle",
+      "name": {
+        "en": "Water Bottle",
+        "hu": "Ütésálló és hőálló palack, BPA-mentes",
+        "de": "Stoß- und hitzebeständig, BPA-frei"
+      },
+      "description": {
+        "en": "Impact- and heat-resistant BPA-free bottle available in 500ml and 700ml sizes.",
+        "hu": "Ütés- és hőálló, BPA-mentes palack, 500ml és 700ml méretben elérhető.",
+        "de": "Stoß- und hitzebeständige BPA-freie Flasche – 500ml und 700ml."
+      },
+      "material": "PC, PP",
+      "size": "500 ml, 700 ml",
+      "tonnage": null,
+      "pallet": "1600",
+      "image": "water-bottle.jpeg"
+    },
+    {
+      "id": "betty-jug",
+      "name": {
+        "en": "Betty Jug",
+        "hu": "Üveg és PP kancsó, praktikus használat",
+        "de": "Glas- und PP-Kanne, praktisch und elegant"
+      },
+      "description": {
+        "en": "Elegant 1.5L jug made of glass and PP – perfect for serving cold drinks.",
+        "hu": "Elegáns 1,5L kancsó üvegből és PP-ből – tökéletes hideg italokhoz.",
+        "de": "Elegante 1,5L Kanne aus Glas und PP – ideal für kalte Getränke."
+      },
+      "material": "GL, PP",
+      "size": "1500 ml",
+      "tonnage": null,
+      "pallet": "480",
+      "image": "betty-jug.jpeg"
+    },
+    {
+      "id": "mixing-bowl",
+      "name": {
+        "en": "Mixing Bowl",
+        "hu": "Csőrös keverőtál",
+        "de": "Rührschüssel mit Schnabel"
+      },
+      "description": {
+        "en": "Lightweight mixing bowl with spout – available in 1.5L, 2.1L, and 2.5L sizes.",
+        "hu": "Könnyű csőrös keverőtál – elérhető 1,5L, 2,1L és 2,5L méretben.",
+        "de": "Leichte Rührschüssel mit Ausguss – in 1,5L, 2,1L und 2,5L erhältlich."
+      },
+      "material": "PP",
+      "size": "1.5 L, 2.1 L, 2.5 L",
+      "tonnage": null,
+      "pallet": "420 / 0 / 240 / 0 / 208 / 0",
+      "image": "mixing-bowl.jpeg"
+    },
+    {
+      "id": "freezy-rectangle",
+      "name": {
+        "en": "Freezy – Rectangular Food Storage Set",
+        "hu": "Szögletes hűtődoboz, 3 db-os szett",
+        "de": "Set 3x Frischhaltedose, rechteckig"
+      },
+      "description": {
+        "en": "A set of 3 stackable rectangular containers perfect for food storage.",
+        "hu": "3 db-os szögletes ételtároló doboz szett.",
+        "de": "Set aus 3 rechteckigen Frischhaltedosen, stapelbar."
+      },
+      "material": "PP",
+      "size": "3×0.5 l | 0.5 l | 1.2 + 2.8 l | 1.3×1.2 l | 3×2.8 l",
+      "tonnage": null,
+      "pallet": "72 / 40 / 48 / 32",
+      "image": "freezy-rectangle.jpeg"
+    },
+    {
+      "id": "freezy-square",
+      "name": {
+        "en": "Freezy – Square Food Storage Set",
+        "hu": "Négyszögletes hűtődoboz, 3 db-os szett",
+        "de": "Set 3x Frischhaltedose, quadratisch"
+      },
+      "description": {
+        "en": "Practical set of 3 square storage boxes for a tidy fridge.",
+        "hu": "Négyszögletes ételtároló doboz, 3 db-os szett.",
+        "de": "3-teiliges quadratisches Frischhaltedosen-Set."
+      },
+      "material": "PP",
+      "size": "3×0.5 l | 0.5 l | 1.2 + 2.8 l | 1.3×1.2 l | 3×2.8 l",
+      "tonnage": null,
+      "pallet": "1296 / 44 / 48 / 32",
+      "image": "freezy-square.jpeg"
+    },
+    {
+      "id": "food-barrel-3pc",
+      "name": {
+        "en": "Food Barrel – 3pc Set (Elevated)",
+        "hu": "Ételhordó, 3db-os szett, magasított",
+        "de": "Set 3x Etagen-Essenträger, erhöht"
+      },
+      "description": {
+        "en": "3 elevated food barrels, ideal for storing or transporting meals.",
+        "hu": "3 részes magasított ételhordó szett.",
+        "de": "Erhöhtes Set mit 3 Etagenbehältern."
+      },
+      "material": "PP + PE",
+      "size": "3×1.2 l",
+      "tonnage": null,
+      "pallet": "216 / 192",
+      "image": "food-barrel-3pc.jpeg"
+    },
+    {
+      "id": "food-barrel-4pc",
+      "name": {
+        "en": "Food Barrel – 4pc Set (Elevated)",
+        "hu": "Ételhordó, 4db-os szett, magasított",
+        "de": "Set 4x Etagen-Essenträger, erhöht"
+      },
+      "description": {
+        "en": "4 elevated food barrels with secure lids for versatile use.",
+        "hu": "4 részes magasított ételhordó szett.",
+        "de": "Erhöhtes Set mit 4 Etagenbehältern."
+      },
+      "material": "PP + PE",
+      "size": "4×1.2 l",
+      "tonnage": null,
+      "pallet": "210",
+      "image": "food-barrel-4pc.jpeg"
+    },
+    {
+      "id": "daily-box",
+      "name": {
+        "en": "Daily Box – 10pc Rectangular Set",
+        "hu": "Ételhordó doboz 10 db-os szett",
+        "de": "Set 10x Frischhaltedose, rechteckig"
+      },
+      "description": {
+        "en": "Set of 10 rectangular food storage boxes for everyday use.",
+        "hu": "10 db-os szögletes ételtároló doboz szett.",
+        "de": "10-teiliges Set rechteckiger Frischhaltedosen."
+      },
+      "material": "PP",
+      "size": "10×1.2 l",
+      "tonnage": null,
+      "pallet": "320",
+      "image": "daily-box.jpeg"
+    },
+    {
+      "id": "click-box",
+      "name": {
+        "en": "Click Box – Lunch Box",
+        "hu": "Tízóra is doboz",
+        "de": "Click-box"
+      },
+      "description": {
+        "en": "Compact 17×12×5 cm click-lock lunch box.",
+        "hu": "17×12×5 cm méretű klikzáras tízórais doboz.",
+        "de": "Clickbox für Pausenbrote, 17×12×5 cm."
+      },
+      "material": "PP",
+      "size": "17×12×5 cm",
+      "tonnage": null,
+      "pallet": "1152",
+      "image": "click-box.jpeg"
+    },
+    {
+      "id": "egg-holder",
+      "name": {
+        "en": "Egg Holder",
+        "hu": "Tojástartó",
+        "de": "Eierhalter"
+      },
+      "description": {
+        "en": "Durable egg holder with secure lid.",
+        "hu": "Tartós tojástartó biztonságos fedéllel.",
+        "de": "Stabiler Eierhalter mit sicherem Deckel."
+      },
+      "material": "PP",
+      "size": "20×11×7 cm",
+      "tonnage": null,
+      "pallet": "1072",
+      "image": "egg-holder.jpeg"
+    },
+    {
+      "id": "flair-click-fresh",
+      "name": {
+        "en": "Food Storage Box, Rectangular",
+        "hu": "Étel tároló, szögletes",
+        "de": "Frischhaltedose, rechteckig"
+      },
+      "description": {
+        "en": "Rectangular food storage box in various sizes and colors.",
+        "hu": "Szögletes ételtároló doboz különböző méretekben és színekben.",
+        "de": "Rechteckige Frischhaltedose in verschiedenen Größen und Farben."
+      },
+      "material": "PP",
+      "size": "0.2 l  / 0.5 l / 1 l / 1.1 l / 1.8 l / 2.1 l",
+      "tonnage": null,
+      "pallet": "2880 1728 / 864 / 720 / 432",
+      "image": "flair-click-fresh.jpeg"
+    },
+    {
+      "id": "gastro-decor",
+      "name": {
+        "en": "Tray with Decor Foil",
+        "hu": "Tálca, dekorfóliával",
+        "de": "Tablett mit Dekorfolie"
+      },
+      "description": {
+        "en": "Decorative trays for serving.",
+        "hu": "Dekoratív tálcák tálaláshoz.",
+        "de": "Dekorative Tabletts zum Servieren."
+      },
+      "material": "PP / ABS",
+      "size": "35×27 cm / 40×31 cm / 45×35 cm",
+      "tonnage": null,
+      "pallet": "160 / 150",
+      "image": "gastro-decor.jpeg"
+    },
+    {
+      "id": "gastro",
+      "name": {
+        "en": "Tray",
+        "hu": "Tálca",
+        "de": "Tablett"
+      },
+      "description": {
+        "en": "Durable plastic trays for everyday use.",
+        "hu": "Tartós műanyag tálcák mindennapi használatra.",
+        "de": "Strapazierfähige Kunststofftabletts für den täglichen Gebrauch."
+      },
+      "material": "PP / ABS",
+      "size": "35×27 cm / 40×31 cm / 45×35 cm",
+      "tonnage": null,
+      "pallet": "160 / 150",
+      "image": "gastro.jpeg"
+    },
+    {
+      "id": "zsúr",
+      "name": {
+        "en": "Loaf-shaped Cake Container",
+        "hu": "Süteménybúra",
+        "de": "Kastenkuchenbehälter"
+      },
+      "description": {
+        "en": "Cake container with colorful handle.",
+        "hu": "Süteménybúra színes fogantyúval.",
+        "de": "Kuchenglocke mit buntem Griff."
+      },
+      "material": "PP",
+      "size": "18×41×16 cm",
+      "tonnage": null,
+      "pallet": "192",
+      "image": "zsúr.jpeg"
+    },
+    {
+      "id": "carry-fresh",
+      "name": {
+        "en": "Cake Container",
+        "hu": "Tortabúra",
+        "de": "Tortenbehälter"
+      },
+      "description": {
+        "en": "Round cake container with secure locking lid.",
+        "hu": "Kerek tortatartó biztonságos záródással.",
+        "de": "Runder Tortenbehälter mit sicherem Deckel."
+      },
+      "material": "PP",
+      "size": "Ø29×14 cm",
+      "tonnage": null,
+      "pallet": "96",
+      "image": "carry-fresh.jpeg"
+    },
+    {
+      "id": "party",
+      "name": {
+        "en": "Loaf-shaped Cake Container",
+        "hu": "Süteménybúra",
+        "de": "Kastenkuchenbehälter"
+      },
+      "description": {
+        "en": "Spacious pink-accented container for cakes.",
+        "hu": "Tágas, rózsaszín díszítésű süteménybúra.",
+        "de": "Großer Kastenkuchenbehälter mit pinkfarbenem Akzent."
+      },
+      "material": "PP",
+      "size": "30×47×9.5 cm",
+      "tonnage": null,
+      "pallet": "132",
+      "image": "party.jpeg"
+    },
+    {
+      "id": "kt1",
+      "name": {
+        "en": "Cake Tray, Crystal",
+        "hu": "Tortatálca, kristály",
+        "de": "Tortenplatte, Kristall"
+      },
+      "description": {
+        "en": "Crystal-style serving tray for cakes.",
+        "hu": "Kristály stílusú tortatálca.",
+        "de": "Tortenplatte im Kristallstil."
+      },
+      "material": "PS",
+      "size": "Ø32 cm",
+      "tonnage": null,
+      "pallet": "1080",
+      "image": "kt1.jpeg"
+    },
+    {
+      "id": "kt2",
+      "name": {
+        "en": "Round Tray, Crystal",
+        "hu": "Kerek tálca, kristály",
+        "de": "Runde Kristallplatte"
+      },
+      "description": {
+        "en": "Elegant round crystal-style serving tray.",
+        "hu": "Elegáns kerek kristály stílusú tálca.",
+        "de": "Elegante runde Servierplatte im Kristallstil."
+      },
+      "material": "PS",
+      "size": "Ø28 cm",
+      "tonnage": null,
+      "pallet": "1350",
+      "image": "kt2.jpeg"
+    },
+    {
+      "id": "kt3",
+      "name": {
+        "en": "Tray, Crystal",
+        "hu": "Tálca, kristály",
+        "de": "Tablett, Kristall"
+      },
+      "description": {
+        "en": "Rectangular crystal-style tray for serving.",
+        "hu": "Téglalap alakú kristály stílusú tálca.",
+        "de": "Rechteckiges Kristallstil-Tablett zum Servieren."
+      },
+      "material": "PS",
+      "size": "34.5×16×2 cm",
+      "tonnage": null,
+      "pallet": "1620",
+      "image": "kt3.jpeg"
+    },
+    {
+      "id": "kt6",
+      "name": {
+        "en": "Tray, Crystal",
+        "hu": "Tálca, kristály",
+        "de": "Tablett, Kristall"
+      },
+      "description": {
+        "en": "Elegant tray with a crystal look.",
+        "hu": "Elegáns kristályhatású tálca.",
+        "de": "Elegantes Tablett mit Kristalloptik."
+      },
+      "material": "PS",
+      "size": "32.5×27.5×2.5 cm",
+      "tonnage": null,
+      "pallet": "600",
+      "image": "kt6.jpeg"
+    },
+    {
+      "id": "kt7",
+      "name": {
+        "en": "Cocktail Tray, Crystal",
+        "hu": "Koktéltálca, kristály",
+        "de": "Cocktailtablett, Kristall"
+      },
+      "description": {
+        "en": "Crystal-look tray for cocktails or desserts.",
+        "hu": "Kristályhatású tálca koktélhoz vagy desszerthez.",
+        "de": "Tablett im Kristallstil für Cocktails oder Desserts."
+      },
+      "material": "PS",
+      "size": "33×21×2.5 cm",
+      "tonnage": null,
+      "pallet": "2250",
+      "image": "kt7.jpeg"
+    },
+    {
+      "id": "freezy-round",
+      "name": {
+        "en": "Food Storage Box, Round",
+        "hu": "Kerek hűtődoboz",
+        "de": "Frischhaltedose, rund"
+      },
+      "description": {
+        "en": "Round-shaped food storage containers.",
+        "hu": "Kerek formájú ételtároló dobozok.",
+        "de": "Runde Frischhaltedosen."
+      },
+      "material": "PP",
+      "size": "0.55 l | 1.2 l | 2.8 l",
+      "tonnage": null,
+      "pallet": "1440 / 720 / 24",
+      "image": "freezy-round.jpeg"
+    },
+    {
+      "id": "freezy-rectangle",
+      "name": {
+        "en": "Food Storage Box, Rectangular",
+        "hu": "Szögletes hűtődoboz",
+        "de": "Frischhaltedose, rechteckig"
+      },
+      "description": {
+        "en": "Rectangular containers for fridge storage.",
+        "hu": "Szögletes ételtároló doboz hűtőszekrényhez.",
+        "de": "Rechteckige Frischhaltedose für Kühlschrank."
+      },
+      "material": "PP",
+      "size": "0.25 l | 0.55 l | 1.2 l | 2.8 l",
+      "tonnage": null,
+      "pallet": "3500 / 1260 / 600 / 400",
+      "image": "freezy-rectangle.jpeg"
+    },
+    {
+      "id": "freezy-square",
+      "name": {
+        "en": "Food Storage Box, Square",
+        "hu": "Négyszögletes hűtődoboz",
+        "de": "Frischhaltedose, quadratisch"
+      },
+      "description": {
+        "en": "Square-shaped food container for efficient storage.",
+        "hu": "Négyszögletes ételtároló hatékony tároláshoz.",
+        "de": "Quadratische Frischhaltedose für effiziente Aufbewahrung."
+      },
+      "material": "PP",
+      "size": "0.55 l | 1.2 l | 2.8 l",
+      "tonnage": null,
+      "pallet": "1920 / 720 / 28",
+      "image": "freezy-square.jpeg"
+    },
+    {
+      "id": "freezy-round-set",
+      "name": {
+        "en": "Food Storage Box, Round, Set of 3",
+        "hu": "Kerek hűtődoboz, 3 db-os szett",
+        "de": "Set 3x Frischhaltedose, rund"
+      },
+      "description": {
+        "en": "Set of 3 round food containers in varying sizes.",
+        "hu": "3 db-os kerek ételtároló szett különböző méretekben.",
+        "de": "3-teiliges Set runder Frischhaltedosen in verschiedenen Größen."
+      },
+      "material": "PP",
+      "size": "3×0.55 l / 0.55 l + 1.2 l + 2.8 l / 3×1.2 l / 3×2.8 l",
+      "tonnage": null,
+      "pallet": "384 / 576 / 240",
+      "image": "freezy-round-set.jpeg"
+    },
+    {
+      "id": "mixing-bowl-set",
+      "name": {
+        "en": "Mixing Bowl, 3-pc Set",
+        "hu": "Csőrös keverőtál, 3 db-os szett",
+        "de": "Set 3x Rührschüssel mit Schnabel"
+      },
+      "description": {
+        "en": "Mixing bowl set with pouring spout and rubber base.",
+        "hu": "Keverőtál szett kiöntőcsőrrel és gumis talppal.",
+        "de": "Rührschüssel-Set mit Ausgießer und Gummiboden."
+      },
+      "material": "PP + rubber",
+      "size": "1.5 + 2 l / 2.5 l",
+      "tonnage": null,
+      "pallet": "n.a.",
+      "image": "mixing-bowl-set.jpeg"
+    },
+    {
+      "id": "mixing-bowl",
+      "name": {
+        "en": "Mixing Bowl",
+        "hu": "Csőrös peremes tál",
+        "de": "Rührschüssel mit Schnabel und Schüttrand"
+      },
+      "description": {
+        "en": "Single mixing bowl with spout and rim.",
+        "hu": "Egyszerű keverőtál kiöntővel és peremmel.",
+        "de": "Einzelne Rührschüssel mit Ausgießer und Rand."
+      },
+      "material": "PP",
+      "size": "Ø18 / Ø22 / Ø26 / Ø30 cm",
+      "tonnage": null,
+      "pallet": "n.a.",
+      "image": "mixing-bowl.jpeg"
+    },
+    {
+      "id": "mixing-bowl-set-4pc",
+      "name": {
+        "en": "Mixing Bowl, Set of 4",
+        "hu": "Csőrös peremes tál, 4 db-os szett",
+        "de": "Set 4x Rührschüssel mit Schnabel und Schüttrand"
+      },
+      "description": {
+        "en": "Set of 4 mixing bowls with pouring spout and rim.",
+        "hu": "4 db-os keverőtál szett kiöntővel és peremmel.",
+        "de": "4-teiliges Rührschüssel-Set mit Ausgießer und Rand."
+      },
+      "material": "PP",
+      "size": "Ø18 + Ø22 + Ø26 + Ø30 cm",
+      "tonnage": null,
+      "pallet": "150",
+      "image": "mixing-bowl-set-4pc.jpeg"
+    },
+    {
+      "id": "bread-proofing-bowl",
+      "name": {
+        "en": "Bread Proofing Bowl",
+        "hu": "Kelesztőtál",
+        "de": "Hefeschale"
+      },
+      "description": {
+        "en": "Proofing bowl with rubber ring, available in 3.5 l and 5.5 l.",
+        "hu": "Kelesztőtál gumis gyűrűvel, 3,5 l és 5,5 l méretben.",
+        "de": "Hefeschale mit Gummiring, in 3,5 l und 5,5 l Größen."
+      },
+      "material": "PP + rubber",
+      "size": "3.5 l / 5.5 l",
+      "tonnage": null,
+      "pallet": "390 / 84",
+      "image": "bread-proofing-bowl.jpeg"
+    },
+    {
+      "id": "mt1",
+      "name": {
+        "en": "Plate-cover for Microwave",
+        "hu": "Micro tányérfedél",
+        "de": "Mikrowellenabdeckhaube"
+      },
+      "description": {
+        "en": "Standard microwave plate cover Ø26×6.5 cm.",
+        "hu": "Standard mikrohullámú tányérfedél Ø26×6.5 cm.",
+        "de": "Standard-Mikrowellenabdeckhaube Ø26×6.5 cm."
+      },
+      "material": "PP",
+      "size": "Ø26×6.5 cm",
+      "tonnage": null,
+      "pallet": "960",
+      "image": "mt1.jpeg"
+    },
+    {
+      "id": "mt2",
+      "name": {
+        "en": "Plate-cover for Microwave",
+        "hu": "Micro tányérfedél",
+        "de": "Mikrowellenabdeckhaube"
+      },
+      "description": {
+        "en": "Large microwave plate cover Ø28×6.5 cm.",
+        "hu": "Nagy mikrohullámú tányérfedél Ø28×6.5 cm.",
+        "de": "Große Mikrowellenabdeckhaube Ø28×6.5 cm."
+      },
+      "material": "PP",
+      "size": "Ø28×6.5 cm",
+      "tonnage": null,
+      "pallet": "4320",
+      "image": "mt2.jpeg"
+    },
+    {
+      "id": "dish-drainer",
+      "name": {
+        "en": "Dish-drainer Basket",
+        "hu": "Edényszárító",
+        "de": "Geschirrablaufkorb"
+      },
+      "description": {
+        "en": "Dish-drainer basket with compartments.",
+        "hu": "Rekeszes edényszárító kosár.",
+        "de": "Geschirrkorb mit Fächern."
+      },
+      "material": "PP",
+      "size": "49×39×9 cm",
+      "tonnage": null,
+      "pallet": "108",
+      "image": "dish-drainer.jpeg"
+    },
+    {
+      "id": "dish-drainer-small",
+      "name": {
+        "en": "Dish-drainer Basket",
+        "hu": "Edényszárító",
+        "de": "Geschirrablaufkorb"
+      },
+      "description": {
+        "en": "Compact dish drainer basket for small kitchens.",
+        "hu": "Kompakt edényszárító kis konyhákhoz.",
+        "de": "Kompakter Geschirrkorb für kleine Küchen."
+      },
+      "material": "PP",
+      "size": "18×36×10.4 cm",
+      "tonnage": null,
+      "pallet": "96",
+      "image": "dish-drainer-small.jpeg"
+    },
+    {
+      "id": "dish-drainer-round",
+      "name": {
+        "en": "Dish-drainer Basket",
+        "hu": "Edényszárító",
+        "de": "Geschirrablaufkorb"
+      },
+      "description": {
+        "en": "Round edge dish drainer basket with slots.",
+        "hu": "Lekerekített szélű edényszárító kosár nyílásokkal.",
+        "de": "Abtropfkorb mit abgerundeten Kanten und Schlitzen."
+      },
+      "material": "PP",
+      "size": "48×36×9 cm",
+      "tonnage": null,
+      "pallet": "112",
+      "image": "dish-drainer-round.jpeg"
+    },
+    {
+      "id": "cutlery-drainer-round",
+      "name": {
+        "en": "Cutlery Drainer",
+        "hu": "Evőeszköztartó",
+        "de": "Besteckabtropfer"
+      },
+      "description": {
+        "en": "Round cutlery drainer with compartments.",
+        "hu": "Kerek evőeszköztartó rekeszekkel.",
+        "de": "Runder Besteckabtropfer mit Fächern."
+      },
+      "material": "PP",
+      "size": "Ø13.5×10 cm",
+      "tonnage": null,
+      "pallet": "720",
+      "image": "cutlery-drainer-round.jpeg"
+    },
+    {
+      "id": "cutlery-drainer-oval",
+      "name": {
+        "en": "Cutlery Drainer",
+        "hu": "Evőeszköztartó",
+        "de": "Besteckabtropfer"
+      },
+      "description": {
+        "en": "Oval-shaped cutlery drainer with side openings.",
+        "hu": "Ovális evőeszköztartó oldalsó nyílásokkal.",
+        "de": "Ovaler Besteckabtropfer mit seitlichen Öffnungen."
+      },
+      "material": "PP",
+      "size": "18×10×15 cm",
+      "tonnage": null,
+      "pallet": "576",
+      "image": "cutlery-drainer-oval.jpeg"
+    },
+    {
+      "id": "cutlery-box-5",
+      "name": {
+        "en": "Cutlery Box, 5 Compartments",
+        "hu": "Evőeszköztartó, 5 rekeszes",
+        "de": "Besteckkasten, 5 Fächer"
+      },
+      "description": {
+        "en": "Cutlery organizer with 5 compartments.",
+        "hu": "5 rekeszes evőeszköz rendező.",
+        "de": "Besteckkasten mit 5 Fächern."
+      },
+      "material": "PP",
+      "size": "33×25.5×4.5 cm",
+      "tonnage": null,
+      "pallet": "1400",
+      "image": "cutlery-box-5.jpeg"
+    },
+    {
+      "id": "cutlery-box-7",
+      "name": {
+        "en": "Cutlery Box, 7 Compartments",
+        "hu": "Evőeszköztartó, 7 rekeszes",
+        "de": "Besteckkasten, 7 Fächer"
+      },
+      "description": {
+        "en": "Cutlery organizer with 7 compartments.",
+        "hu": "7 rekeszes evőeszköz rendező.",
+        "de": "Besteckkasten mit 7 Fächern."
+      },
+      "material": "PP",
+      "size": "37×37×4.5 cm",
+      "tonnage": null,
+      "pallet": "270",
+      "image": "cutlery-box-7.jpeg"
+    },
+    {
+      "id": "cutlery-box-slider",
+      "name": {
+        "en": "Cutlery Box with Slider",
+        "hu": "Evőeszköztartó tolótetővel",
+        "de": "Besteckkasten mit Schieber"
+      },
+      "description": {
+        "en": "Cutlery organizer with sliding lid.",
+        "hu": "Tolófedeles evőeszköztartó.",
+        "de": "Besteckkasten mit verschiebbarem Deckel."
+      },
+      "material": "PP",
+      "size": "39×29×7 cm",
+      "tonnage": null,
+      "pallet": "192",
+      "image": "cutlery-box-slider.jpeg"
+    },
+    {
+      "id": "pouring-jar",
+      "name": {
+        "en": "Pouring Jar",
+        "hu": "Fűszertartó",
+        "de": "Schüttdose"
+      },
+      "description": {
+        "en": "Spice container with pouring lid, various sizes.",
+        "hu": "Öntős fedelű fűszertartó különböző méretekben.",
+        "de": "Streudose mit Ausgussdeckel in verschiedenen Größen."
+      },
+      "material": "PP + PS",
+      "size": "0.3 l | 0.5 l | 0.7 l | 1 l | 1.5 l",
+      "tonnage": null,
+      "pallet": "334 / 8 / 212 / 4 / 120 / 108",
+      "image": "pouring-jar.jpeg"
+    },
+    {
+      "id": "pouring-jar-set",
+      "name": {
+        "en": "Pouring Jar Set, 5 pcs",
+        "hu": "Fűszertartó, 5 db-os szett",
+        "de": "Set 5x Schüttdose"
+      },
+      "description": {
+        "en": "Set of 5 spice containers with pouring lids.",
+        "hu": "5 db-os öntős fedelű fűszertartó szett.",
+        "de": "5-teiliges Set Streudosen mit Ausgussdeckel."
+      },
+      "material": "PP + PS",
+      "size": "0.3 + 0.5 + 0.7 + 1 + 1.5 l",
+      "tonnage": null,
+      "pallet": "720",
+      "image": "pouring-jar-set.jpeg"
+    },
+    {
+      "id": "measuring-jug",
+      "name": {
+        "en": "Measuring Jug",
+        "hu": "Mérőcs kancsó",
+        "de": "Messkanne"
+      },
+      "description": {
+        "en": "Single measuring jug available in 0.5 l, 1.1 l, and 1.5 l sizes.",
+        "hu": "Egyes mérőkancsó 0.5 l, 1.1 l, 1.5 l méretekben.",
+        "de": "Einzelne Messkanne in 0.5 l, 1.1 l und 1.5 l Größen."
+      },
+      "material": "PS",
+      "size": "0.5 l / 1.1 l / 1.5 l",
+      "tonnage": null,
+      "pallet": "528 / 0 / 216 / 162",
+      "image": "measuring-jug.jpeg"
+    },
+    {
+      "id": "measuring-jug-set",
+      "name": {
+        "en": "Measuring Jug Set, 3 pcs",
+        "hu": "Mérőcs kancsó, 3 db-os szett",
+        "de": "Set 3x Messkanne"
+      },
+      "description": {
+        "en": "Set of 3 measuring jugs in different sizes.",
+        "hu": "3 db-os mérőkancsó szett különböző méretekben.",
+        "de": "3-teiliges Messkannenset in verschiedenen Größen."
+      },
+      "material": "PS",
+      "size": "0.5 l / 1 l / 1.5 l",
+      "tonnage": null,
+      "pallet": "576",
+      "image": "measuring-jug-set.jpeg"
+    },
+    {
+      "id": "jug",
+      "name": {
+        "en": "Jug",
+        "hu": "Kancsó",
+        "de": "Krug"
+      },
+      "description": {
+        "en": "Durable household jug available in 1.5 l and 2.2 l sizes.",
+        "hu": "Tartós háztartási kancsó 1,5 l és 2,2 l méretben.",
+        "de": "Robuster Haushaltskrug in 1,5 l und 2,2 l Größen."
+      },
+      "material": "PP",
+      "size": "1.5 l / 2.2 l",
+      "tonnage": null,
+      "pallet": "875 / n.a.",
+      "image": "jug.jpeg"
+    },
+    {
+      "id": "party-jug",
+      "name": {
+        "en": "Jug",
+        "hu": "Kancsó",
+        "de": "Krug"
+      },
+      "description": {
+        "en": "Colorful jug ideal for parties and casual use.",
+        "hu": "Színes kancsó partikhoz és hétköznapi használatra.",
+        "de": "Bunter Krug für Partys und den täglichen Gebrauch."
+      },
+      "material": "PP",
+      "size": "2 l",
+      "tonnage": null,
+      "pallet": "630",
+      "image": "party-jug.jpeg"
+    },
+    {
+      "id": "party-glass",
+      "name": {
+        "en": "Glass",
+        "hu": "Pohár",
+        "de": "Glas"
+      },
+      "description": {
+        "en": "Colorful plastic glass in various heights.",
+        "hu": "Színes műanyag pohár különböző magasságokkal.",
+        "de": "Buntes Kunststoffglas in verschiedenen Höhen."
+      },
+      "material": "PP",
+      "size": "Ø8.3×14 cm / Ø8×10 cm",
+      "tonnage": null,
+      "pallet": "7200 / 9216",
+      "image": "party-glass.jpeg"
+    },
+    {
+      "id": "party-soup-plate",
+      "name": {
+        "en": "Soup Plate",
+        "hu": "Mélytányér",
+        "de": "Suppenteller"
+      },
+      "description": {
+        "en": "Durable soup plate for parties and daily use.",
+        "hu": "Tartós mélytányér partikra és mindennapi használatra.",
+        "de": "Robuster Suppenteller für Partys und den Alltag."
+      },
+      "material": "PP",
+      "size": "Ø20.5×2.5 cm",
+      "tonnage": null,
+      "pallet": "n.a.",
+      "image": "party-soup-plate.jpeg"
+    },
+    {
+      "id": "party-plate",
+      "name": {
+        "en": "Plate",
+        "hu": "Lapostányér",
+        "de": "Essteller"
+      },
+      "description": {
+        "en": "Flat party plate for serving meals.",
+        "hu": "Lapos partytányér tálaláshoz.",
+        "de": "Flacher Partyteller zum Servieren."
+      },
+      "material": "PP",
+      "size": "Ø23×1 cm",
+      "tonnage": null,
+      "pallet": "n.a.",
+      "image": "party-plate.jpeg"
+    },
+    {
+      "id": "party-bowl-large",
+      "name": {
+        "en": "Bowl, Large",
+        "hu": "Nagy tál",
+        "de": "Schüssel, groß"
+      },
+      "description": {
+        "en": "Large serving bowl, ideal for snacks or salads.",
+        "hu": "Nagy tál nassolnivalókhoz vagy salátákhoz.",
+        "de": "Große Servierschüssel für Snacks oder Salate."
+      },
+      "material": "PP",
+      "size": "Ø16×6 cm",
+      "tonnage": null,
+      "pallet": "n.a.",
+      "image": "party-bowl-large.jpeg"
+    },
+    {
+      "id": "party-bowl-small",
+      "name": {
+        "en": "Bowl, Small",
+        "hu": "Kis tál",
+        "de": "Schüssel, klein"
+      },
+      "description": {
+        "en": "Small bowl suitable for side dishes or sauces.",
+        "hu": "Kis tál köretekhez vagy szószokhoz.",
+        "de": "Kleine Schüssel für Beilagen oder Saucen."
+      },
+      "material": "PP",
+      "size": "Ø12.5×4.5 cm",
+      "tonnage": null,
+      "pallet": "n.a.",
+      "image": "party-bowl-small.jpeg"
+    },
+    {
+      "id": "mug",
+      "name": {
+        "en": "Mug",
+        "hu": "Bögre",
+        "de": "Becher"
+      },
+      "description": {
+        "en": "Classic plastic mug for everyday use.",
+        "hu": "Klasszikus műanyag bögre mindennapi használatra.",
+        "de": "Klassischer Kunststoffbecher für den täglichen Gebrauch."
+      },
+      "material": "PP",
+      "size": "0.26 l",
+      "tonnage": null,
+      "pallet": "2100",
+      "image": "mug.jpeg"
+    },
+    {
+      "id": "milk-jug",
+      "name": {
+        "en": "Milk Jug",
+        "hu": "Tejkancsó",
+        "de": "Milchkanne"
+      },
+      "description": {
+        "en": "Plastic milk jug with a spout.",
+        "hu": "Műanyag tejkancsó kiöntővel.",
+        "de": "Milchkanne aus Kunststoff mit Ausgießer."
+      },
+      "material": "PP",
+      "size": "1 l",
+      "tonnage": null,
+      "pallet": "3000",
+      "image": "milk-jug.jpeg"
+    },
+    {
+      "id": "tea-strainer",
+      "name": {
+        "en": "Tea Strainer",
+        "hu": "Teaszűrő",
+        "de": "Teesieb"
+      },
+      "description": {
+        "en": "Small plastic tea strainer for loose leaf tea.",
+        "hu": "Műanyag teaszűrő szálas teához.",
+        "de": "Kleines Teesieb aus Kunststoff für losen Tee."
+      },
+      "material": "PP + PE",
+      "size": "Ø6.5 cm / Ø8 cm",
+      "tonnage": null,
+      "pallet": "18000 / 12000",
+      "image": "tea-strainer.jpeg"
+    },
+    {
+      "id": "pasta-strainer",
+      "name": {
+        "en": "Pasta Strainer",
+        "hu": "Tésztaszűrő",
+        "de": "Nudelsieb"
+      },
+      "description": {
+        "en": "Plastic strainer ideal for draining pasta.",
+        "hu": "Műanyag szűrő tészták lecsöpögtetéséhez.",
+        "de": "Kunststoffsieb ideal zum Abgießen von Nudeln."
+      },
+      "material": "PP",
+      "size": "Ø15 cm / Ø19 cm",
+      "tonnage": null,
+      "pallet": "2100 / 1440",
+      "image": "pasta-strainer.jpeg"
+    },
+    {
+      "id": "pasta-strainer-set1",
+      "name": {
+        "en": "Pasta Strainer, Set of 2",
+        "hu": "Tésztaszűrő, 2 db-os szett",
+        "de": "Set 2x Nudelsieb"
+      },
+      "description": {
+        "en": "Set of 2 pasta strainers in Ø15 and Ø19 cm sizes.",
+        "hu": "2 db-os tésztaszűrő szett Ø15 és Ø19 cm méretben.",
+        "de": "2-teiliges Nudelsieb-Set in Ø15 und Ø19 cm."
+      },
+      "material": "PP",
+      "size": "Ø15 + Ø19 cm",
+      "tonnage": null,
+      "pallet": "600",
+      "image": "pasta-strainer-set1.jpeg"
+    },
+    {
+      "id": "pasta-strainer",
+      "name": {
+        "en": "Pasta Strainer",
+        "hu": "Tésztaszűrő",
+        "de": "Nudelsieb"
+      },
+      "description": {
+        "en": "Single pasta strainer available in Ø12 and Ø16 cm.",
+        "hu": "Egyes tésztaszűrő Ø12 és Ø16 cm méretben.",
+        "de": "Einzeln Nudelsieb in Ø12 und Ø16 cm."
+      },
+      "material": "PP + PE",
+      "size": "Ø12 / Ø16 cm",
+      "tonnage": null,
+      "pallet": "4800 / 2400",
+      "image": "pasta-strainer.jpeg"
+    },
+    {
+      "id": "pasta-strainer-set2",
+      "name": {
+        "en": "Pasta Strainer, Set of 2",
+        "hu": "Tésztaszűrő, 2 db-os szett",
+        "de": "Set 2x Nudelsieb"
+      },
+      "description": {
+        "en": "Set of 2 pasta strainers in Ø12 and Ø16 cm sizes.",
+        "hu": "2 db-os tésztaszűrő szett Ø12 és Ø16 cm méretben.",
+        "de": "2-teiliges Nudelsieb-Set in Ø12 und Ø16 cm."
+      },
+      "material": "PP + PE",
+      "size": "Ø12 + Ø16 cm",
+      "tonnage": null,
+      "pallet": "960",
+      "image": "pasta-strainer-set2.jpeg"
+    },
+    {
+      "id": "funnel-set3",
+      "name": {
+        "en": "Funnel, Set of 3",
+        "hu": "Tölcsér, 3 db-os szett",
+        "de": "Set 3x Trichter"
+      },
+      "description": {
+        "en": "Set of 3 funnels in Ø9, Ø11.5, and Ø14 cm sizes.",
+        "hu": "3 db-os tölcsér szett Ø9, Ø11.5 és Ø14 cm méretben.",
+        "de": "3-teiliges Trichterset in Ø9, Ø11.5 und Ø14 cm."
+      },
+      "material": "PP",
+      "size": "Ø9 + Ø11.5 + Ø14 cm",
+      "tonnage": null,
+      "pallet": "1080",
+      "image": "funnel-set3.jpeg"
+    },
+    {
+      "id": "funnel-set5",
+      "name": {
+        "en": "Funnel, Set of 5",
+        "hu": "Tölcsér, 5 db-os szett",
+        "de": "Set 5x Trichter"
+      },
+      "description": {
+        "en": "Set of 5 funnels in sizes Ø9, Ø11.5, Ø14, Ø18, Ø23 cm.",
+        "hu": "5 db-os tölcsér szett Ø9, Ø11.5, Ø14, Ø18, Ø23 cm méretben.",
+        "de": "5-teiliges Trichterset in Ø9, Ø11.5, Ø14, Ø18, Ø23 cm."
+      },
+      "material": "PP",
+      "size": "Ø9 + Ø11.5 + Ø14 + Ø18 + Ø23 cm",
+      "tonnage": null,
+      "pallet": "300",
+      "image": "funnel-set5.jpeg"
+    },
+    {
+      "id": "funnel",
+      "name": {
+        "en": "Funnel",
+        "hu": "Tölcsér",
+        "de": "Trichter"
+      },
+      "description": {
+        "en": "Single funnel available in various sizes.",
+        "hu": "Egyes tölcsér különböző méretekben.",
+        "de": "Einzelner Trichter in verschiedenen Größen."
+      },
+      "material": "PP",
+      "size": "Ø9 / Ø11.5 / Ø14 / Ø18 / Ø23 cm",
+      "tonnage": null,
+      "pallet": "480 / 0 / 300 / 0 / 240 / 150",
+      "image": "funnel.jpeg"
+    },
+    {
+      "id": "salad-bowl-medium",
+      "name": {
+        "en": "Salad Bowl, Medium",
+        "hu": "Salátástál közepes",
+        "de": "Salatschüssel, mittelgroß"
+      },
+      "description": {
+        "en": "Medium plastic salad bowl with red trim.",
+        "hu": "Közepes méretű műanyag salátástál piros szegéllyel.",
+        "de": "Mittlere Salatschüssel aus Kunststoff mit rotem Rand."
+      },
+      "material": "PS",
+      "size": "Ø16×7.5 cm",
+      "tonnage": null,
+      "pallet": "540",
+      "image": "salad-bowl-medium.jpeg"
+    },
+    {
+      "id": "salad-bowl-small",
+      "name": {
+        "en": "Salad Bowl, Small",
+        "hu": "Salátástál kicsi",
+        "de": "Salatschüssel, klein"
+      },
+      "description": {
+        "en": "Small salad bowl for serving or side dishes.",
+        "hu": "Kis salátástál tálaláshoz vagy köretekhez.",
+        "de": "Kleine Salatschüssel zum Servieren oder für Beilagen."
+      },
+      "material": "PS",
+      "size": "Ø22×10.5 cm",
+      "tonnage": null,
+      "pallet": "1800",
+      "image": "salad-bowl-small.jpeg"
+    },
+    {
+      "id": "salad-bowl-large",
+      "name": {
+        "en": "Salad Bowl, Large",
+        "hu": "Salátástál nagy",
+        "de": "Salatschüssel, groß"
+      },
+      "description": {
+        "en": "Large salad bowl for serving or mixing.",
+        "hu": "Nagy salátástál tálaláshoz vagy keveréshez.",
+        "de": "Große Salatschüssel zum Servieren oder Mischen."
+      },
+      "material": "PS",
+      "size": "Ø28.5×13.5 cm",
+      "tonnage": null,
+      "pallet": "242",
+      "image": "salad-bowl-large.jpeg"
+    },
+    {
+      "id": "lemon-juicer",
+      "name": {
+        "en": "Lemon Juicer",
+        "hu": "Citromfacsaró",
+        "de": "Zitronenpresse"
+      },
+      "description": {
+        "en": "Plastic juicer ideal for lemons.",
+        "hu": "Műanyag citromfacsaró.",
+        "de": "Zitronenpresse aus Kunststoff."
+      },
+      "material": "PP",
+      "size": "18×13×8.5 cm",
+      "tonnage": null,
+      "pallet": "1536",
+      "image": "lemon-juicer.jpeg"
+    },
+    {
+      "id": "grapefruit-juicer",
+      "name": {
+        "en": "Grapefruit Juicer & Measuring Jug",
+        "hu": "Grapefruitfacsaró & mérőkancsó",
+        "de": "Grapefruitpresse & Messkanne"
+      },
+      "description": {
+        "en": "Juicer with integrated measuring jug, ideal for grapefruits.",
+        "hu": "Mérőkancsóval egybeépített facsaró grépfruithoz.",
+        "de": "Presse mit integriertem Messbecher für Grapefruits."
+      },
+      "material": "PP + PS",
+      "size": "0.75 l",
+      "tonnage": null,
+      "pallet": "972",
+      "image": "grapefruit-juicer.jpeg"
+    },
+    {
+      "id": "ice-cube-maker-shaped",
+      "name": {
+        "en": "Shaped Ice Cube Maker",
+        "hu": "Figurás jégkockakészítő",
+        "de": "Eiswürfelform mit Figuren"
+      },
+      "description": {
+        "en": "Fun-shaped ice cube mold for creative chilling.",
+        "hu": "Vidám formájú jégkockatartó kreatív hűtéshez.",
+        "de": "Eiswürfelform in lustigen Formen für kreative Kühlung."
+      },
+      "material": "PP",
+      "size": "24×12×2.5 cm",
+      "tonnage": null,
+      "pallet": "2880",
+      "image": "ice-cube-maker-shaped.jpeg"
+    },
+    {
+      "id": "ice-ball-maker",
+      "name": {
+        "en": "Ice Ball Maker",
+        "hu": "Jéggolyókészítő",
+        "de": "Eiskugelform"
+      },
+      "description": {
+        "en": "Mold for round ice balls.",
+        "hu": "Kerek jéggolyók készítésére alkalmas forma.",
+        "de": "Form für runde Eiskugeln."
+      },
+      "material": "PP",
+      "size": "23.5×7.5×3.5 cm",
+      "tonnage": null,
+      "pallet": "2640",
+      "image": "ice-ball-maker.jpeg"
+    },
+    {
+      "id": "dishwashing-bowl",
+      "name": {
+        "en": "Dishwashing Bowl",
+        "hu": "Mosogató tál",
+        "de": "Spülschüssel"
+      },
+      "description": {
+        "en": "Spacious dishwashing bowl for household use.",
+        "hu": "Tágas mosogatótál háztartási használatra.",
+        "de": "Geräumige Spülschüssel für den Haushalt."
+      },
+      "material": "PP",
+      "size": "11 l",
+      "tonnage": null,
+      "pallet": "600",
+      "image": "dishwashing-bowl.jpeg"
+    }
+  ]
+}

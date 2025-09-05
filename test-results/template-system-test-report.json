@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-06-12T09:07:59.500Z",
+  "tests": {
+    "templateFiles": true,
+    "converterUtility": true,
+    "dynamicPages": true,
+    "templateFactoryImports": true,
+    "typeScript": false
+  },
+  "testData": {
+    "generated": true,
+    "types": [
+      "slideshow",
+      "article",
+      "caseStudy"
+    ]
+  }
+}

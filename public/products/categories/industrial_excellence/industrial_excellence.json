@@ -1,0 +1,139 @@
+{
+  "category": "Industry",
+  "subcategory": "Plastic Pallets",
+  "products": [
+    {
+      "id": "pp80",
+      "name": {
+        "en": "PP80 Industrial Pallet – Euro Size",
+        "hu": "PP80 Ipari Raklap – Euro Méret",
+        "de": "PP80 Industriepalette – Eurogröße"
+      },
+      "description": {
+        "en": "Durable plastic pallet with 5 mm rim for improved stacking and safety.",
+        "hu": "Tartós műanyag raklap 5 mm-es peremmel a biztonságosabb rakodásért.",
+        "de": "Robuste Kunststoffpalette mit 5 mm Rand für mehr Sicherheit beim Stapeln."
+      },
+      "material": "PP",
+      "size": "120×80×15 cm",
+      "weight": "5.1 kg",
+      "static_load": "2000 kg",
+      "dynamic_load": "800 kg",
+      "image": "pp80.jpeg"
+    },
+    {
+      "id": "ppr80",
+      "name": {
+        "en": "PPR80 Reinforced Euro Pallet",
+        "hu": "PPR80 Megerősített Euro Raklap",
+        "de": "PPR80 Verstärkte Euro-Palette"
+      },
+      "description": {
+        "en": "Enhanced load capacity and 5 mm rim – ideal for heavy-duty use.",
+        "hu": "Nagyobb teherbírás és 5 mm-es perem – ipari felhasználásra tervezve.",
+        "de": "Erhöhte Tragkraft und 5 mm Rand – ideal für den Schwerlastbereich."
+      },
+      "material": "PP",
+      "size": "120×80×14.5 cm",
+      "weight": "5.1 kg",
+      "static_load": "2000 kg",
+      "dynamic_load": "800 kg",
+      "image": "ppr80.jpeg"
+    },
+    {
+      "id": "pp100",
+      "name": {
+        "en": "PP100 Industrial Pallet – Standard",
+        "hu": "PP100 Ipari Raklap – Standard Méret",
+        "de": "PP100 Industriepalette – Standardgröße"
+      },
+      "description": {
+        "en": "Heavy-duty plastic pallet designed for 100 cm width systems.",
+        "hu": "Erős, ipari raklap 100 cm széles rendszerekhez.",
+        "de": "Schwerlastpalette aus Kunststoff – passend für 100 cm Systeme."
+      },
+      "material": "PP",
+      "size": "120×100×14 cm",
+      "weight": "6.4 kg",
+      "static_load": "2000 kg",
+      "dynamic_load": "800 kg",
+      "image": "pp100.jpeg"
+    },
+    {
+      "id": "ppr100",
+      "name": {
+        "en": "PPR100 Reinforced Industrial Pallet",
+        "hu": "PPR100 Megerősített Ipari Raklap",
+        "de": "PPR100 Verstärkte Industriepalette"
+      },
+      "description": {
+        "en": "High-strength pallet with reinforced build and 5 mm safety rim.",
+        "hu": "Nagy szilárdságú raklap megerősített kivitelben, 5 mm-es biztonsági peremmel.",
+        "de": "Hochfeste Palette mit verstärkter Struktur und 5 mm Sicherheitsrand."
+      },
+      "material": "PP",
+      "size": "120×100×13.5 cm",
+      "weight": "6.4 kg",
+      "static_load": "2000 kg",
+      "dynamic_load": "800 kg",
+      "image": "ppr100.jpeg"
+    },
+    {
+      "id": "pp60",
+      "name": {
+        "en": "PP60 Compact Euro Pallet",
+        "hu": "PP60 Kompakt Euro Raklap",
+        "de": "PP60 Kompakte Euro-Palette"
+      },
+      "description": {
+        "en": "Compact and reliable pallet – perfect for tighter storage needs.",
+        "hu": "Kompakt és megbízható raklap – szűkebb tárolási igényekhez ideális.",
+        "de": "Kompakte, zuverlässige Palette – ideal für enge Lagerflächen."
+      },
+      "material": "PP",
+      "size": "60×80×14 cm",
+      "weight": "1.84 kg",
+      "static_load": "600 kg",
+      "dynamic_load": "200 kg",
+      "image": "pp60.jpeg"
+    },
+    {
+      "id": "ppr60",
+      "name": {
+        "en": "PPR60 Sliding Base Pallet",
+        "hu": "PPR60 Csúszótalpas Raklap",
+        "de": "PPR60 Palette mit Gleitbasis"
+      },
+      "description": {
+        "en": "Equipped with sliding base – for smooth handling and fast transport.",
+        "hu": "Csúszótalppal ellátva – a könnyű kezelésért és gyors szállításért.",
+        "de": "Mit Gleitbasis – für einfache Handhabung und schnellen Transport."
+      },
+      "material": "PP",
+      "size": "120×80×15 cm",
+      "weight": "1.84 kg",
+      "static_load": "600 kg",
+      "dynamic_load": "200 kg",
+      "image": "ppr60.jpeg"
+    },
+    {
+      "id": "ppr80_alt",
+      "name": {
+        "en": "PPR80 Short-Height Euro Pallet",
+        "hu": "PPR80 Alacsony Euro Raklap",
+        "de": "PPR80 Niedrige Euro-Palette"
+      },
+      "description": {
+        "en": "Same PPR strength, lower height – saves space while staying tough.",
+        "hu": "Ugyanaz az erő, kisebb magasság – helytakarékos, mégis masszív.",
+        "de": "Gleiche Stärke, niedrigere Höhe – platzsparend und robust."
+      },
+      "material": "PP",
+      "size": "60×80×14.5 cm",
+      "weight": "1.15 kg",
+      "static_load": "2500 kg",
+      "dynamic_load": "1200 kg",
+      "image": "ppr80_alt.jpeg"
+    }
+  ]
+}

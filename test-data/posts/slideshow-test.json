@@ -1,0 +1,39 @@
+{
+  "slug": "test-slideshow",
+  "title": "Test Slideshow Post",
+  "summary": "A test slideshow to verify the SlideShowTemplate is working correctly",
+  "postType": "slideshow",
+  "content": [
+    {
+      "image": "/test/slide-1.jpg",
+      "alt": "Introduction slide",
+      "text": "Welcome to our test slideshow. This demonstrates the SlideShowTemplate functionality.",
+      "title": "Introduction",
+      "type": "intro"
+    },
+    {
+      "image": "/test/slide-2.jpg",
+      "alt": "Main content",
+      "text": "This is the main content of our slideshow. It shows how the template handles multiple slides.",
+      "title": "Main Content",
+      "type": "content"
+    },
+    {
+      "image": "/test/slide-3.jpg",
+      "alt": "Conclusion",
+      "text": "Thank you for viewing our test slideshow. This concludes the demonstration.",
+      "title": "Conclusion",
+      "type": "conclusion"
+    }
+  ],
+  "category": "test",
+  "author": {
+    "name": "Test Author",
+    "role": "Test Role"
+  },
+  "tags": [
+    "test",
+    "slideshow"
+  ],
+  "readTime": 3
+}

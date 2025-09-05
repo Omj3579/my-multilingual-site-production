@@ -1,0 +1,401 @@
+{
+  "category": "Kids & Play",
+  "products": [
+    {
+      "id": "dragon-slide",
+      "name": {
+        "en": "Dragon Slide",
+        "hu": "Gyerekszúszda",
+        "de": "Kinderrutsche"
+      },
+      "description": {
+        "en": "Sturdy and colorful kids’ slide perfect for indoor and outdoor fun.",
+        "hu": "Erős, színes gyerekszúszda beltéri és kültéri szórakozáshoz.",
+        "de": "Stabile, farbenfrohe Kinderrutsche für drinnen und draußen."
+      },
+      "material": "PP",
+      "size": "120×40×70 cm",
+      "tonnage": "20",
+      "pallet": null,
+      "image": "dragon-slide.jpeg"
+    },
+    {
+      "id": "sitter-bench",
+      "name": {
+        "en": "Sitter – Kids’ Bench",
+        "hu": "Egyszemélyes gyerekpad",
+        "de": "Einsitzige Kinderbank"
+      },
+      "description": {
+        "en": "One-seater bench designed for children with safe, rounded edges.",
+        "hu": "Együléses gyerekpad lekerekített, biztonságos élekkel.",
+        "de": "Einzelne Kinderbank mit sicheren, abgerundeten Kanten."
+      },
+      "material": "PP",
+      "size": "74×55×48 cm",
+      "tonnage": "48",
+      "pallet": null,
+      "image": "sitter-bench.jpeg"
+    },
+    {
+      "id": "fantasy-table",
+      "name": {
+        "en": "Fantasy Kids’ Table with Decor Foil",
+        "hu": "Dekorfóliás gyerekszék",
+        "de": "Kindertisch mit Dekorfolie"
+      },
+      "description": {
+        "en": "Decorative kids’ table with vibrant themed foil – durable and fun.",
+        "hu": "Dekoratív gyerekszék élénk mintás fóliával – tartós és szórakoztató.",
+        "de": "Dekorativer Kindertisch mit farbenfroher Folie – robust und lustig."
+      },
+      "material": "PP",
+      "size": "46×46×43 cm",
+      "tonnage": null,
+      "pallet": "152",
+      "image": "fantasy-table.jpeg"
+    },
+    {
+      "id": "fantasy-chair",
+      "name": {
+        "en": "Fantasy Kids’ Chair with Decor Foil",
+        "hu": "Dekorfóliás gyerekszék",
+        "de": "Kinderstuhl mit Dekorfolie"
+      },
+      "description": {
+        "en": "Playful kids’ chair with colorful decor foil – comfy and creative seating.",
+        "hu": "Vidám gyerekszék színes dekorfóliával – kényelmes és kreatív ülés.",
+        "de": "Verspielter Kinderstuhl mit bunter Folie – bequem und kreativ."
+      },
+      "material": "PP",
+      "size": "37×29×32 cm",
+      "tonnage": null,
+      "pallet": "300",
+      "image": "fantasy-chair.jpeg"
+    },
+    {
+      "id": "teddy-table",
+      "name": {
+        "en": "Teddy – Square Kids' Table",
+        "hu": "Szögletes gyerekasztal",
+        "de": "Eckiger Kindertisch"
+      },
+      "description": {
+        "en": "Compact and sturdy kids’ table with square top, perfect for play or snacks.",
+        "hu": "Kompakt és masszív gyerekasztal négyzet alakú lappal – játékhoz vagy nassoláshoz.",
+        "de": "Stabiler Kindertisch mit quadratischer Platte – ideal zum Spielen oder Naschen."
+      },
+      "material": "PP",
+      "size": "46×46×43 cm",
+      "tonnage": null,
+      "pallet": "152",
+      "image": "teddy-table.jpeg"
+    },
+    {
+      "id": "cindy-chair",
+      "name": {
+        "en": "Cindy – Kids' Chair",
+        "hu": "Gyerekszék",
+        "de": "Kinderstuhl"
+      },
+      "description": {
+        "en": "Classic children's chair with curved back for comfort and style.",
+        "hu": "Klasszikus gyerekszék ívelt háttámlával a kényelemért és stílusért.",
+        "de": "Klassischer Kinderstuhl mit geschwungener Rückenlehne – bequem und stilvoll."
+      },
+      "material": "PP",
+      "size": "46×46×43 cm",
+      "tonnage": null,
+      "pallet": "152",
+      "image": "cindy-chair.jpeg"
+    },
+    {
+      "id": "dublino-sandpit",
+      "name": {
+        "en": "Dublino – Shell Sandpit",
+        "hu": "Homokozókagyló",
+        "de": "Sandmuschel"
+      },
+      "description": {
+        "en": "Double-sided shell sandpit with ample room for creative play.",
+        "hu": "Kagyló formájú, dupla oldalas homokozó bőséges játéktérrel.",
+        "de": "Doppelseitige Sandmuschel mit viel Platz zum kreativen Spielen."
+      },
+      "material": "PP",
+      "size": "90×80×20 cm",
+      "tonnage": "105/210",
+      "pallet": null,
+      "image": "dublino-sandpit.jpeg"
+    },
+    {
+      "id": "fiore-sandpit",
+      "name": {
+        "en": "Fiore – Flower Sandpit",
+        "hu": "Homokozó",
+        "de": "Sandschale"
+      },
+      "description": {
+        "en": "Charming flower-shaped sandpit for outdoor fun.",
+        "hu": "Bájos, virág alakú homokozó kültéri játékhoz.",
+        "de": "Bezaubernde Sandschale in Blumenform für Spielspaß im Freien."
+      },
+      "material": "PP",
+      "size": "Ø110×20 cm",
+      "tonnage": null,
+      "pallet": "100",
+      "image": "fiore-sandpit.jpeg"
+    },
+    {
+      "id": "jack-jill-sandpit",
+      "name": {
+        "en": "Jack & Jill – Sandpit",
+        "hu": "Homokozó",
+        "de": "Sandschale"
+      },
+      "description": {
+        "en": "Wide base sandpit with sun motif – ideal for shared play.",
+        "hu": "Széles alapú homokozó nap motívummal – közös játékra tervezve.",
+        "de": "Breite Sandschale mit Sonnenmotiv – ideal zum gemeinsamen Spielen."
+      },
+      "material": "PP",
+      "size": "109×94×20 cm",
+      "tonnage": null,
+      "pallet": "100",
+      "image": "jack-jill-sandpit.jpeg"
+    },
+    {
+      "id": "k3-bench",
+      "name": {
+        "en": "K3 – Kids' Bench",
+        "hu": "Gyerekpad",
+        "de": "Kinderbank"
+      },
+      "description": {
+        "en": "Playground-style bench with colorful slats and sturdy design.",
+        "hu": "Játszótéri stílusú gyerekpad színes lécekkel és erős kivitelben.",
+        "de": "Spielplatzbank für Kinder mit bunten Latten und stabiler Konstruktion."
+      },
+      "material": "PP",
+      "size": "77×83×48 cm",
+      "tonnage": null,
+      "pallet": "18",
+      "image": "k3-bench.jpeg"
+    },
+    {
+      "id": "k4-rake",
+      "name": {
+        "en": "K4 – Kids' Rake with Wooden Handle",
+        "hu": "Gyerekjáték, gereblye fanyéllel",
+        "de": "Kinderspielzeug, Rechen mit Holzgriff"
+      },
+      "description": {
+        "en": "Child-sized rake with safe wooden handle – great for garden play.",
+        "hu": "Gyerekeknek készült gereblye biztonságos fa nyéllel – kertbe vagy homokhoz.",
+        "de": "Kinderrechen mit sicherem Holzgriff – ideal für den Garten oder Sandkasten."
+      },
+      "material": "PP + wood",
+      "size": null,
+      "tonnage": null,
+      "pallet": "200 (display) / 840",
+      "image": "k4-rake.jpeg"
+    },
+    {
+      "id": "k5-spade",
+      "name": {
+        "en": "K5 – Kids' Spade with Wooden Handle",
+        "hu": "Gyerekjáték, ásó fanyéllel",
+        "de": "Kinderspielzeug, Spaten mit Holzgriff"
+      },
+      "description": {
+        "en": "Durable plastic spade with real wooden handle for little diggers.",
+        "hu": "Strapabíró műanyag ásó valódi fanyéllel – kis ásóknak.",
+        "de": "Robuste Kinderschaufel mit Holzgriff – für kleine Buddler."
+      },
+      "material": "PP + wood",
+      "size": null,
+      "tonnage": null,
+      "pallet": "200 (display) / 840",
+      "image": "k5-spade.jpeg"
+    },
+    {
+      "id": "k6-shovel",
+      "name": {
+        "en": "K6 – Kids’ Toy Shovel with Wooden Handle",
+        "hu": "Gyerekjáték, lapát fanyéllel",
+        "de": "Kinderspielzeug, Schaufel mit Holzgriff"
+      },
+      "description": {
+        "en": "Child-sized shovel with natural wood grip – safe and durable.",
+        "hu": "Gyermekeknek készült lapát természetes fa nyéllel – biztonságos és tartós.",
+        "de": "Kinderschaufel mit natürlichem Holzgriff – sicher und langlebig."
+      },
+      "material": "PP + wood",
+      "size": null,
+      "tonnage": null,
+      "pallet": "200 (display) / 840",
+      "image": "k6-shovel.jpeg"
+    },
+    {
+      "id": "k7-grass-rake",
+      "name": {
+        "en": "K7 – Kids’ Toy Grass Rake with Wooden Handle",
+        "hu": "Gyerekjáték, fűgereblye fanyéllel",
+        "de": "Kinderspielzeug, Grasrechen mit Holzgriff"
+      },
+      "description": {
+        "en": "Grass-style rake designed for kids, features safe wooden grip.",
+        "hu": "Fűgereblye gyerekeknek, biztonságos fa nyéllel.",
+        "de": "Grasrechen für Kinder mit sicherem Holzgriff."
+      },
+      "material": "PP + wood",
+      "size": null,
+      "tonnage": null,
+      "pallet": "200 (display) / 840",
+      "image": "k7-grass-rake.jpeg"
+    },
+    {
+      "id": "k8-toolset",
+      "name": {
+        "en": "K8 – 4-Piece Kids’ Garden Tool Set",
+        "hu": "Gyerekjáték szett, 4 részes",
+        "de": "Kinderspielzeug-Set, 4-teilig"
+      },
+      "description": {
+        "en": "Fun and safe 4-piece garden toy set: shovel, rake, spade, grass rake.",
+        "hu": "Szórakoztató és biztonságos 4 részes kertész játék szett: lapát, gereblye, ásó, fűgereblye.",
+        "de": "Spielerisches und sicheres Gartenset: Schaufel, Rechen, Spaten, Grasrechen."
+      },
+      "material": "PP + wood",
+      "size": null,
+      "tonnage": null,
+      "pallet": "250",
+      "image": "k8-toolset.jpeg"
+    },
+    {
+      "id": "k9-toilet-seat",
+      "name": {
+        "en": "K9 – Kids’ Toilet Seat",
+        "hu": "Gyerek WC ülőke",
+        "de": "Toilettensitz für Kinder"
+      },
+      "description": {
+        "en": "Brightly colored toilet training seat designed for children.",
+        "hu": "Színes WC ülőke gyerekeknek a könnyebb szobatisztasághoz.",
+        "de": "Bunter Toilettensitz für Kinder zur Erleichterung des Trainings."
+      },
+      "material": "PP",
+      "size": "59×39 cm",
+      "tonnage": null,
+      "pallet": "400",
+      "image": "k9-toilet-seat.jpeg"
+    },
+    {
+      "id": "k10-toilet-seat",
+      "name": {
+        "en": "K10 – Kids’ Toilet Seat",
+        "hu": "Gyerek WC ülőke",
+        "de": "Toilettensitz für Kinder"
+      },
+      "description": {
+        "en": "Compact kids’ toilet seat for safer potty training with fun design.",
+        "hu": "Kompakt gyerek WC ülőke biztonságos szobatisztaság tanításhoz, vidám megjelenéssel.",
+        "de": "Kompakter Kindertoilettensitz für sicheres Töpfchentraining mit fröhlichem Design."
+      },
+      "material": "PP",
+      "size": "62,5×36×6 cm",
+      "tonnage": null,
+      "pallet": "384",
+      "image": "k10-toilet-seat.jpeg"
+    },
+    {
+      "id": "k11-baby-bathtub",
+      "name": {
+        "en": "K11 – Baby Bathtub",
+        "hu": "Baba fürdetőkád",
+        "de": "Babybadewanne"
+      },
+      "description": {
+        "en": "Compact baby bathtub with curved support design for safe bathing.",
+        "hu": "Kompakt baba fürdetőkád ívelt kialakítással a biztonságos fürdéshez.",
+        "de": "Kompakte Babybadewanne mit geschwungener Stütze für sicheres Baden."
+      },
+      "material": "PP",
+      "size": "80×40×22 cm",
+      "tonnage": null,
+      "pallet": "180",
+      "image": "k11-baby-bathtub.jpeg"
+    },
+    {
+      "id": "k12-kids-bathtub",
+      "name": {
+        "en": "K12 – Kids’ Bathtub",
+        "hu": "Gyerek fürdetőkád",
+        "de": "Kinderbadewanne"
+      },
+      "description": {
+        "en": "Spacious bathtub for toddlers, ideal for bath time fun and comfort.",
+        "hu": "Tágas gyerek kád a kényelmes és vidám fürdéshez.",
+        "de": "Geräumige Badewanne für Kinder – für Spaß und Komfort beim Baden."
+      },
+      "material": "PP",
+      "size": "160×110 cm",
+      "tonnage": null,
+      "pallet": "120",
+      "image": "k12-kids-bathtub.jpeg"
+    },
+    {
+      "id": "k1-baby-bath-tub",
+      "name": {
+        "en": "K1 – Baby Bathtub",
+        "hu": "Bébi fürdető dézsa",
+        "de": "Babybadewanne"
+      },
+      "description": {
+        "en": "Colorful baby tub with ergonomic depth and stable base.",
+        "hu": "Színes baba dézsa ergonomikus mélységgel és stabil alappal.",
+        "de": "Farbige Babywanne mit ergonomischer Tiefe und stabilem Boden."
+      },
+      "material": "PP",
+      "size": "55×40×30 cm",
+      "tonnage": null,
+      "pallet": null,
+      "image": "k1-baby-bath-tub.jpeg"
+    },
+    {
+      "id": "k13-potty",
+      "name": {
+        "en": "K13 – Potty",
+        "hu": "Bili",
+        "de": "Töpfchen"
+      },
+      "description": {
+        "en": "Child-friendly potty chair with high backrest for extra support.",
+        "hu": "Gyerek bili magas háttámlával a kényelmes használathoz.",
+        "de": "Kindertöpfchen mit hoher Rückenlehne für extra Halt."
+      },
+      "material": "PP",
+      "size": "60×60 cm",
+      "tonnage": null,
+      "pallet": "1000",
+      "image": "k13-potty.jpeg"
+    },
+    {
+      "id": "k14-potty",
+      "name": {
+        "en": "K14 – Potty",
+        "hu": "Bili",
+        "de": "Töpfchen"
+      },
+      "description": {
+        "en": "Rounded-edge potty with smooth seat – easy to clean and use.",
+        "hu": "Lekerekített szélű bili sima ülőrésszel – könnyen tisztítható és használható.",
+        "de": "Topf mit abgerundeten Kanten und glatter Sitzfläche – leicht zu reinigen."
+      },
+      "material": "PP",
+      "size": "55×55 cm",
+      "tonnage": null,
+      "pallet": "3000",
+      "image": "k14-potty.jpeg"
+    }
+  ]
+}
