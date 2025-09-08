@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronUp } from 'lucide-react';
-import { useIsMobile } from '@/hooks/use-mobile';
+import { useIsMobile, useIsTablet, useIsSmallLaptop } from '@/hooks/use-mobile';
 import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import Logo from './header/Logo';
@@ -14,10 +14,15 @@ const Header = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const isMobile = useIsMobile();
+  const isTablet = useIsTablet();
+  const isSmallLaptop = useIsSmallLaptop();
   const router = useRouter();
   
   // Check if we're on a products page
   const isProductsPage = router.pathname.startsWith('/products');
+  
+  // Determine if we should show mobile menu (mobile + tablet only, not small laptop)
+  const shouldShowMobileMenu = isMobile || isTablet;
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -44,10 +49,10 @@ const Header = () => {
 
   // Close mobile menu when switching to desktop
   useEffect(() => {
-    if (!isMobile && isMenuOpen) {
+    if (!shouldShowMobileMenu && isMenuOpen) {
       setIsMenuOpen(false);
     }
-  }, [isMobile, isMenuOpen]);
+  }, [shouldShowMobileMenu, isMenuOpen]);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -69,18 +74,18 @@ const Header = () => {
           opacity: isVisible ? 1 : 0 
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="fixed w-full top-0 z-50 transition-all duration-300"
-      >        <div className="container mx-auto px-8 md:px-12 py-4">
-          <div className="flex items-center justify-center h-20 md:h-28">            {/* Logo with clean white background - completely borderless */}
+        className="fixed w-full top-0 z-[60] transition-all duration-300"
+      >        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-3 md:py-4">
+          <div className="flex items-center justify-center h-16 sm:h-18 md:h-20 lg:h-28">            {/* Logo with clean white background - responsive sizing */}
             <motion.div
               whileHover={{ scale: 1.08, y: -2 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
               className="flex-none [&_*]:border-0 [&_*]:outline-0 [&_*]:shadow-none"
               style={{
                 background: 'white',
-                borderRadius: '20px',
-                padding: '16px 24px',
-                height: '64px',
+                borderRadius: isSmallLaptop ? '16px' : '20px',
+                padding: isSmallLaptop ? '12px 18px' : '16px 24px',
+                height: isSmallLaptop ? '52px' : '64px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -94,10 +99,10 @@ const Header = () => {
               <Logo />
             </motion.div>
 
-            {/* Desktop Navigation - with neomorphic background and standardized height */}
-            {!isMobile && (
+            {/* Desktop Navigation - show on medium screens and above (1024px+) */}
+            {!shouldShowMobileMenu && (
               <motion.div 
-                className="flex items-center mx-8"
+                className="flex items-center mx-2 md:mx-4 lg:mx-6 xl:mx-8"
                 whileHover={{ y: -1 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 style={{
@@ -108,23 +113,23 @@ const Header = () => {
                     inset 0 0 15px rgba(255,255,255,0.1)
                   `,
                   borderRadius: '25px',
-                  padding: '16px 32px',
+                  padding: '16px 16px md:16px 20px lg:16px 24px xl:16px 32px',
                   backdropFilter: 'blur(8px)',
-                  height: '64px',
+                  height: isSmallLaptop ? '56px' : '64px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}
               >
-                <div className="text-2xl font-semibold">
+                <div className="text-lg md:text-xl xl:text-2xl font-semibold">
                   <DesktopNavigation />
                 </div>
               </motion.div>
             )}
 
-            {/* Right Section with neomorphic elements */}
-            <div className="flex-none flex items-center space-x-4 md:space-x-6">              {/* Neomorphic Contact button for desktop - standardized height */}
-              {!isMobile && (
+            {/* Right Section with responsive elements */}
+            <div className="flex-none flex items-center space-x-2 sm:space-x-3 md:space-x-4 lg:space-x-6">              {/* Contact button - responsive sizing and visibility */}
+              {!shouldShowMobileMenu && (
                 <motion.a
                   href="/contact"                  whileHover={{ 
                     scale: 1.1, 
@@ -137,7 +142,7 @@ const Header = () => {
                   }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 400, damping: 15 }}
-                  className="hidden md:flex items-center text-white font-bold text-xl"
+                  className="flex items-center text-white font-bold text-lg xl:text-xl"
                   style={{
                     background: 'linear-gradient(145deg, #fa9b6b, #e86e40)',
                     boxShadow: `
@@ -149,6 +154,7 @@ const Header = () => {
                     backdropFilter: 'blur(10px)',
                     height: '64px',
                     padding: '0 32px',
+                    minWidth: '140px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -158,7 +164,7 @@ const Header = () => {
                 </motion.a>
               )}
 
-              {/* Neomorphic Language switcher - standardized height */}
+              {/* Language switcher - responsive sizing */}
               <motion.div 
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -170,21 +176,21 @@ const Header = () => {
                     -15px -15px 30px rgba(255,255,255,0.8),
                     inset 0 0 15px rgba(255,255,255,0.2)
                   `,
-                  borderRadius: '18px',
-                  padding: '0 24px',
+                  borderRadius: isSmallLaptop ? '16px' : '18px',
+                  padding: isSmallLaptop ? '0 18px' : '0 24px',
                   backdropFilter: 'blur(8px)',
                   border: 'none',
-                  height: '64px',
+                  height: isSmallLaptop ? '52px' : '64px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}
               >
-                <div className="text-xl font-semibold">
+                <div className="text-lg xl:text-xl font-semibold">
                   <LanguageSwitcher />
                 </div>
-              </motion.div>              {/* Neomorphic Mobile menu toggle - standardized height */}
-              {isMobile && (
+              </motion.div>              {/* Mobile menu toggle - show for mobile, tablet, and small laptop */}
+              {shouldShowMobileMenu && (
                 <AnimatePresence mode="wait">
                   <motion.button
                     key={isMenuOpen ? 'close' : 'menu'}
@@ -203,11 +209,11 @@ const Header = () => {
                         -15px -15px 30px rgba(255,255,255,0.8),
                         inset 0 0 15px rgba(255,255,255,0.2)
                       `,
-                      borderRadius: '18px',
+                      borderRadius: isSmallLaptop ? '16px' : '18px',
                       backdropFilter: 'blur(8px)',
                       border: 'none',
-                      height: '64px',
-                      width: '64px',
+                      height: isSmallLaptop ? '52px' : '64px',
+                      width: isSmallLaptop ? '52px' : '64px',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -215,23 +221,23 @@ const Header = () => {
                     aria-label="Toggle menu"
                   >
                     {isMenuOpen ? (
-                      <X className="h-8 w-8 text-gray-700" />
+                      <X className="h-6 w-6 xl:h-8 xl:w-8 text-gray-700" />
                     ) : (
-                      <Menu className="h-8 w-8 text-gray-700" />
+                      <Menu className="h-6 w-6 xl:h-8 xl:w-8 text-gray-700" />
                     )}
                   </motion.button>
                 </AnimatePresence>
               )}
             </div>
-          </div>          {/* Mobile Navigation Menu with neomorphic design */}
+          </div>          {/* Mobile Navigation Menu - responsive design */}
           <AnimatePresence>
-            {isMenuOpen && isMobile && (
+            {isMenuOpen && shouldShowMobileMenu && (
               <motion.div
                 initial={{ opacity: 0, height: 0, y: -20 }}
                 animate={{ opacity: 1, height: 'auto', y: 0 }}
                 exit={{ opacity: 0, height: 0, y: -20 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="overflow-hidden mt-4"
+                className="overflow-hidden mt-3 md:mt-4"
                 style={{
                   background: 'linear-gradient(145deg, rgba(255,255,255,0.85), rgba(245,245,245,0.75))',
                   boxShadow: `
@@ -239,12 +245,12 @@ const Header = () => {
                     -20px -20px 40px rgba(255,255,255,0.8),
                     inset 0 0 20px rgba(255,255,255,0.2)
                   `,
-                  borderRadius: '25px',
-                  margin: '0 16px 16px 16px',
-                  padding: '20px',
+                  borderRadius: isSmallLaptop ? '20px' : '25px',
+                  margin: '0 12px 12px 12px',
+                  padding: isSmallLaptop ? '16px' : '20px',
                   backdropFilter: 'blur(10px)',
                 }}
-              ><div className="text-2xl font-semibold">
+              ><div className="text-xl lg:text-2xl font-semibold">
                   <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
                 </div>
               </motion.div>

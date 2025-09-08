@@ -66,10 +66,10 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
           icon: Building2
         },
         { 
-          href: '/resources', 
-          label: getTranslation(translations, 'nav.resources', language, 
-            language === 'en' ? 'Knowledge Hub' : 'Tudásbázis'),
-          description: language === 'en' ? 'Industry insights and technical resources' : 'Ipari betekintések és műszaki források',
+          href: '/products', 
+          label: getTranslation(translations, 'nav.products', language, 
+            language === 'en' ? 'Product Portfolio' : 'Termékportfólió'),
+          description: language === 'en' ? 'Innovative plastic solutions for every need' : 'Innovatív műanyag megoldások minden igényre',
           icon: ArrowUpRight
         }
       ]
@@ -81,26 +81,26 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
       links: [
         { 
           href: '/capabilities/injection-moulding', 
-          label: language === 'en' ? 'Precision Moulding' : 'Precíziós öntés',
-          description: language === 'en' ? 'Precision engineered plastic components' : 'Precíziós műanyag alkatrészek',
+          label: language === 'en' ? 'Precision Injection Manufacturing' : 'Precíziós fröccsöntő gyártás',
+          description: language === 'en' ? 'State-of-the-art plastic injection molding with exceptional precision and quality control' : 'Legmodernebb műanyag fröccsöntés kivételes precizitással és minőségbiztosítással',
           icon: Component
         },
         { 
-          href: '/capabilities/blow-moulding', 
-          label: language === 'en' ? 'Hollow Forming' : 'Üreges formázás',
-          description: language === 'en' ? 'Custom hollow container solutions' : 'Egyedi üreges tároló megoldások',
+          href: '/capabilities/in-mould-decoration', 
+          label: language === 'en' ? 'Surface Enhancement Solutions' : 'Felületjavító megoldások',
+          description: language === 'en' ? 'Premium surface decoration techniques for exceptional product finishing' : 'Prémium felületdíszítési technikák kivételes termékkészítéshez',
           icon: Box
         },
         { 
           href: '/capabilities/contract-manufacturing', 
-          label: language === 'en' ? 'Manufacturing Partnership' : 'Gyártási partnerség',
-          description: language === 'en' ? 'End-to-end production partnerships' : 'Teljes körű gyártási partnerségek',
+          label: language === 'en' ? 'Strategic Manufacturing Solutions' : 'Stratégiai gyártási megoldások',
+          description: language === 'en' ? 'Comprehensive manufacturing partnerships from design to delivery with full quality assurance' : 'Átfogó gyártási partnerségek a tervezéstől a szállításig teljes minőségbiztosítással',
           icon: Package2
         },
         { 
-          href: '/capabilities/material-selection', 
-          label: language === 'en' ? 'Polymer Consulting' : 'Polimer tanácsadás',
-          description: language === 'en' ? 'Expert polymer consultation services' : 'Szakértői polimer tanácsadás',
+          href: '/capabilities/tooling-management', 
+          label: language === 'en' ? 'Tooling Management' : 'Szerszám kezelés',
+          description: language === 'en' ? 'Professional mold design and maintenance services' : 'Professzionális forma tervezési és karbantartási szolgáltatások',
           icon: Tag
         }
       ]    },    
@@ -109,37 +109,37 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
       description: language === 'en' ? 'Premium plastic solutions for various industries' : 'Prémium műanyag megoldások különböző iparágak számára',
       links: [
         { 
-          href: '/shop/home', 
+          href: '/products/home', 
           label: language === 'en' ? 'Home' : 'Otthon',
           description: language === 'en' ? 'Residential plastic applications' : 'Lakossági műanyag alkalmazások',
           icon: Home
         },
         { 
-          href: '/shop/kitchen', 
+          href: '/products/kitchen', 
           label: language === 'en' ? 'Kitchen' : 'Konyha',
           description: language === 'en' ? 'Food-grade plastic solutions' : 'Élelmiszeripari műanyag megoldások',
           icon: ChefHat
         },
         { 
-          href: '/shop/garden', 
+          href: '/products/garden', 
           label: language === 'en' ? 'Garden' : 'Kert',
           description: language === 'en' ? 'Weather-resistant outdoor products' : 'Időjárásálló kültéri termékek',
           icon: Flower
         },
         { 
-          href: '/shop/kids', 
+          href: '/products/kids', 
           label: language === 'en' ? 'Kids' : 'Gyerekek',
           description: language === 'en' ? 'Child-safe plastic products' : 'Gyermekbiztos műanyag termékek',
           icon: Baby
         },
         { 
-          href: '/shop/active', 
+          href: '/products/active', 
           label: language === 'en' ? 'Active' : 'Aktív',
           description: language === 'en' ? 'Durable recreational equipment' : 'Tartós rekreációs felszerelések',
           icon: Zap
         },
         { 
-          href: '/shop/pallets', 
+          href: '/products/pallets', 
           label: language === 'en' ? 'Pallets' : 'Raklapok',
           description: language === 'en' ? 'Heavy-duty logistics solutions' : 'Nagy teljesítményű logisztikai megoldások',
           icon: Paintbrush

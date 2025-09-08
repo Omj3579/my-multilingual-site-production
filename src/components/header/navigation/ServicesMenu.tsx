@@ -115,169 +115,86 @@ export const ServicesMenu = () => {
           animate="visible"
           exit="hidden"
           variants={containerVariants}
-          className="w-[800px] p-7 shadow-lg bg-white rounded-xl border border-gray-100"
-          style={{ width: '800px', maxWidth: '800px' }} // Force width with inline style
+          className="navigation-dropdown-container p-4 md:p-5 lg:p-6 shadow-2xl bg-white rounded-xl border border-gray-100"
         >
           {/* Header section */}
-          <div className="mb-6 pb-5 border-b border-gray-100">
-            <h3 className="text-xl font-medium text-gray-800">
+          <div className="mb-3 pb-2 border-b border-gray-100">
+            <h3 className="text-base font-medium text-gray-800">
               {language === 'en' ? 'Manufacturing Services' : 'Gyártási Szolgáltatások'}
             </h3>
-            <p className="text-sm text-gray-600 mt-1.5">
+            <p className="text-xs text-gray-600 mt-0.5">
               {language === 'en' 
                 ? 'Our comprehensive manufacturing solutions and expertise'
                 : 'Átfogó gyártási megoldásaink és szakértelmünk'}
             </p>
           </div>
 
-          {/* Enhanced Grid Layout */}
-          <div className="space-y-8">
-            {/* First category: Manufacturing Excellence - Full Width */}
-            {capabilityCategories.slice(0, 1).map((category, categoryIndex) => (
-              <motion.div 
-                key={categoryIndex}
-                variants={itemVariants}
-                className="space-y-4"
-              >
-                {/* Category Header with Icon and Color */}
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                    category.color === 'blue' ? 'bg-blue-100 text-blue-600' :
-                    category.color === 'orange' ? 'bg-orange-100 text-orange-600' :
-                    'bg-green-100 text-green-600'
-                  }`}>
-                    <category.icon size={20} />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900">{category.title}</h4>
-                    <p className="text-sm text-gray-500">{category.subtitle}</p>
-                  </div>
-                </div>
-
-                {/* Enhanced Links Grid - 3 columns for first category */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {category.links.map((link, linkIndex) => (
-                    <motion.div key={linkIndex} variants={itemVariants}>
-                      <Link 
-                        href={link.href}
-                        className="group block p-4 rounded-xl border border-gray-100 hover:border-[#fa9b6b]/30 hover:bg-gradient-to-br hover:from-[#fa9b6b]/5 hover:to-transparent transition-all duration-300 h-full"
-                      >
-                        {/* Service Badge */}
-                        <div className="flex items-center justify-between mb-3">
-                          <div className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
-                            link.badge === 'Core Service' ? 'bg-blue-100 text-blue-700' :
-                            link.badge === 'Advanced' ? 'bg-purple-100 text-purple-700' :
-                            link.badge === 'Premium' ? 'bg-amber-100 text-amber-700' :
-                            link.badge === 'Partnership' ? 'bg-orange-100 text-orange-700' :
-                            'bg-green-100 text-green-700'
-                          }`}>
-                            {link.badge}
-                          </div>
-                          <div className="w-8 h-8 flex items-center justify-center text-gray-400 group-hover:text-[#fa9b6b] transition-colors">
-                            <link.icon size={18} />
-                          </div>
-                        </div>
-
-                        {/* Service Title */}
-                        <h5 className="font-semibold text-gray-900 group-hover:text-[#fa9b6b] transition-colors mb-2 leading-tight">
-                          {link.label}
-                        </h5>
-                        
-                        {/* Enhanced Description */}
-                        <p className="text-xs text-gray-600 leading-relaxed line-clamp-3">
-                          {link.description}
-                        </p>
-
-                        {/* Hover Arrow */}
-                        <div className="mt-3 flex items-center text-xs text-gray-400 group-hover:text-[#fa9b6b] transition-colors">
-                          <span className="mr-1">Learn more</span>
-                          <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                        </div>
-                      </Link>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-
-            {/* Last two categories: Manufacturing Partnership & Technical Excellence - Side by Side */}
-            {capabilityCategories.length > 1 && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {capabilityCategories.slice(1).map((category, categoryIndex) => (
+          {/* Optimized Grid Layout - All cards in a single unified grid */}
+          <div>
+            {/* Unified grid for all service cards with optimal column distribution */}
+            <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-1">{capabilityCategories.map((category) => 
+                category.links.map((link, linkIndex) => (
                   <motion.div 
-                    key={categoryIndex + 1}
+                    key={`${category.title}-${linkIndex}`} 
                     variants={itemVariants}
-                    className="space-y-4"
+                    className="group"
                   >
-                    {/* Category Header with Icon and Color */}
-                    <div className="flex items-center space-x-3 mb-4">
-                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                        category.color === 'blue' ? 'bg-blue-100 text-blue-600' :
-                        category.color === 'orange' ? 'bg-orange-100 text-orange-600' :
-                        'bg-green-100 text-green-600'
+                    <Link 
+                      href={link.href}
+                      className="flex flex-col p-2 rounded-lg border border-gray-100 hover:border-[#fa9b6b]/30 hover:bg-gradient-to-br hover:from-[#fa9b6b]/5 hover:to-transparent transition-all duration-300 h-full min-h-[140px]"
+                    >
+                      {/* Category Indicator */}
+                      <div className="flex items-center justify-between mb-2">
+                        <div className={`inline-flex items-center px-1.5 py-0.5 rounded-full text-xs font-medium ${
+                          link.badge === 'Core Service' ? 'bg-blue-100 text-blue-700' :
+                          link.badge === 'Advanced' ? 'bg-purple-100 text-purple-700' :
+                          link.badge === 'Premium' ? 'bg-amber-100 text-amber-700' :
+                          link.badge === 'Partnership' ? 'bg-orange-100 text-orange-700' :
+                          'bg-green-100 text-green-700'
+                        }`}>
+                          {link.badge}
+                        </div>
+                        <div className="w-6 h-6 flex items-center justify-center text-gray-400 group-hover:text-[#fa9b6b] transition-colors">
+                          <link.icon size={14} />
+                        </div>
+                      </div>
+
+                      {/* Category Title (Small) */}
+                      <div className={`text-xs font-medium mb-2 ${
+                        category.color === 'blue' ? 'text-blue-600' :
+                        category.color === 'orange' ? 'text-orange-600' :
+                        'text-green-600'
                       }`}>
-                        <category.icon size={20} />
+                        {category.title}
                       </div>
-                      <div>
-                        <h4 className="text-lg font-semibold text-gray-900">{category.title}</h4>
-                        <p className="text-sm text-gray-500">{category.subtitle}</p>
+
+                      {/* Service Title */}
+                      <h5 className="text-sm font-semibold text-gray-900 group-hover:text-[#fa9b6b] transition-colors mb-1.5 leading-tight">
+                        {link.label}
+                      </h5>
+                      
+                      {/* Enhanced Description */}
+                      <p className="text-xs text-gray-600 leading-relaxed line-clamp-2 flex-1 mb-1.5">
+                        {link.description}
+                      </p>
+
+                      {/* Hover Arrow */}
+                      <div className="mt-auto flex items-center text-xs text-gray-400 group-hover:text-[#fa9b6b] transition-colors">
+                        <span className="mr-1">Learn more</span>
+                        <ArrowUpRight size={11} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                       </div>
-                    </div>
-
-                    {/* Enhanced Links Grid - Single column for each category */}
-                    <div className="space-y-4">
-                      {category.links.map((link, linkIndex) => (
-                        <motion.div key={linkIndex} variants={itemVariants}>
-                          <Link 
-                            href={link.href}
-                            className="group block p-4 rounded-xl border border-gray-100 hover:border-[#fa9b6b]/30 hover:bg-gradient-to-br hover:from-[#fa9b6b]/5 hover:to-transparent transition-all duration-300 h-full"
-                          >
-                            {/* Service Badge */}
-                            <div className="flex items-center justify-between mb-3">
-                              <div className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
-                                link.badge === 'Core Service' ? 'bg-blue-100 text-blue-700' :
-                                link.badge === 'Advanced' ? 'bg-purple-100 text-purple-700' :
-                                link.badge === 'Premium' ? 'bg-amber-100 text-amber-700' :
-                                link.badge === 'Partnership' ? 'bg-orange-100 text-orange-700' :
-                                'bg-green-100 text-green-700'
-                              }`}>
-                                {link.badge}
-                              </div>
-                              <div className="w-8 h-8 flex items-center justify-center text-gray-400 group-hover:text-[#fa9b6b] transition-colors">
-                                <link.icon size={18} />
-                              </div>
-                            </div>
-
-                            {/* Service Title */}
-                            <h5 className="font-semibold text-gray-900 group-hover:text-[#fa9b6b] transition-colors mb-2 leading-tight">
-                              {link.label}
-                            </h5>
-                            
-                            {/* Enhanced Description */}
-                            <p className="text-xs text-gray-600 leading-relaxed line-clamp-3">
-                              {link.description}
-                            </p>
-
-                            {/* Hover Arrow */}
-                            <div className="mt-3 flex items-center text-xs text-gray-400 group-hover:text-[#fa9b6b] transition-colors">
-                              <span className="mr-1">Learn more</span>
-                              <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                            </div>
-                          </Link>
-                        </motion.div>
-                      ))}
-                    </div>
+                    </Link>
                   </motion.div>
-                ))}
-              </div>
-            )}
+                ))
+              )}
+            </div>
           </div>
           
           {/* Footer section */}
-          <div className="mt-7 pt-5 border-t border-gray-100">
+          <div className="mt-3 pt-2 border-t border-gray-100">
             <Link 
               href="/services" 
-              className="inline-flex items-center text-base text-[#fa9b6b] font-medium group"
+              className="inline-flex items-center text-sm text-[#fa9b6b] font-medium group"
             >
               <span>
                 {language === 'en' ? 'View all services' : 'Összes szolgáltatás megtekintése'}

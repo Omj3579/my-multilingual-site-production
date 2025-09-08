@@ -10,7 +10,8 @@
     "start": "next start",
     "lint": "next lint",
     "production": "NODE_ENV=production npm run build && npm run start",
-    "deploy": "npm run build"
+    "deploy": "npm run build",
+    "export": "next export"
   },
   "dependencies": {
     "@babel/parser": "^7.27.4",

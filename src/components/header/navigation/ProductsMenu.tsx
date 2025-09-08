@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import { ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Language } from '@/types/language';
 import {
@@ -115,30 +114,27 @@ const ProductsMenu: React.FC = () => {
 
   return (
     <NavigationMenuItem>
-      <NavigationMenuTrigger className="flex items-center gap-2 text-slate-700 hover:text-[#fa9b6b] font-semibold transition-all duration-300 group bg-transparent focus:bg-transparent data-[active]:bg-transparent data-[state=open]:bg-transparent data-[state=open]:text-[#fa9b6b] px-3 py-2 rounded-lg hover:bg-[#fa9b6b]/5">
-        <span className="relative">
-          {getMenuLabel()}
-          <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#fa9b6b] scale-x-0 group-hover:scale-x-100 group-data-[state=open]:scale-x-100 transition-transform duration-300 origin-center"></div>
-        </span>
-        <ChevronDown className="h-5 w-5 transition-all duration-300 group-data-[state=open]:rotate-180 group-hover:text-[#fa9b6b] group-data-[state=open]:text-[#fa9b6b]" />
+      <NavigationMenuTrigger className="group bg-transparent border-none text-gray-800 hover:text-[#fa9b6b] transition-colors text-xl font-semibold data-[state=open]:text-[#fa9b6b] [&>svg]:h-6 [&>svg]:w-6">
+        <span>{getMenuLabel()}</span>
+        <div className="absolute -bottom-1 left-3 right-3 h-0.5 bg-[#fa9b6b] scale-x-0 group-hover:scale-x-100 group-data-[state=open]:scale-x-100 transition-transform origin-center" />
       </NavigationMenuTrigger>
       
-      <NavigationMenuContent className="w-[1400px] p-0" style={{ width: '1400px', maxWidth: '1400px' }}>
+      <NavigationMenuContent className="navigation-dropdown-container large p-0">
         <div className="bg-white/98 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/40 overflow-hidden animate-in fade-in-0 zoom-in-95 duration-200">
           {/* Enhanced Header with gradient and better typography */}
-          <div className="bg-gradient-to-r from-[#fa9b6b]/20 via-[#fa9b6b]/15 to-[#fa9b6b]/10 px-12 py-10 border-b border-white/30 relative overflow-hidden">
+          <div className="bg-gradient-to-r from-[#fa9b6b]/20 via-[#fa9b6b]/15 to-[#fa9b6b]/10 px-6 py-4 border-b border-white/30 relative overflow-hidden">
             {/* Decorative background pattern */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(250,155,107,0.1)_0%,transparent_50%)] opacity-70"></div>
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#fa9b6b]/20 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-[#fa9b6b]/15 to-transparent rounded-full translate-y-12 -translate-x-12"></div>
             
             <div className="relative z-10">
-              <h3 className="text-3xl font-bold text-slate-800 mb-4 tracking-tight">
+              <h3 className="text-xl font-bold text-slate-800 mb-1.5 tracking-tight">
                 {language === 'en' ? '🎯 Product Categories' : 
                  language === 'hu' ? '🎯 Termékkategóriák' : 
                  '🎯 Produktkategorien'}
               </h3>
-              <p className="text-lg text-slate-700 leading-relaxed font-medium">
+              <p className="text-sm text-slate-700 leading-relaxed font-medium">
                 {language === 'en' ? 'Discover premium plastic solutions designed for every aspect of modern life' : 
                  language === 'hu' ? 'Fedezze fel a modern élet minden területére tervezett prémium műanyag megoldásokat' : 
                  'Entdecken Sie Premium-Kunststofflösungen für jeden Bereich des modernen Lebens'}
@@ -146,9 +142,9 @@ const ProductsMenu: React.FC = () => {
             </div>
           </div>
 
-          {/* Categories Grid with staggered animation */}
-          <div className="p-12">
-            <div className="grid grid-cols-3 gap-10">
+          {/* Categories Grid with optimized layout for better card distribution */}
+          <div className="p-6">
+            <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-3 lg:gap-4">
               {categories.map((category, index) => {
                 const delayClass = `delay-[${index * 100}ms]`;
                 return (
@@ -188,15 +184,15 @@ const ProductsMenu: React.FC = () => {
           </div>
 
           {/* Enhanced Footer */}
-          <div className="bg-gradient-to-r from-slate-50/95 via-white/95 to-slate-50/95 px-10 py-6 border-t border-white/30 relative">
+          <div className="bg-gradient-to-r from-slate-50/95 via-white/95 to-slate-50/95 px-4 py-3 border-t border-white/30 relative">
             <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(250,155,107,0.05)_50%,transparent_100%)]"></div>
             <div className="relative z-10 text-center">
-              <p className="text-sm text-slate-700 leading-relaxed font-medium">
+              <p className="text-xs text-slate-700 leading-relaxed font-medium">
                 ✨ {language === 'en' ? 'Precision quality solutions in plastic manufacturing with global reach and local expertise' : 
                    language === 'hu' ? 'Precíziós minőségi megoldások műanyaggyártásban globális elérhetőséggel és helyi szakértelemmel' : 
                    'Präzise Qualitätslösungen in der Kunststoffherstellung mit globaler Reichweite und lokaler Expertise'} ✨
               </p>
-              <div className="mt-3 flex items-center justify-center gap-2">
+              <div className="mt-1.5 flex items-center justify-center gap-2">
                 <div className="w-2 h-2 bg-[#fa9b6b] rounded-full animate-pulse"></div>
                 <span className="text-xs text-slate-500 font-medium">
                   {language === 'en' ? 'Quality • Innovation • Sustainability' : 

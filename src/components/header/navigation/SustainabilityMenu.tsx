@@ -108,28 +108,27 @@ export const SustainabilityMenu = () => {
           animate="visible"
           exit="hidden"
           variants={containerVariants}
-          className="w-[800px] p-6 shadow-lg bg-white rounded-xl border border-gray-100"
-          style={{ width: '800px', maxWidth: '800px' }}
+          className="navigation-dropdown-container p-4 md:p-5 lg:p-6 shadow-2xl bg-white rounded-xl border border-gray-100"
         >
           {/* Feature Header */}
-          <div className="mb-6 p-6 rounded-xl bg-gradient-to-r from-green-50 to-teal-50 border border-green-100">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
-                <Leaf size={24} className="text-white" />
+          <div className="mb-3 p-3 rounded-lg bg-gradient-to-r from-green-50 to-teal-50 border border-green-100">
+            <div className="flex items-center space-x-2.5">
+              <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                <Leaf size={18} className="text-white" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-1">
+                <h3 className="text-base font-bold text-gray-900 mb-0.5">
                   {language === 'en' ? "Green Innovation Initiative" : "Zöld Innovációs Kezdeményezés"}
                 </h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-xs text-gray-600">
                   {language === 'en' 
                     ? "Leading the future of sustainable manufacturing"
                     : "A fenntartható gyártás jövőjének vezetése"}
                 </p>
               </div>
               <div className="ml-auto flex items-center space-x-2">
-                <div className="flex items-center space-x-1 bg-green-100 px-3 py-1 rounded-full">
-                  <Leaf size={14} className="text-green-600" />
+                <div className="flex items-center space-x-1 bg-green-100 px-2 py-1 rounded-full">
+                  <Leaf size={12} className="text-green-600" />
                   <span className="text-xs font-medium text-green-700">ISO 14001</span>
                 </div>
               </div>
@@ -137,16 +136,17 @@ export const SustainabilityMenu = () => {
           </div>
 
           {/* Green Strategy Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-1">
             {greenStrategyInitiatives.map((initiative, index) => (
               <motion.div key={index} variants={itemVariants}>
                 <Link 
                   href={initiative.href}
-                  className="group block p-4 rounded-xl border border-gray-100 hover:border-green-200 hover:bg-gradient-to-br hover:from-green-50/50 hover:to-transparent transition-all duration-300 h-full"
+                  className="group flex flex-col p-2 rounded-lg border border-gray-100 hover:border-green-200 hover:bg-gradient-to-br hover:from-green-50/50 hover:to-transparent transition-all duration-300 h-full min-h-[140px]"
                 >
                   {/* Badge and Icon */}
-                  <div className="flex items-center justify-between mb-3">
-                    <div className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
+                  <div className="flex items-center justify-between mb-2">
+                    <div className={`inline-flex items-center px-1.5 py-0.5 rounded-full text-xs font-medium ${
                       initiative.color === 'green' ? 'bg-green-100 text-green-700' :
                       initiative.color === 'teal' ? 'bg-teal-100 text-teal-700' :
                       initiative.color === 'amber' ? 'bg-amber-100 text-amber-700' :
@@ -156,7 +156,7 @@ export const SustainabilityMenu = () => {
                     }`}>
                       {initiative.badge}
                     </div>
-                    <div className={`w-8 h-8 flex items-center justify-center transition-colors ${
+                    <div className={`w-6 h-6 flex items-center justify-center transition-colors ${
                       initiative.color === 'green' ? 'text-gray-400 group-hover:text-green-600' :
                       initiative.color === 'teal' ? 'text-gray-400 group-hover:text-teal-600' :
                       initiative.color === 'amber' ? 'text-gray-400 group-hover:text-amber-600' :
@@ -164,32 +164,33 @@ export const SustainabilityMenu = () => {
                       initiative.color === 'blue' ? 'text-gray-400 group-hover:text-blue-600' :
                       'text-gray-400 group-hover:text-indigo-600'
                     }`}>
-                      <initiative.icon size={18} />
+                      <initiative.icon size={14} />
                     </div>
                   </div>
 
                   {/* Title */}
-                  <h5 className="font-semibold text-gray-900 group-hover:text-green-600 transition-colors mb-2 leading-tight">
+                  <h5 className="text-sm font-semibold text-gray-900 group-hover:text-green-600 transition-colors mb-1.5 leading-tight">
                     {initiative.title}
                   </h5>
                   
                   {/* Description */}
-                  <p className="text-xs text-gray-600 leading-relaxed line-clamp-3 mb-3">
+                  <p className="text-xs text-gray-600 leading-relaxed line-clamp-2 mb-2 flex-1">
                     {initiative.description}
                   </p>
 
                   {/* Learn More Link */}
-                  <div className="flex items-center text-xs text-gray-400 group-hover:text-green-600 transition-colors">
+                  <div className="flex items-center text-xs text-gray-400 group-hover:text-green-600 transition-colors mt-auto">
                     <span className="mr-1">Learn more</span>
-                    <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <ArrowUpRight size={11} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </div>
                 </Link>
               </motion.div>
             ))}
           </div>
+          </div>
           
           {/* Footer with CTA */}
-          <div className="mt-6 pt-4 border-t border-gray-100 flex justify-between items-center">
+          <div className="mt-3 pt-2 border-t border-gray-100 flex justify-between items-center">
             <Link 
               href="/sustainability/green-strategy" 
               className="inline-flex items-center text-sm text-green-600 font-medium hover:text-green-700 transition-colors group"

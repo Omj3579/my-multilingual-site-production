@@ -1,0 +1,96 @@
+/* Navigation Menu Fix for Dropdown Issues */
+
+/* Ensure proper z-index hierarchy */
+.header-container {
+  position: relative;
+  z-index: 60;
+}
+
+/* Navigation Menu Root Level */
+[data-radix-navigation-menu-root] {
+  position: relative !important;
+  z-index: 70 !important;
+}
+
+/* Navigation Menu Content - Fix positioning and sizing */
+[data-radix-navigation-menu-content] {
+  position: absolute !important;
+  top: 100% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 70 !important;
+  width: auto !important;
+  max-width: calc(100vw - 32px) !important;
+  min-width: 320px !important;
+  overflow: visible !important;
+}
+
+/* Navigation Menu Viewport - Fix overflow and positioning */
+[data-radix-navigation-menu-viewport] {
+  position: relative !important;
+  z-index: 70 !important;
+  overflow: visible !important;
+  width: 100% !important;
+}
+
+/* Navigation Menu Viewport Container */
+.navigation-menu-viewport-container {
+  position: absolute !important;
+  left: 0 !important;
+  top: 100% !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  z-index: 70 !important;
+}
+
+/* Fix dropdown content background and positioning */
+[data-radix-navigation-menu-content] > div {
+  background: rgba(255, 255, 255, 0.98) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  [data-radix-navigation-menu-content] {
+    max-width: calc(100vw - 48px) !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  [data-radix-navigation-menu-content] {
+    max-width: calc(100vw - 64px) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  [data-radix-navigation-menu-content] {
+    max-width: calc(100vw - 32px) !important;
+    width: calc(100vw - 32px) !important;
+    left: 16px !important;
+    right: 16px !important;
+    transform: none !important;
+  }
+}
+
+/* Prevent any overflow issues */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Ensure header doesn't interfere with dropdown */
+.fixed-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 60 !important;
+}
+
+/* Fix animation issues */
+[data-radix-navigation-menu-content][data-motion="from-start"],
+[data-radix-navigation-menu-content][data-motion="from-end"] {
+  animation-duration: 200ms !important;
+}
