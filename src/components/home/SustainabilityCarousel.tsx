@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay, EffectCreative, Pagination } from 'swiper/modules';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion, AnimatePresence, useMotionValue, useTransform } from 'framer-motion';
+import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-creative';
@@ -13,72 +14,88 @@ const slides = [
     src: {
       en: '/sustainability/sustainable-tomorrow.webp',
       hu: '/sustainability/sustainable-tomorrow.webp',
+      de: '/sustainability/sustainable-tomorrow.webp',
     },
     alt: {
       en: 'Strategic Energy Infrastructure Development',
       hu: 'Stratégiai energia infrastruktúra fejlesztés',
+      de: 'Strategische Energieinfrastrukturentwicklung',
     },
     title: {
       en: 'RENEWABLE ENERGY INFRASTRUCTURE: STRATEGIC TRANSFORMATION INITIATIVE',
-      hu: 'MEGÚJULÓ ENERGIA INFRASTRUKTÚRA: STRATÉGIAI ÁTALAKULÁSI KEZDEMÉNYEZÉS'
+      hu: 'MEGÚJULÓ ENERGIA INFRASTRUKTÚRA: STRATÉGIAI ÁTALAKULÁSI KEZDEMÉNYEZÉS',
+      de: 'ERNEUERBARE ENERGIE-INFRASTRUKTUR: STRATEGISCHE TRANSFORMATIONSINITIATIVE'
     },
     description: {
       en: 'Implementing comprehensive renewable energy infrastructure through strategic partnerships with leading sustainable energy providers. Our systematic approach to carbon-neutral manufacturing represents a fundamental transformation in operational excellence and environmental stewardship.',
-      hu: 'Átfogó megújuló energia infrastruktúra megvalósítása stratégiai partnerségeken keresztül vezető fenntartható energia szolgáltatókkal. Szisztematikus megközelítésünk a szén-semleges gyártáshoz alapvető átalakulást képvisel a működési kiválóságban és környezeti felelősségvállalásban.'
+      hu: 'Átfogó megújuló energia infrastruktúra megvalósítása stratégiai partnerségeken keresztül vezető fenntartható energia szolgáltatókkal. Szisztematikus megközelítésünk a szén-semleges gyártáshoz alapvető átalakulást képvisel a működési kiválóságban és környezeti felelősségvállalásban.',
+      de: 'Implementierung einer umfassenden erneuerbaren Energieinfrastruktur durch strategische Partnerschaften mit führenden nachhaltigen Energieanbietern. Unser systematischer Ansatz zur kohlenstoffneutralen Fertigung stellt eine grundlegende Transformation in operativer Exzellenz und Umweltverantwortung dar.'
     }
   },
   {
     src: {
       en: '/sustainability/safeguarding-water.webp',
       hu: '/sustainability/safeguarding-water.webp',
+      de: '/sustainability/safeguarding-water.webp',
     },
     alt: {
       en: 'Advanced Thermal Management Systems',
       hu: 'Fejlett termikus kezelési rendszerek',
+      de: 'Fortschrittliche Thermomanagement-Systeme',
     },
     title: {
       en: 'THERMAL MANAGEMENT EXCELLENCE: CLOSED-LOOP OPTIMIZATION SYSTEMS',
-      hu: 'TERMIKUS KEZELÉSI KIVÁLÓSÁG: ZÁRT KÖRŰ OPTIMALIZÁLÁSI RENDSZEREK'
+      hu: 'TERMIKUS KEZELÉSI KIVÁLÓSÁG: ZÁRT KÖRŰ OPTIMALIZÁLÁSI RENDSZEREK',
+      de: 'THERMOMANAGEMENT-EXZELLENZ: GESCHLOSSENE OPTIMIERUNGSSYSTEME'
     },
     description: {
       en: 'Advanced closed-loop circulation systems providing optimal thermal regulation essential for precision manufacturing processes. Our sophisticated thermal management infrastructure maximizes resource efficiency while maintaining the highest standards of operational performance and environmental responsibility.',
-      hu: 'Fejlett zárt körű cirkulációs rendszerek optimális termikus szabályozást biztosítva, amely alapvető fontosságú a precíziós gyártási folyamatokhoz. Kifinomult termikus kezelési infrastruktúránk maximalizálja az erőforrás-hatékonyságot miközben fenntartja a legmagasabb működési teljesítmény és környezeti felelősség szabványokat.'
+      hu: 'Fejlett zárt körű cirkulációs rendszerek optimális termikus szabályozást biztosítva, amely alapvető fontosságú a precíziós gyártási folyamatokhoz. Kifinomult termikus kezelési infrastruktúránk maximalizálja az erőforrás-hatékonyságot miközben fenntartja a legmagasabb működési teljesítmény és környezeti felelősség szabványokat.',
+      de: 'Fortschrittliche geschlossene Kreislaufsysteme, die optimale Temperaturregelung bieten, die für Präzisionsfertigungsprozesse unerlässlich ist. Unsere ausgeklügelte Thermomanagement-Infrastruktur maximiert die Ressourceneffizienz bei gleichzeitiger Aufrechterhaltung höchster Standards für Betriebsleistung und Umweltverantwortung.'
     }
   },
   {
     src: {
       en: '/sustainability/forest-conservation.webp',
       hu: '/sustainability/forest-conservation.webp',
+      de: '/sustainability/forest-conservation.webp',
     },
     alt: {
       en: 'Circular Manufacturing Excellence',
       hu: 'Körforgásos gyártási kiválóság',
+      de: 'Kreislaufwirtschaftliche Fertigungsexzellenz',
     },
     title: {
       en: 'CIRCULAR MANUFACTURING: COMPREHENSIVE MATERIAL FLOW OPTIMIZATION',
-      hu: 'KÖRFORGÁSOS GYÁRTÁS: ÁTFOGÓ ANYAGÁRAMLÁS OPTIMALIZÁLÁS'
+      hu: 'KÖRFORGÁSOS GYÁRTÁS: ÁTFOGÓ ANYAGÁRAMLÁS OPTIMALIZÁLÁS',
+      de: 'KREISLAUFWIRTSCHAFTLICHE FERTIGUNG: UMFASSENDE MATERIALFLUSS-OPTIMIERUNG'
     },
     description: {
       en: 'Implementing comprehensive material recovery systems ensuring complete reintegration of production outputs into continuous manufacturing cycles. Our circular economy approach achieves zero-waste operational standards through advanced process optimization and material flow management.',
-      hu: 'Átfogó anyag-visszanyerési rendszerek megvalósítása biztosítva a gyártási kimenetek teljes reintegrációját folyamatos gyártási ciklusokba. Körforgásos gazdasági megközelítésünk nulla hulladék működési szabványokat ér el fejlett folyamat optimalizáláson és anyagáramlás kezelésen keresztül.'
+      hu: 'Átfogó anyag-visszanyerési rendszerek megvalósítása biztosítva a gyártási kimenetek teljes reintegrációját folyamatos gyártási ciklusokba. Körforgásos gazdasági megközelítésünk nulla hulladék működési szabványokat ér el fejlett folyamat optimalizáláson és anyagáramlás kezelésen keresztül.',
+      de: 'Implementierung umfassender Materialrückgewinnungssysteme zur vollständigen Reintegration von Produktionsoutputs in kontinuierliche Fertigungszyklen. Unser Kreislaufwirtschaftsansatz erreicht Null-Abfall-Betriebsstandards durch fortschrittliche Prozessoptimierung und Materialflussmanagement.'
     }
   },
   {
     src: {
       en: '/sustainability/wildlife.webp',
       hu: '/sustainability/wildlife.webp',
+      de: '/sustainability/wildlife.webp',
     },
     alt: {
       en: 'Environmental Stewardship Excellence',
       hu: 'Környezeti felelősségvállalási kiválóság',
+      de: 'Umweltverantwortung Exzellenz',
     },
     title: {
       en: 'ENVIRONMENTAL STEWARDSHIP: COMPREHENSIVE CONTAINMENT PROTOCOLS',
-      hu: 'KÖRNYEZETI FELELŐSSÉGVÁLLALÁS: ÁTFOGÓ VISSZATARTÁSI PROTOKOLLOK'
+      hu: 'KÖRNYEZETI FELELŐSSÉGVÁLLALÁS: ÁTFOGÓ VISSZATARTÁSI PROTOKOLLOK',
+      de: 'UMWELTVERANTWORTUNG: UMFASSENDE EINDÄMMUNGSPROTOKOLLE'
     },
     description: {
       en: 'Maintaining rigorous quality management systems and environmental containment protocols to prevent material dispersion and ensure comprehensive environmental stewardship. Our systematic approach to environmental protection demonstrates unwavering commitment to ecological responsibility and operational excellence.',
-      hu: 'Szigorú minőségkezelési rendszerek és környezeti visszatartási protokollok fenntartása anyag szóródás megelőzésére és átfogó környezeti felelősségvállalás biztosítására. Szisztematikus megközelítésünk a környezetvédelemhez rendíthetetlen elkötelezettséget mutat az ökológiai felelősség és működési kiválóság iránt.'
+      hu: 'Szigorú minőségkezelési rendszerek és környezeti visszatartási protokollok fenntartása anyag szóródás megelőzésére és átfogó környezeti felelősségvállalás biztosítására. Szisztematikus megközelítésünk a környezetvédelemhez rendíthetetlen elkötelezettséget mutat az ökológiai felelősség és működési kiválóság iránt.',
+      de: 'Aufrechterhaltung strenger Qualitätsmanagementsysteme und Umwelteindämmungsprotokolle zur Verhinderung von Materialstreuung und zur Gewährleistung umfassender Umweltverantwortung. Unser systematischer Ansatz zum Umweltschutz zeigt unerschütterliches Engagement für ökologische Verantwortung und operative Exzellenz.'
     }
   }
 ];
@@ -255,17 +272,24 @@ const SustainabilityCarousel = () => {
                   } : {}}
                 >
                   <div className="absolute inset-0 overflow-hidden">
-                    <motion.img
-                      src={slide.src[language]}
-                      alt={slide.alt[language]}
-                      className="w-full h-full object-cover brightness-[0.85] scale-110"
-                      loading={idx === 0 ? "eager" : "lazy"}
+                    <motion.div
+                      className="w-full h-full relative"
                       initial={{ scale: 1.2 }}
                       animate={{ 
                         scale: isHovering ? 1.15 : 1.1
                       }}
                       transition={{ duration: 3, ease: "easeOut" }}
-                    />
+                    >
+                      <Image
+                        src={slide.src[language]}
+                        alt={slide.alt[language]}
+                        fill
+                        className="object-cover brightness-[0.85]"
+                        priority={idx === 0}
+                        quality={85}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                      />
+                    </motion.div>
                     
                     {/* Advanced gradient overlay with blend modes */}
                     <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent mix-blend-multiply"></div>
