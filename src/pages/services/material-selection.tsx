@@ -1,18 +1,16 @@
 
 import React from 'react';
-import HeroSection from '@/components/material-selection/HeroSection';
-import ChoosingMaterialsSection from '@/components/material-selection/ChoosingMaterialsSection';
-import ImageCardGrid from '@/components/material-selection/ImageCardGrid';
-import MaterialSelectionCallout from '@/components/material-selection/MaterialSelectionCallout';
+import ModernServicesHero from '@/components/capabilities/ModernServicesHero';
+import ModernCapabilitiesOverview from '@/components/capabilities/ModernCapabilitiesOverview';
+import ModernCTA from '@/components/capabilities/ModernCTA';
 import CapabilitiesLayout from '@/components/layouts/CapabilitiesLayout';
 
 const MaterialSelection = () => {
   return (
     <CapabilitiesLayout>
-      <HeroSection />
-      <ChoosingMaterialsSection />
-      <ImageCardGrid />
-      <MaterialSelectionCallout />
+      <ModernServicesHero />
+      <ModernCapabilitiesOverview />
+      <ModernCTA />
     </CapabilitiesLayout>
   );
 };
