@@ -27,7 +27,7 @@ const cardVariants = {
 const images = {
   en: [
     {
-      src: '/Capabilities/contract-manufacturing.webp',
+      src: '/capabilities/contract-manufacturing.webp',
       title: 'Manufacturing Partnerships',
       description: 'Exceptional precision in custom manufacturing solutions',
       features: [
@@ -37,7 +37,7 @@ const images = {
       ]
     },
     {
-      src: '/Capabilities/injection-molding-excellence.webp',
+      src: '/capabilities/injection-molding-excellence.webp',
       title: 'Advanced Injection Molding',
       description: 'Cutting-edge technology and specialized expertise',
       features: [
@@ -47,7 +47,7 @@ const images = {
       ]
     },
     {
-      src: '/Capabilities/sustainability-commitment.webp',
+      src: '/capabilities/sustainability-commitment.webp',
       title: 'Environmental Responsibility',
       description: 'Pioneering eco-conscious manufacturing practices',
       features: [
@@ -59,7 +59,7 @@ const images = {
   ],
   hu: [
     {
-      src: '/Capabilities/contract-manufacturing.webp',
+      src: '/capabilities/contract-manufacturing.webp',
       title: 'Gyártási Partnerség',
       description: 'Kivételes pontosság egyedi gyártási megoldásokban',
       features: [
@@ -69,7 +69,7 @@ const images = {
       ]
     },
     {
-      src: '/Capabilities/injection-molding-excellence.webp',
+      src: '/capabilities/injection-molding-excellence.webp',
       title: 'Fejlett Fröccsöntés',
       description: 'Élvonalbeli technológia és szakosodott szakértelem',
       features: [
@@ -79,7 +79,7 @@ const images = {
       ]
     },
     {
-      src: '/Capabilities/sustainability-commitment.webp',
+      src: '/capabilities/sustainability-commitment.webp',
       title: 'Környezeti Felelősség',
       description: 'Úttörő környezettudatos gyártási gyakorlatok',
       features: [
