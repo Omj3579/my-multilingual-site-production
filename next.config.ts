@@ -15,9 +15,7 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   // Memory optimization
-  experimental: {
-    esmExternals: 'loose',
-  },
+  // Removed experimental.esmExternals as it may disrupt module resolution
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
       config.optimization = {
