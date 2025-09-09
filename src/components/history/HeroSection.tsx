@@ -111,7 +111,7 @@ const HeroSection = () => {
       {/* Replace Wave Divider with the new SectionDivider */}
       <div className="absolute bottom-0 left-0 w-full z-20">
         <SectionDivider 
-          color="white" 
+          color="grey-500" 
           style="straight" 
           height={80}
           animated={true}

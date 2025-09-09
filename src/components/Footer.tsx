@@ -45,7 +45,7 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
       description: language === 'en' ? 'Discover our expertise and capabilities' : 'Fedezze fel szakértelmünket és képességeinket',
       links: [
         { 
-          href: '/capabilities', 
+          href: '/services', 
           label: getTranslation(translations, 'nav.capabilities', language, 
             language === 'en' ? 'Our Services' : 'Szolgáltatásaink'),
           description: language === 'en' ? 'Professional manufacturing solutions' : 'Professzionális gyártási megoldások',
@@ -59,7 +59,7 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
           icon: Compass
         },
         { 
-          href: '/company', 
+          href: '/company/history', 
           label: getTranslation(translations, 'nav.company', language, 
             language === 'en' ? 'About Us' : 'Rólunk'),
           description: language === 'en' ? 'Our company story and values' : 'Vállalati történetünk és értékeink',
@@ -80,25 +80,25 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
       description: language === 'en' ? 'Specialized plastic manufacturing expertise' : 'Specializált műanyaggyártási szakértelem',
       links: [
         { 
-          href: '/capabilities/injection-moulding', 
+          href: '/services/plastic-injection-moulding', 
           label: language === 'en' ? 'Precision Injection Manufacturing' : 'Precíziós fröccsöntő gyártás',
           description: language === 'en' ? 'State-of-the-art plastic injection molding with exceptional precision and quality control' : 'Legmodernebb műanyag fröccsöntés kivételes precizitással és minőségbiztosítással',
           icon: Component
         },
         { 
-          href: '/capabilities/in-mould-decoration', 
+          href: '/services/in-mould-decoration', 
           label: language === 'en' ? 'Surface Enhancement Solutions' : 'Felületjavító megoldások',
           description: language === 'en' ? 'Premium surface decoration techniques for exceptional product finishing' : 'Prémium felületdíszítési technikák kivételes termékkészítéshez',
           icon: Box
         },
         { 
-          href: '/capabilities/contract-manufacturing', 
+          href: '/services/contract-manufacturing', 
           label: language === 'en' ? 'Strategic Manufacturing Solutions' : 'Stratégiai gyártási megoldások',
           description: language === 'en' ? 'Comprehensive manufacturing partnerships from design to delivery with full quality assurance' : 'Átfogó gyártási partnerségek a tervezéstől a szállításig teljes minőségbiztosítással',
           icon: Package2
         },
         { 
-          href: '/capabilities/tooling-management', 
+          href: '/services/tooling-management', 
           label: language === 'en' ? 'Tooling Management' : 'Szerszám kezelés',
           description: language === 'en' ? 'Professional mold design and maintenance services' : 'Professzionális forma tervezési és karbantartási szolgáltatások',
           icon: Tag

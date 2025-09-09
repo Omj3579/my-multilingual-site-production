@@ -232,7 +232,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 1 }}
           >
             <Link 
-              href="/capabilities"
+              href="/services"
               className="group relative overflow-hidden px-8 py-4 bg-[#e38454] text-white font-semibold rounded-lg shadow-lg flex items-center gap-2 hover:bg-[#d17343] transition-colors duration-300"
             >
               {language === 'en' ? 'Our Services' : 'Szolgáltatásaink'}

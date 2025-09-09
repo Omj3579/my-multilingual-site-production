@@ -311,7 +311,7 @@ const ResourcesLayout = ({ children }: ResourcesLayoutProps) => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/capabilities" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <Link href="/services" className="text-gray-400 hover:text-white transition-colors text-sm">
                     {language === 'en' ? 'Capabilities' : 'Képességek'}
                   </Link>
                 </li>
@@ -321,7 +321,7 @@ const ResourcesLayout = ({ children }: ResourcesLayoutProps) => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/company" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  <Link href="/company/history" className="text-gray-400 hover:text-white transition-colors text-sm">
                     {language === 'en' ? 'Company' : 'Cég'}
                   </Link>
                 </li>

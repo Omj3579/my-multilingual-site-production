@@ -457,7 +457,7 @@ const InnovationAwardShowcase = () => {
                  'Beratung planen'}
               </Button>
               <Button variant="outline" size="lg">
-                <Link href="/capabilities" className="flex items-center">
+                <Link href="/services" className="flex items-center">
                   {language === 'en' ? 'Explore Our Technologies' :
                    language === 'hu' ? 'Fedezze fel technológiáinkat' :
                    'Unsere Technologien erkunden'}

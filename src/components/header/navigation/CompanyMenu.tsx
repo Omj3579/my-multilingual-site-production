@@ -223,7 +223,7 @@ export const CompanyMenu = () => {
           {/* Footer */}
           <div className="mt-3 pt-2 border-t border-gray-100 text-center">
             <Link 
-              href="/company" 
+              href="/company/history" 
               className="inline-flex items-center text-sm text-blue-600 font-medium hover:text-blue-700 transition-colors group"
             >
               <span>
