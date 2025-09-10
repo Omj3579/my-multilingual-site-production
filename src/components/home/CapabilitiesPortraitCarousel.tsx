@@ -171,7 +171,11 @@ const CapabilitiesPortraitCarousel = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <span className="font-bold tracking-wide text-blue-600">Our</span> Services
+            {language === 'en' ? (
+              <><span className="font-bold tracking-wide text-blue-600">Our</span> Services</>
+            ) : (
+              <><span className="font-bold tracking-wide text-blue-600">Szolgáltatásaink</span></>
+            )}
           </motion.h2>
           
           <motion.div 

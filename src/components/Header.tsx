@@ -3,6 +3,7 @@ import { Menu, X, ChevronUp } from 'lucide-react';
 import { useIsMobile, useIsTablet, useIsSmallLaptop } from '@/hooks/use-mobile';
 import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '@/contexts/LanguageContext';
 import Logo from './header/Logo';
 import LanguageSwitcher from './header/LanguageSwitcher';
 import MobileMenu from './header/MobileMenu';
@@ -17,6 +18,7 @@ const Header = () => {
   const isTablet = useIsTablet();
   const isSmallLaptop = useIsSmallLaptop();
   const router = useRouter();
+  const { language } = useLanguage();
   
   // Check if we're on a products page
   const isProductsPage = router.pathname.startsWith('/products');
@@ -160,7 +162,7 @@ const Header = () => {
                     justifyContent: 'center',
                   }}
                 >
-                  Contact Us
+                  {language === 'en' ? 'Contact Us' : 'Kapcsolat'}
                 </motion.a>
               )}
 

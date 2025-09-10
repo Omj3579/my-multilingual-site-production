@@ -188,9 +188,9 @@ const SustainabilityCarousel = () => {
             transition={{ duration: 0.7 }}
           >
             <span className="font-bold tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-500">
-              Sustainability
+              {language === 'en' ? 'Sustainability' : 'Fenntarthatóság'}
             </span>{" "}
-            Excellence
+            {language === 'en' ? 'Excellence' : 'Kiválóság'}
           </motion.h2>
           
           <motion.div 
