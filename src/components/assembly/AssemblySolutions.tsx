@@ -694,7 +694,7 @@ const AssemblySolutions = () => {
                             transition={{ delay: index * 0.1 }}
                             className="flex justify-between items-center p-3 bg-gray-800/50 rounded-lg"
                           >
-                            <span className="text-gray-300 font-medium">{key}</span>
+                            <span className="text-gray-200 font-medium">{key}</span>
                             <span className="text-white font-bold">{value}</span>
                           </motion.div>
                         ))}

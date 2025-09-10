@@ -124,7 +124,7 @@ export const SolutionDisplay: React.FC<SolutionDisplayProps> = ({
                     </div>
                     <div className="flex-1">
                       <h5 className="text-lg font-semibold">{benefit.title}</h5>
-                      <p className="text-gray-300 text-sm">{benefit.description}</p>
+                      <p className="text-gray-200 text-sm">{benefit.description}</p>
                     </div>
                   </div>
                   

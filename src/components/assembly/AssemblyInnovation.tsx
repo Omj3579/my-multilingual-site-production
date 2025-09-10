@@ -71,15 +71,15 @@ const AssemblyInnovation = () => {
         },
         {
           year: "2021", 
-          title: "Nano-Precision Assembly",
+          title: "Advanced Assembly Technology",
           category: "Precision Engineering",
           icon: Microscope,
-          description: "Achieved microscopic tolerances with laser-guided positioning systems and atomic-level precision control.",
-          impact: "±0.001mm tolerance",
+          description: "Achieved exceptional tolerances with laser-guided positioning systems and advanced precision control.",
+          impact: "Ultra-precise tolerances",
           technologies: ["Laser Guidance", "Atomic Positioning", "Quantum Sensors"],
           results: [
-            "Sub-micron positioning accuracy",
-            "Atomic-level component placement",
+            "Microscopic positioning accuracy",
+            "Precision component placement",
             "Zero-defect micro-assembly"
           ],
           status: "Production Ready"
@@ -663,11 +663,11 @@ const AssemblyInnovation = () => {
                             <div className="text-2xl font-bold text-purple-400">
                               {activeTimelineItem.year}
                             </div>
-                            <div className="text-sm text-gray-300">Launch Year</div>
+                            <div className="text-sm text-gray-200">Launch Year</div>
                           </div>
                           <div className="p-4 bg-white/10 backdrop-blur-sm rounded-lg">
                             <div className="text-2xl font-bold text-green-400">Active</div>
-                            <div className="text-sm text-gray-300">Status</div>
+                            <div className="text-sm text-gray-200">Status</div>
                           </div>
                         </div>
 

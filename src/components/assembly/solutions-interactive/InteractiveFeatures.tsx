@@ -78,7 +78,7 @@ const InteractiveFeatures: React.FC<InteractiveFeaturesProps> = ({
                 <h4 className="text-xl font-bold mb-2">
                   {content.interactiveFeatures.features[activeFeature].title}
                 </h4>
-                <p className="text-gray-300 text-sm">
+                <p className="text-gray-200 text-sm">
                   {content.interactiveFeatures.features[activeFeature].description}
                 </p>
               </div>

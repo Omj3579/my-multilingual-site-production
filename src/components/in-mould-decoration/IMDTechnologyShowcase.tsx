@@ -299,7 +299,7 @@ const IMDTechnologyShowcase = () => {
                   </div>
                   <h4 className="text-white text-lg font-medium mb-1">{spec.title}</h4>
                   <div className="text-amber-400 text-xl font-bold mb-3">{spec.value}</div>
-                  <p className="text-gray-300 text-sm">{spec.desc}</p>
+                  <p className="text-gray-200 text-sm">{spec.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -374,8 +374,8 @@ const IMDTechnologyShowcase = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
           >
             <motion.a
-              href={language === 'en' ? '/en/contact' : '/hu/kapcsolat'}
-              className="inline-flex items-center gap-2 bg-[#fbbf24] hover:bg-amber-500 text-[#212a1d] py-3 px-6 rounded-lg font-medium transition-all"
+              href={language === 'en' ? '/contact' : '/contact'}
+              className="inline-flex items-center gap-2 bg-[#fbbf24] hover:bg-amber-500 text-[#212a1d] py-3 px-6 rounded-lg font-medium transition-all no-underline"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

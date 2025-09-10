@@ -515,7 +515,7 @@ const ToolingManagementSection = () => {
           transition={{ duration: 0.7, delay: 0.5 }}
           className="mt-20 text-center"
         >
-          <h3 className="text-2xl md:text-3xl font-bold mb-6">
+          <h3 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">
             {language === 'en' ? (
               <>Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-500">optimize</span> your tooling performance?</>
             ) : (
@@ -524,8 +524,8 @@ const ToolingManagementSection = () => {
           </h3>
           
           <a 
-            href={language === 'en' ? '/contact' : '/kapcsolat'} 
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white text-lg rounded-full transition-colors shadow-md hover:shadow-lg font-medium"
+            href={language === 'en' ? '/contact' : '/contact'} 
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white text-lg rounded-full transition-colors shadow-md hover:shadow-lg font-medium no-underline"
           >
             {language === 'en' ? 'Contact Our Tooling Experts' : 'Kapcsolatfelvétel Szerszámszakértőinkkel'}
             <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

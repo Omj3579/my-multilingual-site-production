@@ -28,7 +28,7 @@ const WhyPartnerSection = () => {
         icon: <Award className="h-8 w-8" />,
         color: '#4361ee',
         bgGradient: 'from-blue-500/10 via-indigo-500/5 to-blue-500/10',
-        stats: '99.8% precision rate',
+        stats: 'Superior precision standards',
         highlight: 'ISO 9001:2015 certified'
       },
       {
@@ -239,11 +239,11 @@ const WhyPartnerSection = () => {
                   {/* Stats/Highlights */}
                   <div className="mt-auto">
                     <div className="flex items-center mt-4 text-gray-800">
-                      <CheckCircle2 size={16} className="mr-2 text-gray-400" />
+                      <CheckCircle2 size={16} className="mr-2 text-green-600" />
                       <span className="text-sm font-medium">{partner.stats}</span>
                     </div>
                     <div className="flex items-center mt-2 text-gray-800">
-                      <CheckCircle2 size={16} className="mr-2 text-gray-400" />
+                      <CheckCircle2 size={16} className="mr-2 text-green-600" />
                       <span className="text-sm font-medium">{partner.highlight}</span>
                     </div>
                   </div>
@@ -295,7 +295,7 @@ const WhyPartnerSection = () => {
           transition={{ duration: 0.7, delay: 0.6 }}
         >
           <a 
-            href="/about"
+            href="/company"
             className="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-md hover:from-blue-700 hover:to-indigo-700 transition-all duration-300"
           >
             <span className="absolute left-0 flex items-center justify-start w-10 h-10 duration-300 transform -translate-x-full group-hover:translate-x-0 ease">

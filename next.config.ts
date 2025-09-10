@@ -61,7 +61,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/capabilities/plastic-injection',
-        destination: '/capabilities/plastic-injection-moulding',
+        destination: '/services/plastic-injection-moulding',
         permanent: false,
       },
     ];

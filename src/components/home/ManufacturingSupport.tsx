@@ -305,33 +305,23 @@ const ManufacturingSupport = () => {
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
           transition={{ duration: 0.7, delay: 1 }}
         >
-          <a 
+          <motion.a 
             href="/services"
-            className="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden font-medium transition-all bg-[#00156A] text-white rounded-lg hover:bg-[#001d8a]"
+            className="group relative inline-flex items-center justify-center px-8 py-4 font-medium bg-[#00156A] text-white rounded-lg hover:bg-[#001d8a] focus:outline-none focus:ring-2 focus:ring-[#00156A] focus:ring-opacity-50 transition-all duration-300 no-underline"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
-            <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
-              <ChevronRight />
-            </span>
-            <span className="group-hover:pr-6 transition-all duration-300 ease">
+            {/* Button text */}
+            <span className="group-hover:mr-2 transition-all duration-300">
               {language === 'en' ? 'Explore Our Complete Services' : 'Fedezze fel szolgáltatásainkat'}
             </span>
             
-            {/* Button shine effect */}
-            <span className="absolute inset-0 w-full h-full overflow-hidden opacity-0 group-hover:opacity-100">
-              <motion.span 
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                animate={{
-                  left: ["-100%", "100%"],
-                  opacity: [0, 0.4, 0]
-                }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  repeatDelay: 2
-                }}
-              />
-            </span>
-          </a>
+            {/* Arrow icon */}
+            <ChevronRight 
+              size={18} 
+              className="ml-0 group-hover:ml-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0" 
+            />
+          </motion.a>
         </motion.div>
       </motion.div>
     </section>

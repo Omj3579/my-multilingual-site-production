@@ -23,6 +23,23 @@ const CategoryHeroSection: React.FC<CategoryHeroSectionProps> = ({
   const [isMounted, setIsMounted] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
+  // Catalog mapping function
+  const getCatalogPath = (categoryId: string): string => {
+    // Map category IDs to catalog file names in public/products/catalogs
+    const catalogMapping: Record<string, string> = {
+      'active': 'active.pdf',
+      'garden': 'garden.pdf', 
+      'home': 'Home.pdf',
+      'kids': 'kids.pdf',
+      'kitchen': 'kitchen.pdf',
+      'pallets': 'pallets.pdf'
+    };
+
+    const catalogFile = catalogMapping[categoryId];
+    // For debugging - always return a path if no specific mapping, use general catalog
+    return catalogFile ? `/products/catalogs/${catalogFile}` : '/products/catalogs/Categories.pdf';
+  };
+
   // Framer Motion values
   const { scrollYProgress } = useScroll();
   const mouseX = useMotionValue(0);
@@ -285,14 +302,18 @@ const CategoryHeroSection: React.FC<CategoryHeroSectionProps> = ({
                 </div>
               </div>
               {/* Download Catalog button */}
-              <motion.button
-                className="px-8 py-4 bg-white/20 backdrop-blur-lg text-white rounded-xl font-semibold border border-white/30 hover:bg-white/30 transition-all"
+              <motion.a
+                href={getCatalogPath(categoryId)}
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-white/20 backdrop-blur-lg text-white rounded-xl font-semibold border border-white/30 hover:bg-white/30 transition-all no-underline inline-block"
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 style={{ transform: calcTransform(0.1) }}
               >
                 {language === 'en' ? 'Download Catalog' : 'Katalógus Letöltése'}
-              </motion.button>
+              </motion.a>
             </motion.div>
           </div>
         </div>

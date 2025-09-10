@@ -265,7 +265,7 @@ const FeaturedProductsSection: React.FC<FeaturedProductsSectionProps> = ({
                                       <Star
                                         key={i}
                                         className={`w-4 h-4 ${
-                                          i < product.rating! ? 'text-yellow-400 fill-current' : 'text-gray-300'
+                                          i < product.rating! ? 'text-yellow-400 fill-current' : 'text-gray-400'
                                         }`}
                                       />
                                     ))}

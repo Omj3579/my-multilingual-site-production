@@ -160,8 +160,8 @@ export const InjectionMoulding = () => {
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
                 <motion.a 
-                  href={language === 'en' ? '/en/contact' : '/hu/kapcsolat'} 
-                  className="inline-flex items-center gap-2 py-3 px-6 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium rounded-lg overflow-hidden relative group shadow-lg"
+                  href={language === 'en' ? '/contact' : '/contact'}
+                  className="inline-flex items-center gap-2 py-3 px-6 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium rounded-lg overflow-hidden relative group shadow-lg no-underline"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
                 >

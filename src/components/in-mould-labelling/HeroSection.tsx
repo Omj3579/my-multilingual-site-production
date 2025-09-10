@@ -125,7 +125,7 @@ const HeroSection = () => {
               
               {/* Modern description */}
               <motion.p
-                className="text-xl text-gray-300 leading-relaxed max-w-lg"
+                className="text-xl text-gray-200 leading-relaxed max-w-lg"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 30 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
@@ -142,8 +142,9 @@ const HeroSection = () => {
                 animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
                 transition={{ duration: 0.6, delay: 0.9 }}
               >
-                <motion.button
-                  className="group relative bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-4 rounded-xl font-semibold overflow-hidden"
+                <motion.a
+                  href={language === 'en' ? '/services' : '/services'}
+                  className="group relative bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-4 rounded-xl font-semibold overflow-hidden no-underline text-white"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -158,19 +159,20 @@ const HeroSection = () => {
                   <span className="relative z-10">
                     {language === 'en' ? 'Explore Technology' : 'Technológia felfedezése'}
                   </span>
-                </motion.button>
+                </motion.a>
                 
-                <motion.div 
-                  className="flex items-center gap-2 text-cyan-300 cursor-pointer group"
+                <motion.a 
+                  href={language === 'en' ? '/contact' : '/contact'}
+                  className="flex items-center gap-2 text-cyan-300 cursor-pointer group no-underline"
                   whileHover={{ x: 5 }}
                 >
                   <span className="text-sm font-medium">
-                    {language === 'en' ? 'Watch Process' : 'Folyamat megtekintése'}
+                    {language === 'en' ? 'Get Quote' : 'Árajánlat kérése'}
                   </span>
                   <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </motion.div>
+                </motion.a>
               </motion.div>
             </motion.div>
             
@@ -219,7 +221,7 @@ const HeroSection = () => {
                         <h4 className="text-white font-semibold mb-2 group-hover:text-cyan-300 transition-colors">
                           {point.title}
                         </h4>
-                        <p className="text-gray-400 text-sm leading-relaxed">
+                        <p className="text-gray-200 text-sm leading-relaxed">
                           {point.desc}
                         </p>
                       </div>
@@ -243,21 +245,23 @@ const HeroSection = () => {
                 >
                   <div className="text-center">
                     <div className="text-2xl font-bold text-cyan-300">99.8%</div>
-                    <div className="text-xs text-gray-400 uppercase tracking-wider">
+                    <div className="text-xs text-gray-200 uppercase tracking-wider">
                       {language === 'en' ? 'Precision' : 'Pontosság'}
                     </div>
                   </div>
                   <div className="w-px h-8 bg-white/10" />
                   <div className="text-center">
                     <div className="text-2xl font-bold text-blue-300">24/7</div>
-                    <div className="text-xs text-gray-400 uppercase tracking-wider">
+                    <div className="text-xs text-gray-200 uppercase tracking-wider">
                       {language === 'en' ? 'Production' : 'Gyártás'}
                     </div>
                   </div>
                   <div className="w-px h-8 bg-white/10" />
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-300">±0.01mm</div>
-                    <div className="text-xs text-gray-400 uppercase tracking-wider">
+                    <div className="text-2xl font-bold text-purple-300">
+                      {language === 'en' ? 'Ultra-Fine' : 'Ultra-Finom'}
+                    </div>
+                    <div className="text-xs text-gray-200 uppercase tracking-wider">
                       {language === 'en' ? 'Tolerance' : 'Tűrés'}
                     </div>
                   </div>

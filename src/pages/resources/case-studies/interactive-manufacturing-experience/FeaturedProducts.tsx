@@ -62,7 +62,7 @@ const FeaturedProducts = () => {
       },
       features: [
         { en: "Chemical resistance", hu: "Vegyszerállóság" },
-        { en: "Micro-precision tolerances", hu: "Mikro-precíziós tűrések" },
+        { en: "Advanced precision standards", hu: "Fejlett precíziós szabványok" },
         { en: "Optimized flow dynamics", hu: "Optimalizált áramlási dinamika" }
       ],
       imagePath: "/resources/caseStudies/Picture4.png",

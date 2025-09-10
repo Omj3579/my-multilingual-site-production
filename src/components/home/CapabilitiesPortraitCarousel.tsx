@@ -30,6 +30,7 @@ const images = {
       src: '/capabilities/contract-manufacturing.webp',
       title: 'Manufacturing Partnerships',
       description: 'Exceptional precision in custom manufacturing solutions',
+      link: '/services/contract-manufacturing',
       features: [
         'Tailored production strategies',
         'Comprehensive quality assurance',
@@ -40,6 +41,7 @@ const images = {
       src: '/capabilities/injection-molding-excellence.webp',
       title: 'Advanced Injection Molding',
       description: 'Cutting-edge technology and specialized expertise',
+      link: '/services/plastic-injection-moulding',
       features: [
         'Innovative molding processes',
         'Diverse material applications',
@@ -50,6 +52,7 @@ const images = {
       src: '/capabilities/sustainability-commitment.webp',
       title: 'Environmental Responsibility',
       description: 'Pioneering eco-conscious manufacturing practices',
+      link: '/sustainability',
       features: [
         'Sustainable material solutions',
         'Resource-efficient operations',
@@ -62,6 +65,7 @@ const images = {
       src: '/capabilities/contract-manufacturing.webp',
       title: 'Gyártási Partnerség',
       description: 'Kivételes pontosság egyedi gyártási megoldásokban',
+      link: '/services/contract-manufacturing',
       features: [
         'Testreszabott termelési stratégiák',
         'Átfogó minőségbiztosítás',
@@ -72,6 +76,7 @@ const images = {
       src: '/capabilities/injection-molding-excellence.webp',
       title: 'Fejlett Fröccsöntés',
       description: 'Élvonalbeli technológia és szakosodott szakértelem',
+      link: '/services/plastic-injection-moulding',
       features: [
         'Innovatív öntési folyamatok',
         'Sokféle anyagalkalmazás',
@@ -82,6 +87,7 @@ const images = {
       src: '/capabilities/sustainability-commitment.webp',
       title: 'Környezeti Felelősség',
       description: 'Úttörő környezettudatos gyártási gyakorlatok',
+      link: '/sustainability',
       features: [
         'Fenntartható anyagmegoldások',
         'Erőforrás-hatékony működés',
@@ -309,7 +315,7 @@ const CapabilitiesPortraitCarousel = () => {
                                 />
                               ))}
                             </div>
-                            <span className="text-gray-400 text-sm ml-2">0{index + 1}/0{images[language].length}</span>
+                            <span className="text-gray-600 text-sm ml-2">0{index + 1}/0{images[language].length}</span>
                           </div>
                           
                           <motion.h2 
@@ -383,8 +389,9 @@ const CapabilitiesPortraitCarousel = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.6 }}
                           >
-                            <motion.button 
-                              className="group relative px-6 py-3 overflow-hidden rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg transition-all duration-300"
+                            <motion.a
+                              href={slide.link}
+                              className="group relative inline-block px-6 py-3 overflow-hidden rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg transition-all duration-300 no-underline"
                               whileHover={{ scale: 1.05 }}
                               whileTap={{ scale: 0.98 }}
                             >
@@ -409,7 +416,7 @@ const CapabilitiesPortraitCarousel = () => {
                               <span className="block relative z-10">
                                 {language === 'en' ? 'Explore in Detail' : 'Részletes felfedezés'}
                               </span>
-                            </motion.button>
+                            </motion.a>
                           </motion.div>
                         </motion.div>
                       </AnimatePresence>

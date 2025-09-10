@@ -119,7 +119,7 @@ const CommitmentCallout = () => {
               transition={{ duration: 0.5, delay: 1 }}
               className="mt-10 text-right"
             >
-              <p className="text-gray-400 font-medium italic">
+              <p className="text-gray-200 font-medium italic">
                 — Flair-Plastic {language === 'en' ? 'Tooling Management Team' : 'Szerszámkezelési Csapat'}
               </p>
             </motion.div>
@@ -133,8 +133,8 @@ const CommitmentCallout = () => {
             className="flex justify-center mt-12"
           >
             <a 
-              href={language === 'en' ? '/contact' : '/kapcsolat'}
-              className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-4 rounded-full shadow-lg shadow-amber-900/20 font-medium text-lg transition-all duration-300 hover:shadow-xl hover:shadow-amber-900/30 hover:-translate-y-1"
+              href={language === 'en' ? '/contact' : '/contact'}
+              className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-4 rounded-full shadow-lg shadow-amber-900/20 font-medium text-lg transition-all duration-300 hover:shadow-xl hover:shadow-amber-900/30 hover:-translate-y-1 no-underline"
             >
               {language === 'en' ? 'Speak With Our Tooling Experts' : 'Beszéljen Szerszámszakértőinkkel'}
             </a>

@@ -290,7 +290,7 @@ const CommitmentCallout = () => {
                       </div>
                       <div>
                         <h4 className="text-lg font-semibold text-white mb-2">{benefit.title}</h4>
-                        <p className="text-gray-300 text-sm leading-relaxed">{benefit.description}</p>
+                        <p className="text-gray-200 text-sm leading-relaxed">{benefit.description}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -305,8 +305,8 @@ const CommitmentCallout = () => {
                 className="mt-12 text-center"
               >
                 <a 
-                  href={language === 'en' ? "/contact" : "/kapcsolat"} 
-                  className="inline-flex items-center gap-2 py-3 px-8 rounded-full bg-amber-500 hover:bg-amber-600 text-white font-medium transition-colors duration-300 shadow-lg hover:shadow-xl"
+                  href={language === 'en' ? "/contact" : "/contact"} 
+                  className="inline-flex items-center gap-2 py-3 px-8 rounded-full bg-amber-500 hover:bg-amber-600 text-white font-medium transition-colors duration-300 shadow-lg hover:shadow-xl no-underline"
                 >
                   {language === 'en' ? 'Discuss Your Project' : 'Beszéljünk projektjéről'}
                   <ArrowRight className="w-5 h-5" />

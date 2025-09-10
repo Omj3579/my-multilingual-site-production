@@ -9,26 +9,29 @@ interface SocialIconProps {
   delay?: number;
 }
 
-const SocialIcon: React.FC<SocialIconProps> = ({ href, icon, label, delay = 0 }) => (
-  <motion.a
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label={label}
-    initial={{ opacity: 0, scale: 0.8 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    whileHover={{ y: -5, scale: 1.1 }}
-    whileTap={{ scale: 0.95 }}
-    transition={{ 
-      duration: 0.3, 
-      delay,
-      type: "spring",
-      stiffness: 400,
-      damping: 10
-    }}
-    viewport={{ once: true }}
-    className="relative group w-8 h-8 rounded-full bg-gradient-to-br from-blue-600/90 to-blue-800/90 flex items-center justify-center shadow-lg backdrop-blur-sm hover:shadow-blue-600/30 transition-all duration-300 overflow-hidden border border-white/10"
-  >
+const SocialIcon: React.FC<SocialIconProps> = ({ href, icon, label, delay = 0 }) => {
+  const isExternal = href.startsWith('http');
+  
+  return (
+    <motion.a
+      href={href}
+      target={isExternal ? "_blank" : "_self"}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+      aria-label={label}
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      whileHover={{ y: -5, scale: 1.1 }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ 
+        duration: 0.3, 
+        delay,
+        type: "spring",
+        stiffness: 400,
+        damping: 10
+      }}
+      viewport={{ once: true }}
+      className="relative group w-8 h-8 rounded-full bg-gradient-to-br from-blue-600/90 to-blue-800/90 flex items-center justify-center shadow-lg backdrop-blur-sm hover:shadow-blue-600/30 transition-all duration-300 overflow-hidden border border-white/10"
+    >
     {/* Animated premium glass effect background */}
     <motion.div
       className="absolute inset-0 bg-gradient-to-br from-blue-500/90 to-blue-700/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -62,7 +65,8 @@ const SocialIcon: React.FC<SocialIconProps> = ({ href, icon, label, delay = 0 })
     {/* Glass highlight effect */}
     <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/20 to-transparent rounded-t-full"></div>
   </motion.a>
-);
+  );
+};
 
 interface SocialIconsProps {
   className?: string;
@@ -70,27 +74,27 @@ interface SocialIconsProps {
 
 const SocialIcons: React.FC<SocialIconsProps> = ({ className = "" }) => {  const socialLinks = [
     {
-      href: "https://linkedin.com/company/flair-plastic",
+      href: "https://www.linkedin.com/company/flairplastic",
       icon: <Linkedin className="w-3.5 h-3.5" />,
       label: "LinkedIn"
     },
     {
-      href: "https://facebook.com/flairplastic",
+      href: "/",
       icon: <Facebook className="w-3.5 h-3.5" />,
       label: "Facebook"
     },
     {
-      href: "https://instagram.com/flairplastic",
+      href: "/",
       icon: <Instagram className="w-3.5 h-3.5" />,
       label: "Instagram"
     },
     {
-      href: "https://twitter.com/flairplastic",
+      href: "/",
       icon: <Twitter className="w-3.5 h-3.5" />,
       label: "Twitter"
     },
     {
-      href: "https://youtube.com/flairplastic",
+      href: "https://www.youtube.com/@FlairPlastic",
       icon: <Youtube className="w-3.5 h-3.5" />,
       label: "YouTube"
     }

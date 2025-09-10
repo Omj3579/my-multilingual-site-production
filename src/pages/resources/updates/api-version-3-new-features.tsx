@@ -266,12 +266,12 @@ const ApiVersion3NewFeatures = () => {
                     </p>
                   </div>
                   <Link
-                    href="/api/docs"
+                    href="/contact"
                     className="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors"
                   >
-                    {language === 'hu' ? 'Dokumentáció megtekintése' : 
-                     language === 'de' ? 'Dokumentation anzeigen' : 
-                     'View Documentation'}
+                    {language === 'hu' ? 'Kapcsolatfelvétel' : 
+                     language === 'de' ? 'Kontakt aufnehmen' : 
+                     'Contact Us'}
                   </Link>
                 </div>
               </div>

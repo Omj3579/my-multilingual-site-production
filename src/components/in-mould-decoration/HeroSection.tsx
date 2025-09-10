@@ -349,7 +349,7 @@ const HeroSection = () => {
                       {point.id}
                     </div>
                     <div>
-                      <h4 className="font-semibold text-lg mb-2">{point.title}</h4>
+                      <h4 className="font-semibold text-lg mb-2 text-gray-900">{point.title}</h4>
                       <p className="text-slate-600">{point.desc}</p>
                     </div>
                   </div>

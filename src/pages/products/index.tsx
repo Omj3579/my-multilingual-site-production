@@ -137,9 +137,12 @@ const Products: React.FC<ProductsPageProps> = ({ categories, productsPageContent
                     ? 'Our expert team specializes in creating tailored manufacturing solutions for your unique requirements.'
                     : 'Szakértő csapatunk egyedi gyártási megoldások létrehozására specializálódott az Ön egyedi igényeihez.'}
                 </p>
-                <button className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                <a
+                  href={language === 'en' ? '/contact' : '/contact'}
+                  className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 no-underline inline-block"
+                >
                   {language === 'en' ? 'Contact Our Experts' : 'Kapcsolatfelvétel Szakértőinkkel'}
-                </button>
+                </a>
               </div>
             </div>
           </div>

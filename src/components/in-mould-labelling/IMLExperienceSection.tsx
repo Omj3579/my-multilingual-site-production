@@ -68,12 +68,12 @@ export const IMLExperienceSection = () => {
   // Statistics data
   const stats = language === 'en' ? [
     { value: "50M+", label: "IML products annually" },
-    { value: "99.8%", label: "Quality accuracy" },
-    { value: "0.01mm", label: "Precision tolerance" }
+    { value: "Superior", label: "Quality accuracy" },
+    { value: "Exceptional", label: "Precision standard" }
   ] : [
     { value: "50M+", label: "IML termék évente" },
-    { value: "99.8%", label: "Minőségi pontosság" },
-    { value: "0.01mm", label: "Precíziós tűrés" }
+    { value: "Kiváló", label: "Minőségi pontosság" },
+    { value: "Kivételes", label: "Precíziós szabvány" }
   ];
 
   return (
@@ -135,7 +135,7 @@ export const IMLExperienceSection = () => {
             {language === 'en' ? (
               <>
                 <span className="text-[#222]">Elevating</span>{" "}
-                Product Design{" "}
+                <span className="text-[#222]">Product Design</span>{" "}
                 <span className="text-[#222] relative">
                   Through In–Mold Labeling
                   <motion.div 
@@ -149,7 +149,7 @@ export const IMLExperienceSection = () => {
             ) : (
               <>
                 <span className="text-[#222]">Termékek</span>{" "}
-                tervezésének{" "}
+                <span className="text-[#222]">tervezésének</span>{" "}
                 <span className="text-[#222] relative">
                   fejlesztése szerszámon belüli címkézéssel
                   <motion.div 
@@ -471,12 +471,12 @@ export const IMLExperienceSection = () => {
                   : "IML technológiánk kombinálja a művészetet és a tudományt, hogy olyan termékeket hozzon létre, amelyek kitűnnek a polcokon és felülmúlják az elvárásokat."}
               </p>
               <motion.a
-                href={language === 'en' ? '/en/portfolio' : '/hu/portfolio'}
-                className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white px-6 py-3 rounded-lg font-medium"
+                href={language === 'en' ? '/products' : '/products'}
+                className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white px-6 py-3 rounded-lg font-medium no-underline"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
               >
-                {language === 'en' ? 'View our portfolio' : 'Portfólió megtekintése'}
+                {language === 'en' ? 'View our products' : 'Termékek megtekintése'}
                 <ArrowRight className="w-4 h-4" />
               </motion.a>
             </motion.div>

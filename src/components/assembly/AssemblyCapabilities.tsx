@@ -69,8 +69,8 @@ const AssemblyCapabilities = () => {
             "Cosmetic Grade Finishing"
           ],
           metrics: {
-            tolerance: "±0.1mm",
-            accuracy: "99.8%",
+            tolerance: "Ultra-precise",
+            accuracy: "Industry-leading",
             resolution: "Food-grade quality"
           }
         },
@@ -511,7 +511,7 @@ const AssemblyCapabilities = () => {
                           <div className="flex-1">
                             <div className="flex items-center justify-between mb-1">
                               <span className="font-medium">{step.title}</span>
-                              <span className="text-sm text-gray-400">{step.duration}%</span>
+                              <span className="text-sm text-gray-200">{step.duration}%</span>
                             </div>
                             <div className="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
                               <motion.div
@@ -541,7 +541,7 @@ const AssemblyCapabilities = () => {
                         </span>
                       </div>
                       <div className="text-right">
-                        <div className="text-sm text-gray-400">
+                        <div className="text-sm text-gray-200">
                           {language === 'en' ? 'Efficiency' : 'Hatékonyság'}
                         </div>
                         <div className="text-lg font-bold text-green-400">98.7%</div>

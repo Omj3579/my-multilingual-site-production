@@ -239,8 +239,8 @@ const SustainabilityPathwaySection = () => {
               
               <div className="flex-shrink-0">
                 <a 
-                  href="/contact" 
-                  className="group inline-flex items-center gap-2 bg-white text-green-700 hover:bg-green-50 px-6 py-3 rounded-full font-medium transition shadow-md hover:shadow-lg"
+                  href={language === 'en' ? '/contact' : '/contact'} 
+                  className="group inline-flex items-center gap-2 bg-white text-green-700 hover:bg-green-50 px-6 py-3 rounded-full font-medium transition shadow-md hover:shadow-lg no-underline"
                 >
                   <span>
                     {language === 'en' ? 'Contact Our Green Team' : 'Kapcsolat a Zöld Csapatunkkal'}

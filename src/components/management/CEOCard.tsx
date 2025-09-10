@@ -267,8 +267,8 @@ const CEOCard = () => {
                   {['linkedin', 'email', 'twitter'].map((social) => (
                     <motion.a 
                       key={social}
-                      href="#"
-                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#FFAB77]/10 hover:text-[#e57b48] transition-all duration-300"
+                      href={language === 'en' ? '/contact' : '/contact'}
+                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#FFAB77]/10 hover:text-[#e57b48] transition-all duration-300 no-underline"
                       whileHover={{ y: -2 }}
                       whileTap={{ scale: 0.95 }}
                     >

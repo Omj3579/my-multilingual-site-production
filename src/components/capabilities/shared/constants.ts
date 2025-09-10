@@ -19,7 +19,7 @@ export const injectionMoldingFeatures: {
     {
       title: "Precision Engineering",
       icon: "⚙️",
-      description: "Ultra-tight tolerances and consistency across high-volume production runs with detailed quality control."
+      description: "Exceptional precision standards and consistency across high-volume production runs with detailed quality control."
     },
     {
       title: "Material Innovation",
@@ -149,7 +149,7 @@ export const relatedCapabilities = [
       hu: 'Fejlett műanyag fröccsöntési megoldások precíziós gyártáshoz'
     },
     path: '/capabilities/plastic-injection',
-    image: 'https://flair-plastic.hu/wp-content/uploads/2024/04/DJI_0999.00_10_30_08.Still030-300x169.jpg.webp'
+    image: '/capabilities/injection-molding-excellence.webp'
   },
   {
     title: { en: 'In-Mould Labelling', hu: 'Címkézés Fröccsöntés Közben' },
@@ -158,7 +158,7 @@ export const relatedCapabilities = [
       hu: 'Címkék zökkenőmentes integrálása a fröccsöntési folyamat során'
     },
     path: '/capabilities/in-mould-labelling',
-    image: 'https://flair-plastic.hu/wp-content/uploads/2024/05/machine-performing-in-mould-decoration-on-white-plastic-parts-showcasing-the-process-of-1.png.webp'
+    image: '/creatives/webp_images/machine-performing-in-mould-decoration-on-white-plastic-parts-showcasing-the-process-of-1.webp'
   },
   {
     title: { en: 'In-Mould Decoration', hu: 'Dekoráció Fröccsöntés Közben' },
@@ -167,7 +167,7 @@ export const relatedCapabilities = [
       hu: 'Kiváló minőségű dekoratív felületek alkalmazása fröccsöntés közben'
     },
     path: '/capabilities/in-mould-decoration',
-    image: 'https://flair-plastic.hu/wp-content/uploads/2024/05/machine-performing-in-mould-decoration-on-white-plastic-parts-showcasing-the-process-of-1.png.webp'
+    image: '/creatives/webp_images/ImgCreator.ai-Image-displays-the-before-after-of-in-mould-decoration-in-plastic-manufacturing.-On-the1-left-a-cl.webp'
   },
   {
     title: { en: 'Injection Blow', hu: 'Fröccsöntött Fújás' },
@@ -176,7 +176,7 @@ export const relatedCapabilities = [
       hu: 'Kombinált fröccsöntés és fúvás üreges műanyag termékekhez'
     },
     path: '/capabilities/injection-blow',
-    image: 'https://flair-plastic.hu/wp-content/uploads/2024/05/machine-performing-in-mould-decoration-on-white-plastic-parts-showcasing-the-process-of-1.png.webp'
+    image: '/creatives/webp_images/Image-of-a-busy-injection-molding-tools-warehouse-in-a-manufacturing-company.-Workers-are-engaged-i.webp'
   },
   {
     title: { en: 'Surface Finishing', hu: 'Felületkezelés' },
@@ -185,7 +185,7 @@ export const relatedCapabilities = [
       hu: 'Szakértői felületkezelési és -kikészítési megoldások'
     },
     path: '/capabilities/surface-finishing',
-    image: 'https://flair-plastic.hu/wp-content/uploads/2024/05/machine-performing-in-mould-decoration-on-white-plastic-parts-showcasing-the-process-of-1.png.webp'
+    image: '/creatives/webp_images/Surface_finishing.webp'
   }
 ];
 

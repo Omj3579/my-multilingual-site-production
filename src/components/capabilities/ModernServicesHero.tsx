@@ -150,22 +150,24 @@ const ModernServicesHero = () => {
               transition={{ duration: 0.8, delay: 0.7 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <motion.button
+              <motion.a
+                href={language === 'en' ? '/services' : '/services'}
                 whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(59, 130, 246, 0.4)" }}
                 whileTap={{ scale: 0.95 }}
-                className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-2xl font-semibold flex items-center gap-3 transition-all duration-300"
+                className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-2xl font-semibold flex items-center gap-3 transition-all duration-300 no-underline"
               >
                 {language === 'en' ? 'Explore Services' : 'Szolgáltatások felfedezése'}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
+              </motion.a>
               
-              <motion.button
+              <motion.a
+                href={language === 'en' ? '/contact' : '/contact'}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-white/20 text-white px-8 py-4 rounded-2xl font-semibold backdrop-blur-sm hover:bg-white/10 transition-all duration-300"
+                className="border-2 border-white/20 text-white px-8 py-4 rounded-2xl font-semibold backdrop-blur-sm hover:bg-white/10 transition-all duration-300 no-underline flex items-center justify-center"
               >
-                {language === 'en' ? 'Learn More' : 'Tudj meg többet'}
-              </motion.button>
+                {language === 'en' ? 'Get Quote' : 'Árajánlat kérése'}
+              </motion.a>
             </motion.div>
           </motion.div>
 

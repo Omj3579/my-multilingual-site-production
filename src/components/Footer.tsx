@@ -501,7 +501,7 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
               </button>
               
               <Link 
-                href="/policies/cookies" 
+                href="/policies/cookiepolicy" 
                 className="text-sm text-gray-500 hover:text-blue-700 transition-colors group relative"
                 aria-label={language === 'en' ? 'Cookies Policy' : 'Cookie Szabályzat'}
               >
@@ -513,7 +513,7 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
               </Link>
               
               <Link 
-                href="/policies/privacy" 
+                href="/policies/privacypolicy" 
                 className="text-sm text-gray-500 hover:text-blue-700 transition-colors group relative"
                 aria-label={language === 'en' ? 'Privacy Policy' : 'Adatvédelmi Szabályzat'}
               >
@@ -525,7 +525,7 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
               </Link>
               
               <Link 
-                href="/policies/terms" 
+                href="/policies/termsconditions" 
                 className="text-sm text-gray-500 hover:text-blue-700 transition-colors group relative"
                 aria-label={language === 'en' ? 'Terms of Service' : 'Felhasználási Feltételek'}
               >

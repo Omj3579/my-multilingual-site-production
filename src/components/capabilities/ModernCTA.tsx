@@ -88,33 +88,36 @@ const ModernCTA = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
-            <motion.button
+            <motion.a
+              href={language === 'en' ? '/contact' : '/contact'}
               whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(251, 191, 36, 0.4)" }}
               whileTap={{ scale: 0.95 }}
-              className="group bg-gradient-to-r from-yellow-400 to-orange-500 text-green-900 px-8 py-4 rounded-2xl font-bold flex items-center gap-3 transition-all duration-300 shadow-lg"
+              className="group bg-gradient-to-r from-yellow-400 to-orange-500 text-green-900 px-8 py-4 rounded-2xl font-bold flex items-center gap-3 transition-all duration-300 shadow-lg no-underline"
             >
               <MessageCircle className="w-5 h-5" />
               {language === 'en' ? 'Contact Us' : 'Kapcsolat'}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+            </motion.a>
             
-            <motion.button
+            <motion.a
+              href={language === 'en' ? '/contact' : '/contact'}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group border-2 border-white/30 text-white px-8 py-4 rounded-2xl font-semibold backdrop-blur-sm hover:bg-white/10 transition-all duration-300 flex items-center gap-3"
+              className="group border-2 border-white/30 text-white px-8 py-4 rounded-2xl font-semibold backdrop-blur-sm hover:bg-white/10 transition-all duration-300 flex items-center gap-3 no-underline"
             >
               <Calendar className="w-5 h-5" />
               {language === 'en' ? 'Schedule Consultation' : 'Konzultáció időpontja'}
-            </motion.button>
+            </motion.a>
             
-            <motion.button
+            <motion.a
+              href={language === 'en' ? '/resources' : '/resources'}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group border-2 border-white/30 text-white px-8 py-4 rounded-2xl font-semibold backdrop-blur-sm hover:bg-white/10 transition-all duration-300 flex items-center gap-3"
+              className="group border-2 border-white/30 text-white px-8 py-4 rounded-2xl font-semibold backdrop-blur-sm hover:bg-white/10 transition-all duration-300 flex items-center gap-3 no-underline"
             >
               <Download className="w-5 h-5" />
               {language === 'en' ? 'Download Brochure' : 'Brosúra letöltése'}
-            </motion.button>
+            </motion.a>
           </motion.div>
 
           {/* Contact info cards */}

@@ -60,15 +60,15 @@ const HeroSection = () => {
             <div className="flex items-center gap-4">
               <a
                 href="#learn-more"
-                className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-3 rounded-full font-medium transition-all shadow-md hover:shadow-lg inline-flex items-center group"
+                className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-3 rounded-full font-medium transition-all shadow-md hover:shadow-lg inline-flex items-center group no-underline"
               >
                 {language === 'en' ? 'Learn More' : 'Tudj Meg Többet'}
                 <ChevronDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
               </a>
               
               <a
-                href="/contact"
-                className="border border-amber-200 hover:bg-amber-50 text-amber-700 px-8 py-3 rounded-full font-medium transition-all"
+                href={language === 'en' ? '/contact' : '/contact'}
+                className="border border-amber-200 hover:bg-amber-50 text-amber-700 px-8 py-3 rounded-full font-medium transition-all no-underline"
               >
                 {language === 'en' ? 'Contact Us' : 'Kapcsolat'}
               </a>

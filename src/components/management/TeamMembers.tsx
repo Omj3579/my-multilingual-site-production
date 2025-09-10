@@ -710,20 +710,7 @@ const TeamMembers = () => {
           ))}
         </div>
       </div>
-      
-      {/* Bottom information */}
-      <motion.div
-        className="mt-32 text-center text-gray-500 text-sm"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.7 }}
-        transition={{ duration: 1, delay: 1.5 }}
-      >
-        <p>
-          {language === 'en' 
-            ? 'Click on team members or department filters to explore our organizational structure.' 
-            : 'Kattintson a csapattagokra vagy a részlegszűrőkre a szervezeti struktúránk felfedezéséhez.'}
-        </p>
-      </motion.div>
+
     </section>
   );
 };

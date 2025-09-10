@@ -30,7 +30,8 @@ const slides = [
       en: 'Implementing comprehensive renewable energy infrastructure through strategic partnerships with leading sustainable energy providers. Our systematic approach to carbon-neutral manufacturing represents a fundamental transformation in operational excellence and environmental stewardship.',
       hu: 'Átfogó megújuló energia infrastruktúra megvalósítása stratégiai partnerségeken keresztül vezető fenntartható energia szolgáltatókkal. Szisztematikus megközelítésünk a szén-semleges gyártáshoz alapvető átalakulást képvisel a működési kiválóságban és környezeti felelősségvállalásban.',
       de: 'Implementierung einer umfassenden erneuerbaren Energieinfrastruktur durch strategische Partnerschaften mit führenden nachhaltigen Energieanbietern. Unser systematischer Ansatz zur kohlenstoffneutralen Fertigung stellt eine grundlegende Transformation in operativer Exzellenz und Umweltverantwortung dar.'
-    }
+    },
+    link: '/sustainability'
   },
   {
     src: {
@@ -52,7 +53,8 @@ const slides = [
       en: 'Advanced closed-loop circulation systems providing optimal thermal regulation essential for precision manufacturing processes. Our sophisticated thermal management infrastructure maximizes resource efficiency while maintaining the highest standards of operational performance and environmental responsibility.',
       hu: 'Fejlett zárt körű cirkulációs rendszerek optimális termikus szabályozást biztosítva, amely alapvető fontosságú a precíziós gyártási folyamatokhoz. Kifinomult termikus kezelési infrastruktúránk maximalizálja az erőforrás-hatékonyságot miközben fenntartja a legmagasabb működési teljesítmény és környezeti felelősség szabványokat.',
       de: 'Fortschrittliche geschlossene Kreislaufsysteme, die optimale Temperaturregelung bieten, die für Präzisionsfertigungsprozesse unerlässlich ist. Unsere ausgeklügelte Thermomanagement-Infrastruktur maximiert die Ressourceneffizienz bei gleichzeitiger Aufrechterhaltung höchster Standards für Betriebsleistung und Umweltverantwortung.'
-    }
+    },
+    link: '/sustainability'
   },
   {
     src: {
@@ -74,7 +76,8 @@ const slides = [
       en: 'Implementing comprehensive material recovery systems ensuring complete reintegration of production outputs into continuous manufacturing cycles. Our circular economy approach achieves zero-waste operational standards through advanced process optimization and material flow management.',
       hu: 'Átfogó anyag-visszanyerési rendszerek megvalósítása biztosítva a gyártási kimenetek teljes reintegrációját folyamatos gyártási ciklusokba. Körforgásos gazdasági megközelítésünk nulla hulladék működési szabványokat ér el fejlett folyamat optimalizáláson és anyagáramlás kezelésen keresztül.',
       de: 'Implementierung umfassender Materialrückgewinnungssysteme zur vollständigen Reintegration von Produktionsoutputs in kontinuierliche Fertigungszyklen. Unser Kreislaufwirtschaftsansatz erreicht Null-Abfall-Betriebsstandards durch fortschrittliche Prozessoptimierung und Materialflussmanagement.'
-    }
+    },
+    link: '/sustainability'
   },
   {
     src: {
@@ -96,7 +99,8 @@ const slides = [
       en: 'Maintaining rigorous quality management systems and environmental containment protocols to prevent material dispersion and ensure comprehensive environmental stewardship. Our systematic approach to environmental protection demonstrates unwavering commitment to ecological responsibility and operational excellence.',
       hu: 'Szigorú minőségkezelési rendszerek és környezeti visszatartási protokollok fenntartása anyag szóródás megelőzésére és átfogó környezeti felelősségvállalás biztosítására. Szisztematikus megközelítésünk a környezetvédelemhez rendíthetetlen elkötelezettséget mutat az ökológiai felelősség és működési kiválóság iránt.',
       de: 'Aufrechterhaltung strenger Qualitätsmanagementsysteme und Umwelteindämmungsprotokolle zur Verhinderung von Materialstreuung und zur Gewährleistung umfassender Umweltverantwortung. Unser systematischer Ansatz zum Umweltschutz zeigt unerschütterliches Engagement für ökologische Verantwortung und operative Exzellenz.'
-    }
+    },
+    link: '/sustainability'
   }
 ];
 
@@ -211,7 +215,7 @@ const SustainabilityCarousel = () => {
           </motion.div>
           
           <motion.p
-            className="max-w-2xl mx-auto mt-6 text-gray-300 text-lg"
+            className="max-w-2xl mx-auto mt-6 text-gray-600 text-lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.4 }}
@@ -444,8 +448,9 @@ const SustainabilityCarousel = () => {
                             className="flex items-center gap-4"
                           >
                             {/* Interactive glass button with hover effects */}
-                            <motion.button 
-                              className="group relative px-6 py-3 overflow-hidden rounded-md"
+                            <motion.a
+                              href={slide.link}
+                              className="group relative inline-block px-6 py-3 overflow-hidden rounded-md no-underline"
                               whileHover={{ scale: 1.05 }}
                               whileTap={{ scale: 0.98 }}
                             >
@@ -470,7 +475,7 @@ const SustainabilityCarousel = () => {
                               <span className="relative z-10 text-white font-medium">
                                 {language === 'en' ? 'Learn More' : 'Tudj meg többet'}
                               </span>
-                            </motion.button>
+                            </motion.a>
                             
                             {/* Animated arrow button */}
                             <motion.div 

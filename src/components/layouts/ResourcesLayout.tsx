@@ -369,10 +369,10 @@ const ResourcesLayout = ({ children }: ResourcesLayoutProps) => {
               © {new Date().getFullYear()} Flair-Plastic. {language === 'en' ? 'All rights reserved.' : 'Minden jog fenntartva.'}
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/privacy" className="text-sm text-gray-400 hover:text-white transition-colors">
+              <Link href="/policies/privacypolicy" className="text-sm text-gray-400 hover:text-white transition-colors">
                 {language === 'en' ? 'Privacy Policy' : 'Adatvédelmi irányelvek'}
               </Link>
-              <Link href="/terms" className="text-sm text-gray-400 hover:text-white transition-colors">
+              <Link href="/policies/termsconditions" className="text-sm text-gray-400 hover:text-white transition-colors">
                 {language === 'en' ? 'Terms of Service' : 'Felhasználási feltételek'}
               </Link>
             </div>

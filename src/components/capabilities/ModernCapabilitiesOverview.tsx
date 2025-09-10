@@ -40,7 +40,7 @@ const ModernCapabilitiesOverview = () => {
       description: language === 'en'
         ? 'Ultra-high precision and dimensional accuracy for mission-critical applications and exacting standards.'
         : 'Rendkívül nagy pontosság és méretpontosság kritikus alkalmazásokhoz és szigorú szabványokhoz.',
-      stats: { value: '±0.01mm', label: language === 'en' ? 'Tolerance' : 'Tűrés' },
+      stats: { value: language === 'en' ? 'Ultra-Fine' : 'Ultra-Finom', label: language === 'en' ? 'Tolerance' : 'Tűrés' },
       gradient: 'from-emerald-500 to-teal-500'
     },
     {
@@ -246,7 +246,7 @@ const ModernCapabilitiesOverview = () => {
             
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { number: '99.9%', label: language === 'en' ? 'Quality Rate' : 'Minőségi arány' },
+                { number: language === 'en' ? 'Superior' : 'Kiváló', label: language === 'en' ? 'Quality Rate' : 'Minőségi arány' },
                 { number: '48h', label: language === 'en' ? 'Lead Time' : 'Átfutási idő' },
                 { number: '500+', label: language === 'en' ? 'Projects' : 'Projektek' }
               ].map((stat, index) => (

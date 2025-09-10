@@ -60,7 +60,7 @@ const cards: Card[] = [
       en: 'Custom Product Development Solutions',
       hu: 'Egyedi Termékfejlesztési Megoldások'
     },
-    link: '/services/household-products',
+    link: '/products',
     description: {
       en: 'Partner with us for comprehensive product development from concept to market. Our engineering team specializes in designing and manufacturing high-quality plastic products using sustainable materials and innovative manufacturing processes. We combine technical expertise with environmental responsibility to create durable, functional products that meet the highest industry standards and regulatory requirements.',
       hu: 'Partnereljen velünk az átfogó termékfejlesztésben a koncepcióktól a piacig. Mérnöki csapatunk kiváló minőségű műanyag termékek tervezésére és gyártására specializálódott fenntartható anyagok és innovatív gyártási folyamatok alkalmazásával. A műszaki szakértelmet a környezeti felelősséggel ötvözve tartós, funkcionális termékeket hozunk létre, amelyek megfelelnek a legmagasabb ipari szabványoknak és szabályozási követelményeknek.'

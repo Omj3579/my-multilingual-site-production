@@ -224,8 +224,9 @@ const ContractManufacturingHero = () => {
                 visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.7 } }
               }}
             >
-              <motion.button
-                className="flex items-center gap-2 bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-700 hover:to-amber-600 text-white py-3 px-6 rounded-lg font-medium group transition-all"
+              <motion.a
+                href={language === 'en' ? '/services' : '/services'}
+                className="flex items-center gap-2 bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-700 hover:to-amber-600 text-white py-3 px-6 rounded-lg font-medium group transition-all no-underline"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -243,7 +244,7 @@ const ContractManufacturingHero = () => {
                 >
                   <ArrowRight className="w-5 h-5" />
                 </motion.div>
-              </motion.button>
+              </motion.a>
             </motion.div>
           </motion.div>
           

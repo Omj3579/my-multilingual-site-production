@@ -361,8 +361,9 @@ const CommitmentCallout = () => {
               animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <motion.button
-                className="group relative overflow-hidden px-8 py-4 rounded-full font-medium text-white"
+              <motion.a
+                href={language === 'en' ? '/contact' : '/contact'}
+                className="group relative overflow-hidden px-8 py-4 rounded-full font-medium text-white no-underline inline-block"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -387,7 +388,7 @@ const CommitmentCallout = () => {
                     <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
                 </span>
-              </motion.button>
+              </motion.a>
             </motion.div>
           </motion.div>
         </div>

@@ -207,8 +207,8 @@ const ContractManufacturingSection = () => {
                     transition={{ delay: 0.5 }}
                   >
                     <motion.a
-                      href={language === 'en' ? '/en/contact' : '/hu/kapcsolat'}
-                      className="flex items-center gap-2 text-amber-600 font-medium group"
+                      href={language === 'en' ? '/contact' : '/contact'}
+                      className="flex items-center gap-2 text-amber-600 font-medium group no-underline"
                       whileHover={{ x: 5 }}
                     >
                       <span>
