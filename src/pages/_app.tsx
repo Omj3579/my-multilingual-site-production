@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
+import { DefaultSeo } from 'next-seo';
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { CartProvider } from "@/contexts/CartContext";
 import Header from "@/components/Header";
@@ -7,6 +8,10 @@ import Footer from "@/components/Footer";
 import { ReactElement, ReactNode } from "react";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { useAnalytics } from '@/lib/analytics/useAnalytics';
+import SEO from '@/lib/seo/next-seo.config';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -15,6 +20,11 @@ type NextPageWithLayout = NextPage & {
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
+
+function AnalyticsWrapper({ children }: { children: ReactNode }) {
+  useAnalytics();
+  return <>{children}</>;
+}
 
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const router = useRouter();
@@ -28,9 +38,14 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <LanguageProvider>
       <CartProvider>
-        {!isResourcesPage && <Header />}
-        {getLayout(<Component {...pageProps} />)}
-        {!isResourcesPage && <Footer />}
+        <AnalyticsWrapper>
+          <DefaultSeo {...SEO} />
+          {!isResourcesPage && <Header />}
+          {getLayout(<Component {...pageProps} />)}
+          {!isResourcesPage && <Footer />}
+          <Analytics />
+          <SpeedInsights />
+        </AnalyticsWrapper>
       </CartProvider>
     </LanguageProvider>
   );

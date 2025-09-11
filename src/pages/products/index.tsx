@@ -1,9 +1,11 @@
 import React from 'react';
+import Head from 'next/head';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ProductLayout from '@/components/layouts/ProductLayout';
 import SimpleGrid from '@/components/products/SimpleGrid';
 import ProductsHeroSection from '@/components/products/ProductsHeroSection';
 import { fetchCategoryDescriptions, CategoryDescriptions } from '@/utils/fetchProducts';
+import { PRODUCTS_MAIN_SEO } from '@/lib/seo/productsMainSEO';
 
 interface ProductsPageProps {
   categories: CategoryDescriptions;
@@ -33,12 +35,69 @@ const Products: React.FC<ProductsPageProps> = ({ categories, productsPageContent
     window.__categories = categories;
   }
 
+  // Get SEO data for current language
+  const seoData = PRODUCTS_MAIN_SEO[language as keyof typeof PRODUCTS_MAIN_SEO] || PRODUCTS_MAIN_SEO.en;
+
   return (
-    <ProductLayout>      {/* Sophisticated Hero Section */}      <ProductsHeroSection
-        title={productsPageContent?.labels?.[language] || productsPageContent?.labels?.en || undefined}
-        description={productsPageContent?.content?.[language]?.description || productsPageContent?.content?.en?.description || undefined}
-        heroImage="/products/categories/hero/Products-hero.png"
-      />
+    <>
+      <Head>
+        {/* Primary Meta Tags */}
+        <title>{seoData.title}</title>
+        <meta name="title" content={seoData.title} />
+        <meta name="description" content={seoData.description} />
+        <meta name="keywords" content={seoData.keywords} />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href={seoData.canonical} />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content={seoData.openGraph.type} />
+        <meta property="og:url" content={seoData.openGraph.url} />
+        <meta property="og:title" content={seoData.openGraph.title} />
+        <meta property="og:description" content={seoData.openGraph.description} />
+        <meta property="og:image" content={seoData.openGraph.image} />
+        <meta property="og:image:alt" content={seoData.openGraph.imageAlt} />
+        <meta property="og:site_name" content="Flair Plastic" />
+        <meta property="og:locale" content={language === 'hu' ? 'hu_HU' : 'en_US'} />
+        
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={seoData.openGraph.url} />
+        <meta property="twitter:title" content={seoData.openGraph.title} />
+        <meta property="twitter:description" content={seoData.openGraph.description} />
+        <meta property="twitter:image" content={seoData.openGraph.image} />
+        <meta property="twitter:image:alt" content={seoData.openGraph.imageAlt} />
+        
+        {/* Alternate Language Links */}
+        <link rel="alternate" hrefLang="en" href="https://flairplastic.hu/products" />
+        <link rel="alternate" hrefLang="hu" href="https://flairplastic.hu/hu/products" />
+        <link rel="alternate" hrefLang="x-default" href="https://flairplastic.hu/products" />
+        
+        {/* Robots */}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        
+        {/* Additional SEO Meta Tags */}
+        <meta name="author" content="Flair Plastic" />
+        <meta name="publisher" content="Flair Plastic" />
+        <meta name="language" content={language} />
+        <meta name="revisit-after" content="7 days" />
+        
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(seoData.structuredData),
+          }}
+        />
+      </Head>
+      
+      <ProductLayout>
+        {/* Sophisticated Hero Section */}
+        <ProductsHeroSection
+          title={productsPageContent?.labels?.[language] || productsPageContent?.labels?.en || undefined}
+          description={productsPageContent?.content?.[language]?.description || productsPageContent?.content?.en?.description || undefined}
+          heroImage="/products/categories/hero/Products-hero.png"
+        />
 
       {/* Premium Categories Section */}
       <div className="relative py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden">
@@ -149,6 +208,7 @@ const Products: React.FC<ProductsPageProps> = ({ categories, productsPageContent
         </div>
       </div>
     </ProductLayout>
+    </>
   );
 };
 

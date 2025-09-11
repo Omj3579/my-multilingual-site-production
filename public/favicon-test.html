@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flair Plastic Favicon Test</title>
+    <link rel="icon" href="/logos/flair_plastic_logo_cmyk_full_-_MAIN.png?v=4" type="image/png">
+    <link rel="shortcut icon" href="/logos/flair_plastic_logo_cmyk_full_-_MAIN.png?v=4" type="image/png">
+    <script>
+        // Force favicon refresh
+        setTimeout(() => {
+            const link = document.querySelector("link[rel*='icon']");
+            if (link) {
+                link.href = link.href + '&t=' + Date.now();
+            }
+        }, 1000);
+    </script>
+</head>
+<body>
+    <h1>Favicon Test - Check your browser tab!</h1>
+    <p>The Flair Plastic logo should appear in the browser tab.</p>
+</body>
+</html>

@@ -1,8 +1,10 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useAnalytics } from '@/lib/analytics/useAnalytics';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
+import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { Shield } from 'lucide-react';
 import PageLayout from '@/components/layouts/PageLayout';
@@ -10,11 +12,45 @@ import PageLayout from '@/components/layouts/PageLayout';
 const CookieSettings = () => {
   const { language } = useLanguage();
   const { toast } = useToast();
+  const { updateConsent } = useAnalytics();
   
   const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
   const [marketingEnabled, setMarketingEnabled] = useState(false);
   
+  // Load saved preferences on mount
+  useEffect(() => {
+    const savedConsent = localStorage.getItem('cookieConsent');
+    if (savedConsent) {
+      try {
+        const consent = JSON.parse(savedConsent);
+        setAnalyticsEnabled(consent.analytics || false);
+        setMarketingEnabled(consent.marketing || false);
+        
+        // Apply saved consent to analytics
+        updateConsent({
+          analytics: consent.analytics || false,
+          marketing: consent.marketing || false
+        });
+      } catch (error) {
+        console.error('Error loading cookie preferences:', error);
+      }
+    }
+  }, [updateConsent]);
+  
   const handleSavePreferences = () => {
+    // Update analytics consent
+    updateConsent({
+      analytics: analyticsEnabled,
+      marketing: marketingEnabled
+    });
+
+    // Save to localStorage for persistence
+    localStorage.setItem('cookieConsent', JSON.stringify({
+      analytics: analyticsEnabled,
+      marketing: marketingEnabled,
+      timestamp: Date.now()
+    }));
+
     toast({
       title: language === 'en' ? 'Preferences saved' : 'Beállítások mentve',
       description: language === 'en' 
