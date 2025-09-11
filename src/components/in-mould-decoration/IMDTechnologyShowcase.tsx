@@ -323,7 +323,7 @@ const IMDTechnologyShowcase = () => {
           >
             {language === 'en' ? (
               <>
-                In-mold decoration technology offers the flexibility to create{" "}
+                In-Mould decoration technology offers the flexibility to create{" "}
                 <motion.span 
                   className="relative inline-block"
                   initial={{ perspective: 1000 }}

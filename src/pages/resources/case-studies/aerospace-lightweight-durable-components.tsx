@@ -585,7 +585,7 @@ export default function AerospaceLightweightDurableComponents() {
                   <p className="text-blue-200 text-sm leading-relaxed">
                     {index === 0 && "Advanced polymer composite systems for superior strength-to-weight ratios"}
                     {index === 1 && "Aerospace-grade quality assurance and certification protocols"}
-                    {index === 2 && "Precision injection molding with micron-level accuracy"}
+                    {index === 2 && "Precision injection Moulding with micron-level accuracy"}
                     {index === 3 && "Real-time monitoring and data analytics integration"}
                   </p>
                   
@@ -805,7 +805,7 @@ export default function AerospaceLightweightDurableComponents() {
                   </div>
                   <div className="flex items-start">
                     <CheckCircleIcon className="w-5 h-5 text-green-400 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-blue-100">Precision injection molding techniques</span>
+                    <span className="text-blue-100">Precision injection Moulding techniques</span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircleIcon className="w-5 h-5 text-green-400 mr-3 mt-1 flex-shrink-0" />
@@ -1066,7 +1066,7 @@ export default function AerospaceLightweightDurableComponents() {
               </h2>
               
               <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-                Join industry leaders who have revolutionized their production with our advanced injection molding solutions.
+                Join industry leaders who have revolutionized their production with our advanced injection Moulding solutions.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-12">

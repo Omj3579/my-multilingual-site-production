@@ -135,9 +135,9 @@ const ModernCTA = () => {
                 description: language === 'en' ? 'Response time' : 'Válaszidő'
               },
               {
-                title: language === 'en' ? 'Global Support' : 'Globális támogatás',
-                value: '24/7',
-                description: language === 'en' ? 'Available' : 'Elérhető'
+                title: language === 'en' ? 'Quality Standard' : 'Minőségi szabvány',
+                value: 'ISO 9001',
+                description: language === 'en' ? 'Certified' : 'Tanúsított'
               },
               {
                 title: language === 'en' ? 'Expert Team' : 'Szakértő csapat',

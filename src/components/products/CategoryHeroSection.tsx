@@ -115,7 +115,7 @@ const CategoryHeroSection: React.FC<CategoryHeroSectionProps> = ({
   }, [mouseX, mouseY]);
 
   const defaultCategoryNames = {
-    'injection-blow': language === 'en' ? 'Injection Blow Molding' : 'Fröccsöntés és Fúvás',
+    'injection-blow': language === 'en' ? 'Injection Blow Moulding' : 'Fröccsöntés és Fúvás',
     'surface-finishing': language === 'en' ? 'Surface Finishing' : 'Felületkezelés',
     'in-mould-labelling': language === 'en' ? 'In-Mould Labelling' : 'Szerszámon Belüli Címkézés',
     'in-mould-decoration': language === 'en' ? 'In-Mould Decoration' : 'Szerszámon Belüli Dekoráció',

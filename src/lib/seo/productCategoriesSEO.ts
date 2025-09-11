@@ -34,7 +34,7 @@ export const PRODUCT_CATEGORIES_SEO: Record<string, ProductCategorySEO> = {
       hu: "Professzionális sport és aktív életmód műanyag termékek. Magas minőségű gyártás sportszerekhez, kültéri felszerelésekhez és aktív rekreációs termékekhez."
     },
     keywords: {
-      en: ["sports products", "active lifestyle", "outdoor equipment", "sporting goods", "recreation products", "plastic manufacturing", "injection molding", "Hungary"],
+      en: ["sports products", "active lifestyle", "outdoor equipment", "sporting goods", "recreation products", "plastic manufacturing", "injection Moulding", "Hungary"],
       hu: ["sport termékek", "aktív életmód", "kültéri felszerelések", "sportszerek", "rekreációs termékek", "műanyag gyártás", "fröccsöntés", "Magyarország"]
     },
     openGraph: {
@@ -62,7 +62,7 @@ export const PRODUCT_CATEGORIES_SEO: Record<string, ProductCategorySEO> = {
         hu: "Aktív és Sport Termékek"
       },
       description: {
-        en: "Professional sports and active lifestyle plastic products manufactured with precision injection molding technology.",
+        en: "Professional sports and active lifestyle plastic products manufactured with precision injection Moulding technology.",
         hu: "Professzionális sport és aktív életmód műanyag termékek precíziós fröccsöntő technológiával gyártva."
       },
       category: "Sporting Goods",
@@ -77,11 +77,11 @@ export const PRODUCT_CATEGORIES_SEO: Record<string, ProductCategorySEO> = {
       hu: "Kert és Kültéri Termékek | Flair Plastic Gyártás"
     },
     description: {
-      en: "Premium garden and outdoor plastic products. Durable planters, containers, and gardening solutions manufactured with sustainable injection molding.",
+      en: "Premium garden and outdoor plastic products. Durable planters, containers, and gardening solutions manufactured with sustainable injection Moulding.",
       hu: "Prémium kert és kültéri műanyag termékek. Tartós virágcserepek, konténerek és kertészeti megoldások fenntartható fröccsöntéssel gyártva."
     },
     keywords: {
-      en: ["garden products", "outdoor containers", "planters", "gardening solutions", "plastic pots", "injection molding", "sustainable manufacturing", "Hungary"],
+      en: ["garden products", "outdoor containers", "planters", "gardening solutions", "plastic pots", "injection Moulding", "sustainable manufacturing", "Hungary"],
       hu: ["kerti termékek", "kültéri konténerek", "virágcserepek", "kertészeti megoldások", "műanyag cserepek", "fröccsöntés", "fenntartható gyártás", "Magyarország"]
     },
     openGraph: {

@@ -67,8 +67,8 @@ shared/
 - `useWordAnimation` - Text animation control
 
 #### **constants.ts** - Centralized Data:
-- `injectionMoldingFeatures` - Feature cards (EN/HU)
-- `injectionMoldingProcess` - Process steps (EN/HU)
+- `injectionMouldingFeatures` - Feature cards (EN/HU)
+- `injectionMouldingProcess` - Process steps (EN/HU)
 - `manufacturingCapabilities` - Capabilities list (EN/HU)
 - `manufacturingOverviewContent` - Full content structure
 - `commitmentText` - Commitment callout text

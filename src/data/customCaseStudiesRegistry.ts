@@ -261,7 +261,7 @@ export const customCaseStudies: Partial<CaseStudy>[] = [
     tags: ['partnership', 'garden-tools', 'power-tools', 'manufacturing', 'quality-control', 'sustainability'],
     featured: true,    industry: 'Garden & Power Tools Manufacturing',
     projectDuration: '10+ years',
-    technologies: ['Injection Molding', 'Quality Control Systems', 'Sustainable Materials', 'Ergonomic Design', 'Advanced Manufacturing'],    customUrl: '/resources/case-studies/a-decade-of-innovation-collaboration'
+    technologies: ['Injection Moulding', 'Quality Control Systems', 'Sustainable Materials', 'Ergonomic Design', 'Advanced Manufacturing'],    customUrl: '/resources/case-studies/a-decade-of-innovation-collaboration'
   },  {
     id: 'custom-interactive-manufacturing-experience',
     slug: 'interactive-manufacturing-experience-showcase',

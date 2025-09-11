@@ -434,7 +434,7 @@ const TeamMembers = () => {
       language
     },
     {
-      name: language === 'en' ? 'Mónika Miklósné Bertók' : 'Miklósné Bertók Mónika',
+      name: language === 'en' ? 'Miklóssyné Bertók Mónika' : 'Miklóssyné Bertók Mónika',
       title: language === 'en' ? 'Chief Financial Officer' : 'Pénzügyi igazgató',
       department: 'finance',
       relatedDepartments: ['ceo'],

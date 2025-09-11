@@ -34,16 +34,6 @@ const LeadershipExcellenceCallout = () => {
     mouseY.set(-rotateX);
   };
 
-  // Floating particles for ambiance
-  const particles = Array.from({ length: 15 }, (_, i) => ({
-    id: i,
-    size: Math.random() * 3 + 1,
-    duration: Math.random() * 4 + 3,
-    delay: Math.random() * 3,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-  }));
-
   useEffect(() => {
     if (isInView) {
       controls.start('visible');
@@ -85,7 +75,7 @@ const LeadershipExcellenceCallout = () => {
   return (
     <motion.section 
       ref={sectionRef}
-      className="relative py-32 font-[Poppins] overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20"
+      className="relative py-32 font-[Poppins] overflow-hidden bg-gradient-to-br from-slate-900 via-gray-900 to-black"
       style={{ y }}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
@@ -94,72 +84,55 @@ const LeadershipExcellenceCallout = () => {
       animate={controls}
       variants={containerVariants}
     >
-      {/* Advanced Background Elements */}
+      {/* Futuristic Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Floating gradient orbs */}
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"
-          animate={{
-            x: [0, 100, 0],
-            y: [0, -50, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{ duration: 20, repeat: Infinity }}
-        />
-        <motion.div
-          className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-br from-purple-400/15 to-pink-400/15 rounded-full blur-3xl"
-          animate={{
-            x: [0, -80, 0],
-            y: [0, 60, 0],
-            scale: [1, 0.8, 1],
-          }}
-          transition={{ duration: 25, repeat: Infinity }}
-        />
-
-        {/* Floating particles */}
-        {particles.map((particle) => (
-          <motion.div
-            key={particle.id}
-            className="absolute rounded-full bg-blue-400/40"
+        {/* Animated grid pattern */}
+        <div className="absolute inset-0 opacity-20">
+          <div 
+            className="absolute inset-0"
             style={{
-              width: particle.size,
-              height: particle.size,
-              left: `${particle.x}%`,
-              top: `${particle.y}%`,
-            }}
-            animate={{
-              y: [0, -100, 0],
-              opacity: [0, 1, 0],
-              scale: [0, 1.5, 0],
-            }}
-            transition={{
-              duration: particle.duration,
-              delay: particle.delay,
-              repeat: Infinity,
-              ease: "easeInOut"
+              backgroundImage: `
+                linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px)
+              `,
+              backgroundSize: '40px 40px',
+              animation: 'grid-move 20s linear infinite'
             }}
           />
-        ))}
+        </div>
 
-        {/* Geometric shapes */}
-        <motion.div
-          className="absolute top-1/3 right-1/6 w-32 h-32 border-2 border-blue-300/30 rounded-full"
-          animate={{ rotate: 360, scale: [1, 1.1, 1] }}
-          transition={{ rotate: { duration: 30, repeat: Infinity, ease: "linear" }, scale: { duration: 4, repeat: Infinity } }}
+        {/* Subtle background elements */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-20" 
+          style={{
+            background: 'radial-gradient(circle, rgba(100, 100, 100, 0.1) 0%, transparent 70%)'
+          }}
+        />
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full blur-3xl opacity-15" 
+          style={{
+            background: 'radial-gradient(circle, rgba(120, 120, 120, 0.08) 0%, transparent 70%)'
+          }}
         />
 
-        {/* Mouse-following glow */}
+        {/* Interactive cursor glow */}
         <motion.div
-          className="absolute w-80 h-80 rounded-full pointer-events-none opacity-30"
+          className="absolute w-96 h-96 rounded-full pointer-events-none"
           style={{
-            background: 'radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%)',
-            left: mousePosition.x - 160,
-            top: mousePosition.y - 160,
-            opacity: isHovered ? 0.6 : 0,
+            background: 'radial-gradient(circle, rgba(0, 255, 255, 0.2) 0%, rgba(147, 51, 234, 0.1) 50%, transparent 70%)',
+            left: mousePosition.x - 192,
+            top: mousePosition.y - 192,
+            opacity: isHovered ? 0.8 : 0,
+            filter: 'blur(40px)'
           }}
           transition={{ duration: 0.3 }}
         />
       </div>
+
+      <style jsx>{`
+        @keyframes grid-move {
+          0% { transform: translate(0, 0); }
+          100% { transform: translate(40px, 40px); }
+        }
+      `}</style>
 
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-center justify-center">
@@ -171,75 +144,77 @@ const LeadershipExcellenceCallout = () => {
           }}
           variants={itemVariants}
         >
-          {/* Enhanced glass panel with better depth */}
+          {/* Futuristic holographic panel */}
           <motion.div
             className="relative p-12 md:p-20 rounded-3xl overflow-hidden"
             whileHover={{
-              scale: 1.02,
-              y: -5,
+              scale: 1.03,
+              y: -8,
+              rotateX: 2,
+              rotateY: 2
             }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            transition={{ type: "spring", stiffness: 200, damping: 20 }}
           >
-            {/* Multi-layer glass effect */}
+            {/* Multi-layer holographic effect */}
             <div className="absolute inset-0 -z-10">
-              {/* Base glass layer */}
-              <div className="absolute inset-0 bg-white/20 backdrop-blur-2xl rounded-3xl" />
+              {/* Base dark glass layer */}
+              <div className="absolute inset-0 bg-black/40 backdrop-blur-3xl rounded-3xl" />
               
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-white/10 to-white/5 rounded-3xl" />
+              {/* Subtle gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-700/10 via-gray-600/5 to-gray-800/10 rounded-3xl" />
               
-              {/* Inner glow */}
-              <div className="absolute inset-0 shadow-[inset_0_0_60px_rgba(255,255,255,0.2)] rounded-3xl" />
+              {/* Subtle inner glow */}
+              <div className="absolute inset-0 shadow-[inset_0_0_60px_rgba(255,255,255,0.05)] rounded-3xl" />
               
-              {/* Animated shimmer */}
+              {/* Subtle shimmer effect */}
               <motion.div 
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-3xl"
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent rounded-3xl"
                 animate={{
                   x: ['-100%', '200%'],
                 }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
               />
               
-              {/* Border accents */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-blue-400/60 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-purple-400/60 to-transparent" />
-              <div className="absolute top-0 bottom-0 left-0 w-[2px] bg-gradient-to-b from-transparent via-blue-400/40 to-transparent" />
-              <div className="absolute top-0 bottom-0 right-0 w-[2px] bg-gradient-to-b from-transparent via-purple-400/40 to-transparent" />
+              {/* Subtle border accents */}
+              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gray-400/30 to-transparent rounded-t-3xl" />
+              <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gray-400/20 to-transparent rounded-b-3xl" />
+              <div className="absolute top-0 bottom-0 left-0 w-[1px] bg-gradient-to-b from-transparent via-gray-400/25 to-transparent rounded-l-3xl" />
+              <div className="absolute top-0 bottom-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-gray-400/25 to-transparent rounded-r-3xl" />
             </div>
 
-            {/* Corner decorative elements */}
-            <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-500/10 to-transparent rounded-tr-3xl rounded-bl-3xl" />
-            <div className="absolute bottom-0 left-0 w-20 h-20 bg-gradient-to-tr from-purple-500/10 to-transparent rounded-bl-3xl rounded-tr-3xl" />
+            {/* Subtle corner accents */}
+            <div className="absolute top-4 right-4 w-8 h-8 border border-gray-400/20 rounded-lg" />
+            <div className="absolute bottom-4 left-4 w-6 h-6 border border-gray-400/15 rounded-full" />
 
-            {/* Enhanced header */}
+            {/* Futuristic header */}
             <motion.div 
-              className="text-center mb-12"
+              className="text-center mb-16"
               variants={itemVariants}
             >
               <motion.div
-                className="inline-flex items-center gap-3 px-6 py-3 mb-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm border border-white/30 rounded-full"
-                whileHover={{ scale: 1.05, borderColor: 'rgba(59, 130, 246, 0.5)' }}
-                animate={{
-                  boxShadow: [
-                    "0 0 20px rgba(59, 130, 246, 0.1)",
-                    "0 0 30px rgba(59, 130, 246, 0.3)",
-                    "0 0 20px rgba(59, 130, 246, 0.1)"
-                  ]
+                className="inline-flex items-center gap-4 px-8 py-4 mb-12 relative overflow-hidden rounded-full bg-gray-800/40 border border-gray-600/30 backdrop-blur-sm"
+                whileHover={{ 
+                  scale: 1.05,
+                  borderColor: 'rgba(156, 163, 175, 0.4)'
                 }}
-                transition={{ duration: 4, repeat: Infinity }}
+                transition={{ duration: 0.3 }}
               >
-                <Brain className="w-5 h-5 text-blue-600" />
-                <span className="text-blue-800 font-semibold tracking-wide">
-                  {language === 'en' ? "Our Leadership Ethos" : "Vezetői Hitvallásunk"}
+                <Brain className="w-6 h-6 text-gray-300" />
+                <span className="text-gray-200 font-bold tracking-wider text-lg">
+                  {language === 'en' ? "LEADERSHIP EXCELLENCE" : "VEZETŐI KIVÁLÓSÁG"}
                 </span>
-                <Sparkles className="w-5 h-5 text-purple-600" />
+                <Sparkles className="w-6 h-6 text-gray-300" />
               </motion.div>
             </motion.div>
 
-            {/* Enhanced content with original message */}
+            {/* Cyberpunk content with original message */}
             <motion.div className="relative z-10" variants={itemVariants}>
               <motion.p 
-                className="text-xl md:text-3xl leading-relaxed tracking-wide text-gray-800"
+                className="text-xl md:text-3xl leading-relaxed tracking-wide relative"
+                style={{
+                  color: '#e0e0e0',
+                  textShadow: '0 0 15px rgba(255, 255, 255, 0.3)'
+                }}
                 animate={controls} 
                 variants={containerVariants}
                 transition={{ staggerChildren: 0.03 }}
@@ -247,130 +222,84 @@ const LeadershipExcellenceCallout = () => {
                 {language === 'en' ? (
                   <motion.span variants={containerVariants}>
                     <motion.span 
-                      className="text-blue-600 font-bold relative inline-block group"
+                      className="font-bold relative inline-block group text-gray-100"
                       variants={wordVariants}
-                      whileHover={{ scale: 1.05 }}
+                      whileHover={{ scale: 1.02 }}
                     >
                       Flair-Plastic&apos;s executive leadership
                       <motion.span 
-                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500 to-purple-500"
+                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-gray-400/60"
                         initial={{ scaleX: 0, transformOrigin: 'left' }}
                         animate={{ scaleX: isInView ? 1 : 0 }}
                         transition={{ duration: 1.5, delay: 0.5 }}
-                      />
-                      <motion.span 
-                        className="absolute bottom-0 left-0 right-0 h-[6px] bg-gradient-to-r from-blue-500/30 to-purple-500/30 blur-sm"
-                        initial={{ x: '-100%' }}
-                        animate={{ x: '100%' }}
-                        transition={{ duration: 3, delay: 2, repeat: Infinity, repeatDelay: 8 }}
                       />
                     </motion.span>{" "}
                     
                     is unwavering in their commitment to uphold and enhance our{" "}
                     
                     <motion.span 
-                      className="text-gray-900 font-bold relative group"
+                      className="font-bold text-gray-200"
                       variants={wordVariants}
-                      whileHover={{ scale: 1.02 }}
+                      whileHover={{ scale: 1.01 }}
                     >
-                      <motion.span 
-                        className="absolute -inset-2 rounded-xl opacity-20 blur-lg -z-10 bg-gradient-to-r from-blue-500 to-purple-500"
-                        animate={{ opacity: [0.1, 0.3, 0.1] }}
-                        transition={{ duration: 3, repeat: Infinity, repeatType: "mirror" }}
-                      />
                       exceptional standards of performance, precision, and flexibility
                     </motion.span>.{" "}
                     
                     Through careful attention to detail and an all-encompassing approach, they ensure that every aspect of the organization operates with the utmost{" "}
                     
                     <motion.span 
-                      className="text-emerald-600 font-bold relative group"
+                      className="font-bold text-gray-200"
                       variants={wordVariants}
-                      whileHover={{ scale: 1.05 }}
                     >
-                      <motion.span
-                        className="absolute -inset-1 rounded-lg opacity-20 blur-sm -z-10 bg-emerald-500"
-                        animate={{ opacity: [0.2, 0.4, 0.2] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                      />
                       care
                     </motion.span>{" "}and{" "}
                     
                     <motion.span 
-                      className="text-orange-600 font-bold relative group"
+                      className="font-bold text-gray-200"
                       variants={wordVariants}
-                      whileHover={{ scale: 1.05 }}
                     >
-                      <motion.span
-                        className="absolute -inset-1 rounded-lg opacity-20 blur-sm -z-10 bg-orange-500"
-                        animate={{ opacity: [0.2, 0.4, 0.2] }}
-                        transition={{ duration: 2.5, repeat: Infinity }}
-                      />
                       efficiency
                     </motion.span>, thereby fostering a culture of excellence that permeates every level of the company.
                   </motion.span>
                 ) : (
                   <motion.span variants={containerVariants}>
                     <motion.span 
-                      className="text-blue-600 font-bold relative inline-block group"
+                      className="font-bold relative inline-block group text-gray-100"
                       variants={wordVariants}
-                      whileHover={{ scale: 1.05 }}
+                      whileHover={{ scale: 1.02 }}
                     >
                       A Flair-Plastic vezetősége
                       <motion.span 
-                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500 to-purple-500"
+                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-gray-400/60"
                         initial={{ scaleX: 0, transformOrigin: 'left' }}
                         animate={{ scaleX: isInView ? 1 : 0 }}
                         transition={{ duration: 1.5, delay: 0.5 }}
-                      />
-                      <motion.span 
-                        className="absolute bottom-0 left-0 right-0 h-[6px] bg-gradient-to-r from-blue-500/30 to-purple-500/30 blur-sm"
-                        initial={{ x: '-100%' }}
-                        animate={{ x: '100%' }}
-                        transition={{ duration: 3, delay: 2, repeat: Infinity, repeatDelay: 8 }}
                       />
                     </motion.span>{" "}
                     
                     rendíthetetlenül elkötelezett a{" "}
                     
                     <motion.span 
-                      className="text-gray-900 font-bold relative group"
+                      className="font-bold text-gray-200"
                       variants={wordVariants}
-                      whileHover={{ scale: 1.02 }}
+                      whileHover={{ scale: 1.01 }}
                     >
-                      <motion.span 
-                        className="absolute -inset-2 rounded-xl opacity-20 blur-lg -z-10 bg-gradient-to-r from-blue-500 to-purple-500"
-                        animate={{ opacity: [0.1, 0.3, 0.1] }}
-                        transition={{ duration: 3, repeat: Infinity, repeatType: "mirror" }}
-                      />
                       kivételes teljesítmény, precizitás és rugalmasság
                     </motion.span>{" "}
                     
                     standardjainak fenntartása és fejlesztése mellett. A részletekre való gondos odafigyeléssel és átfogó megközelítéssel biztosítják, hogy a szervezet minden aspektusa a legnagyobb{" "}
                     
                     <motion.span 
-                      className="text-emerald-600 font-bold relative group"
+                      className="font-bold text-gray-200"
                       variants={wordVariants}
-                      whileHover={{ scale: 1.05 }}
                     >
-                      <motion.span
-                        className="absolute -inset-1 rounded-lg opacity-20 blur-sm -z-10 bg-emerald-500"
-                        animate={{ opacity: [0.2, 0.4, 0.2] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                      />
                       gondossággal
                     </motion.span>{" "}és{" "}
                     
                     <motion.span 
-                      className="text-orange-600 font-bold relative group"
+                      className="font-bold text-gray-200"
                       variants={wordVariants}
-                      whileHover={{ scale: 1.05 }}
                     >
-                      <motion.span
-                        className="absolute -inset-1 rounded-lg opacity-20 blur-sm -z-10 bg-orange-500"
-                        animate={{ opacity: [0.2, 0.4, 0.2] }}
-                        transition={{ duration: 2.5, repeat: Infinity }}
-                      />
                       hatékonysággal
                     </motion.span>{" "}
                     működjön, ezáltal olyan kiválósági kultúrát teremtve, amely áthatja a vállalat minden szintjét.
@@ -378,58 +307,51 @@ const LeadershipExcellenceCallout = () => {
                 )}
               </motion.p>
 
-              {/* Enhanced bottom accent */}
+              {/* Subtle bottom accent */}
               <motion.div
                 className="mt-12 flex justify-center"
                 variants={itemVariants}
               >
-                <motion.div
-                  className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm border border-white/40 rounded-full"
-                  animate={{
-                    y: [0, -5, 0],
-                    opacity: [0.7, 1, 0.7]
-                  }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                >
-                  <Target className="w-5 h-5 text-blue-600" />
-                  <span className="text-gray-700 font-medium">
+                <div className="flex items-center gap-3 px-6 py-3 bg-gray-800/30 backdrop-blur-sm border border-gray-600/20 rounded-full">
+                  <Target className="w-5 h-5 text-gray-400" />
+                  <span className="text-gray-300 font-medium">
                     {language === 'en' ? 'Excellence in Leadership' : 'Kiválóság a Vezetésben'}
                   </span>
-                  <Zap className="w-5 h-5 text-purple-600" />
-                </motion.div>
+                  <Zap className="w-5 h-5 text-gray-400" />
+                </div>
               </motion.div>
             </motion.div>
           </motion.div>
         </motion.div>
       </div>
       
-      {/* Enhanced floating accents */}
+      {/* Subtle floating accents */}
       <motion.div 
         className="absolute bottom-16 right-16 w-32 h-32 rounded-full pointer-events-none"
         style={{ 
-          background: 'radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(147, 51, 234, 0.1) 50%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(156, 163, 175, 0.08) 0%, rgba(107, 114, 128, 0.05) 50%, transparent 70%)',
           filter: 'blur(20px)'
         }}
         animate={{ 
-          scale: [1, 1.3, 1],
-          opacity: [0.3, 0.7, 0.3],
+          scale: [1, 1.2, 1],
+          opacity: [0.1, 0.3, 0.1],
           rotate: [0, 180, 360]
         }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
       />
       
       <motion.div 
         className="absolute top-20 left-16 w-24 h-24 rounded-full pointer-events-none"
         style={{ 
-          background: 'radial-gradient(circle, rgba(147, 51, 234, 0.12) 0%, rgba(59, 130, 246, 0.08) 50%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(107, 114, 128, 0.06) 0%, rgba(156, 163, 175, 0.04) 50%, transparent 70%)',
           filter: 'blur(15px)'
         }}
         animate={{ 
-          scale: [1, 1.4, 1],
-          opacity: [0.2, 0.6, 0.2],
+          scale: [1, 1.3, 1],
+          opacity: [0.1, 0.2, 0.1],
           rotate: [360, 180, 0]
         }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
       />
     </motion.section>
   );

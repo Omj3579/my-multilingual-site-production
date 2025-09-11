@@ -27,7 +27,7 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
   const [cookieDialogOpen, setCookieDialogOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0.7, 1], [0.3, 1]);
+  const opacity = useTransform(scrollYProgress, [0.7, 1], [0.9, 1]);
   // Add ref for contact info (no longer needed but keeping for compatibility)
   const contactInfoRef = React.useRef<HTMLDivElement>(null);
 
@@ -82,7 +82,7 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
         { 
           href: '/services/plastic-injection-moulding', 
           label: language === 'en' ? 'Precision Injection Manufacturing' : 'Precíziós fröccsöntő gyártás',
-          description: language === 'en' ? 'State-of-the-art plastic injection molding with exceptional precision and quality control' : 'Legmodernebb műanyag fröccsöntés kivételes precizitással és minőségbiztosítással',
+          description: language === 'en' ? 'State-of-the-art plastic injection Moulding with exceptional precision and quality control' : 'Legmodernebb műanyag fröccsöntés kivételes precizitással és minőségbiztosítással',
           icon: Component
         },
         { 
@@ -100,7 +100,7 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
         { 
           href: '/services/tooling-management', 
           label: language === 'en' ? 'Tooling Management' : 'Szerszám kezelés',
-          description: language === 'en' ? 'Professional mold design and maintenance services' : 'Professzionális forma tervezési és karbantartási szolgáltatások',
+          description: language === 'en' ? 'Professional Mould design and maintenance services' : 'Professzionális forma tervezési és karbantartási szolgáltatások',
           icon: Tag
         }
       ]    },    

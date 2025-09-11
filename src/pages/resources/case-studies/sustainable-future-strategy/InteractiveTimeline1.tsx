@@ -72,7 +72,7 @@ const InteractiveTimeline1 = () => {
           hu: "A Kiválóság Kezdete" 
         },
         description: {
-          en: "Established our state-of-the-art injection molding facility with a vision to revolutionize household product manufacturing through precision engineering and sustainable practices.",
+          en: "Established our state-of-the-art injection Moulding facility with a vision to revolutionize household product manufacturing through precision engineering and sustainable practices.",
           hu: "Élvonalbeli fröccsöntő üzemünk létrehozása azzal a vízióval, hogy forradalmasítsuk a háztartási termékek gyártását precíziós mérnöki munkán és fenntartható gyakorlatokon keresztül."
         },
         category: "foundation",
@@ -80,7 +80,7 @@ const InteractiveTimeline1 = () => {
         color: "from-blue-500 to-cyan-500",
         achievements: [
           { en: "50,000 sq ft facility", hu: "50,000 négyzetláb üzem" },
-          { en: "15 injection molding machines", hu: "15 fröccsöntő gép" },
+          { en: "15 injection Moulding machines", hu: "15 fröccsöntő gép" },
           { en: "ISO 9001 certification", hu: "ISO 9001 tanúsítvány" },
           { en: "25 skilled employees", hu: "25 képzett alkalmazott" }
         ],

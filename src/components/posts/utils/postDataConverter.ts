@@ -161,7 +161,7 @@ export function createCaseStudy(
         'Delivery and ongoing support'
       ],
       timeline: '3-6 months',
-      technologies: ['Injection Molding', 'Quality Control', 'Custom Tooling']
+      technologies: ['Injection Moulding', 'Quality Control', 'Custom Tooling']
     },
     results: {
       metrics: results,
@@ -199,7 +199,7 @@ function inferTagsFromContent(title: string): string[] {
   const tags: string[] = [];
 
   // Manufacturing related tags
-  if (keywords.includes('injection') || keywords.includes('molding')) tags.push('injection-molding');
+  if (keywords.includes('injection') || keywords.includes('Moulding')) tags.push('injection-Moulding');
   if (keywords.includes('sustainability') || keywords.includes('eco')) tags.push('sustainability');
   if (keywords.includes('energy') || keywords.includes('efficiency')) tags.push('energy-efficiency');
   if (keywords.includes('contract') || keywords.includes('manufacturing')) tags.push('contract-manufacturing');

@@ -7,7 +7,7 @@ import { ProcessTimeline } from './shared/ProcessTimeline';
 import { SectionHeader } from './shared/SectionHeader';
 import { BackgroundPattern } from './shared/BackgroundPattern';
 import { containerVariants, itemVariants } from './shared/animations';
-import { injectionMoldingFeatures, injectionMoldingProcess } from './shared/constants';
+import { injectionMouldingFeatures, injectionMouldingProcess } from './shared/constants';
 import { ComponentProps, defaultComponentProps } from './shared/types';
 
 const InjectionMouldingDetails: React.FC<ComponentProps> = (props = {}) => {
@@ -25,8 +25,8 @@ const InjectionMouldingDetails: React.FC<ComponentProps> = (props = {}) => {
     }
   }, [controls, inView]);
 
-  const featureCards = injectionMoldingFeatures[language];
-  const processSteps = injectionMoldingProcess[language];
+  const featureCards = injectionMouldingFeatures[language];
+  const processSteps = injectionMouldingProcess[language];
 
   return (
     <BackgroundPattern
@@ -58,9 +58,9 @@ const InjectionMouldingDetails: React.FC<ComponentProps> = (props = {}) => {
           {/* Section Header */}
           <SectionHeader
             subtitle={language === 'en' ? "Technology Capabilities" : "Technológiai Képességek"}
-            title={language === 'en' ? "Advanced Injection Molding" : "Fejlett Fröccsöntés"}
+            title={language === 'en' ? "Advanced Injection Moulding" : "Fejlett Fröccsöntés"}
             description={language === 'en'
-              ? "At Flair-Plastic, we combine advanced technology with decades of expertise to deliver exceptional plastic injection molding solutions. Our state-of-the-art facilities and dedication to precision engineering ensure that every product meets the highest standards of quality and performance."
+              ? "At Flair-Plastic, we combine advanced technology with decades of expertise to deliver exceptional plastic injection Moulding solutions. Our state-of-the-art facilities and dedication to precision engineering ensure that every product meets the highest standards of quality and performance."
               : "A Flair-Plastic-nél a legfejlettebb technológiát ötvözzük évtizedes szakértelemmel, hogy kivételes műanyag fröccsöntési megoldásokat nyújtsunk. Legkorszerűbb létesítményeink és a precíziós mérnöki munkára való elkötelezettségünk biztosítja, hogy minden termék megfeleljen a legmagasabb minőségi és teljesítménystandardoknak."}
           />
 
@@ -115,13 +115,13 @@ const InjectionMouldingDetails: React.FC<ComponentProps> = (props = {}) => {
             <motion.div className="space-y-6 text-gray-700 relative z-10">
               <motion.p variants={itemVariants}>
                 {language === 'en'
-                  ? "Our injection molding process utilizes cutting-edge machinery and robotics to ensure consistency and efficiency across production runs. With capacity ranging from small precision components to large-scale manufacturing, we tailor our approach to meet your specific needs while maintaining exceptional quality standards throughout the production lifecycle."
+                  ? "Our injection Moulding process utilizes cutting-edge machinery and robotics to ensure consistency and efficiency across production runs. With capacity ranging from small precision components to large-scale manufacturing, we tailor our approach to meet your specific needs while maintaining exceptional quality standards throughout the production lifecycle."
                   : "Fröccsöntési folyamatunk élvonalbeli gépeket és robotokat használ a termelési futamok közötti konzisztencia és hatékonyság biztosítására. A kis precíziós alkatrészektől a nagyüzemi gyártásig terjedő kapacitással személyre szabjuk megközelítésünket, hogy megfeleljen az Ön egyedi igényeinek, miközben fenntartjuk a kivételes minőségi szabványokat a teljes termelési életciklus során."}
               </motion.p>
               
               <motion.p variants={itemVariants}>
                 {language === 'en'
-                  ? "Beyond standard injection molding, Flair-Plastic excels in specialized techniques including multi-shot injection, overmolding, and gas-assisted molding. Our engineering team collaborates closely with clients from concept to production, offering material selection guidance, design optimization, and prototyping services to ensure your product achieves optimal performance and cost-efficiency."
+                  ? "Beyond standard injection Moulding, Flair-Plastic excels in specialized techniques including multi-shot injection, overMoulding, and gas-assisted Moulding. Our engineering team collaborates closely with clients from concept to production, offering material selection guidance, design optimization, and prototyping services to ensure your product achieves optimal performance and cost-efficiency."
                   : "A standard fröccsöntésen túl a Flair-Plastic kiváló a speciális technikákban, beleértve a többlépcsős fröccsöntést, a ráöntést és a gázsegített öntést. Mérnöki csapatunk szorosan együttműködik az ügyfelekkel a koncepciótól a gyártásig, anyagválasztási útmutatást, tervezési optimalizálást és prototípus-készítési szolgáltatásokat kínálva annak biztosítására, hogy termékük optimális teljesítményt és költséghatékonyságot érjen el."}
               </motion.p>
             </motion.div>

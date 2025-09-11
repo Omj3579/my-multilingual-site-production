@@ -50,7 +50,6 @@ export const SustainabilityMenu = () => {
         : "Stratégiai partnerségek megújuló energia szolgáltatókkal fenntartható energiainfrastruktúra megvalósításához gyártási műveleteinkben",
       href: "/sustainability/green-strategy#renewable-energy",
       icon: Zap,
-      badge: "Strategic Phase",
       color: "amber"
     },
     {
@@ -60,7 +59,6 @@ export const SustainabilityMenu = () => {
         : "Zárt körű vízcirkulációs rendszerek termikus kezelési folyamatok optimalizálásához kiváló erőforrás-hatékonysággal",
       href: "/sustainability/green-strategy#water-management",
       icon: Droplets,
-      badge: "Operational",
       color: "blue"
     },
     {
@@ -70,7 +68,6 @@ export const SustainabilityMenu = () => {
         : "Átfogó anyag-visszanyerési rendszerek biztosítva a gyártási melléktermékek teljes reintegrációját a gyártási ciklusokba",
       href: "/sustainability/green-strategy#material-recovery",
       icon: Recycle,
-      badge: "Active",
       color: "teal"
     },
     {
@@ -80,7 +77,6 @@ export const SustainabilityMenu = () => {
         : "Szigorú visszatartási protokollok az alapanyag szóródás és környezeti szennyezés elleni védelemhez",
       href: "/sustainability/green-strategy#environmental-stewardship",
       icon: Target,
-      badge: "Critical Priority",
       color: "green"
     },
     {
@@ -90,7 +86,6 @@ export const SustainabilityMenu = () => {
         : "Precíziós gyártási módszertanok anyaghulladék minimalizálásához fejlett folyamatszabályozással és minőségi rendszerekkel",
       href: "/sustainability/green-strategy#process-optimization",
       icon: TreePine,
-      badge: "Excellence",
       color: "emerald"
     }
   ];
@@ -144,18 +139,8 @@ export const SustainabilityMenu = () => {
                   href={initiative.href}
                   className="group flex flex-col p-2 rounded-lg border border-gray-100 hover:border-green-200 hover:bg-gradient-to-br hover:from-green-50/50 hover:to-transparent transition-all duration-300 h-full min-h-[140px]"
                 >
-                  {/* Badge and Icon */}
-                  <div className="flex items-center justify-between mb-2">
-                    <div className={`inline-flex items-center px-1.5 py-0.5 rounded-full text-xs font-medium ${
-                      initiative.color === 'green' ? 'bg-green-100 text-green-700' :
-                      initiative.color === 'teal' ? 'bg-teal-100 text-teal-700' :
-                      initiative.color === 'amber' ? 'bg-amber-100 text-amber-700' :
-                      initiative.color === 'emerald' ? 'bg-emerald-100 text-emerald-700' :
-                      initiative.color === 'blue' ? 'bg-blue-100 text-blue-700' :
-                      'bg-indigo-100 text-indigo-700'
-                    }`}>
-                      {initiative.badge}
-                    </div>
+                  {/* Icon */}
+                  <div className="flex items-center justify-end mb-2">
                     <div className={`w-6 h-6 flex items-center justify-center transition-colors ${
                       initiative.color === 'green' ? 'text-gray-400 group-hover:text-green-600' :
                       initiative.color === 'teal' ? 'text-gray-400 group-hover:text-teal-600' :
@@ -206,22 +191,6 @@ export const SustainabilityMenu = () => {
                 <ArrowUpRight size={16} />
               </motion.div>
             </Link>
-            
-            {/* Professional Impact Metrics reflecting enterprise excellence */}
-            <div className="flex items-center space-x-4 text-xs">
-              <div className="text-center">
-                <div className="font-semibold text-green-600">100%</div>
-                <div className="text-gray-500">{language === 'en' ? 'Material Recovery' : 'Anyag Visszanyerés'}</div>
-              </div>
-              <div className="text-center">
-                <div className="font-semibold text-blue-600">Optimized</div>
-                <div className="text-gray-500">{language === 'en' ? 'Thermal Systems' : 'Termikus Rendszerek'}</div>
-              </div>
-              <div className="text-center">
-                <div className="font-semibold text-amber-600">Strategic</div>
-                <div className="text-gray-500">{language === 'en' ? 'Energy Planning' : 'Energia Tervezés'}</div>
-              </div>
-            </div>
           </div>
         </motion.div>
       </NavigationMenuContent>

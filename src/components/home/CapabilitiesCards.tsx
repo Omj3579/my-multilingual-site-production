@@ -30,7 +30,7 @@ const cards: Card[] = [
     },
     link: '/services/contract-manufacturing',
     description: {
-      en: 'Transform your product concepts into reality through our comprehensive manufacturing partnership services. We specialize in high-volume plastic component production utilizing advanced injection molding and blow molding technologies. Our experienced team collaborates with you from initial design through final delivery, ensuring exceptional quality and adherence to your exact specifications throughout the entire manufacturing process.',
+      en: 'Transform your product concepts into reality through our comprehensive manufacturing partnership services. We specialize in high-volume plastic component production utilizing advanced injection Moulding and blow Moulding technologies. Our experienced team collaborates with you from initial design through final delivery, ensuring exceptional quality and adherence to your exact specifications throughout the entire manufacturing process.',
       hu: 'Alakítsa át termékelképzeléseit valósággá átfogó gyártási partnerségi szolgáltatásainkkal. Nagy volumenű műanyag alkatrészgyártásra specializálódunk fejlett fröccsöntési és fúvási technológiák alkalmazásával. Tapasztalt csapatunk a kezdeti tervezéstől a végső szállításig együttműködik Önnel, biztosítva a kivételes minőséget és pontos specifikációinak betartását a teljes gyártási folyamat során.'
     },
     buttonText: {
@@ -41,33 +41,33 @@ const cards: Card[] = [
   {
     img: 'https://flair-plastic.hu/wp-content/uploads/2024/09/1.png.webp',
     title: {
-      en: 'Advanced Injection Molding Technology',
+      en: 'Advanced Injection Moulding Technology',
       hu: 'Fejlett Fröccsöntési Technológia'
     },
-    link: '/services/plastic-injection',
+    link: '/services/plastic-injection-moulding',
     description: {
-      en: 'Achieve superior quality and consistency with our advanced injection molding services. Our modern manufacturing facility features cutting-edge machinery designed to handle complex geometries and diverse material requirements. We deliver high-precision plastic components for demanding applications across multiple industries, from automotive and electronics to medical devices and industrial equipment.',
+      en: 'Achieve superior quality and consistency with our advanced injection Moulding services. Our modern manufacturing facility features cutting-edge machinery designed to handle complex geometries and diverse material requirements. We deliver high-precision plastic components for demanding applications across multiple industries, from automotive and electronics to medical devices and industrial equipment.',
       hu: 'Érjen el kiváló minőséget és következetességet fejlett fröccsöntési képességeinkkel. Modern gyártási létesítményünk élvonalbeli gépekkel rendelkezik, amelyek komplex geometriák és változatos anyagigények kezelésére lettek tervezve. Nagy pontosságú műanyag alkatrészeket szállítunk igényes alkalmazásokhoz több iparágban, az autóipartól és elektronikától az orvosi eszközökig és ipari berendezésekig.'
     },
     buttonText: {
-      en: 'Discover Molding Solutions',
+      en: 'Discover Moulding Solutions',
       hu: 'Öntési Megoldások Felfedezése'
     }
   },
   {
     img: 'https://flair-plastic.hu/wp-content/uploads/2024/09/household-products.png.webp',
     title: {
-      en: 'Custom Product Development Solutions',
-      hu: 'Egyedi Termékfejlesztési Megoldások'
+      en: 'Household & Kitchen Products',
+      hu: 'Háztartási és Konyhai Termékek'
     },
-    link: '/services/household-products',
+    link: '/products',
     description: {
-      en: 'Partner with us for comprehensive product development from concept to market. Our engineering team specializes in designing and manufacturing high-quality plastic products using sustainable materials and innovative manufacturing processes. We combine technical expertise with environmental responsibility to create durable, functional products that meet the highest industry standards and regulatory requirements.',
-      hu: 'Partnereljen velünk az átfogó termékfejlesztésben a koncepcióktól a piacig. Mérnöki csapatunk kiváló minőségű műanyag termékek tervezésére és gyártására specializálódott fenntartható anyagok és innovatív gyártási folyamatok alkalmazásával. A műszaki szakértelmet a környezeti felelősséggel ötvözve tartós, funkcionális termékeket hozunk létre, amelyek megfelelnek a legmagasabb ipari szabványoknak és szabályozási követelményeknek.'
+      en: 'Innovative plastic solutions for modern homes and kitchens. We manufacture food-safe storage containers, kitchen appliance components, home organization systems, and household accessories. Our products feature ergonomic designs, durable materials, and practical functionality to enhance daily living while maintaining the highest quality and safety standards.',
+      hu: 'Innovatív műanyag megoldások modern otthonok és konyhák számára. Élelmiszer-biztonságos tárolóedényeket, konyhai készülék alkatrészeket, otthoni szervezési rendszereket és háztartási kiegészítőket gyártunk. Termékeink ergonomikus kialakítást, tartós anyagokat és gyakorlati funkcionalitást kínálnak a mindennapi élet javítása érdekében, miközben fenntartják a legmagasabb minőségi és biztonsági szabványokat.'
     },
     buttonText: {
-      en: 'Explore Development Services',
-      hu: 'Fejlesztési Szolgáltatások Felfedezése'
+      en: 'Explore Household Products',
+      hu: 'Háztartási Termékek Felfedezése'
     }
   }
 ];
@@ -151,7 +151,7 @@ const ServicesCards = () => {
                   alt={`${card.title[language as keyof typeof card.title] || card.title['en']}`}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                   priority={index === 0}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/70" />

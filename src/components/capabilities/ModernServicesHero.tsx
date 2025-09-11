@@ -10,8 +10,8 @@ import {
   Sparkles,
   Globe,
   Layers,
-  Settings,
-  ChevronDown
+  ChevronDown,
+  Shield
 } from 'lucide-react';
 
 const ModernServicesHero = () => {
@@ -21,7 +21,7 @@ const ModernServicesHero = () => {
   const statistics = [
     { value: "30+", label: language === 'en' ? 'Years Experience' : '30+ év tapasztalat', icon: Award },
     { value: "500+", label: language === 'en' ? 'Projects Delivered' : '500+ projekt', icon: Target },
-    { value: "24/7", label: language === 'en' ? 'Production Support' : '24/7 támogatás', icon: Settings },
+    { value: "ISO", label: language === 'en' ? '9001 Certified' : 'ISO 9001 tanúsított', icon: Shield },
   ];
 
   useEffect(() => {

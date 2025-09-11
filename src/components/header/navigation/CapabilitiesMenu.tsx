@@ -43,31 +43,28 @@ export const ServicesMenu = () => {
   // Categories structure with enhanced descriptions and modern layout
   const capabilityCategories = [
     {
-      title: language === 'en' ? 'Advanced Injection Molding' : 'Fejlett fröccsöntési technológia',
+      title: language === 'en' ? 'Advanced Injection Moulding' : 'Fejlett fröccsöntési technológia',
       subtitle: language === 'en' ? 'Precision manufacturing solutions' : 'Precíziós gyártási megoldások',
       icon: Component,
       color: 'blue',
       links: [
         { 
           label: language === 'en' ? 'Precision Injection Manufacturing' : 'Precíziós fröccsöntési gyártás',
-          description: language === 'en' ? 'State-of-the-art plastic injection molding with exceptional precision and quality control' : 'Csúcstechnológiás műanyag fröccsöntés kivételes pontossággal és minőségellenőrzéssel',
+          description: language === 'en' ? 'State-of-the-art plastic injection Moulding with exceptional precision and quality control' : 'Csúcstechnológiás műanyag fröccsöntés kivételes pontossággal és minőségellenőrzéssel',
           href: '/services/plastic-injection-moulding',
-          icon: Component,
-          badge: 'Core Service'
+          icon: Component
         },
         { 
-          label: language === 'en' ? 'In-Mold Labeling Technology' : 'Öntés közbeni címkézési technológia',
+          label: language === 'en' ? 'In-Mould Labeling Technology' : 'Öntés közbeni címkézési technológia',
           description: language === 'en' ? 'Integrated labeling solutions that enhance product durability and visual appeal' : 'Integrált címkézési megoldások, amelyek növelik a termék tartósságát és vizuális vonzerejét',
           href: '/services/in-mould-labelling',
-          icon: Tag,
-          badge: 'Advanced'
+          icon: Tag
         },
         { 
           label: language === 'en' ? 'Surface Enhancement Solutions' : 'Felületjavítási megoldások',
           description: language === 'en' ? 'Premium surface decoration techniques for exceptional product finishing' : 'Prémium felületi dekorációs technikák kivételes termékbefejezéshez',
           href: '/services/in-mould-decoration',
-          icon: Paintbrush,
-          badge: 'Premium'
+          icon: Paintbrush
         },
       ]
     },
@@ -81,8 +78,7 @@ export const ServicesMenu = () => {
           label: language === 'en' ? 'Strategic Manufacturing Solutions' : 'Stratégiai gyártási megoldások',
           description: language === 'en' ? 'Comprehensive manufacturing partnerships from design to delivery with full quality assurance' : 'Átfogó gyártási partnerségek a tervezéstől a szállításig teljes minőségbiztosítással',
           href: '/services/contract-manufacturing',
-          icon: Box,
-          badge: 'Partnership'
+          icon: Box
         },
       ]
     },
@@ -96,8 +92,7 @@ export const ServicesMenu = () => {
           label: language === 'en' ? 'Professional Tooling Management' : 'Professzionális szerszámkezelés',
           description: language === 'en' ? 'Expert tool design, manufacturing, and maintenance services for optimal production efficiency' : 'Szakértői szerszámtervezés, gyártás és karbantartási szolgáltatások az optimális gyártási hatékonyságért',
           href: '/services/tooling-management',
-          icon: Layers,
-          badge: 'Expert'
+          icon: Layers
         },
       ]
     }
@@ -162,17 +157,8 @@ export const ServicesMenu = () => {
                         href={link.href}
                         className="group block p-4 rounded-xl border border-gray-100 hover:border-[#fa9b6b]/30 hover:bg-gradient-to-br hover:from-[#fa9b6b]/5 hover:to-transparent transition-all duration-300 h-full"
                       >
-                        {/* Service Badge */}
-                        <div className="flex items-center justify-between mb-3">
-                          <div className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
-                            link.badge === 'Core Service' ? 'bg-blue-100 text-blue-700' :
-                            link.badge === 'Advanced' ? 'bg-purple-100 text-purple-700' :
-                            link.badge === 'Premium' ? 'bg-amber-100 text-amber-700' :
-                            link.badge === 'Partnership' ? 'bg-orange-100 text-orange-700' :
-                            'bg-green-100 text-green-700'
-                          }`}>
-                            {link.badge}
-                          </div>
+                        {/* Service Icon */}
+                        <div className="flex items-center justify-end mb-3">
                           <div className="w-8 h-8 flex items-center justify-center text-gray-400 group-hover:text-[#fa9b6b] transition-colors">
                             <link.icon size={18} />
                           </div>
@@ -232,17 +218,8 @@ export const ServicesMenu = () => {
                             href={link.href}
                             className="group block p-4 rounded-xl border border-gray-100 hover:border-[#fa9b6b]/30 hover:bg-gradient-to-br hover:from-[#fa9b6b]/5 hover:to-transparent transition-all duration-300 h-full"
                           >
-                            {/* Service Badge */}
-                            <div className="flex items-center justify-between mb-3">
-                              <div className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
-                                link.badge === 'Core Service' ? 'bg-blue-100 text-blue-700' :
-                                link.badge === 'Advanced' ? 'bg-purple-100 text-purple-700' :
-                                link.badge === 'Premium' ? 'bg-amber-100 text-amber-700' :
-                                link.badge === 'Partnership' ? 'bg-orange-100 text-orange-700' :
-                                'bg-green-100 text-green-700'
-                              }`}>
-                                {link.badge}
-                              </div>
+                            {/* Service Icon */}
+                            <div className="flex items-center justify-end mb-3">
                               <div className="w-8 h-8 flex items-center justify-center text-gray-400 group-hover:text-[#fa9b6b] transition-colors">
                                 <link.icon size={18} />
                               </div>

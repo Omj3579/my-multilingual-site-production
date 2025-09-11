@@ -21,7 +21,7 @@ export const IMLSection = () => {
                   <>
                     <span className="text-[#000] font-medium">Elevating</span>{" "}
                     Products Design{" "}
-                    <span className="text-[#000] font-bold">Through In–Mold Labeling</span>
+                    <span className="text-[#000] font-bold">Through In–Mould Labeling</span>
                   </>
                 ) : (
                   <>

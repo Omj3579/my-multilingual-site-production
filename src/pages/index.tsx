@@ -3,9 +3,7 @@ import { SEOHead } from "@/lib/seo/SEOHead";
 import { generateSEOData } from "@/lib/seo/utils";
 import HeroSection from "@/components/HeroSection";
 import ServicesCards from "@/components/home/ServicesCards";
-import SustainabilityCarousel from "@/components/home/SustainabilityCarousel";
 import ManufacturingSupport from "@/components/home/ManufacturingSupport";
-import CapabilitiesPortraitCarousel from "@/components/home/CapabilitiesPortraitCarousel";
 import WhyPartnerSection from "@/components/home/WhyPartnerSection";
 
 export default function Home() {
@@ -28,9 +26,7 @@ export default function Home() {
           <HeroSection />
         </div>
         <ServicesCards />
-        <SustainabilityCarousel />
         <ManufacturingSupport />
-        <CapabilitiesPortraitCarousel />
         <WhyPartnerSection />
       </div>
     </>

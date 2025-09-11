@@ -21,13 +21,13 @@
 
 ### ContractManufacturing
 - **Section Title:** What is Contract Manufacturing?
-- **Description:** We specialize in high-volume production, leveraging advanced injection and blow molding technologies to deliver precision plastic components and assemblies.
+- **Description:** We specialize in high-volume production, leveraging advanced injection and blow Moulding technologies to deliver precision plastic components and assemblies.
 
 ### ContractManufacturingSection
 - **Section Title:** Our Contract Manufacturing Services
 - **Features:**
   1. Comprehensive Project Management
-  2. Advanced Molding Technologies
+  2. Advanced Moulding Technologies
   3. Flexible Production Volumes
   4. Quality Assurance
   5. Supply Chain Integration

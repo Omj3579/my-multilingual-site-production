@@ -20,16 +20,16 @@ const ModernCapabilitiesOverview = () => {
       icon: Cpu,
       title: language === 'en' ? 'Multi-Component Injection' : 'Többkomponensű fröccsöntés',
       description: language === 'en' 
-        ? 'Advanced multi-material injection molding for complex component requirements with enhanced properties.'
+        ? 'Advanced multi-material injection Moulding for complex component requirements with enhanced properties.'
         : 'Fejlett többanyagú fröccsöntés összetett alkatrész-követelményekhez fokozott tulajdonságokkal.',
       stats: { value: '50+', label: language === 'en' ? 'Material Types' : 'Anyagtípus' },
       gradient: 'from-blue-500 to-cyan-500'
     },
     {
       icon: Layers3,
-      title: language === 'en' ? 'In-Mold Decoration' : 'Formában díszítés',
+      title: language === 'en' ? 'In-Mould Decoration' : 'Formában díszítés',
       description: language === 'en'
-        ? 'Seamless integration of decorative elements directly during the molding process for superior aesthetics.'
+        ? 'Seamless integration of decorative elements directly during the Moulding process for superior aesthetics.'
         : 'A dekoratív elemek zökkenőmentes integrációja közvetlenül a formázási folyamat során kiváló esztétikumért.',
       stats: { value: '99.8%', label: language === 'en' ? 'Precision' : 'Pontosság' },
       gradient: 'from-purple-500 to-pink-500'
@@ -109,11 +109,11 @@ const ModernCapabilitiesOverview = () => {
             {language === 'en' ? 'Technology Capabilities' : 'Technológiai képességek'}
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            {language === 'en' ? 'Advanced Injection Molding' : 'Fejlett fröccsöntés'}
+            {language === 'en' ? 'Advanced Injection Moulding' : 'Fejlett fröccsöntés'}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {language === 'en'
-              ? 'At Flair-Plastic, we combine advanced technology with decades of expertise to deliver exceptional plastic injection molding solutions that meet the highest standards of quality and performance.'
+              ? 'At Flair-Plastic, we combine advanced technology with decades of expertise to deliver exceptional plastic injection Moulding solutions that meet the highest standards of quality and performance.'
               : 'A Flair-Plastic-nál fejlett technológiát kombinálunk évtizedes szakértelemmel, hogy kivételes műanyag fröccsöntési megoldásokat nyújtsunk, amelyek megfelelnek a legmagasabb minőségi és teljesítménystandardoknak.'
             }
           </p>
@@ -239,7 +239,7 @@ const ModernCapabilitiesOverview = () => {
             
             <p className="text-gray-600 text-lg max-w-4xl mx-auto mb-8 leading-relaxed">
               {language === 'en'
-                ? 'Our injection molding precision delivers cutting-edge machinery and industry to ensure competency and efficiency across production runs. With capacity ranging from small precision components to large-scale manufacturing, we have the expertise to meet your specific needs while maintaining exceptional standards throughout our production facilities, utilizing advanced molding techniques including multi-shot molding, overmolding, and gas-assisted molding technologies designed to ensure your product achieves optimal performance and cost-efficiency.'
+                ? 'Our injection Moulding precision delivers cutting-edge machinery and industry to ensure competency and efficiency across production runs. With capacity ranging from small precision components to large-scale manufacturing, we have the expertise to meet your specific needs while maintaining exceptional standards throughout our production facilities, utilizing advanced Moulding techniques including multi-shot Moulding, overMoulding, and gas-assisted Moulding technologies designed to ensure your product achieves optimal performance and cost-efficiency.'
                 : 'Fröccsöntési pontosságunk élvonalbeli gépeket és iparágat biztosít a termelési futásokon keresztüli kompetencia és hatékonyság érdekében. A kis precíziós alkatrészektől a nagyüzemi gyártásig terjedő kapacitással rendelkezünk a szakértelemmel, hogy megfelelünk az Ön speciális igényeinek, miközben kivételes szabványokat tartunk fenn termelési létesítményeinkben, fejlett formázási technikákat alkalmazva, beleértve a többlövéses formázást, túlformázást és gázzal segített formázási technológiákat, amelyeket úgy terveztek, hogy biztosítsák termékének optimális teljesítményét és költséghatékonyságát.'
               }
             </p>
@@ -247,7 +247,7 @@ const ModernCapabilitiesOverview = () => {
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 { number: language === 'en' ? 'Superior' : 'Kiváló', label: language === 'en' ? 'Quality Rate' : 'Minőségi arány' },
-                { number: '48h', label: language === 'en' ? 'Lead Time' : 'Átfutási idő' },
+                { number: '50+', label: language === 'en' ? 'Materials' : 'Anyagok' },
                 { number: '500+', label: language === 'en' ? 'Projects' : 'Projektek' }
               ].map((stat, index) => (
                 <motion.div

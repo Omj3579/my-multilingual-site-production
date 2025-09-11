@@ -48,9 +48,9 @@ const HeroSection = () => {
   
   // Process steps data
   const processSteps = language === 'en' ? [
-    { icon: <FlaskConical className="h-6 w-6" />, title: "Injection Phase", desc: "Melted plastic is injected into the mold to form the preform" },
+    { icon: <FlaskConical className="h-6 w-6" />, title: "Injection Phase", desc: "Melted plastic is injected into the Mould to form the preform" },
     { icon: <Droplets className="h-6 w-6" />, title: "Blow Phase", desc: "The preform is stretched and blown into the final shape" },
-    { icon: <Factory className="h-6 w-6" />, title: "Ejection Phase", desc: "The finished product is cooled and ejected from the mold" }
+    { icon: <Factory className="h-6 w-6" />, title: "Ejection Phase", desc: "The finished product is cooled and ejected from the Mould" }
   ] : [
     { icon: <FlaskConical className="h-6 w-6" />, title: "Befecskendezési fázis", desc: "Az olvasztott műanyagot a szerszámba fecskendezzük az előforma kialakításához" },
     { icon: <Droplets className="h-6 w-6" />, title: "Fúvási fázis", desc: "Az előformát kifeszítjük és a végső alakra fújjuk" },

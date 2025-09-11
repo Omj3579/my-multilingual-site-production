@@ -137,7 +137,7 @@ export const IMLExperienceSection = () => {
                 <span className="text-[#222]">Elevating</span>{" "}
                 <span className="text-[#222]">Product Design</span>{" "}
                 <span className="text-[#222] relative">
-                  Through In–Mold Labeling
+                  Through In–Mould Labeling
                   <motion.div 
                     className="absolute -bottom-2 left-0 h-[3px] bg-blue-500"
                     initial={{ width: 0 }}

@@ -263,7 +263,7 @@ const ResourcesLayout = ({ children }: ResourcesLayoutProps) => {
               </Link>
               <p className="text-gray-400 text-sm mb-4">
                 {language === 'en' 
-                  ? 'Leading plastic manufacturing company specializing in injection molding and sustainable solutions.'
+                  ? 'Leading plastic manufacturing company specializing in injection Moulding and sustainable solutions.'
                   : 'Vezető műanyaggyártó vállalat, amely a fröccsöntésre és fenntartható megoldásokra specializálódott.'}
               </p>              <div className="flex space-x-4">
                 <a 

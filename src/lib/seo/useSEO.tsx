@@ -70,7 +70,7 @@ export function useProductCategorySEO(category: {
 }) {
   const seo = useSEO({
     title: `${category.name} Products - Premium Plastic Manufacturing Solutions`,
-    description: `Discover our premium ${category.name.toLowerCase()} products. ${category.description} Professional injection molding and contract manufacturing by Flair Plastic.`,
+    description: `Discover our premium ${category.name.toLowerCase()} products. ${category.description} Professional injection Moulding and contract manufacturing by Flair Plastic.`,
     openGraph: {
       title: `${category.name} Products - Flair Plastic`,
       description: category.description,
@@ -97,7 +97,7 @@ export function useIndustrySEO(industry: {
   benefits: string[];
 }) {
   const seo = useSEO({
-    title: `${industry.name} Manufacturing Solutions - Contract Manufacturing & Injection Molding`,
+    title: `${industry.name} Manufacturing Solutions - Contract Manufacturing & Injection Moulding`,
     description: `${industry.description} Professional plastic manufacturing services for ${industry.name.toLowerCase()} industry. ISO certified quality and sustainable solutions.`,
     openGraph: {
       title: `${industry.name} Solutions - Flair Plastic`,
@@ -119,11 +119,11 @@ export function useIndustrySEO(industry: {
 // Main Products Page SEO Hook
 export function useProductsMainSEO() {
   const seo = useSEO({
-    title: 'Premium Plastic Products - Injection Molding & Contract Manufacturing',
-    description: 'Explore our comprehensive range of premium plastic products manufactured using advanced injection molding technology. From kitchen essentials to garden solutions, discover quality that exceeds expectations.',
+    title: 'Premium Plastic Products - Injection Moulding & Contract Manufacturing',
+    description: 'Explore our comprehensive range of premium plastic products manufactured using advanced injection Moulding technology. From kitchen essentials to garden solutions, discover quality that exceeds expectations.',
     openGraph: {
       title: 'Premium Plastic Products - Flair Plastic Manufacturing',
-      description: 'Comprehensive range of premium plastic products manufactured using advanced injection molding technology.',
+      description: 'Comprehensive range of premium plastic products manufactured using advanced injection Moulding technology.',
       images: [
         {
           url: 'https://flairplastic.com/products/og-image-main.jpg',

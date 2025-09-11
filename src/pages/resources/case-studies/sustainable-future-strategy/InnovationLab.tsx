@@ -67,7 +67,7 @@ const InnovationLab = () => {
       'molecular-analysis': {
         name: { en: "Molecular Structure Analysis", hu: "Molekuláris Szerkezet Elemzés" },
         description: { 
-          en: "Advanced analysis of polymer chains and molecular bonding in injection molding materials",
+          en: "Advanced analysis of polymer chains and molecular bonding in injection Moulding materials",
           hu: "Polimer láncok és molekuláris kötések fejlett elemzése fröccsöntési anyagokban"
         },
         icon: <Atom className="w-8 h-8" />,

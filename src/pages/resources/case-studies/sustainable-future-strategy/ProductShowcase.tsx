@@ -44,7 +44,7 @@ const ProductShowcase = () => {
       hu: "Precízen Kidolgozott<br/><span class='text-gradient'>Háztartási Kiválóság</span>"
     },
     subtitle: {
-      en: "Explore our comprehensive collection of innovative household products, each designed with meticulous attention to detail and manufactured using cutting-edge injection molding technology.",
+      en: "Explore our comprehensive collection of innovative household products, each designed with meticulous attention to detail and manufactured using cutting-edge injection Moulding technology.",
       hu: "Fedezze fel innovatív háztartási termékeink átfogó kollekcióját, amelyek mindegyike aprólékos figyelemmel a részletekre és élvonalbeli fröccsöntési technológiával készült."
     },
     filters: [

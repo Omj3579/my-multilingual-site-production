@@ -35,7 +35,7 @@ const Overview = () => {
       hu: "A Koncepciótól<br/><span class='highlight-gradient'>a Konyhai Valóságig</span>"
     },
     subtitle: {
-      en: "Discover how our innovative plastic injection molding transforms everyday household experiences through precision engineering and sustainable design.",
+      en: "Discover how our innovative plastic injection Moulding transforms everyday household experiences through precision engineering and sustainable design.",
       hu: "Fedezze fel, hogyan alakítja át innovatív műanyag fröccsöntési technológiánk a mindennapi háztartási élményeket precíziós mérnöki munkán és fenntartható tervezésen keresztül."
     },
     categories: [

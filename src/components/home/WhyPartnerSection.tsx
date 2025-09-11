@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import Link from 'next/link';
 import { motion, useInView, useMotionValue, useTransform } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ArrowRight, CheckCircle2, Award, Lightbulb, Leaf } from 'lucide-react';
@@ -33,12 +34,12 @@ const WhyPartnerSection = () => {
       },
       {
         title: 'Innovation at the Core',
-        description: 'With over 25 years of expertise, we continuously innovate to provide cutting-edge solutions tailored to your needs.',
+        description: 'With over 30 years of expertise, we continuously innovate to provide cutting-edge solutions tailored to your needs.',
         icon: <Lightbulb className="h-8 w-8" />,
         color: '#e45200',
         bgGradient: 'from-orange-500/10 via-red-500/5 to-orange-500/10',
-        stats: '25+ years expertise',
-        highlight: 'Cutting-edge R&D facilities'
+        stats: '30+ years expertise',
+        highlight: 'ISO 9001:2015 certified'
       },
       {
         title: 'Sustainability Commitment',
@@ -46,7 +47,7 @@ const WhyPartnerSection = () => {
         icon: <Leaf className="h-8 w-8" />,
         color: '#00b574',
         bgGradient: 'from-green-500/10 via-emerald-500/5 to-green-500/10',
-        stats: '30% carbon reduction',
+        stats: 'Sustainable practices',
         highlight: 'ISO 14001 Environmental Management'
       }
     ],
@@ -62,12 +63,12 @@ const WhyPartnerSection = () => {
       },
       {
         title: 'Innováció a középpontban',
-        description: 'Több mint 25 éves szakértelemmel folyamatosan innoválunk, hogy az Ön igényeire szabott, élvonalbeli megoldásokat kínáljunk.',
+        description: 'Több mint 30 éves szakértelemmel folyamatosan innoválunk, hogy az Ön igényeire szabott, élvonalbeli megoldásokat kínáljunk.',
         icon: <Lightbulb className="h-8 w-8" />,
         color: '#e45200',
         bgGradient: 'from-orange-500/10 via-red-500/5 to-orange-500/10',
-        stats: '25+ év szakértelem',
-        highlight: 'Élvonalbeli K+F létesítmények'
+        stats: '30+ év szakértelem',
+        highlight: 'ISO 9001:2015 tanúsított'
       },
       {
         title: 'Elkötelezettség a fenntarthatóság iránt',
@@ -75,7 +76,7 @@ const WhyPartnerSection = () => {
         icon: <Leaf className="h-8 w-8" />,
         color: '#00b574',
         bgGradient: 'from-green-500/10 via-emerald-500/5 to-green-500/10',
-        stats: '30% szén-dioxid csökkentés',
+        stats: 'Fenntartható gyakorlatok',
         highlight: 'ISO 14001 Környezetirányítás'
       }
     ]
@@ -294,7 +295,7 @@ const WhyPartnerSection = () => {
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
           transition={{ duration: 0.7, delay: 0.6 }}
         >
-          <a 
+          <Link 
             href="/company"
             className="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-md hover:from-blue-700 hover:to-indigo-700 transition-all duration-300"
           >
@@ -319,7 +320,7 @@ const WhyPartnerSection = () => {
                 }}
               />
             </span>
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

@@ -24,7 +24,7 @@ const ALL_CAPABILITIES: CapabilityPage[] = [
   {
     title: { en: 'Plastic Injection', hu: 'Műanyag Fröccsöntés' },
     summary: { 
-      en: 'Advanced plastic injection molding solutions for precision manufacturing',
+      en: 'Advanced plastic injection Moulding solutions for precision manufacturing',
       hu: 'Fejlett műanyag fröccsöntési megoldások precíziós gyártáshoz'
     },
     path: '/capabilities/plastic-injection',
@@ -33,7 +33,7 @@ const ALL_CAPABILITIES: CapabilityPage[] = [
   {
     title: { en: 'In-Mould Labelling', hu: 'Címkézés Fröccsöntés Közben' },
     summary: {
-      en: 'Seamless integration of labels during the injection molding process',
+      en: 'Seamless integration of labels during the injection Moulding process',
       hu: 'Címkék zökkenőmentes integrálása a fröccsöntési folyamat során'
     },
     path: '/capabilities/in-mould-labelling',
@@ -42,7 +42,7 @@ const ALL_CAPABILITIES: CapabilityPage[] = [
   {
     title: { en: 'In-Mould Decoration', hu: 'Dekoráció Fröccsöntés Közben' },
     summary: {
-      en: 'High-quality decorative finishes applied during molding',
+      en: 'High-quality decorative finishes applied during Moulding',
       hu: 'Kiváló minőségű dekoratív felületek alkalmazása fröccsöntés közben'
     },
     path: '/capabilities/in-mould-decoration',
@@ -51,7 +51,7 @@ const ALL_CAPABILITIES: CapabilityPage[] = [
   {
     title: { en: 'Injection Blow', hu: 'Fröccsöntött Fújás' },
     summary: {
-      en: 'Combined injection and blow molding for hollow plastic products',
+      en: 'Combined injection and blow Moulding for hollow plastic products',
       hu: 'Kombinált fröccsöntés és fúvás üreges műanyag termékekhez'
     },
     path: '/capabilities/injection-blow',

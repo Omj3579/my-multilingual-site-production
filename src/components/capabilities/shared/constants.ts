@@ -1,7 +1,7 @@
 import { FeatureCard, ProcessStep, BilingualContent } from './types';
 
-// Feature cards data for injection molding
-export const injectionMoldingFeatures: {
+// Feature cards data for injection Moulding
+export const injectionMouldingFeatures: {
   en: FeatureCard[];
   hu: FeatureCard[];
 } = {
@@ -9,12 +9,12 @@ export const injectionMoldingFeatures: {
     {
       title: "Multi-Component Injection",
       icon: "💠",
-      description: "Combining different materials in a single molding cycle for complex parts with enhanced properties."
+      description: "Combining different materials in a single Moulding cycle for complex parts with enhanced properties."
     },
     {
-      title: "In-Mold Decoration",
+      title: "In-Mould Decoration",
       icon: "🎨",
-      description: "Advanced techniques to incorporate graphics, textures, and patterns directly during the molding process."
+      description: "Advanced techniques to incorporate graphics, textures, and patterns directly during the Moulding process."
     },
     {
       title: "Precision Engineering",
@@ -51,15 +51,15 @@ export const injectionMoldingFeatures: {
   ]
 };
 
-// Process steps for injection molding
-export const injectionMoldingProcess: {
+// Process steps for injection Moulding
+export const injectionMouldingProcess: {
   en: ProcessStep[];
   hu: ProcessStep[];
 } = {
   en: [
     { step: "01", title: "Design & Engineering", description: "Collaborative design optimization for manufacturability." },
     { step: "02", title: "Prototyping", description: "Rapid prototyping to validate design and material selection." },
-    { step: "03", title: "Tooling", description: "Precision mold creation with advanced CNC technology." },
+    { step: "03", title: "Tooling", description: "Precision Mould creation with advanced CNC technology." },
     { step: "04", title: "Production", description: "Automated high-volume manufacturing with robotic assistance." },
     { step: "05", title: "Quality Assurance", description: "Comprehensive testing and inspection protocols." }
   ],
@@ -75,7 +75,7 @@ export const injectionMoldingProcess: {
 // Manufacturing capabilities list
 export const manufacturingCapabilities: BilingualContent[] = [
   {
-    en: "Injection Molding with 30-2500 ton machines",
+    en: "Injection Moulding with 30-2500 ton machines",
     hu: "Fröccsöntés 30-2500 tonnás gépekkel"
   },
   {
@@ -83,7 +83,7 @@ export const manufacturingCapabilities: BilingualContent[] = [
     hu: "Többkomponensű & LSR képességek"
   },
   {
-    en: "In-mold decoration & labeling",
+    en: "In-Mould decoration & labeling",
     hu: "Szerszámon belüli dekoráció és címkézés"
   },
   {
@@ -145,16 +145,16 @@ export const relatedCapabilities = [
   {
     title: { en: 'Plastic Injection', hu: 'Műanyag Fröccsöntés' },
     summary: { 
-      en: 'Advanced plastic injection molding solutions for precision manufacturing',
+      en: 'Advanced plastic injection Moulding solutions for precision manufacturing',
       hu: 'Fejlett műanyag fröccsöntési megoldások precíziós gyártáshoz'
     },
     path: '/capabilities/plastic-injection',
-    image: '/capabilities/injection-molding-excellence.webp'
+    image: '/capabilities/injection-Moulding-excellence.webp'
   },
   {
     title: { en: 'In-Mould Labelling', hu: 'Címkézés Fröccsöntés Közben' },
     summary: {
-      en: 'Seamless integration of labels during the injection molding process',
+      en: 'Seamless integration of labels during the injection Moulding process',
       hu: 'Címkék zökkenőmentes integrálása a fröccsöntési folyamat során'
     },
     path: '/capabilities/in-mould-labelling',
@@ -163,7 +163,7 @@ export const relatedCapabilities = [
   {
     title: { en: 'In-Mould Decoration', hu: 'Dekoráció Fröccsöntés Közben' },
     summary: {
-      en: 'High-quality decorative finishes applied during molding',
+      en: 'High-quality decorative finishes applied during Moulding',
       hu: 'Kiváló minőségű dekoratív felületek alkalmazása fröccsöntés közben'
     },
     path: '/capabilities/in-mould-decoration',
@@ -172,11 +172,11 @@ export const relatedCapabilities = [
   {
     title: { en: 'Injection Blow', hu: 'Fröccsöntött Fújás' },
     summary: {
-      en: 'Combined injection and blow molding for hollow plastic products',
+      en: 'Combined injection and blow Moulding for hollow plastic products',
       hu: 'Kombinált fröccsöntés és fúvás üreges műanyag termékekhez'
     },
     path: '/capabilities/injection-blow',
-    image: '/creatives/webp_images/Image-of-a-busy-injection-molding-tools-warehouse-in-a-manufacturing-company.-Workers-are-engaged-i.webp'
+    image: '/creatives/webp_images/Image-of-a-busy-injection-Moulding-tools-warehouse-in-a-manufacturing-company.-Workers-are-engaged-i.webp'
   },
   {
     title: { en: 'Surface Finishing', hu: 'Felületkezelés' },

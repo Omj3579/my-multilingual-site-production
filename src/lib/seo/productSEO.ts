@@ -19,7 +19,7 @@ export const PRODUCT_SEO_TEMPLATES: ProductSEO = {
     const description = product.desc?.[language] || product.desc?.en || '';
     
     const templates = {
-      en: `${productName} from Flair Plastic's ${categoryName} collection. ${description} Premium quality plastic manufacturing with sustainable practices and professional injection molding technology.`,
+      en: `${productName} from Flair Plastic's ${categoryName} collection. ${description} Premium quality plastic manufacturing with sustainable practices and professional injection Moulding technology.`,
       hu: `${productName} a Flair Plastic ${categoryName} kollekciójából. ${description} Prémium minőségű műanyag gyártás fenntartható gyakorlatokkal és professzionális fröccsöntő technológiával.`
     };
     
@@ -33,7 +33,7 @@ export const PRODUCT_SEO_TEMPLATES: ProductSEO = {
         productName.toLowerCase(),
         categoryName.toLowerCase(),
         'flair plastic',
-        'injection molding',
+        'injection Moulding',
         'plastic manufacturing',
         'sustainable manufacturing',
         'hungary manufacturing',

@@ -38,12 +38,12 @@ const images = {
       ]
     },
     {
-      src: '/capabilities/injection-molding-excellence.webp',
-      title: 'Advanced Injection Molding',
+      src: '/capabilities/injection-Moulding-excellence.webp',
+      title: 'Advanced Injection Moulding',
       description: 'Cutting-edge technology and specialized expertise',
       link: '/services/plastic-injection-moulding',
       features: [
-        'Innovative molding processes',
+        'Innovative Moulding processes',
         'Diverse material applications',
         'High-precision engineering'
       ]
@@ -73,7 +73,7 @@ const images = {
       ]
     },
     {
-      src: '/capabilities/injection-molding-excellence.webp',
+      src: '/capabilities/injection-Moulding-excellence.webp',
       title: 'Fejlett Fröccsöntés',
       description: 'Élvonalbeli technológia és szakosodott szakértelem',
       link: '/services/plastic-injection-moulding',

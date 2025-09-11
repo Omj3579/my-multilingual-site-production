@@ -141,7 +141,7 @@ const InjectionBlowMoulding = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               {language === 'en'
-                ? "Flair-Plastic offers industry-leading injection blow molding solutions, leveraging our deep expertise in food and beverage production. Our commitment to sustainability and cost-effectiveness makes us the preferred partner for businesses seeking environmentally responsible products."
+                ? "Flair-Plastic offers industry-leading injection blow Moulding solutions, leveraging our deep expertise in food and beverage production. Our commitment to sustainability and cost-effectiveness makes us the preferred partner for businesses seeking environmentally responsible products."
                 : "A Flair-Plastic iparágvezető fröccsöntés-fúvási megoldásokat kínál, kihasználva mély szakértelmünket az élelmiszer- és italgyártásban. A fenntarthatóság és költséghatékonyság iránti elkötelezettségünk tesz minket a környezettudatos termékeket kereső vállalkozások preferált partnerévé."}
             </motion.p>
             

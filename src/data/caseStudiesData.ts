@@ -192,7 +192,7 @@ export const caseStudyItems: CaseStudy[] = [
       <p>We developed a comprehensive approach combining material innovation with design optimization:</p>
       <ul>
         <li>Bio-based polymer blend with enhanced barrier properties</li>
-        <li>Thin-wall molding technology reducing material usage by 40%</li>
+        <li>Thin-wall Moulding technology reducing material usage by 40%</li>
         <li>Innovative closure system eliminating secondary packaging</li>
         <li>Smart labeling integration for enhanced consumer experience</li>
       </ul>
@@ -266,7 +266,7 @@ export const caseStudyItems: CaseStudy[] = [
     featured: true,
     industry: 'Food & Beverage',
     projectDuration: '6 months',
-    technologies: ['Bio-based plastics', 'Thin-wall molding', 'Barrier coatings']
+    technologies: ['Bio-based plastics', 'Thin-wall Moulding', 'Barrier coatings']
   },
   {
     id: 'automotive-lightweight',
@@ -336,7 +336,7 @@ export const caseStudyItems: CaseStudy[] = [
       <p>The project required extensive testing and validation to meet automotive industry standards while achieving the desired weight reduction targets.</p>
       
       <h2>Manufacturing Process</h2>
-      <p>We implemented advanced compression molding techniques to ensure consistent quality and strength properties across all components.</p>
+      <p>We implemented advanced compression Moulding techniques to ensure consistent quality and strength properties across all components.</p>
       
       <h2>Results</h2>
       <p>The final components not only met but exceeded all performance criteria, leading to their adoption across AutoTech's entire vehicle lineup.</p>`,
@@ -365,7 +365,7 @@ export const caseStudyItems: CaseStudy[] = [
     featured: true,
     industry: 'Automotive',
     projectDuration: '8 months',
-    technologies: ['Carbon fiber reinforcement', 'Impact absorption', 'Precision molding']
+    technologies: ['Carbon fiber reinforcement', 'Impact absorption', 'Precision Moulding']
   },
   {
     id: 'medical-sterilization',
@@ -522,13 +522,13 @@ export const caseStudyItems: CaseStudy[] = [
       <p>TechGadget Pro's latest smartphone design faced significant thermal management challenges that threatened device performance and user experience.</p>
       
       <h2>Innovation Approach</h2>
-      <p>Our team developed a novel thermally conductive plastic compound that could be molded into complex shapes while providing excellent heat dissipation properties.</p>
+      <p>Our team developed a novel thermally conductive plastic compound that could be Moulded into complex shapes while providing excellent heat dissipation properties.</p>
       
       <h2>Design Integration</h2>
       <p>The solution included integrated heat channels that distributed thermal load efficiently while maintaining the device's sleek aesthetic design.</p>
       
       <h2>Manufacturing Optimization</h2>
-      <p>We optimized the injection molding process to ensure consistent thermal properties across all components while maintaining cost-effectiveness.</p>`,
+      <p>We optimized the injection Moulding process to ensure consistent thermal properties across all components while maintaining cost-effectiveness.</p>`,
       
       hu: `<h2>Projekt áttekintés</h2>
       <p>A TechGadget Pro legújabb okostelefon-tervezése jelentős hőmenedzsment kihívásokkal szembesült, amelyek veszélyeztették az eszköz teljesítményét és a felhasználói élményt.</p>
@@ -551,7 +551,7 @@ export const caseStudyItems: CaseStudy[] = [
     featured: false,
     industry: 'Electronics',
     projectDuration: '5 months',
-    technologies: ['Thermal conductivity', 'Complex molding', 'Surface treatments']
+    technologies: ['Thermal conductivity', 'Complex Moulding', 'Surface treatments']
   },
   {
     id: 'aerospace-components',

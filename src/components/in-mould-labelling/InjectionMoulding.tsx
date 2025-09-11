@@ -121,7 +121,7 @@ export const InjectionMoulding = () => {
               >
                 <p className="text-[17px] text-[#444] leading-relaxed">
                   {language === 'en' 
-                    ? "Flair-Plastic's in-mould labelling technology seamlessly integrates high-quality labels into plastic products during the injection molding process, ensuring durability and premium aesthetics while optimizing production efficiency."
+                    ? "Flair-Plastic's in-mould labelling technology seamlessly integrates high-quality labels into plastic products during the injection Moulding process, ensuring durability and premium aesthetics while optimizing production efficiency."
                     : "A Flair-Plastic címkézési technológiája zökkenőmentesen integrálja a kiváló minőségű címkéket a műanyag termékekbe a fröccsöntési folyamat során, biztosítva a tartósságot és a prémium esztétikát, miközben optimalizálja a gyártási hatékonyságot."}
                 </p>
               </motion.div>
@@ -235,7 +235,7 @@ export const InjectionMoulding = () => {
                     </h4>
                     <p className="text-white/90 text-sm mb-4 leading-relaxed">
                       {language === 'en' 
-                        ? "High-precision labeling integrated seamlessly during molding for superior quality results."
+                        ? "High-precision labeling integrated seamlessly during Moulding for superior quality results."
                         : "Nagy pontosságú címkézés zökkenőmentesen integrálva a fröccsöntés során a kiváló minőségű eredményekért."}
                     </p>
                     

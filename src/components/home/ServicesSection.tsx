@@ -17,7 +17,7 @@ const ServicesSection = () => {
     {
       title: language === 'en' ? 'Leading Plastic Injection Moulding Expertise' : 'Vezető műanyag fröccsöntési szakértelem',
       description: language === 'en'
-        ? 'Experience unparalleled quality and reliability with our plastic injection molding services.'
+        ? 'Experience unparalleled quality and reliability with our plastic injection Moulding services.'
         : 'Tapasztalja meg a páratlan minőséget és megbízhatóságot műanyag fröccsöntési szolgáltatásainkkal.',
       imageSrc: '/lovable-uploads/ccfa0b21-daed-4f1e-9f0b-042099f3ebc6.png'
     },

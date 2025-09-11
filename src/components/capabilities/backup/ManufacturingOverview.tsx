@@ -67,9 +67,9 @@ const ManufacturingOverview = () => {
   
   // Feature list items
   const manufacturingFeatures = language === 'en' ? [
-    "Injection Molding with 30-2500 ton machines",
+    "Injection Moulding with 30-2500 ton machines",
     "Multi-shot & LSR capabilities",
-    "In-mold decoration & labeling",
+    "In-Mould decoration & labeling",
     "Automated assembly lines",
     "Quality testing & inspection",
     "Custom packaging solutions"

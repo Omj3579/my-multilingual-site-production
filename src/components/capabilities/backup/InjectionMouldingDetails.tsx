@@ -46,12 +46,12 @@ const featureCardsEn = [
   {
     title: "Multi-Component Injection",
     icon: "💠",
-    description: "Combining different materials in a single molding cycle for complex parts with enhanced properties."
+    description: "Combining different materials in a single Moulding cycle for complex parts with enhanced properties."
   },
   {
-    title: "In-Mold Decoration",
+    title: "In-Mould Decoration",
     icon: "🎨",
-    description: "Advanced techniques to incorporate graphics, textures, and patterns directly during the molding process."
+    description: "Advanced techniques to incorporate graphics, textures, and patterns directly during the Moulding process."
   },
   {
     title: "Precision Engineering",
@@ -92,7 +92,7 @@ const featureCardsHu = [
 const processStepsEn = [
   { step: "01", title: "Design & Engineering", description: "Collaborative design optimization for manufacturability." },
   { step: "02", title: "Prototyping", description: "Rapid prototyping to validate design and material selection." },
-  { step: "03", title: "Tooling", description: "Precision mold creation with advanced CNC technology." },
+  { step: "03", title: "Tooling", description: "Precision Mould creation with advanced CNC technology." },
   { step: "04", title: "Production", description: "Automated high-volume manufacturing with robotic assistance." },
   { step: "05", title: "Quality Assurance", description: "Comprehensive testing and inspection protocols." }
 ];
@@ -315,7 +315,7 @@ const InjectionMouldingDetails: React.FC<Props> = (props) => {
               {language === 'en' ? "Technology Capabilities" : "Technológiai Képességek"}
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-600">
-              {language === 'en' ? "Advanced Injection Molding" : "Fejlett Fröccsöntés"}
+              {language === 'en' ? "Advanced Injection Moulding" : "Fejlett Fröccsöntés"}
             </h2>
             <motion.div
               className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-6"
@@ -332,7 +332,7 @@ const InjectionMouldingDetails: React.FC<Props> = (props) => {
           >
             <p className="text-lg text-gray-700 leading-relaxed">
               {language === 'en'
-                ? "At Flair-Plastic, we combine advanced technology with decades of expertise to deliver exceptional plastic injection molding solutions. Our state-of-the-art facilities and dedication to precision engineering ensure that every product meets the highest standards of quality and performance."
+                ? "At Flair-Plastic, we combine advanced technology with decades of expertise to deliver exceptional plastic injection Moulding solutions. Our state-of-the-art facilities and dedication to precision engineering ensure that every product meets the highest standards of quality and performance."
                 : "A Flair-Plastic-nél fejlett technológiát ötvözünk évtizedes szakértelemmel, hogy kivételes műanyag fröccsöntési megoldásokat nyújtsunk. Csúcstechnológiás létesítményeink és a precíziós mérnöki munkánk iránti elkötelezettségünk biztosítja, hogy minden termék megfeleljen a minőség és teljesítmény legmagasabb színvonalának."}
             </p>
           </motion.div>
@@ -474,13 +474,13 @@ const InjectionMouldingDetails: React.FC<Props> = (props) => {
               <motion.div className="space-y-6 text-gray-700 relative z-10">
                 <motion.p variants={itemVariants}>
                   {language === 'en'
-                    ? "Our injection molding process utilizes cutting-edge machinery and robotics to ensure consistency and efficiency across production runs. With capacity ranging from small precision components to large-scale manufacturing, we tailor our approach to meet your specific needs while maintaining exceptional quality standards throughout the production lifecycle."
+                    ? "Our injection Moulding process utilizes cutting-edge machinery and robotics to ensure consistency and efficiency across production runs. With capacity ranging from small precision components to large-scale manufacturing, we tailor our approach to meet your specific needs while maintaining exceptional quality standards throughout the production lifecycle."
                     : "Fröccsöntési folyamatunk csúcstechnológiás gépeket és robotikát használ a gyártási futások során a konzisztencia és hatékonyság biztosítására. A kis precíziós alkatrészektől a nagyszabású gyártásig terjedő kapacitással, megközelítésünket az Ön egyedi igényeinek megfelelően alakítjuk, miközben kivételes minőségi normákat tartunk fenn a teljes gyártási életciklus során."}
                 </motion.p>
                 
                 <motion.p variants={itemVariants}>
                   {language === 'en'
-                    ? "Beyond standard injection molding, Flair-Plastic excels in specialized techniques including multi-shot injection, overmolding, and gas-assisted molding. Our engineering team collaborates closely with clients from concept to production, offering material selection guidance, design optimization, and prototyping services to ensure your product achieves optimal performance and cost-efficiency."
+                    ? "Beyond standard injection Moulding, Flair-Plastic excels in specialized techniques including multi-shot injection, overMoulding, and gas-assisted Moulding. Our engineering team collaborates closely with clients from concept to production, offering material selection guidance, design optimization, and prototyping services to ensure your product achieves optimal performance and cost-efficiency."
                     : "A standard fröccsöntésen túl a Flair-Plastic kiváló specializált technikákban, beleértve a többkomponensű fröccsöntést, a túlfröccsöntést és a gázsegítéses fröccsöntést. Mérnöki csapatunk szorosan együttműködik az ügyfelekkel a koncepciótól a gyártásig, anyagválasztási útmutatást, tervezési optimalizálást és prototípuskészítési szolgáltatásokat kínálva, hogy terméke optimális teljesítményt és költséghatékonyságot érjen el."}
                 </motion.p>
               </motion.div>

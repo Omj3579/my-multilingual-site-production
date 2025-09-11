@@ -7,7 +7,7 @@ export const INDUSTRIES_SEO_DATA = {
       de: 'Elektrowerkzeuge Fertigung | Präzisions-Kunststoffkomponenten | Flair Plastic'
     },
     description: {
-      en: 'Industry-leading plastic injection molding for power tools. Precision components, durable housings, and ergonomic grips for professional-grade power tools. ISO certified quality.',
+      en: 'Industry-leading plastic injection Moulding for power tools. Precision components, durable housings, and ergonomic grips for professional-grade power tools. ISO certified quality.',
       hu: 'Iparágvezető műanyag fröccsöntés elektromos szerszámokhoz. Precíziós alkatrészek, tartós burkolatok és ergonomikus fogantyúk professzionális elektromos szerszámokhoz. ISO tanúsított minőség.',
       de: 'Branchenführender Kunststoffspritzguss für Elektrowerkzeuge. Präzisionskomponenten, langlebige Gehäuse und ergonomische Griffe für professionelle Elektrowerkzeuge. ISO-zertifizierte Qualität.'
     },
@@ -77,7 +77,7 @@ export const INDUSTRY_SCHEMAS = {
     "@type": "ManufacturingBusiness",
     "name": "Flair Plastic",
     "url": "https://flair-plastic.hu",
-    "description": "Leading plastic injection molding and contract manufacturing company",
+    "description": "Leading plastic injection Moulding and contract manufacturing company",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "Hungary",

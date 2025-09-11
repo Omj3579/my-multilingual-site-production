@@ -195,7 +195,7 @@ const HeroSection = () => {
               transformStyle: "preserve-3d",
             }}
           >
-            <div className="relative p-6 rounded-xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-2xl">
+            <div className="relative p-6 rounded-xl bg-black/10 backdrop-blur-none border border-white/5 shadow-lg">
               {/* Glass highlights */}
               <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>

@@ -177,38 +177,6 @@ const HeroSection = () => {
                 : 'Fenntartható gyártási kiválóság fejlesztése stratégiai megújuló energia integrációval, optimalizált termikus kezelési rendszerekkel és átfogó körforgásos gazdasági elvekkel.'}
             </motion.p>
             
-            {/* Professional metrics reflecting operational excellence */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-wrap gap-6 md:gap-8 justify-center md:justify-start mb-10"
-            >
-              {/* Metric 1 - Thermal Management Efficiency */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg px-5 py-3 border border-blue-400/20">
-                <div className="text-3xl font-bold text-blue-300">98%</div>
-                <div className="text-sm text-blue-100">
-                  {language === 'en' ? 'Thermal Efficiency' : 'Termikus Hatékonyság'}
-                </div>
-              </div>
-              
-              {/* Metric 2 - Material Recovery Excellence */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg px-5 py-3 border border-green-400/20">
-                <div className="text-3xl font-bold text-green-300">100%</div>
-                <div className="text-sm text-green-100">
-                  {language === 'en' ? 'Material Recovery' : 'Anyag Visszanyerés'}
-                </div>
-              </div>
-              
-              {/* Metric 3 - Environmental Stewardship */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg px-5 py-3 border border-amber-400/20">
-                <div className="text-3xl font-bold text-amber-300">Zero</div>
-                <div className="text-sm text-amber-100">
-                  {language === 'en' ? 'Environmental Impact' : 'Környezeti Hatás'}
-                </div>
-              </div>
-            </motion.div>
-            
             {/* CTA Button */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}

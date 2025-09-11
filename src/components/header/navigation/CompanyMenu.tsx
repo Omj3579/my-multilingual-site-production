@@ -55,8 +55,7 @@ export const CompanyMenu = () => {
             ? "Founded in 1990 with a vision to revolutionize precision plastic manufacturing in Europe"
             : "1990-ben alapítottuk azzal a vízióval, hogy forradalmasítsuk a precíziós műanyag gyártást Európában",
           href: "/company/history#origins",
-          icon: Calendar,
-          badge: "Founded 1990"
+          icon: Calendar
         },
         {
           title: language === 'en' ? "Growth & Milestones" : "Növekedés és Mérföldkövek",
@@ -64,17 +63,15 @@ export const CompanyMenu = () => {
             ? "Key achievements and technological breakthroughs that shaped our 35-year journey to industry leadership"
             : "Kulcsfontosságú eredmények és technológiai áttörések, amelyek formálták 35 éves utunkat az iparági vezetésig",
           href: "/company/history#milestones",
-          icon: Target,
-          badge: "35+ Years"
+          icon: Target
         },
         {
           title: language === 'en' ? "Innovation Legacy" : "Innovációs Örökség",
           description: language === 'en' 
-            ? "Our pioneering developments in injection molding, sustainable practices, and quality excellence"
+            ? "Our pioneering developments in injection Moulding, sustainable practices, and quality excellence"
             : "Úttörő fejlesztéseink a fröccsöntésben, fenntartható gyakorlatokban és minőségi kiválóságban",
           href: "/company/history#innovation",
-          icon: Award,
-          badge: "Industry Pioneer"
+          icon: Award
         }
       ]
     },
@@ -89,8 +86,7 @@ export const CompanyMenu = () => {
             ? "Meet our CEO and senior executives who guide strategic direction and operational excellence"
             : "Ismerje meg vezérigazgatónkat és vezető beosztottjainkat, akik irányítják a stratégiai irányt és működési kiválóságot",
           href: "/company/management#executives",
-          icon: Briefcase,
-          badge: "C-Level"
+          icon: Briefcase
         },
         {
           title: language === 'en' ? "Department Heads" : "Osztályvezetők",
@@ -98,8 +94,7 @@ export const CompanyMenu = () => {
             ? "Experienced managers leading our production, quality, engineering, and business development teams"
             : "Tapasztalt vezetők, akik irányítják termelési, minőségi, mérnöki és üzletfejlesztési csapatainkat",
           href: "/company/management#department-heads",
-          icon: Users,
-          badge: "Department Leaders"
+          icon: Users
         }
       ]
     }
@@ -164,18 +159,8 @@ export const CompanyMenu = () => {
                           : 'hover:border-purple-200 hover:from-purple-50/50'
                       }`}
                     >
-                      {/* Badge and Icon */}
-                      <div className="flex items-center justify-between mb-2">
-                        <div className={`inline-flex items-center px-1.5 py-0.5 rounded-full text-xs font-medium ${
-                          item.badge === 'Founded 1990' ? 'bg-blue-100 text-blue-700' :
-                          item.badge === '35+ Years' ? 'bg-green-100 text-green-700' :
-                          item.badge === 'Industry Pioneer' ? 'bg-amber-100 text-amber-700' :
-                          item.badge === 'C-Level' ? 'bg-purple-100 text-purple-700' :
-                          item.badge === 'Department Leaders' ? 'bg-indigo-100 text-indigo-700' :
-                          'bg-pink-100 text-pink-700'
-                        }`}>
-                          {item.badge}
-                        </div>
+                      {/* Icon */}
+                      <div className="flex items-center justify-end mb-2">
                         <div className={`w-6 h-6 flex items-center justify-center text-gray-400 transition-colors ${
                           section.color === 'blue' ? 'group-hover:text-blue-600' : 'group-hover:text-purple-600'
                         }`}>

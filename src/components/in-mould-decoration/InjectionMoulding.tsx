@@ -120,7 +120,7 @@ const InjectionMoulding = () => {
               >
                 <p className="text-[17px] text-[#4b5563] leading-relaxed">
                   {language === 'en' 
-                    ? "Flair-Plastic's in-mold decoration (IMD) technology allows for the integration of complex and vibrant graphics directly into your products. After extensive research and development, we have perfected a process that is both efficient and cost-effective, ensuring reliability in every project."
+                    ? "Flair-Plastic's in-Mould decoration (IMD) technology allows for the integration of complex and vibrant graphics directly into your products. After extensive research and development, we have perfected a process that is both efficient and cost-effective, ensuring reliability in every project."
                     : "A Flair-Plastic szerszámon belüli dekorációs (IMD) technológiája lehetővé teszi komplex és élénk grafikák közvetlen integrálását termékeibe. Kiterjedt kutatás és fejlesztés után tökéletesítettük egy olyan folyamatot, amely hatékony és költséghatékony, biztosítva a megbízhatóságot minden projektben."
                   }
                 </p>
@@ -243,7 +243,7 @@ const InjectionMoulding = () => {
                     </h4>
                     <p className="text-sm text-slate-600">
                       {language === 'en' 
-                        ? "Precision decoration integrated during molding" 
+                        ? "Precision decoration integrated during Moulding" 
                         : "Precíziós dekoráció integrálva a fröccsöntés során"}
                     </p>
                   </div>

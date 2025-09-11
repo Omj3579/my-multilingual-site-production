@@ -43,7 +43,7 @@ const SurfaceFinishingOptions = () => {
     {
       icon: Tag,
       title: language === 'en' ? 'In-Mould Labelling' : 'Szerszámon Belüli Címkézés',
-      description: language === 'en' ? 'Seamless label integration during the molding process' : 'Zökkenőmentes címkeintegráció a fröccsöntési folyamat során',
+      description: language === 'en' ? 'Seamless label integration during the Moulding process' : 'Zökkenőmentes címkeintegráció a fröccsöntési folyamat során',
     },
     {
       icon: Printer,

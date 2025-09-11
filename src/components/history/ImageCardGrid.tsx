@@ -34,7 +34,7 @@ const ImageCardGrid = () => {
       title: language === 'en' ? "Technology Revolution" : "Technológiai Forradalom", 
       subtitle: language === 'en' ? "Innovation Era" : "Innovációs Korszak",
       description: language === 'en'
-        ? "Advanced injection molding technologies and automated quality control systems revolutionized our production capabilities."
+        ? "Advanced injection Moulding technologies and automated quality control systems revolutionized our production capabilities."
         : "A fejlett fröccsöntő technológiák és automatizált minőségirányítási rendszerek forradalmasították termelési képességeinket.",
       icon: Lightbulb,
       accent: "purple",

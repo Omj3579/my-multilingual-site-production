@@ -45,7 +45,7 @@ const AboutSection = () => {
   };
 
   // Split paragraphs into words for staggered animation
-  const enParagraph = 'For over 30 years, Flair-Plastic has been a prominent player in the plastic injection molding industry, manufacturing a multitude of products that improve everyday life. Our product line extends from consumer goods to essential items in hygiene and power tools sectors. With unwavering commitment to technical precision and innovation, we consistently provide high-quality plastic parts to a diverse customer base worldwide.';
+  const enParagraph = 'For over 30 years, Flair-Plastic has been a prominent player in the plastic injection Moulding industry, manufacturing a multitude of products that improve everyday life. Our product line extends from consumer goods to essential items in hygiene and power tools sectors. With unwavering commitment to technical precision and innovation, we consistently provide high-quality plastic parts to a diverse customer base worldwide.';
   const enWords = enParagraph.split(' ');
   
   const huParagraph = 'Több mint 30 éve a Flair-Plastic meghatározó szereplő a műanyag fröccsöntő iparágban, olyan termékek gyártásával, amelyek javítják a mindennapi életet. Termékpalettánk a fogyasztási cikkektől a higiéniai és szerszámgép ágazat alapvető elemeiig terjed. A műszaki precizitás és innováció iránti töretlen elkötelezettségünkkel következetesen biztosítunk kiváló minőségű műanyag alkatrészeket világszerte különböző ügyfelek számára.';
@@ -411,7 +411,7 @@ const AboutSection = () => {
                       transition={{ duration: 0.5, delay: 0.7 }}
                     >
                       {language === 'en'
-                        ? "Discover the precision and innovation behind our industry-leading plastic injection molding solutions."
+                        ? "Discover the precision and innovation behind our industry-leading plastic injection Moulding solutions."
                         : "Fedezze fel a precizitást és innovációt vezető műanyag fröccsöntési megoldásaink mögött."}
                     </motion.p>
                     

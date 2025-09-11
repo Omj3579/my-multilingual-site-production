@@ -73,12 +73,12 @@ const TechnicalDetails = () => {
       processes: {
         title: { en: "Advanced Manufacturing Processes", hu: "Fejlett Gyártási Folyamatok" },
         description: {
-          en: "State-of-the-art injection molding technologies combined with precision automation deliver consistent, high-quality results at scale.",
+          en: "State-of-the-art injection Moulding technologies combined with precision automation deliver consistent, high-quality results at scale.",
           hu: "Legmodernebb fröccsöntési technológiák precíziós automatizálással kombinálva következetes, kiváló minőségű eredményeket szolgáltatnak nagyban."
         },
         details: [
           {
-            name: { en: "Multi-Cavity Injection Molding", hu: "Többüregű Fröccsöntés" },
+            name: { en: "Multi-Cavity Injection Moulding", hu: "Többüregű Fröccsöntés" },
             specifications: [
               { en: "Cavity count: Up to 32 cavities", hu: "Üreg szám: Akár 32 üreg" },
               { en: "Cycle time: 45-180 seconds", hu: "Ciklus idő: 45-180 másodperc" },
@@ -88,7 +88,7 @@ const TechnicalDetails = () => {
             advantages: { en: "High efficiency, consistent quality, reduced cost per part", hu: "Nagy hatékonyság, következetes minőség, csökkentett darabköltség" }
           },
           {
-            name: { en: "In-Mold Assembly (IMA)", hu: "Forma-beli Összeszerelés (IMA)" },
+            name: { en: "In-Mould Assembly (IMA)", hu: "Forma-beli Összeszerelés (IMA)" },
             specifications: [
               { en: "Assembly stages: Up to 3 components", hu: "Összeszerelési szakaszok: Akár 3 alkatrész" },
               { en: "Precision: ±0.02mm alignment", hu: "Pontosság: ±0,02mm igazítás" },

@@ -2,22 +2,22 @@ import { DefaultSeoProps } from 'next-seo';
 
 const config: DefaultSeoProps = {
   titleTemplate: '%s | Flair Plastic Manufacturing',
-  defaultTitle: 'Flair Plastic - Advanced Injection Molding & Contract Manufacturing',
-  description: 'Leading plastic injection molding and contract manufacturing company specializing in sustainable manufacturing solutions with global reach and local expertise.',
+  defaultTitle: 'Flair Plastic - Advanced Injection Moulding & Contract Manufacturing',
+  description: 'Leading plastic injection Moulding and contract manufacturing company specializing in sustainable manufacturing solutions with global reach and local expertise.',
   canonical: 'https://flairplastic.com',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://flairplastic.com',
     siteName: 'Flair Plastic Manufacturing',
-    title: 'Flair Plastic - Advanced Injection Molding & Contract Manufacturing',
-    description: 'Leading plastic injection molding and contract manufacturing company specializing in sustainable manufacturing solutions with global reach and local expertise.',
+    title: 'Flair Plastic - Advanced Injection Moulding & Contract Manufacturing',
+    description: 'Leading plastic injection Moulding and contract manufacturing company specializing in sustainable manufacturing solutions with global reach and local expertise.',
     images: [
       {
         url: 'https://flairplastic.com/images/og-image-main.jpg',
         width: 1200,
         height: 630,
-        alt: 'Flair Plastic Manufacturing - Advanced Injection Molding Solutions',
+        alt: 'Flair Plastic Manufacturing - Advanced Injection Moulding Solutions',
         type: 'image/jpeg',
       },
       {

@@ -7,18 +7,18 @@ export const INDUSTRIES_SEO_DATA = {
       de: 'Elektrowerkzeuge Fertigung | Präzisions-Kunststoffkomponenten | Flair Plastic'
     },
     description: {
-      en: 'Industry-leading plastic injection molding for power tools. Precision components, durable housings, and ergonomic grips for professional-grade power tools. ISO certified quality.',
+      en: 'Industry-leading plastic injection Moulding for power tools. Precision components, durable housings, and ergonomic grips for professional-grade power tools. ISO certified quality.',
       hu: 'Iparágvezető műanyag fröccsöntés elektromos szerszámokhoz. Precíziós alkatrészek, tartós burkolatok és ergonomikus fogantyúk professzionális elektromos szerszámokhoz. ISO tanúsított minőség.',
       de: 'Branchenführender Kunststoffspritzguss für Elektrowerkzeuge. Präzisionskomponenten, langlebige Gehäuse und ergonomische Griffe für professionelle Elektrowerkzeuge. ISO-zertifizierte Qualität.'
     },
     ogImage: 'https://flair-plastic.hu/images/og/power-tools-og.jpg',
     keywords: {
-      en: ['power tools plastic components', 'drill housing manufacturing', 'power tool grips', 'cordless tool cases', 'professional tool manufacturing', 'power tool plastic parts', 'tool housing injection molding', 'ergonomic tool grips', 'power tool accessories plastic', 'tool case manufacturing'],
+      en: ['power tools plastic components', 'drill housing manufacturing', 'power tool grips', 'cordless tool cases', 'professional tool manufacturing', 'power tool plastic parts', 'tool housing injection Moulding', 'ergonomic tool grips', 'power tool accessories plastic', 'tool case manufacturing'],
       hu: ['elektromos szerszám műanyag alkatrészek', 'fúró burkolat gyártás', 'elektromos szerszám fogantyúk', 'akkus szerszám tok', 'professzionális szerszám gyártás', 'elektromos szerszám műanyag részek', 'szerszám burkolat fröccsöntés', 'ergonomikus szerszám fogantyúk', 'elektromos szerszám kiegészítők műanyag', 'szerszám tok gyártás'],
       de: ['Elektrowerkzeuge Kunststoffkomponenten', 'Bohrmaschinen Gehäuse Fertigung', 'Elektrowerkzeug Griffe', 'Akku Werkzeug Gehäuse', 'Professionelle Werkzeug Fertigung', 'Elektrowerkzeug Kunststoffteile', 'Werkzeuggehäuse Spritzguss', 'Ergonomische Werkzeuggriffe', 'Elektrowerkzeug Zubehör Kunststoff', 'Werkzeugkoffer Fertigung']
     },
     content: {
-      en: 'We manufacture precision plastic components for leading power tool brands. Our expertise includes durable tool housings, ergonomic grips, battery cases, and protective covers. With advanced injection molding technology and rigorous quality control, we deliver components that withstand professional use.',
+      en: 'We manufacture precision plastic components for leading power tool brands. Our expertise includes durable tool housings, ergonomic grips, battery cases, and protective covers. With advanced injection Moulding technology and rigorous quality control, we deliver components that withstand professional use.',
       hu: 'Precíziós műanyag alkatrészeket gyártunk vezető elektromos szerszám márkák számára. Szaktudásunk magában foglalja a tartós szerszám burkolatokat, ergonomikus fogantyúkat, akkumulátor tokokat és védőfedeleket. Fejlett fröccsöntési technológiával és szigorú minőségkontrollal olyan alkatrészeket szállítunk, amelyek ellenállnak a professzionális használatnak.',
       de: 'Wir fertigen Präzisions-Kunststoffkomponenten für führende Elektrowerkzeug-Marken. Unsere Expertise umfasst langlebige Werkzeuggehäuse, ergonomische Griffe, Batteriegehäuse und Schutzabdeckungen. Mit fortschrittlicher Spritzgusstechnologie und rigoroser Qualitätskontrolle liefern wir Komponenten, die professionellem Einsatz standhalten.'
     }
@@ -37,7 +37,7 @@ export const INDUSTRIES_SEO_DATA = {
     },
     ogImage: 'https://flair-plastic.hu/images/og/household-products-og.jpg',
     keywords: {
-      en: ['household plastic products', 'kitchen appliance components', 'storage container manufacturing', 'home organization plastic', 'household item injection molding', 'kitchen plastic parts', 'home storage solutions', 'household container manufacturing', 'kitchen accessory plastic', 'home utility products'],
+      en: ['household plastic products', 'kitchen appliance components', 'storage container manufacturing', 'home organization plastic', 'household item injection Moulding', 'kitchen plastic parts', 'home storage solutions', 'household container manufacturing', 'kitchen accessory plastic', 'home utility products'],
       hu: ['háztartási műanyag termékek', 'konyhai készülék alkatrészek', 'tárolóedény gyártás', 'otthoni szervezés műanyag', 'háztartási cikk fröccsöntés', 'konyhai műanyag részek', 'otthoni tárolási megoldások', 'háztartási edény gyártás', 'konyhai kiegészítő műanyag', 'otthoni hasznossági termékek'],
       de: ['Haushalts Kunststoffprodukte', 'Küchengeräte Komponenten', 'Aufbewahrungsbehälter Fertigung', 'Haus Organisation Kunststoff', 'Haushaltsartikel Spritzguss', 'Küchen Kunststoffteile', 'Haus Aufbewahrungslösungen', 'Haushalts Container Fertigung', 'Küchen Zubehör Kunststoff', 'Haushalts Gebrauchsgegenstände']
     },
@@ -106,7 +106,7 @@ export const INDUSTRIES_SEO_DATA = {
       de: 'ISO 13485 zertifizierte medizinische Kunststofffertigung. Präzisionskomponenten für Medizinprodukte, Diagnosegeräte und Gesundheitsprodukte. Biokompatible Materialien und Reinraumproduktion.'
     },
     keywords: {
-      en: ['medical device manufacturing', 'healthcare plastic components', 'medical injection molding', 'biocompatible plastic parts', 'diagnostic equipment plastic', 'medical device components', 'healthcare product manufacturing', 'medical grade plastic', 'cleanroom manufacturing', 'ISO 13485 plastic manufacturing'],
+      en: ['medical device manufacturing', 'healthcare plastic components', 'medical injection Moulding', 'biocompatible plastic parts', 'diagnostic equipment plastic', 'medical device components', 'healthcare product manufacturing', 'medical grade plastic', 'cleanroom manufacturing', 'ISO 13485 plastic manufacturing'],
       hu: ['orvosi eszköz gyártás', 'egészségügyi műanyag alkatrészek', 'orvosi fröccsöntés', 'biokompatibilis műanyag részek', 'diagnosztikai berendezés műanyag', 'orvosi eszköz alkatrészek', 'egészségügyi termék gyártás', 'orvosi minőségű műanyag', 'tisztatéri gyártás', 'ISO 13485 műanyag gyártás'],
       de: ['Medizinprodukte Fertigung', 'Gesundheitswesen Kunststoffkomponenten', 'Medizinischer Spritzguss', 'Biokompatible Kunststoffteile', 'Diagnosegeräte Kunststoff', 'Medizinprodukte Komponenten', 'Gesundheitsprodukte Fertigung', 'Medizinischer Kunststoff', 'Reinraum Fertigung', 'ISO 13485 Kunststoff Fertigung']
     },
@@ -129,7 +129,7 @@ export const INDUSTRIES_SEO_DATA = {
       de: 'Präzisions-Kunststoffgehäuse und -komponenten für Verbraucherelektronik. Smartphone-Hüllen, Tablet-Gehäuse, elektronische Gerätegehäuse und Tech-Zubehör-Fertigung. EMI-Abschirmung und Wärmeableitung.'
     },
     keywords: {
-      en: ['consumer electronics plastic', 'smartphone case manufacturing', 'electronic housing injection molding', 'tablet case manufacturing', 'electronic device components', 'tech accessory plastic', 'electronic enclosure manufacturing', 'consumer electronics components', 'electronic device housing', 'technology product plastic'],
+      en: ['consumer electronics plastic', 'smartphone case manufacturing', 'electronic housing injection Moulding', 'tablet case manufacturing', 'electronic device components', 'tech accessory plastic', 'electronic enclosure manufacturing', 'consumer electronics components', 'electronic device housing', 'technology product plastic'],
       hu: ['fogyasztói elektronika műanyag', 'okostelefon tok gyártás', 'elektronikus burkolat fröccsöntés', 'tablet tok gyártás', 'elektronikus eszköz alkatrészek', 'tech kiegészítő műanyag', 'elektronikus ház gyártás', 'fogyasztói elektronika alkatrészek', 'elektronikus eszköz burkolat', 'technológiai termék műanyag'],
       de: ['Verbraucherelektronik Kunststoff', 'Smartphone Hülle Fertigung', 'Elektronik Gehäuse Spritzguss', 'Tablet Hülle Fertigung', 'Elektronische Gerät Komponenten', 'Tech Zubehör Kunststoff', 'Elektronik Gehäuse Fertigung', 'Verbraucherelektronik Komponenten', 'Elektronische Gerät Gehäuse', 'Technologie Produkt Kunststoff']
     },
@@ -152,7 +152,7 @@ export const INDUSTRIES_SEO_DATA = {
       de: 'Umfassende Kunststoffverpackungslösungen für verschiedene Branchen. Maßgeschneiderte Behälter, Schutzverpackungen, Einzelhandelsaufsteller und spezielle Verpackungsdesigns.'
     },
     keywords: {
-      en: ['custom plastic packaging', 'protective packaging manufacturing', 'retail packaging solutions', 'industrial packaging plastic', 'packaging design manufacturing', 'specialty packaging containers', 'packaging injection molding', 'custom container manufacturing', 'packaging plastic solutions', 'commercial packaging plastic'],
+      en: ['custom plastic packaging', 'protective packaging manufacturing', 'retail packaging solutions', 'industrial packaging plastic', 'packaging design manufacturing', 'specialty packaging containers', 'packaging injection Moulding', 'custom container manufacturing', 'packaging plastic solutions', 'commercial packaging plastic'],
       hu: ['egyedi műanyag csomagolás', 'védő csomagolás gyártás', 'kiskereskedelmi csomagolási megoldások', 'ipari csomagolás műanyag', 'csomagolástervezés gyártás', 'speciális csomagolási tárolók', 'csomagolás fröccsöntés', 'egyedi tároló gyártás', 'csomagolás műanyag megoldások', 'kereskedelmi csomagolás műanyag'],
       de: ['Maßgeschneiderte Kunststoffverpackung', 'Schutzverpackung Fertigung', 'Einzelhandelsverpackung Lösungen', 'Industrieverpackung Kunststoff', 'Verpackungsdesign Fertigung', 'Spezialverpackung Container', 'Verpackung Spritzguss', 'Maßgeschneiderte Container Fertigung', 'Verpackung Kunststoff Lösungen', 'Kommerzielle Verpackung Kunststoff']
     },
@@ -198,7 +198,7 @@ export const INDUSTRIES_SEO_DATA = {
       de: 'Präzisionsfertigung von Verschlüssen und Kappen für Flaschen und Behälter. Schraubverschlüsse, Klappdeckel, Sportverschlüsse und Spezialverschlüsse mit manipulationssicheren Eigenschaften.'
     },
     keywords: {
-      en: ['bottle caps manufacturing', 'closure manufacturing', 'screw caps plastic', 'flip top closures', 'sports bottle caps', 'tamper evident closures', 'bottle closure injection molding', 'custom caps manufacturing', 'container closures', 'specialty bottle caps'],
+      en: ['bottle caps manufacturing', 'closure manufacturing', 'screw caps plastic', 'flip top closures', 'sports bottle caps', 'tamper evident closures', 'bottle closure injection Moulding', 'custom caps manufacturing', 'container closures', 'specialty bottle caps'],
       hu: ['üveg kupak gyártás', 'zár gyártás', 'csavaros kupakok műanyag', 'felhajtható zárak', 'sport üveg kupakok', 'hamisítás-biztos zárak', 'üveg zár fröccsöntés', 'egyedi kupak gyártás', 'tároló zárak', 'speciális üveg kupakok'],
       de: ['Flaschenkappe Fertigung', 'Verschluss Fertigung', 'Schraubverschlüsse Kunststoff', 'Klappdeckel Verschlüsse', 'Sport Flaschenverschlüsse', 'Manipulationssichere Verschlüsse', 'Flaschenverschluss Spritzguss', 'Maßgeschneiderte Kappen Fertigung', 'Container Verschlüsse', 'Spezial Flaschenkappe']
     },
@@ -221,7 +221,7 @@ export const INDUSTRIES_SEO_DATA = {
       de: 'Elegante Kosmetikbehälter und Schönheitsprodukt-Verpackungen. Tiegel, Flaschen, Kompaktdosen und Luxusverpackungslösungen für Hautpflege-, Make-up- und Duftprodukte.'
     },
     keywords: {
-      en: ['cosmetic containers manufacturing', 'beauty packaging', 'makeup container manufacturing', 'skincare packaging', 'cosmetic jars', 'beauty product bottles', 'luxury cosmetic packaging', 'compact containers', 'cosmetic bottle manufacturing', 'beauty container injection molding'],
+      en: ['cosmetic containers manufacturing', 'beauty packaging', 'makeup container manufacturing', 'skincare packaging', 'cosmetic jars', 'beauty product bottles', 'luxury cosmetic packaging', 'compact containers', 'cosmetic bottle manufacturing', 'beauty container injection Moulding'],
       hu: ['kozmetikai tároló gyártás', 'szépség csomagolás', 'smink tároló gyártás', 'bőrápolás csomagolás', 'kozmetikai tégelyek', 'szépségápolási termék üvegek', 'luxus kozmetikai csomagolás', 'kompakt tárolók', 'kozmetikai üveg gyártás', 'szépség tároló fröccsöntés'],
       de: ['Kosmetikbehälter Fertigung', 'Schönheitsverpackung', 'Make-up Container Fertigung', 'Hautpflege Verpackung', 'Kosmetiktiegel', 'Schönheitsprodukt Flaschen', 'Luxus Kosmetikverpackung', 'Kompakte Container', 'Kosmetikflasche Fertigung', 'Schönheit Container Spritzguss']
     },
@@ -244,7 +244,7 @@ export const INDUSTRIES_SEO_DATA = {
       de: 'Sichere, ungiftige Kunststofffertigung für Baby- und Kinderprodukte. BPA-freie Flaschen, Fütterungszubehör, Spielzeug und Kinderbetreuungsartikel mit abgerundeten Kanten und kindersicheren Materialien.'
     },
     keywords: {
-      en: ['baby product manufacturing', 'child safe plastic products', 'BPA free baby bottles', 'baby feeding accessories', 'childcare plastic products', 'non toxic baby products', 'baby bottle manufacturing', 'child safe containers', 'baby product injection molding', 'infant care plastic'],
+      en: ['baby product manufacturing', 'child safe plastic products', 'BPA free baby bottles', 'baby feeding accessories', 'childcare plastic products', 'non toxic baby products', 'baby bottle manufacturing', 'child safe containers', 'baby product injection Moulding', 'infant care plastic'],
       hu: ['baba termék gyártás', 'gyermekbiztos műanyag termékek', 'BPA mentes baba üvegek', 'baba táplálási kiegészítők', 'gyermekgondozási műanyag termékek', 'nem mérgező baba termékek', 'baba üveg gyártás', 'gyermekbiztos tárolók', 'baba termék fröccsöntés', 'csecsemő ápolás műanyag'],
       de: ['Babyprodukt Fertigung', 'Kindersichere Kunststoffprodukte', 'BPA freie Babyflaschen', 'Baby Fütterung Zubehör', 'Kinderbetreuung Kunststoffprodukte', 'Ungiftige Babyprodukte', 'Babyflasche Fertigung', 'Kindersichere Container', 'Babyprodukt Spritzguss', 'Säuglingspflege Kunststoff']
     },
@@ -336,7 +336,7 @@ export const INDUSTRIES_SEO_DATA = {
       de: 'Langlebige Kunststoffkomponenten für Reinigungswerkzeuge und professionelle Ausrüstung. Moppgriffe, Sprühflaschen, Reinigungsbehälter und Hausmeisterzubehör.'
     },
     keywords: {
-      en: ['cleaning tool manufacturing', 'professional cleaning equipment', 'spray bottle manufacturing', 'cleaning container manufacturing', 'mop handle manufacturing', 'janitorial accessory manufacturing', 'cleaning equipment plastic', 'commercial cleaning tools', 'cleaning tool injection molding', 'professional cleaning plastic'],
+      en: ['cleaning tool manufacturing', 'professional cleaning equipment', 'spray bottle manufacturing', 'cleaning container manufacturing', 'mop handle manufacturing', 'janitorial accessory manufacturing', 'cleaning equipment plastic', 'commercial cleaning tools', 'cleaning tool injection Moulding', 'professional cleaning plastic'],
       hu: ['tisztítószerszám gyártás', 'professzionális takarítási felszerelés', 'permetező üveg gyártás', 'tisztítási tároló gyártás', 'felmosó fogantyú gyártás', 'takarítási kiegészítő gyártás', 'tisztítóberendezés műanyag', 'kereskedelmi tisztítószerszámok', 'tisztítószerszám fröccsöntés', 'professzionális tisztítás műanyag'],
       de: ['Reinigungswerkzeug Fertigung', 'Professionelle Reinigungsausrüstung', 'Sprühflasche Fertigung', 'Reinigungsbehälter Fertigung', 'Moppgriff Fertigung', 'Hausmeisterzubehör Fertigung', 'Reinigungsausrüstung Kunststoff', 'Kommerzielle Reinigungswerkzeuge', 'Reinigungswerkzeug Spritzguss', 'Professionelle Reinigung Kunststoff']
     },
@@ -382,7 +382,7 @@ export const INDUSTRIES_SEO_DATA = {
       de: 'FDA-zugelassene Lebensmittel- und Getränkeverpackungslösungen. Sichere, langlebige Behälter, Flaschen, Verschlüsse und Kappen für die Lebensmittelindustrie. BPA-freie Materialien und lebensmittelkontaktsichere Fertigung.'
     },
     keywords: {
-      en: ['food packaging manufacturing', 'beverage container manufacturing', 'FDA approved plastic containers', 'food grade plastic manufacturing', 'beverage bottle manufacturing', 'food container injection molding', 'food packaging solutions', 'beverage packaging plastic', 'food safety packaging', 'BPA free containers'],
+      en: ['food packaging manufacturing', 'beverage container manufacturing', 'FDA approved plastic containers', 'food grade plastic manufacturing', 'beverage bottle manufacturing', 'food container injection Moulding', 'food packaging solutions', 'beverage packaging plastic', 'food safety packaging', 'BPA free containers'],
       hu: ['élelmiszer csomagolás gyártás', 'ital tároló gyártás', 'FDA jóváhagyott műanyag tárolók', 'élelmiszeripari műanyag gyártás', 'ital üveg gyártás', 'élelmiszer tároló fröccsöntés', 'élelmiszer csomagolási megoldások', 'ital csomagolás műanyag', 'élelmiszerbiztonság csomagolás', 'BPA mentes tárolók'],
       de: ['Lebensmittelverpackung Fertigung', 'Getränkebehälter Fertigung', 'FDA zugelassene Kunststoffbehälter', 'Lebensmittelrechtlicher Kunststoff Fertigung', 'Getränkeflasche Fertigung', 'Lebensmittelbehälter Spritzguss', 'Lebensmittelverpackung Lösungen', 'Getränkeverpackung Kunststoff', 'Lebensmittelsicherheit Verpackung', 'BPA freie Container']
     },
@@ -405,7 +405,7 @@ export const INDUSTRIES_SEO_DATA = {
       de: 'Sichere, langlebige Kunststofffertigung für Spielzeug und Bildungsprodukte. Kindersichere Materialien, abgerundete Kanten und ungiftige Oberflächen. CPSIA-konforme und EN71-zertifizierte Fertigung.'
     },
     keywords: {
-      en: ['toy manufacturing plastic', 'educational toy components', 'child safe plastic products', 'toy injection molding', 'educational product manufacturing', 'safe toy plastic', 'children toy components', 'educational tool plastic', 'toy safety manufacturing', 'child friendly plastic'],
+      en: ['toy manufacturing plastic', 'educational toy components', 'child safe plastic products', 'toy injection Moulding', 'educational product manufacturing', 'safe toy plastic', 'children toy components', 'educational tool plastic', 'toy safety manufacturing', 'child friendly plastic'],
       hu: ['játék gyártás műanyag', 'oktatási játék alkatrészek', 'gyermekbiztos műanyag termékek', 'játék fröccsöntés', 'oktatási termék gyártás', 'biztonságos játék műanyag', 'gyermek játék alkatrészek', 'oktatási eszköz műanyag', 'játékbiztonság gyártás', 'gyermekbarát műanyag'],
       de: ['Spielzeug Fertigung Kunststoff', 'Bildungsspielzeug Komponenten', 'Kindersichere Kunststoffprodukte', 'Spielzeug Spritzguss', 'Bildungsprodukt Fertigung', 'Sicheres Spielzeug Kunststoff', 'Kinder Spielzeug Komponenten', 'Bildungswerkzeug Kunststoff', 'Spielzeugsicherheit Fertigung', 'Kinderfreundlicher Kunststoff']
     },
@@ -428,7 +428,7 @@ export const INDUSTRIES_SEO_DATA = {
       de: 'Innovative Kunststoffkomponenten für modernes Möbeldesign. Stuhlkomponenten, Tischzubehör, Aufbewahrungslösungen und dekorative Elemente. Langlebige Materialien für Wohn- und Geschäftsmöbel.'
     },
     keywords: {
-      en: ['furniture plastic components', 'chair manufacturing plastic', 'table component manufacturing', 'furniture accessory plastic', 'modern furniture plastic', 'furniture hardware plastic', 'furniture injection molding', 'plastic furniture parts', 'furniture component manufacturing', 'contemporary furniture plastic'],
+      en: ['furniture plastic components', 'chair manufacturing plastic', 'table component manufacturing', 'furniture accessory plastic', 'modern furniture plastic', 'furniture hardware plastic', 'furniture injection Moulding', 'plastic furniture parts', 'furniture component manufacturing', 'contemporary furniture plastic'],
       hu: ['bútor műanyag alkatrészek', 'szék gyártás műanyag', 'asztal alkatrész gyártás', 'bútor kiegészítő műanyag', 'modern bútor műanyag', 'bútor vasalás műanyag', 'bútor fröccsöntés', 'műanyag bútor részek', 'bútor alkatrész gyártás', 'kortárs bútor műanyag'],
       de: ['Möbel Kunststoffkomponenten', 'Stuhl Fertigung Kunststoff', 'Tisch Komponente Fertigung', 'Möbel Zubehör Kunststoff', 'Moderne Möbel Kunststoff', 'Möbel Hardware Kunststoff', 'Möbel Spritzguss', 'Kunststoff Möbelteile', 'Möbel Komponente Fertigung', 'Zeitgenössische Möbel Kunststoff']
     },
@@ -447,7 +447,7 @@ export const INDUSTRY_SCHEMAS = {
     "@type": "ManufacturingBusiness",
     "name": "Flair Plastic",
     "url": "https://flair-plastic.hu",
-    "description": "Leading plastic injection molding and contract manufacturing company",
+    "description": "Leading plastic injection Moulding and contract manufacturing company",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "Hungary",
@@ -478,7 +478,7 @@ export const INDUSTRY_SCHEMAS = {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Injection Molding"
+            "name": "Injection Moulding"
           }
         },
         {

@@ -48,7 +48,7 @@ const HeroSection = () => {
 
   // Key points about IMD process
   const processPoints = language === 'en' ? [
-    { id: 1, title: 'Film Insertion', desc: 'Specialized film with design is placed in the mold cavity' },
+    { id: 1, title: 'Film Insertion', desc: 'Specialized film with design is placed in the Mould cavity' },
     { id: 2, title: 'Injection Process', desc: 'Molten plastic flows around the film, bonding permanently' },
     { id: 3, title: 'Surface Integration', desc: 'The film becomes an integral part of the product surface' }
   ] : [

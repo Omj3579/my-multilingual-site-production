@@ -137,17 +137,7 @@ const SustainabilityPathwaySection = () => {
                     </motion.div>
                   </div>
                   
-                  {/* Stats */}
-                  <div className="absolute -top-4 -right-4 bg-green-500 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg border-2 border-white">
-                    <motion.div
-                      animate={{ scale: [1, 1.1, 1] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                      className="text-center"
-                    >
-                      <div className="text-xs font-light">TARGET</div>
-                      <div className="text-xl font-bold">2030</div>
-                    </motion.div>
-                  </div>
+
                 </div>
               </div>
             </motion.div>
@@ -243,7 +233,7 @@ const SustainabilityPathwaySection = () => {
                   className="group inline-flex items-center gap-2 bg-white text-green-700 hover:bg-green-50 px-6 py-3 rounded-full font-medium transition shadow-md hover:shadow-lg no-underline"
                 >
                   <span>
-                    {language === 'en' ? 'Contact Our Green Team' : 'Kapcsolat a Zöld Csapatunkkal'}
+                    {language === 'en' ? 'Contact US' : 'Kapcsolat a Zöld Csapatunkkal'}
                   </span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>

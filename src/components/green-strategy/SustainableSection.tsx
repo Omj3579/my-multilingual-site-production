@@ -78,7 +78,7 @@ const SustainableSection = () => {
                 </p>
                 <p className="text-gray-600 text-lg leading-relaxed pl-4">
                   {language === 'en'
-                    ? "At Flair–Plastic, we stand at the forefront of the plastic injection molding and contract manufacturing industries, with a unique opportunity to pioneer sustainable innovations. We embrace our responsibility to make a significant positive impact on the environment, influencing the entire supply chain to adopt greener practices."
+                    ? "At Flair–Plastic, we stand at the forefront of the plastic injection Moulding and contract manufacturing industries, with a unique opportunity to pioneer sustainable innovations. We embrace our responsibility to make a significant positive impact on the environment, influencing the entire supply chain to adopt greener practices."
                     : "A Flair–Plastic-nál a műanyag fröccsöntő és szerződéses gyártóipar élvonalában állunk, egyedülálló lehetőséggel a fenntartható innovációk úttörőjeként. Felelősségünket vállaljuk a környezetre gyakorolt jelentős pozitív hatás érdekében, befolyásolva az egész ellátási láncot a zöldebb gyakorlatok bevezetésére."}
                 </p>
               </div>
@@ -143,20 +143,7 @@ const SustainableSection = () => {
                     </p>
                   </div>
                   
-                  {/* Floating stats */}
-                  <div className="absolute -top-4 -right-4 bg-white rounded-xl shadow-lg p-3 transform rotate-3 hover:rotate-0 transition-transform duration-300">
-                    <div className="text-green-600 font-bold text-lg">100%</div>
-                    <div className="text-xs text-gray-500">
-                      {language === 'en' ? 'Committed' : 'Elkötelezett'}
-                    </div>
-                  </div>
-                  
-                  <div className="absolute -bottom-6 -left-6 bg-emerald-500 text-white rounded-xl shadow-lg p-3 transform -rotate-6 hover:rotate-0 transition-transform duration-300">
-                    <div className="font-bold text-lg">2024+</div>
-                    <div className="text-xs opacity-90">
-                      {language === 'en' ? 'Green Era' : 'Zöld korszak'}
-                    </div>
-                  </div>
+
                 </div>
               </div>
             </div>
@@ -227,7 +214,7 @@ const SustainableSection = () => {
                     </span>
                   </p>
                   <p className="text-lg font-medium text-green-100 flex items-center gap-2">
-                    <span>{language === 'en' ? 'Jekó Péter' : 'Jekó Péter'}</span>
+                    <span>{language === 'en' ? 'Jekő Péter' : 'Jekő Péter'}</span>
                     <span className="w-6 h-px bg-green-200/60"></span>
                     <span className="text-green-200/80 font-normal">{language === 'en' ? 'CEO' : 'Vezérigazgató'}</span>
                   </p>

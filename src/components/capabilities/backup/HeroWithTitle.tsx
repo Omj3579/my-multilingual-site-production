@@ -282,7 +282,7 @@ const HeroWithTitle = ({ title }) => {
                 >
                   <motion.img
                     src="https://flair-plastic.hu/wp-content/uploads/2024/05/machine-performing-in-mould-decoration-on-white-plastic-parts-showcasing-the-process-of-1.png.webp"
-                    alt={language === 'en' ? 'Injection Molding Machine' : 'Fröccsöntő gép'}
+                    alt={language === 'en' ? 'Injection Moulding Machine' : 'Fröccsöntő gép'}
                     className="absolute inset-0 w-full h-full object-cover z-10"
                     style={{
                       transform: `translateX(${-mousePosition.x / 60}px) translateY(${-mousePosition.y / 60}px) scale(1.1)`

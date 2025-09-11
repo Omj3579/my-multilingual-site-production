@@ -34,7 +34,7 @@ const TermsConditions = () => {
             </h2>
             <p className="text-gray-700">
               {language === 'en'
-                ? 'Flair-Plastic.hu is operated by Flair-Plastic, a company registered in Hungary. Our registered office is located at Sajószigeti utca 2, 3527 Miskolc, and we are registered under company number 0509004973. As a leading provider in the plastic injection molding industry, Flair-Plastic manages operations across various international locations.'
+                ? 'Flair-Plastic.hu is operated by Flair-Plastic, a company registered in Hungary. Our registered office is located at Sajószigeti utca 2, 3527 Miskolc, and we are registered under company number 0509004973. As a leading provider in the plastic injection Moulding industry, Flair-Plastic manages operations across various international locations.'
                 : 'A Flair-Plastic.hu-t a Flair-Plastic üzemelteti, amely Magyarországon bejegyzett vállalat. Székhelyünk: Sajószigeti utca 2, 3527 Miskolc, cégjegyzékszámunk: 0509004973. A műanyag fröccsöntő ipar vezető szolgáltatójaként a Flair-Plastic különböző nemzetközi helyszíneken működik.'}
             </p>
 

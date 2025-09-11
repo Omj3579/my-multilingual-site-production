@@ -16,7 +16,7 @@ interface HeroWithTitleProps extends ComponentProps {
 const HeroWithTitle: React.FC<HeroWithTitleProps> = ({ 
   title, 
   imageUrl = "https://flair-plastic.hu/wp-content/uploads/2024/05/machine-performing-in-mould-decoration-on-white-plastic-parts-showcasing-the-process-of-1.png.webp",
-  imageAlt = "Injection Molding Machine",
+  imageAlt = "Injection Moulding Machine",
   className = ''
 }) => {
   const { mousePosition, containerRef, scrollYProgress } = useMouseInteraction();

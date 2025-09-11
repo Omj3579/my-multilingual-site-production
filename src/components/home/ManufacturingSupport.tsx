@@ -1,331 +1,247 @@
-import React, { useRef, useEffect, useState } from 'react';
-import { ChevronRight, ArrowUpRight } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ArrowUpRight, Sparkles, Zap, Shield, FileText } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { motion, useMotionValue, useTransform } from 'framer-motion';
+import Link from 'next/link';
 
 const features = {
   en: [
     {
       title: 'Engineering Consultation',
-      description: 'Comprehensive engineering consultation from concept development to production readiness. Our technical specialists focus on optimizing design efficiency and manufacturing cost reduction.',
-      icon: '/icons/design-support.svg',
-      color: '#4a6cf7'
+      description: 'Expert engineering support from concept to production, ensuring optimal design and manufacturability.',
+      color: '#4A6CF7',
+      gradient: 'from-blue-500/20 to-indigo-600/20',
+      icon: Sparkles,
+      delay: 0
     },
     {
-      title: 'R&D Facilities',
-      description: 'Cutting-edge R&D facilities featuring advanced equipment for accelerated prototyping and thorough validation of your innovative product ideas.',
-      icon: '/icons/innovation-labs.svg',
-      color: '#e44002'
+      title: 'Material Selection', 
+      description: 'Comprehensive material analysis and selection guidance for optimal performance and cost-effectiveness.',
+      color: '#E44002',
+      gradient: 'from-orange-500/20 to-red-600/20',
+      icon: Zap,
+      delay: 0.1
     },
     {
-      title: 'Manufacturing Transition',
-      description: 'Strategic manufacturing relocation services ensuring uninterrupted operations. Our expert transition specialists maintain production continuity and quality excellence.',
-      icon: '/icons/production-transfer.svg',
-      color: '#00b574'
+      title: 'Quality Assurance',
+      description: 'Rigorous quality control processes and testing protocols to ensure consistent product excellence.',
+      color: '#00B574',
+      gradient: 'from-emerald-500/20 to-green-600/20',
+      icon: Shield,
+      delay: 0.2
     },
     {
-      title: 'Project Methodology',
-      description: 'Proven workflow systems for streamlined product launch and market entry. Our established methodologies ensure predictable outcomes and schedule adherence.',
-      icon: '/icons/our-process.svg',
-      color: '#ffb700'
-    },
+      title: 'Technical Documentation',
+      description: 'Complete technical documentation and specifications to support your manufacturing requirements.',
+      color: '#FFB700',
+      gradient: 'from-amber-500/20 to-orange-600/20',
+      icon: FileText,
+      delay: 0.3
+    }
   ],
   hu: [
     {
-      title: 'Mérnöki tanácsadás',
-      description: 'Átfogó mérnöki tanácsadás a koncepciófejlesztéstől a gyártási készenlétéig. Műszaki szakembereink a tervezési hatékonyság és a gyártási költségcsökkentés optimalizálására összpontosítanak.',
-      icon: '/icons/design-support.svg',
-      color: '#4a6cf7'
+      title: 'Mérnöki Konzultáció',
+      description: 'Szakértő mérnöki támogatás a koncepciótól a gyártásig, az optimális tervezés és gyárthatóság biztosítása érdekében.',
+      color: '#4A6CF7',
+      gradient: 'from-blue-500/20 to-indigo-600/20',
+      icon: Sparkles,
+      delay: 0
     },
     {
-      title: 'K+F létesítmények',
-      description: 'Élvonalbeli K+F létesítmények fejlett berendezésekkel a gyorsított prototípuskészítéshez és innovatív termékötletek alapos validálásához.',
-      icon: '/icons/innovation-labs.svg',
-      color: '#e44002'
+      title: 'Anyagválasztás',
+      description: 'Átfogó anyagelemzés és -választási útmutatás az optimális teljesítmény és költséghatékonyság érdekében.',
+      color: '#E44002',
+      gradient: 'from-orange-500/20 to-red-600/20',
+      icon: Zap,
+      delay: 0.1
     },
     {
-      title: 'Gyártási átmenet',
-      description: 'Stratégiai gyártási áthelyezési szolgáltatások zavartalan működés biztosításával. Szakértő átmeneti specialistáink fenntartják a termelési folytonosságot és a minőségi kiválóságot.',
-      icon: '/icons/production-transfer.svg',
-      color: '#00b574'
+      title: 'Minőségbiztosítás',
+      description: 'Szigorú minőség-ellenőrzési folyamatok és tesztelési protokollok a következetes termékminőség biztosítása érdekében.',
+      color: '#00B574',
+      gradient: 'from-emerald-500/20 to-green-600/20',
+      icon: Shield,
+      delay: 0.2
     },
     {
-      title: 'Projekt módszertan',
-      description: 'Bevált munkafolyamat-rendszerek a racionalizált termékbevezetéshez és piaci belépéshez. Kialakított módszertanaink kiszámítható eredményeket és ütemterv-betartást biztosítanak.',
-      icon: '/icons/our-process.svg',
-      color: '#ffb700'
-    },
-  ],
+      title: 'Műszaki Dokumentáció',
+      description: 'Teljes műszaki dokumentáció és specifikációk a gyártási követelmények támogatásához.',
+      color: '#FFB700',
+      gradient: 'from-amber-500/20 to-orange-600/20',
+      icon: FileText,
+      delay: 0.3
+    }
+  ]
 };
 
-const ManufacturingSupport = () => {
+export default function ManufacturingSupport() {
   const { language } = useLanguage();
-  const containerRef = useRef(null);
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const [isInView, setIsInView] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight * 0.7 && rect.bottom > 0;
-        setIsInView(isVisible);
-      }
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
-    
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  const handleMouseMove = (e) => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    mouseX.set(x);
-    mouseY.set(y);
-  };
-
-  // Rotation transform based on mouse position
-  const rotateY = useTransform(mouseX, [-1000, 1000], [5, -5]);
-  const rotateX = useTransform(mouseY, [-1000, 1000], [-5, 5]);
-
-  // Create an array of feature background patterns for visual interest
-  const patterns = [
-    `radial-gradient(circle at 10% 20%, rgba(74, 108, 247, 0.03) 0%, transparent 40%)`,
-    `radial-gradient(circle at 90% 80%, rgba(228, 64, 2, 0.03) 0%, transparent 40%)`,
-    `radial-gradient(circle at 80% 10%, rgba(0, 181, 116, 0.03) 0%, transparent 40%)`,
-    `radial-gradient(circle at 20% 90%, rgba(255, 183, 0, 0.03) 0%, transparent 40%)`,
-  ];
-
   return (
-    <section 
-      ref={containerRef}
-      className="w-full py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden relative"
-      onMouseMove={handleMouseMove}
-    >
-      {/* Animated background particles */}
-      {[...Array(15)].map((_, index) => (
-        <motion.div
-          key={index}
-          className="absolute rounded-full bg-blue-500/5 backdrop-blur-3xl"
+    <section className="relative w-full py-32 overflow-hidden">
+      {/* Lighter Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100">
+        {/* Animated mesh gradient */}
+        <div className="absolute inset-0 opacity-40">
+          <div 
+            className="absolute inset-0 bg-gradient-to-r from-blue-200/30 via-purple-200/30 to-cyan-200/30"
+            style={{
+              transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`,
+              transition: 'transform 0.3s ease-out'
+            }}
+          />
+        </div>
+        
+        {/* Grid pattern */}
+        <div className="absolute inset-0 opacity-15"
           style={{
-            width: Math.random() * 200 + 50,
-            height: Math.random() * 200 + 50,
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            x: useTransform(mouseX, [-1000, 1000], [(index % 2 === 0 ? -20 : 20), (index % 2 === 0 ? 20 : -20)]),
-            y: useTransform(mouseY, [-1000, 1000], [(index % 2 === 0 ? 20 : -20), (index % 2 === 0 ? -20 : 20)]),
-            opacity: 0.2 + (Math.random() * 0.2),
-          }}
-          animate={{
-            scale: [1, 1.05, 1],
-            opacity: [0.2 + (Math.random() * 0.2), 0.3 + (Math.random() * 0.2), 0.2 + (Math.random() * 0.2)],
-          }}
-          transition={{
-            duration: 5 + Math.random() * 10,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut",
+            backgroundImage: `
+              linear-gradient(rgba(59, 130, 246, 0.2) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(59, 130, 246, 0.2) 1px, transparent 1px)
+            `,
+            backgroundSize: '50px 50px'
           }}
         />
-      ))}
 
-      {/* Main Content Container with depth effect */}
-      <motion.div 
-        className="w-full max-w-[1200px] mx-auto px-6 lg:px-8"
-        style={{ 
-          rotateX: isInView ? rotateX : 0,
-          rotateY: isInView ? rotateY : 0,
-          perspective: "1000px",
-          transformStyle: "preserve-3d",
-        }}
-      >
-        {/* Header with premium effect */}
-        <motion.div 
-          className="mb-16 text-center max-w-3xl mx-auto"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 40 }}
-          transition={{ duration: 0.8 }}
-        >
-          {/* Floating badge */}
-          <motion.div 
-            className="inline-flex items-center px-4 py-2 mb-6 bg-blue-50 border border-blue-100 rounded-full"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div className="w-2 h-2 rounded-full bg-[#00156A] mr-2"></div>
-            <span className="text-sm font-medium text-[#00156A]">
-              {language === 'en' ? 'Advanced Manufacturing Solutions' : 'Fejlett gyártási megoldások'}
+
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4">
+        {/* Futuristic Header */}
+        <div className="text-center mb-20">
+          <div className="inline-block mb-4 px-4 py-2 bg-blue-600/10 border border-blue-500/30 rounded-full backdrop-blur-sm">
+            <span className="text-blue-700 text-sm font-medium tracking-wider uppercase">
+              {language === 'en' ? 'Next-Gen Manufacturing' : 'Következő generációs gyártás'}
             </span>
-          </motion.div>
+          </div>
           
-          <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-          >
-            {language === 'en' ? (
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00156A] to-[#0041a1]">
-                Production Excellence
-              </span>
-            ) : (
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00156A] to-[#0041a1]">
-                Termelési kiválóság
-              </span>
-            )}
-          </motion.h2>
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight">
+            <span className="bg-gradient-to-r from-gray-800 via-gray-900 to-slate-800 bg-clip-text text-transparent">
+              {language === 'en' ? 'Production' : 'Gyártási'}
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+              {language === 'en' ? 'Experience' : 'Tapasztalat'}
+            </span>
+          </h2>
           
-          <motion.div 
-            className="max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-          >
-            <p className="text-gray-600 text-lg leading-relaxed">
-              {language === 'en'
-                ? 'Leveraging advanced engineering capabilities and decades of plastic manufacturing excellence, Flair-Plastic delivers innovative production solutions and end-to-end project management across diverse industries.'
-                : 'Fejlett mérnöki képességeket és évtizedes műanyaggyártási kiválóságot kihasználva, a Flair-Plastic innovatív termelési megoldásokat és végpontól végpontig tartó projektmenedzsmentet biztosít különböző iparágakban.'}
-            </p>
-          </motion.div>
-        </motion.div>
+          <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light">
+            {language === 'en' 
+              ? 'Revolutionary manufacturing solutions powered by advanced technology and decades of expertise'
+              : 'Forradalmi gyártási megoldások fejlett technológiával és évtizedes szakértelemmel'}
+          </p>
+        </div>
 
-        {/* 3D Feature Cards - Always showing content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-          {features[language].map((feature, index) => (
-            <motion.div
-              key={index}
-              className="relative group"
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 40 }}
-              transition={{ duration: 0.7, delay: 0.1 * (index + 4) }}
-              whileHover={{ scale: 1.02 }}
-            >
-              <motion.div 
-                className="h-full relative overflow-hidden rounded-2xl"
-                style={{
-                  transformStyle: "preserve-3d",
-                  transform: "perspective(1000px)",
-                  rotateX: useTransform(mouseY, [-1000, 1000], [2, -2], { clamp: true }),
-                  rotateY: useTransform(mouseX, [-1000, 1000], [-2, 2], { clamp: true }),
-                }}
+        {/* Advanced Feature Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {features[language as keyof typeof features].map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <Link
+                key={index}
+                href="/contact"
+                className="group relative block"
+                style={{ animationDelay: `${feature.delay}s` }}
               >
-                {/* Card with glass effect */}
-                <div 
-                  className="p-8 md:p-10 relative overflow-hidden h-full transition-all duration-300 border border-opacity-20 border-blue-200" 
-                  style={{ 
-                    background: `linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.85))`,
-                    boxShadow: `0 10px 40px -10px rgba(0, 21, 106, 0.1), 0 3px 10px -3px rgba(0, 21, 106, 0.07)`,
-                    backdropFilter: "blur(10px)",
-                  }}
-                >
-                  {/* Decorative elements */}
-                  <div className="absolute inset-0 opacity-20" style={{ background: patterns[index % patterns.length] }}></div>
-                  <div className="absolute top-0 right-0 left-0 h-[1px] bg-gradient-to-r from-transparent via-white to-transparent"></div>
-
-                  {/* Color accent at top */}
-                  <div className="absolute top-0 left-0 w-full h-1.5 opacity-80" style={{ backgroundColor: feature.color }}></div>
+                {/* Card Container */}
+                <div className="relative p-8 h-full bg-white/80 backdrop-blur-xl rounded-3xl border border-gray-200/60 hover:border-blue-300/50 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/30 overflow-hidden">
+                  {/* Gradient overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                   
-                  {/* Radial gradient glow on hover */}
-                  <motion.div 
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                    style={{ 
-                      background: `radial-gradient(circle at center, ${feature.color}10 0%, transparent 70%)`,
-                    }}
-                  ></motion.div>
+                  {/* Animated border glow */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-400/0 via-blue-400/30 to-purple-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
                   {/* Content */}
-                  <div className="relative z-10 h-full flex flex-col">
-                    {/* Header with icon */}
-                    <div className="flex items-center mb-6">
-                      <div className="w-12 h-12 rounded-xl flex items-center justify-center shadow-sm" 
-                        style={{ 
-                          backgroundColor: `${feature.color}15`,
-                          border: `1px solid ${feature.color}30`
-                        }}
-                      >
-                        <div className="w-6 h-6 rounded-full" style={{ backgroundColor: feature.color }}></div>
+                  <div className="relative z-10">
+                    {/* Icon and Title */}
+                    <div className="flex items-start mb-6">
+                      <div className="relative">
+                        <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-2xl flex items-center justify-center border border-gray-200/50 group-hover:border-blue-400/50 transition-colors duration-300">
+                          <Icon className="w-8 h-8 text-blue-600 group-hover:text-blue-700 transition-colors duration-300" />
+                        </div>
+                        {/* Glow effect */}
+                        <div className="absolute inset-0 bg-blue-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500" />
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900 ml-4 tracking-tight">{feature.title}</h3>
+                      
+                      <div className="ml-6 flex-1">
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-blue-900 transition-colors duration-300">
+                          {feature.title}
+                        </h3>
+                        <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
+                      </div>
                     </div>
                     
-                    {/* Description - Now always visible */}
-                    <p className="text-gray-600 leading-relaxed mb-6">
+                    {/* Description */}
+                    <p className="text-gray-600 leading-relaxed mb-6 text-lg group-hover:text-gray-700 transition-colors duration-300">
                       {feature.description}
                     </p>
                     
-                    {/* Learn more link */}
-                    <div className="mt-auto">
-                      <motion.a
-                        href={`/services#${feature.title.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="inline-flex items-center text-sm font-medium text-gray-900 hover:text-[#00156A] group/link"
-                        whileHover={{ x: 3 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                      >
-                        <span>{language === 'en' ? 'Learn more' : 'Tudj meg többet'}</span>
-                        <motion.span 
-                          className="ml-2 inline-block"
-                          initial={{ x: 0 }}
-                          whileHover={{ x: 3 }}
-                          transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                        >
-                          <ArrowUpRight size={16} className="text-current group-hover/link:text-[#00156A] transition-colors" />
-                        </motion.span>
-                      </motion.a>
+                    {/* CTA */}
+                    <div className="flex items-center text-blue-600 font-semibold group-hover:text-blue-700 transition-colors duration-300">
+                      <span className="mr-3">
+                        {language === 'en' ? 'Explore Solution' : 'Megoldás felfedezése'}
+                      </span>
+                      <div className="relative">
+                        <ArrowUpRight 
+                          size={20} 
+                          className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" 
+                        />
+                        <div className="absolute inset-0 bg-blue-400/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </div>
                     </div>
                   </div>
+                  
+                  {/* Animated background elements */}
+                  <div className="absolute top-4 right-4 w-32 h-32 bg-gradient-to-br from-blue-400/5 to-purple-400/5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-700 transform group-hover:scale-110" />
+                  <div className="absolute bottom-4 left-4 w-24 h-24 bg-gradient-to-br from-cyan-400/5 to-blue-400/5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-700 delay-100 transform group-hover:scale-110" />
                 </div>
-                
-                {/* Animated shine effect */}
-                <motion.div 
-                  className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100"
-                  animate={{
-                    background: [
-                      "linear-gradient(45deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 45%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 55%, rgba(255,255,255,0) 100%)",
-                      "linear-gradient(45deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 5%, rgba(255,255,255,0.3) 10%, rgba(255,255,255,0) 15%, rgba(255,255,255,0) 100%)"
-                    ],
-                    backgroundPosition: ["200% 200%", "-150% -150%"]
-                  }}
-                  transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 5 }}
-                />
-              </motion.div>
-            </motion.div>
-          ))}
+              </Link>
+            );
+          })}
         </div>
-        
-        {/* Discover More - CTA button */}
-        <motion.div 
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
-          transition={{ duration: 0.7, delay: 1 }}
-        >
-          <motion.a 
-            href="/services"
-            className="group relative inline-flex items-center justify-center px-8 py-4 font-medium bg-[#00156A] text-white rounded-lg hover:bg-[#001d8a] focus:outline-none focus:ring-2 focus:ring-[#00156A] focus:ring-opacity-50 transition-all duration-300 no-underline"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            {/* Button text */}
-            <span className="group-hover:mr-2 transition-all duration-300">
-              {language === 'en' ? 'Explore Our Complete Services' : 'Fedezze fel szolgáltatásainkat'}
-            </span>
-            
-            {/* Arrow icon */}
-            <ChevronRight 
-              size={18} 
-              className="ml-0 group-hover:ml-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0" 
-            />
-          </motion.a>
-        </motion.div>
-      </motion.div>
+
+        {/* Futuristic CTA Section */}
+        <div className="text-center mt-24">
+          <div className="relative inline-block">
+            <Link
+              href="/contact"
+              className="group relative inline-flex items-center px-12 py-6 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 text-white rounded-2xl font-bold text-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/50"
+            >
+              {/* Animated background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              {/* Content */}
+              <span className="relative z-10 mr-4">
+                {language === 'en' ? 'Launch Your Future' : 'Indítsa el jövőjét'}
+              </span>
+              <ArrowUpRight 
+                size={24} 
+                className="relative z-10 transform group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-300" 
+              />
+              
+              {/* Glow effect */}
+              <div className="absolute inset-0 bg-white/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-20px) rotate(180deg); }
+        }
+      `}</style>
     </section>
   );
-};
-
-export default ManufacturingSupport;
+}

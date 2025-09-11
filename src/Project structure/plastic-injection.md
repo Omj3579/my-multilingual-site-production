@@ -32,7 +32,7 @@
   - In-depth look at our injection moulding capabilities, including machine range, tooling, and quality control.
 - **Features:**
   1. Advanced machinery for small to large parts
-  2. Precision tooling and mold design
+  2. Precision tooling and Mould design
   3. Rigorous quality assurance at every stage
 
 ---

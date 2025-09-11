@@ -64,7 +64,7 @@ const DYNAMIC_CONTENT = {
   blog: [
     'sustainable-plastic-manufacturing-innovations',
     'recycling-technology-advances-2024',
-    'injection-molding-precision-techniques',
+    'injection-Moulding-precision-techniques',
     'circular-economy-plastic-industry',
     'future-of-bioplastics-manufacturing',
     'smart-manufacturing-iot-integration',
@@ -85,7 +85,7 @@ const DYNAMIC_CONTENT = {
     'ceo-keynote-plastic-future-summit'
   ],
   updates: [
-    'new-injection-molding-machine-installation',
+    'new-injection-Moulding-machine-installation',
     'iso-certification-renewal-2024',
     'employee-training-sustainability-program',
     'facility-expansion-completion'

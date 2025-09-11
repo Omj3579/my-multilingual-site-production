@@ -55,17 +55,17 @@
 - **Main Title:** EN: Plastic Injection Moulding, HU: Műanyag Fröccsöntés Gyártás
 - **Subheading:** EN: Precision engineering and innovative manufacturing solutions for advanced plastic components. HU: Precíziós mérnöki munka és innovatív gyártási megoldások fejlett műanyag alkatrészekhez.
 - **CTA:** EN: Learn More, HU: Tudj meg többet
-- **Image:** EN: Injection Molding Machine, HU: Fröccsöntő gép
+- **Image:** EN: Injection Moulding Machine, HU: Fröccsöntő gép
 - **Floating Labels:** EN: Precision Engineering, Advanced Technology, HU: Precíziós mérnöki munka, Fejlett technológia
 
 ### About Section
-For over 30 years, Flair-Plastic has been a prominent player in the plastic injection molding industry, manufacturing a multitude of products that improve everyday life. Our product line extends from consumer goods to essential items in hygiene and power tools sectors. With unwavering commitment to technical precision and innovation, we consistently provide high-quality plastic parts to a diverse customer base worldwide.
+For over 30 years, Flair-Plastic has been a prominent player in the plastic injection Moulding industry, manufacturing a multitude of products that improve everyday life. Our product line extends from consumer goods to essential items in hygiene and power tools sectors. With unwavering commitment to technical precision and innovation, we consistently provide high-quality plastic parts to a diverse customer base worldwide.
 - **Stats:** 30 Years Experience, 500 Products, 24 Countries
 
 ### Injection Moulding Details
 - **Feature Cards:**
   - Multi-Component Injection
-  - In-Mold Decoration
+  - In-Mould Decoration
   - Precision Engineering
   - Material Innovation
 - **Process Steps:**
@@ -77,9 +77,9 @@ For over 30 years, Flair-Plastic has been a prominent player in the plastic inje
 
 ### Manufacturing Overview
 - **Manufacturing Features:**
-  - Injection Molding with 30-2500 ton machines
+  - Injection Moulding with 30-2500 ton machines
   - Multi-shot & LSR capabilities
-  - In-mold decoration & labeling
+  - In-Mould decoration & labeling
   - Automated assembly lines
   - Quality testing & inspection
   - Custom packaging solutions

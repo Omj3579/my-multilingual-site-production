@@ -210,7 +210,7 @@ const IndustriesPage: React.FC<IndustriesPageProps> = ({ locale }) => {
   };
 
   const seoDescription = {
-    en: 'Discover our manufacturing expertise across 19 industries: power tools, household products, hygiene & personal care, food packaging, and more. Premium injection molding solutions.',
+    en: 'Discover our manufacturing expertise across 19 industries: power tools, household products, hygiene & personal care, food packaging, and more. Premium injection Moulding solutions.',
     hu: 'Fedezze fel gyártási szakértelmünket 19 iparágban: elektromos szerszámok, háztartási termékek, higiénia és személyi ápolás, élelmiszer-csomagolás és még sok más. Prémium fröccsöntési megoldások.',
     de: 'Entdecken Sie unsere Fertigungsexpertise in 19 Branchen: Elektrowerkzeuge, Haushaltsprodukte, Hygiene & Körperpflege, Lebensmittelverpackungen und mehr. Premium-Spritzgusslösungen.'
   };
@@ -261,7 +261,7 @@ const IndustriesPage: React.FC<IndustriesPageProps> = ({ locale }) => {
         seoData={{
           title: seoTitle[locale],
           description: seoDescription[locale],
-          keywords: ['industries', 'manufacturing', 'plastic injection molding', 'power tools', 'household products', 'hygiene personal care', 'food packaging'],
+          keywords: ['industries', 'manufacturing', 'plastic injection Moulding', 'power tools', 'household products', 'hygiene personal care', 'food packaging'],
           canonical: `https://flair-plastic.hu/${locale}/industries`,
           ogTitle: seoTitle[locale],
           ogDescription: seoDescription[locale],

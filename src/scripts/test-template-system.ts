@@ -96,7 +96,7 @@ const testCases = {
           'Deployment and training'
         ],
         timeline: '6 months',
-        technologies: ['Injection Molding', 'Quality Control', 'Automation']
+        technologies: ['Injection Moulding', 'Quality Control', 'Automation']
       },
       results: {
         metrics: [

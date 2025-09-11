@@ -71,16 +71,16 @@ const ModernIMDApplications = () => {
     },
     {
       step: '02',
-      title: language === 'en' ? 'Mold Integration' : 'Forma integráció',
+      title: language === 'en' ? 'Mould Integration' : 'Forma integráció',
       description: language === 'en'
-        ? 'Careful placement and securing of decorative film in the mold'
+        ? 'Careful placement and securing of decorative film in the Mould'
         : 'A dekoratív fólia gondos elhelyezése és rögzítése a formában'
     },
     {
       step: '03',
       title: language === 'en' ? 'Injection Process' : 'Fröccsöntési folyamat',
       description: language === 'en'
-        ? 'Precise injection molding creating seamless integration'
+        ? 'Precise injection Moulding creating seamless integration'
         : 'Precíz fröccsöntés zökkenőmentes integrációt eredményezve'
     },
     {

@@ -52,11 +52,11 @@ const ContractManufacturingHero = () => {
   const expertiseCards = language === 'en' ? [
     { title: "Precision Engineering", desc: "Delivering tight tolerances and exceptional quality" },
     { title: "Complete Solutions", desc: "From concept to delivery with integrated services" },
-    { title: "Global Reach", desc: "Supporting clients with worldwide manufacturing services" }
+    { title: "Custom Tooling", desc: "Specialized injection Moulds and tooling designed for your products" }
   ] : [
     { title: "Precíziós Mérnöki Munka", desc: "Szűk tűréshatárok és kivételes minőség biztosítása" },
     { title: "Teljes Körű Megoldások", desc: "A koncepcióktól a szállításig integrált szolgáltatásokkal" },
-    { title: "Globális Jelenlét", desc: "Ügyfelek támogatása világszintű gyártási képességekkel" }
+    { title: "Egyedi Szerszámgyártás", desc: "Specializált fröccsöntő szerszámok és eszközök az Ön termékeihez" }
   ];
 
   return (

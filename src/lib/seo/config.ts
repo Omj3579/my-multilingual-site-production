@@ -4,13 +4,13 @@ export const SEO_CONFIG = {
     name: 'Flair Plastic',
     domain: 'https://flair-plastic.hu',
     description: {
-      en: 'Leading plastic injection molding and contract manufacturing company specializing in power tools, household products, hygiene & personal care, agriculture, medical & healthcare, and sustainable manufacturing solutions.',
+      en: 'Leading plastic injection Moulding and contract manufacturing company specializing in power tools, household products, hygiene & personal care, agriculture, medical & healthcare, and sustainable manufacturing solutions.',
       hu: 'Vezető műanyag fröccsöntési és szerződéses gyártási vállalat, amely elektromos szerszámok, háztartási termékek, higiéniai és személyes ápolási termékek, mezőgazdasági, orvosi és egészségügyi területeken kínál fenntartható, magas minőségű megoldásokat.',
       de: 'Führendes Unternehmen für Kunststoffspritzguss und Lohnfertigung, spezialisiert auf Elektrowerkzeuge, Haushaltsprodukte, Hygiene- und Körperpflegeartikel, Landwirtschaft, Medizin- und Gesundheitswesen sowie nachhaltige Fertigungslösungen.'
     },
     keywords: {
       en: [
-        'plastic injection molding',
+        'plastic injection Moulding',
         'contract manufacturing',
         'power tools manufacturing',
         'household products plastic',
@@ -114,7 +114,7 @@ export const SEO_CONFIG = {
       "name": "Flair Plastic",
       "url": "https://flair-plastic.hu",
       "logo": "https://flair-plastic.hu/logos/flair_plastic_logo_cmyk_full_-_MAIN.png",
-      "description": "Leading plastic injection molding and contract manufacturing company specializing in power tools, household products, hygiene & personal care, and sustainable manufacturing solutions",
+      "description": "Leading plastic injection Moulding and contract manufacturing company specializing in power tools, household products, hygiene & personal care, and sustainable manufacturing solutions",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "Hungary",
@@ -180,12 +180,12 @@ export const SEO_CONFIG = {
 export const PAGE_SEO_CONFIG = {
   home: {
     title: {
-      en: 'Flair Plastic: Advanced Injection Molding & Sustainable Manufacturing Solutions',
+      en: 'Flair Plastic: Advanced Injection Moulding & Sustainable Manufacturing Solutions',
       hu: 'Flair Plastic: Fejlett Fröccsöntés és Fenntartható Gyártási Megoldások',
       de: 'Flair Plastic: Fortschrittlicher Spritzguss & Nachhaltige Fertigungslösungen'
     },
     description: {
-      en: 'Discover Flair Plastic\'s cutting-edge injection molding expertise. From precision engineering to eco-friendly solutions, we deliver exceptional quality for power tools, household products & more. Get your custom quote today!',
+      en: 'Discover Flair Plastic\'s cutting-edge injection Moulding expertise. From precision engineering to eco-friendly solutions, we deliver exceptional quality for power tools, household products & more. Get your custom quote today!',
       hu: 'Fedezze fel a Flair Plastic élvonalbeli fröccsöntési szakértelmét. A precíziós mérnökségtől az környezetbarát megoldásokig kivételes minőséget szállítunk elektromos szerszámok, háztartási termékek és egyebek számára. Kérje egyedi ajánlatát még ma!',
       de: 'Entdecken Sie Flair Plastics hochmoderne Spritzguss-Expertise. Von Präzisionstechnik bis zu umweltfreundlichen Lösungen liefern wir außergewöhnliche Qualität für Elektrowerkzeuge, Haushaltsprodukte und mehr. Holen Sie sich heute Ihr individuelles Angebot!'
     }
@@ -193,14 +193,14 @@ export const PAGE_SEO_CONFIG = {
   
   services: {
     title: {
-      en: 'Premium Manufacturing Services: Injection Molding Excellence & Custom Solutions',
+      en: 'Premium Manufacturing Services: Injection Moulding Excellence & Custom Solutions',
       hu: 'Prémium Gyártási Szolgáltatások: Fröccsöntési Kiválóság és Egyedi Megoldások',
       de: 'Premium Fertigungsdienstleistungen: Spritzguss-Exzellenz & Maßlösungen'
     },
     description: {
-      en: 'Explore our comprehensive manufacturing capabilities: precision injection molding, in-mold technologies, sustainable solutions & quality assurance. Transform your ideas into reality with Europe\'s trusted manufacturing partner.',
+      en: 'Explore our comprehensive manufacturing capabilities: precision injection Moulding, in-Mould technologies, sustainable solutions & quality assurance. Transform your ideas into reality with Europe\'s trusted manufacturing partner.',
       hu: 'Fedezze fel átfogó gyártási képességeinket: precíziós fröccsöntés, forma technológiák, fenntartható megoldások és minőségbiztosítás. Alakítsa ötleteit valósággá Európa megbízható gyártási partnerével.',
-      de: 'Entdecken Sie unsere umfassenden Fertigungskapazitäten: Präzisions-Spritzguss, In-Mold-Technologien, nachhaltige Lösungen & Qualitätssicherung. Verwandeln Sie Ihre Ideen mit Europas vertrauensvollem Fertigungspartner in die Realität.'
+      de: 'Entdecken Sie unsere umfassenden Fertigungskapazitäten: Präzisions-Spritzguss, In-Mould-Technologien, nachhaltige Lösungen & Qualitätssicherung. Verwandeln Sie Ihre Ideen mit Europas vertrauensvollem Fertigungspartner in die Realität.'
     }
   },
   

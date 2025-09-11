@@ -30,7 +30,7 @@ const cards: Card[] = [
     },
     link: '/services/contract-manufacturing',
     description: {
-      en: 'Transform your product concepts into reality through our comprehensive manufacturing partnership services. We specialize in high-volume plastic component production utilizing advanced injection molding and blow molding technologies. Our experienced team collaborates with you from initial design through final delivery, ensuring exceptional quality and adherence to your exact specifications throughout the entire manufacturing process.',
+      en: 'Transform your product concepts into reality through our comprehensive manufacturing partnership services. We specialize in high-volume plastic component production utilizing advanced injection Moulding and blow Moulding technologies. Our experienced team collaborates with you from initial design through final delivery, ensuring exceptional quality and adherence to your exact specifications throughout the entire manufacturing process.',
       hu: 'Alakítsa át termékelképzeléseit valósággá átfogó gyártási partnerségi szolgáltatásainkkal. Nagy volumenű műanyag alkatrészgyártásra specializálódunk fejlett fröccsöntési és fúvási technológiák alkalmazásával. Tapasztalt csapatunk a kezdeti tervezéstől a végső szállításig együttműködik Önnel, biztosítva a kivételes minőséget és pontos specifikációinak betartását a teljes gyártási folyamat során.'
     },
     buttonText: {
@@ -41,33 +41,33 @@ const cards: Card[] = [
   {
     img: 'https://flair-plastic.hu/wp-content/uploads/2024/09/1.png.webp',
     title: {
-      en: 'Advanced Injection Molding Technology',
+      en: 'Advanced Injection Moulding Technology',
       hu: 'Fejlett Fröccsöntési Technológia'
     },
-    link: '/services/plastic-injection',
+    link: '/services/plastic-injection-moulding',
     description: {
-      en: 'Achieve superior quality and consistency with our advanced injection molding services. Our modern manufacturing facility features cutting-edge machinery designed to handle complex geometries and diverse material requirements. We deliver high-precision plastic components for demanding applications across multiple industries, from automotive and electronics to medical devices and industrial equipment.',
+      en: 'Achieve superior quality and consistency with our advanced injection Moulding services. Our modern manufacturing facility features cutting-edge machinery designed to handle complex geometries and diverse material requirements. We deliver high-precision plastic components for demanding applications across multiple industries, from automotive and electronics to medical devices and industrial equipment.',
       hu: 'Érjen el kiváló minőséget és következetességet fejlett fröccsöntési képességeinkkel. Modern gyártási létesítményünk élvonalbeli gépekkel rendelkezik, amelyek komplex geometriák és változatos anyagigények kezelésére lettek tervezve. Nagy pontosságú műanyag alkatrészeket szállítunk igényes alkalmazásokhoz több iparágban, az autóipartól és elektronikától az orvosi eszközökig és ipari berendezésekig.'
     },
     buttonText: {
-      en: 'Discover Molding Solutions',
+      en: 'Discover Moulding Solutions',
       hu: 'Öntési Megoldások Felfedezése'
     }
   },
   {
     img: 'https://flair-plastic.hu/wp-content/uploads/2024/09/household-products.png.webp',
     title: {
-      en: 'Custom Product Development Solutions',
-      hu: 'Egyedi Termékfejlesztési Megoldások'
+      en: 'Household Products Manufacturing',
+      hu: 'Háztartási Termékek Gyártása'
     },
     link: '/products',
     description: {
-      en: 'Partner with us for comprehensive product development from concept to market. Our engineering team specializes in designing and manufacturing high-quality plastic products using sustainable materials and innovative manufacturing processes. We combine technical expertise with environmental responsibility to create durable, functional products that meet the highest industry standards and regulatory requirements.',
-      hu: 'Partnereljen velünk az átfogó termékfejlesztésben a koncepcióktól a piacig. Mérnöki csapatunk kiváló minőségű műanyag termékek tervezésére és gyártására specializálódott fenntartható anyagok és innovatív gyártási folyamatok alkalmazásával. A műszaki szakértelmet a környezeti felelősséggel ötvözve tartós, funkcionális termékeket hozunk létre, amelyek megfelelnek a legmagasabb ipari szabványoknak és szabályozási követelményeknek.'
+      en: 'From kitchen essentials to storage solutions, we manufacture durable plastic products for everyday household use. Our product range includes food-safe containers, kitchen utensils, cleaning accessories, and home organization items. Each product is designed for longevity and meets European safety standards, ensuring reliability in daily household applications.',
+      hu: 'A konyhai alapvető eszközöktől a tárolási megoldásokig, tartós műanyag termékeket gyártunk mindennapi háztartási használatra. Termékpalettánk élelmiszer-biztonságos edényeket, konyhai eszközöket, tisztítószereket és otthoni szervezési cikkeket tartalmaz. Minden termék hosszú élettartamra van tervezve és megfelel az európai biztonsági előírásoknak, biztosítva a megbízhatóságát a mindennapi háztartási alkalmazásokban.'
     },
     buttonText: {
-      en: 'Explore Development Services',
-      hu: 'Fejlesztési Szolgáltatások Felfedezése'
+      en: 'View Products',
+      hu: 'Termékek Megtekintése'
     }
   }
 ];
@@ -142,7 +142,7 @@ const ServicesCards = () => {
             >
               {/* Background Image with Gradient Overlay */}
               <motion.div 
-                className="absolute inset-0 w-full h-full"
+                className="absolute inset-0 w-full h-full overflow-hidden"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 2.5 }}
               >
@@ -151,7 +151,7 @@ const ServicesCards = () => {
                   alt={`${card.title[language as keyof typeof card.title] || card.title['en']}`}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain object-center"
                   priority={index === 0}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/70" />
@@ -200,9 +200,9 @@ const ServicesCards = () => {
                     {card.description[language].split('.').slice(0, 2).join('.') + '.'}
                   </motion.p>
                   
-                  <Link href={card.link}>
-                    <motion.button 
-                      className="w-full backdrop-blur-md bg-white/20 hover:bg-white/30 border border-white/30 text-white rounded-lg py-3 px-5 font-medium text-sm flex items-center justify-center space-x-2 transform-gpu transition-all duration-300"
+                  <Link href={card.link} className="w-full">
+                    <motion.div 
+                      className="w-full backdrop-blur-md bg-white/20 hover:bg-white/30 border border-white/30 text-white rounded-lg py-3 px-5 font-medium text-sm flex items-center justify-center space-x-2 transform-gpu transition-all duration-300 cursor-pointer"
                       whileHover={{ 
                         scale: 1.02,
                         boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
@@ -215,7 +215,7 @@ const ServicesCards = () => {
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
-                    </motion.button>
+                    </motion.div>
                   </Link>
                 </motion.div>
               </div>

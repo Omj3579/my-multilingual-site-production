@@ -28,7 +28,7 @@ export class AdvancedSchemaGenerator {
       '@id': `${this.baseUrl}/#organization`,
       name: 'Flair Plastic Manufacturing',
       alternateName: ['Flair Plastic', 'Flair Manufacturing'],
-      description: 'Leading plastic injection molding and contract manufacturing company specializing in sustainable manufacturing solutions with global reach and local expertise.',
+      description: 'Leading plastic injection Moulding and contract manufacturing company specializing in sustainable manufacturing solutions with global reach and local expertise.',
       url: this.baseUrl,
       logo: `${this.baseUrl}/logos/flair_plastic_logo_cmyk_mono_-_MAIN.png`,
       image: `${this.baseUrl}/logos/flair_plastic_logo_cmyk_mono_-_MAIN.png`,
@@ -51,7 +51,7 @@ export class AdvancedSchemaGenerator {
       },
       foundingDate: '1995',
       knowsAbout: [
-        'Injection Molding',
+        'Injection Moulding',
         'Contract Manufacturing', 
         'Sustainable Manufacturing',
         'Plastic Processing',
@@ -67,7 +67,7 @@ export class AdvancedSchemaGenerator {
       '@id': `${this.baseUrl}/#website`,
       url: this.baseUrl,
       name: 'Flair Plastic Manufacturing',
-      description: 'Leading plastic injection molding and contract manufacturing company',
+      description: 'Leading plastic injection Moulding and contract manufacturing company',
       publisher: {
         '@id': `${this.baseUrl}/#organization`
       },

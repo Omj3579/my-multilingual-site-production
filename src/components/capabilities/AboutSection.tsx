@@ -33,7 +33,7 @@ const AboutSection = () => {
 
   // Company description text
   const description = {
-    en: 'For over 30 years, Flair-Plastic has been a prominent player in the plastic injection molding industry, manufacturing a multitude of products that improve everyday life. Our product line extends from consumer goods to essential items in hygiene and power tools sectors. With unwavering commitment to technical precision and innovation, we consistently provide high-quality plastic parts to a diverse customer base worldwide.',
+    en: 'For over 30 years, Flair-Plastic has been a prominent player in the plastic injection Moulding industry, manufacturing a multitude of products that improve everyday life. Our product line extends from consumer goods to essential items in hygiene and power tools sectors. With unwavering commitment to technical precision and innovation, we consistently provide high-quality plastic parts to a diverse customer base worldwide.',
     hu: 'Több mint 30 éve a Flair-Plastic meghatározó szereplő a műanyag fröccsöntő iparágban, olyan termékek gyártásával, amelyek javítják a mindennapi életet. Termékpalettánk a fogyasztási cikkektől a higiéniai és szerszámgép ágazat alapvető elemeiig terjed. A műszaki precizitás és innováció iránti töretlen elkötelezettségünkkel következetesen biztosítunk kiváló minőségű műanyag alkatrészeket világszerte különböző ügyfelek számára.'
   };
 

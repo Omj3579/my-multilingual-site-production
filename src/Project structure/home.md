@@ -22,10 +22,10 @@
   - Our Capabilities
 - **Cards:**
   1. **Precision Contract Manufacturing Solutions**
-     - Unlock the full potential of your product ideas with our comprehensive contract manufacturing services. Specializing in high-volume production, we leverage advanced injection and blow molding technologies to deliver precision plastic components and assemblies. From concept to completion, our team works closely with you to ensure your specifications and quality standards are met every step of the way.
+     - Unlock the full potential of your product ideas with our comprehensive contract manufacturing services. Specializing in high-volume production, we leverage advanced injection and blow Moulding technologies to deliver precision plastic components and assemblies. From concept to completion, our team works closely with you to ensure your specifications and quality standards are met every step of the way.
      - [Discover Manufacturing Solutions](/capabilities/contract-manufacturing)
   2. **Leading Plastic Injection Moulding Expertise**
-     - Experience unparalleled quality and reliability with our plastic injection molding services. Our state-of-the-art facility is equipped with cutting-edge machinery capable of handling complex molds and a diverse range of materials. We focus on delivering high-precision parts and components, tailored to the needs of industries ranging from power tools to consumer goods.
+     - Experience unparalleled quality and reliability with our plastic injection Moulding services. Our state-of-the-art facility is equipped with cutting-edge machinery capable of handling complex Moulds and a diverse range of materials. We focus on delivering high-precision parts and components, tailored to the needs of industries ranging from power tools to consumer goods.
      - [Explore Injection Moulding](/capabilities/plastic-injection)
   3. **Innovative Household Products for Modern Living**
      - Explore our wide range of premium household products designed to enhance your everyday life. From kitchen essentials to storage solutions, our products combine functionality with style, made using eco-friendly practices and the highest quality recycled plastics. Each item reflects our commitment to innovation and sustainability.

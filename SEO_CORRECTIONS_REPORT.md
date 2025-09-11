@@ -57,7 +57,7 @@ https://flair-plastic.hu/industries/hygiene-personal-care
 Updated keywords to reflect your actual specialization:
 
 **English Keywords:**
-- plastic injection molding
+- plastic injection Moulding
 - contract manufacturing
 - power tools manufacturing
 - household products plastic
@@ -149,7 +149,7 @@ Create blog content for your actual industries:
 
 ### **3. Performance Monitoring**
 Monitor these industry-specific KPIs:
-- Power tools plastic injection molding searches
+- Power tools plastic injection Moulding searches
 - Household products manufacturing inquiries
 - Hygiene packaging solution requests
 - Agricultural component quote requests

@@ -95,7 +95,7 @@ const CommitmentCallout = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-br from-gray-900 via-gray-800 to-amber-700 bg-clip-text text-transparent leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 leading-tight"
             >
               <span className="relative">
                 {language === 'en' ? 'A Partner' : 'Egy Partner'}
@@ -103,7 +103,14 @@ const CommitmentCallout = () => {
                   initial={{ width: 0 }}
                   animate={{ width: isInView ? "100%" : 0 }}
                   transition={{ duration: 1, delay: 0.7 }}
-                  className="absolute -bottom-2 left-0 h-1 bg-amber-400 rounded-full"
+                  className="absolute -bottom-1 left-0 h-3 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 rounded-full shadow-xl shadow-amber-500/50"
+                />
+                {/* Glow effect */}
+                <motion.span 
+                  initial={{ width: 0, opacity: 0 }}
+                  animate={{ width: isInView ? "100%" : 0, opacity: isInView ? 1 : 0 }}
+                  transition={{ duration: 1, delay: 0.8 }}
+                  className="absolute -bottom-1 left-0 h-3 bg-amber-400 rounded-full blur-sm opacity-70"
                 />
               </span>
               <br />
@@ -188,7 +195,7 @@ const CommitmentCallout = () => {
                 
                 {/* Main image */}
                 <img
-                  src="https://flair-plastic.hu/wp-content/uploads/2024/05/Image-of-a-busy-injection-molding-tools-warehouse-in-a-manufacturing-company.-Workers-are-engaged-i.png.webp"
+                  src="https://flair-plastic.hu/wp-content/uploads/2024/05/Image-of-a-busy-injection-Moulding-tools-warehouse-in-a-manufacturing-company.-Workers-are-engaged-i.png.webp"
                   alt={language === 'en' ? "Manufacturing facility" : "Gyártóüzem"}
                   className="absolute inset-0 w-full h-full object-cover object-center"
                 />
@@ -252,8 +259,8 @@ const CommitmentCallout = () => {
                 {/* Benefits items */}
                 {(language === 'en' ? [
                   {
-                    title: "Global Innovation Network",
-                    description: "Strategic locations and innovation centres spanning the globe to serve your needs wherever you are."
+                    title: "End-to-End Manufacturing Solutions",
+                    description: "From initial design consultation to final product delivery, we provide comprehensive plastic manufacturing services tailored to your specific requirements."
                   },
                   {
                     title: "Efficient & Sustainable Solutions",
@@ -265,8 +272,8 @@ const CommitmentCallout = () => {
                   }
                 ] : [
                   {
-                    title: "Globális Innovációs Hálózat",
-                    description: "Stratégiai helyszínek és innovációs központok világszerte, hogy kiszolgáljuk igényeit bárhol is legyen."
+                    title: "Teljes körű Gyártási Megoldások",
+                    description: "A kezdeti tervezési konzultációtól a végtermék szállításáig átfogó műanyaggyártási szolgáltatásokat nyújtunk az Ön specifikus igényeihez igazítva."
                   },
                   {
                     title: "Hatékony és Fenntartható Megoldások",
