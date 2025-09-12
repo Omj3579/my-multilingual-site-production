@@ -1,15 +1,54 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ChevronRight, ArrowRight, Play, Sparkles } from 'lucide-react';
+import { ChevronRight, ArrowRight, Sparkles } from 'lucide-react';
 
 export const IMLExperienceSection = () => {
   const { language } = useLanguage();
   const containerRef = useRef(null);
-  const [activeTab, setActiveTab] = useState(0);
-  const [showVideo, setShowVideo] = useState(false);
   
+  // State hooks
+  const [activeTab, setActiveTab] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [bottomImageIndex, setBottomImageIndex] = useState(0);
+  
+  // Featured section images - ONLY landscape IML images for wide display
+  const featuredImages = [
+    '/images/imd_iml-creatives/IML2.webp', // Landscape
+    '/images/imd_iml-creatives/IML3.webp', // Landscape
+    '/images/imd_iml-creatives/IML4.webp', // Landscape
+    '/images/imd_iml-creatives/IML5.webp', // Landscape
+  ];
+  
+  // Bottom section background images - using IML and general images
+  const bottomSectionImages = [
+    '/images/imd_iml-creatives/IML2.webp',
+    '/images/imd_iml-creatives/IML3.webp', 
+    '/images/imd_iml-creatives/IML4.webp',
+    '/images/imd_iml-creatives/15.webp' // General image for variety
+  ];
+  
+  // Auto-cycle through featured images
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % featuredImages.length);
+    }, 5000); // Change image every 5 seconds
+    
+    return () => clearInterval(interval);
+  }, [featuredImages.length]);
+  
+  // Auto-cycle bottom section images
+  useEffect(() => {
+    const bottomInterval = setInterval(() => {
+      setBottomImageIndex((prev) => (prev + 1) % bottomSectionImages.length);
+    }, 8000); // Change every 8 seconds for slower, more elegant transition
+    
+    return () => clearInterval(bottomInterval);
+  }, [bottomSectionImages.length]);
+  
+  // InView hooks
   const [headingRef, headingInView] = useInView({ threshold: 0.2, triggerOnce: true });
   const [textRef, textInView] = useInView({ threshold: 0.2, triggerOnce: true });
   const [statsRef, statsInView] = useInView({ threshold: 0.3, triggerOnce: true });
@@ -263,44 +302,72 @@ export const IMLExperienceSection = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: imageInView ? 1 : 0, y: imageInView ? 0 : 50 }}
             transition={{ duration: 0.8 }}
-          >
-            {/* Video overlay */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/30 z-10 mix-blend-multiply"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: imageInView ? 0.4 : 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            />
-            
-            {/* Play button */}
-            <motion.button
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-sm w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center shadow-xl"
-              initial={{ scale: 0 }}
-              animate={{ scale: imageInView ? 1 : 0 }}
-              transition={{ type: "spring", duration: 0.8, delay: 0.5 }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setShowVideo(true)}
-            >
-              <Play className="h-6 w-6 md:h-8 md:w-8 text-blue-600 ml-1" />
+          >            
+            {/* Dynamic cycling main feature images - Fixed landscape aspect ratio */}
+            <div className="relative w-full h-[500px] md:h-[600px] lg:h-[650px] overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentImageIndex}
+                  className="absolute inset-0"
+                  initial={{ opacity: 0, scale: 1.02 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 1.2, ease: "easeInOut" }}
+                >
+                  <Image
+                    src={featuredImages[currentImageIndex]}
+                    alt={language === 'en' ? "IML Product Showcase" : "IML Termék Bemutató"}
+                    fill
+                    className="object-cover object-center"
+                    priority
+                  />
+                </motion.div>
+              </AnimatePresence>
               
-              {/* Animated ring around play button */}
-              <motion.div 
-                className="absolute inset-0 rounded-full border-2 border-white"
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  opacity: [1, 0.5, 1]
-                }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
-            </motion.button>
-            
-            {/* Main feature image */}
-            <img
-              src="https://flair-plastic.hu/wp-content/uploads/2024/05/dec6525.png.webp"
-              alt={language === 'en' ? "IML Candy Showcase" : "IML Édesség Bemutató"}
-              className="w-full h-auto object-cover"
-            />
+              {/* Multiple image preview thumbnails */}
+              <div className="absolute top-4 right-4 flex flex-col gap-2 z-15">
+                {featuredImages.slice(0, 3).map((image, index) => {
+                  const displayIndex = (currentImageIndex + index + 1) % featuredImages.length;
+                  return (
+                    <motion.div
+                      key={displayIndex}
+                      className="w-16 h-12 rounded-lg overflow-hidden border-2 border-white/80 shadow-lg cursor-pointer hover:scale-105 transition-transform"
+                      onClick={() => setCurrentImageIndex(displayIndex)}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: imageInView ? 0.9 : 0, x: imageInView ? 0 : 20 }}
+                      transition={{ duration: 0.5, delay: 0.8 + (index * 0.1) }}
+                      whileHover={{ opacity: 1, scale: 1.05 }}
+                    >
+                      <Image
+                        src={featuredImages[displayIndex]}
+                        alt={`Preview ${displayIndex + 1}`}
+                        width={400}
+                        height={300}
+                        className="w-full h-full object-cover"
+                      />
+                    </motion.div>
+                  );
+                })}
+              </div>
+              
+              {/* Image cycle indicators */}
+              <div className="absolute bottom-4 right-4 flex gap-2 z-15">
+                {featuredImages.map((_, index) => (
+                  <motion.button
+                    key={index}
+                    className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                      index === currentImageIndex ? 'bg-white shadow-lg' : 'bg-white/50 hover:bg-white/70'
+                    }`}
+                    onClick={() => setCurrentImageIndex(index)}
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.9 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: imageInView ? 1 : 0, y: imageInView ? 0 : 10 }}
+                    transition={{ duration: 0.5, delay: 1.2 + (index * 0.05) }}
+                  />
+                ))}
+              </div>
+            </div>
             
             {/* Image caption */}
             <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent pt-10 pb-6 px-8 z-10">
@@ -322,46 +389,6 @@ export const IMLExperienceSection = () => {
               </div>
             </div>
           </motion.div>
-          
-          {/* Video modal */}
-          <AnimatePresence>
-            {showVideo && (
-              <motion.div
-                className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-6"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                onClick={() => setShowVideo(false)}
-              >
-                <motion.div
-                  className="relative w-full max-w-4xl bg-black rounded-xl overflow-hidden"
-                  initial={{ scale: 0.9, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  exit={{ scale: 0.9, opacity: 0 }}
-                  transition={{ type: "spring", damping: 20 }}
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <button
-                    className="absolute top-4 right-4 z-10 bg-black/50 text-white p-2 rounded-full"
-                    onClick={() => setShowVideo(false)}
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="18" y1="6" x2="6" y2="18"></line>
-                      <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                  </button>
-                  <div className="aspect-w-16 aspect-h-9">
-                    <iframe 
-                      src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" 
-                      allow="autoplay; encrypted-media" 
-                      allowFullScreen
-                      className="w-full h-full"
-                    ></iframe>
-                  </div>
-                </motion.div>
-              </motion.div>
-            )}
-          </AnimatePresence>
         </motion.div>
         
         {/* IML Mastery section with stats */}
@@ -437,19 +464,44 @@ export const IMLExperienceSection = () => {
           className="mt-32 -mx-6 md:-mx-8 relative h-[500px] overflow-hidden"
           style={{ y: bottomImageY }}
         >
-          {/* Full-width image - now with stronger overlay for text visibility */}
-          <motion.div 
-            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-            style={{ 
-              backgroundImage: "url('https://flair-plastic.hu/wp-content/uploads/2024/05/decoration-1.png')" 
-            }}
-            initial={{ scale: 1.1 }}
-            whileInView={{ scale: 1 }}
-            transition={{ duration: 1.2 }}
-          >
+          {/* Dynamic full-width cycling background images */}
+          <div className="absolute inset-0 w-full h-full">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={bottomImageIndex}
+                className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+                style={{ 
+                  backgroundImage: `url('${bottomSectionImages[bottomImageIndex]}')`
+                }}
+                initial={{ opacity: 0, scale: 1.1 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.05 }}
+                transition={{ duration: 2.5, ease: "easeInOut" }}
+              />
+            </AnimatePresence>
+            
             {/* Enhanced gradient overlay for better text visibility */}
             <div className="absolute inset-0 bg-black/50 bg-gradient-to-t from-black/70 via-black/50 to-black/40" />
-          </motion.div>
+            
+            {/* Bottom section image indicators */}
+            <div className="absolute bottom-6 left-6 flex gap-3 z-30">
+              {bottomSectionImages.map((_, index) => (
+                <motion.button
+                  key={index}
+                  className={`w-3 h-3 rounded-full transition-all duration-500 ${
+                    index === bottomImageIndex ? 'bg-white shadow-lg' : 'bg-white/40 hover:bg-white/60'
+                  }`}
+                  onClick={() => setBottomImageIndex(index)}
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                />
+              ))}
+            </div>
+          </div>
           
           {/* Content overlay */}
           <div className="absolute inset-0 flex items-center justify-center z-20 px-6">

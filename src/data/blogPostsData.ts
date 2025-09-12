@@ -80,14 +80,14 @@ export const blogAuthors: Author[] = [
     avatar: '/images/team/julia-nagy.jpg'
   },
   {
-    id: 'peter-schmidt',
-    name: 'Dr. Peter Schmidt',
+    id: 'Péter-schmidt',
+    name: 'Dr. Péter Schmidt',
     role: {
       en: 'Materials Science Expert',
       hu: 'Anyagtudományi szakértő',
       de: 'Materialwissenschafts-Experte'
     },
-    avatar: '/images/team/peter-schmidt.jpg'
+    avatar: '/images/team/Péter-schmidt.jpg'
   }
 ];
 
@@ -368,7 +368,7 @@ export const blogItems: BlogPost[] = [
     },    image: '/resources/Blog/circular-economy.webp',
     thumbnailImage: '/resources/Blog/circular-economy.webp',
     date: '2024-02-28',
-    author: blogAuthors[3], // Peter Schmidt
+    author: blogAuthors[3], // Péter Schmidt
     readTime: 8,
     tags: ['circular-economy', 'sustainability', 'manufacturing', 'innovation'],
     featured: true,

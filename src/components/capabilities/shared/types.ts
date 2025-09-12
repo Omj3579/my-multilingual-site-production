@@ -57,6 +57,14 @@ export interface FloatingElement {
   delay: number;
 }
 
+export interface RelatedCapability {
+  title: BilingualContent;
+  summary: BilingualContent;
+  path: string;
+  image: string;
+  imageArray: string[];
+}
+
 export const defaultComponentProps: Partial<ComponentProps> = {
   moveUp: 100,
   moveDown: 0,

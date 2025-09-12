@@ -1,16 +1,34 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
-import { motion, useScroll, useTransform, useInView } from 'framer-motion';
+import React, { useState, useRef, useEffect } from 'react';
+import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 const HeroSection = () => {
   const { language } = useLanguage();
   const [activePoint, setActivePoint] = useState<number | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.2 });
+  
+  // Multiple background images for IML
+  const backgroundImages = [
+    '/images/imd_iml-creatives/IML5.webp',
+    '/images/imd_iml-creatives/IMD4.webp',
+    '/images/imd_iml-creatives/IMD5.webp',
+    '/images/imd_iml-creatives/IMD6.webp'
+  ];
+  
+  // Auto-cycle through images
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
+    }, 7000); // Change image every 7 seconds for IML
+    
+    return () => clearInterval(interval);
+  }, [backgroundImages.length]);
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -43,7 +61,7 @@ const HeroSection = () => {
 
   return (
     <div className="relative bg-black overflow-hidden min-h-[100vh]" ref={containerRef}>
-      {/* Full-screen background image */}
+      {/* Dynamic full-screen background with multiple images */}
       <motion.div 
         className="absolute inset-0 w-full h-full"
         style={{
@@ -51,13 +69,58 @@ const HeroSection = () => {
           y: imageY
         }}
       >
-        <Image 
-          src="https://flair-plastic.hu/wp-content/uploads/2024/05/ImgCreator.ai-Image-displays-the-before-after-of-in-mould-decoration-in-plastic-manufacturing.-On-the1-left-a-cl.png.webp" 
-          alt={language === 'en' ? "In-Mould Labelling Process" : "Címkézés a szerszámban folyamat"}
-          fill
-          className="object-cover object-center"
-          priority
-        />
+        {/* Main cycling background */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentImageIndex}
+            className="absolute inset-0"
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.98 }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+          >
+            <Image 
+              src={backgroundImages[currentImageIndex]}
+              alt={language === 'en' ? "In-Mould Labelling Process" : "Címkézés a szerszámban folyamat"}
+              fill
+              className="object-cover object-center"
+              priority
+            />
+          </motion.div>
+        </AnimatePresence>
+        
+        {/* Secondary overlay image for depth */}
+        <motion.div 
+          className="absolute top-4 right-4 w-64 h-40 rounded-xl overflow-hidden border-2 border-white/20 shadow-2xl hidden lg:block"
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: inView ? 0.8 : 0, x: inView ? 0 : 100 }}
+          transition={{ duration: 1.5, delay: 1 }}
+        >
+          <Image 
+            src={backgroundImages[(currentImageIndex + 2) % backgroundImages.length]}
+            alt={language === 'en' ? "IML Technology Detail" : "IML Technológia Részlet"}
+            fill
+            className="object-cover object-center"
+          />
+        </motion.div>
+        
+        {/* Image navigation dots */}
+        <div className="absolute bottom-6 left-6 flex gap-3 z-20">
+          {backgroundImages.map((_, index) => (
+            <motion.button
+              key={index}
+              className={`w-3 h-3 rounded-full transition-all duration-500 ${
+                index === currentImageIndex ? 'bg-cyan-400 shadow-lg shadow-cyan-400/50' : 'bg-white/30 hover:bg-white/50'
+              }`}
+              onClick={() => setCurrentImageIndex(index)}
+              whileHover={{ scale: 1.3 }}
+              whileTap={{ scale: 0.9 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+              transition={{ duration: 0.5, delay: 2 + (index * 0.1) }}
+            />
+          ))}
+        </div>
         
         {/* Modern gradient overlays for depth */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/60" />

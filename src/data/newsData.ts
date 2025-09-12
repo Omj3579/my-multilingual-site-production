@@ -70,14 +70,14 @@ export const newsAuthors: Author[] = [
     avatar: '/images/team/maria-garcia.jpg'
   },
   {
-    id: 'peter-kovacs',
+    id: 'Péter-kovacs',
     name: 'Péter Kovács',
     role: {
       en: 'Communications Director',
       hu: 'Kommunikációs igazgató',
       de: 'Kommunikationsdirektor'
     },
-    avatar: '/images/team/peter-kovacs.jpg'
+    avatar: '/images/team/Péter-kovacs.jpg'
   },
   {
     id: 'sarah-johnson',
@@ -343,7 +343,7 @@ export const newsItems: NewsArticle[] = [
     image: '/images/news/partnership-announcement.jpg',
     thumbnailImage: '/images/news/partnership-announcement-thumb.jpg',
     date: '2024-03-08',
-    author: newsAuthors[2], // Peter Kovacs
+    author: newsAuthors[2], // Péter Kovacs
     readTime: 3,
     tags: ['partnership', 'innovation', 'research', 'technology'],
     featured: false,

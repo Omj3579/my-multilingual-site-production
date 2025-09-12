@@ -71,8 +71,8 @@ export const IMLSection = () => {
         <div className="relative -mt-40 mb-20 z-10">
           <div className="w-[1440px] overflow-hidden rounded-[40px] shadow-lg" style={{ marginLeft: 0 }}>
             <img
-              src="https://flair-plastic.hu/wp-content/uploads/2024/05/dec6525.png.webp"
-              alt={language === 'en' ? "IML Candy Showcase" : "IML Édesség Bemutató"}
+              src="/images/imd_iml-creatives/IML5.webp"
+              alt={language === 'en' ? "IML Product Showcase" : "IML Termék Bemutató"}
               className="w-full h-auto object-cover"
             />
           </div>

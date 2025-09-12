@@ -105,14 +105,14 @@ export const caseStudyAuthors: Author[] = [
     avatar: '/images/team/julia-nagy.jpg'
   },
   {
-    id: 'peter-smith',
-    name: 'Peter Smith',
+    id: 'Péter-smith',
+    name: 'Péter Smith',
     role: {
       en: 'Senior Materials Engineer',
       hu: 'Vezető anyagmérnök',
       de: 'Senior Materialingenieur'
     },
-    avatar: '/images/team/peter-smith.jpg'
+    avatar: '/images/team/Péter-smith.jpg'
   }
 ];
 

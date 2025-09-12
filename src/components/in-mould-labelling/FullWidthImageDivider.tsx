@@ -10,7 +10,7 @@ export const FullWidthImageDivider = () => {
       {/* Full-width Image */}
       <div className="w-full h-[400px]">
         <img
-          src="https://flair-plastic.hu/wp-content/uploads/2024/05/decoration-1.png"
+          src="/images/imd_iml-creatives/IML4.webp"
           alt={language === 'en' ? "In-Mould Labelling Process" : "Szerszámon belüli címkézési folyamat"}
           className="w-full h-full object-cover"
         />

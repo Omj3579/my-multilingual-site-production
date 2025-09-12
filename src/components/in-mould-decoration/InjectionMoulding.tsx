@@ -220,7 +220,7 @@ const InjectionMoulding = () => {
                 >
                   <div className="relative rounded-xl overflow-hidden">
                     <img
-                      src="https://flair-plastic.hu/wp-content/uploads/2024/05/dec51.png.webp"
+                      src="/images/imd_iml-creatives/IMD1.webp"
                       alt={language === 'en' ? 'In-Mould Decoration Technology' : 'Szerszámon Belüli Dekorációs Technológia'}
                       className="w-full h-auto object-cover"
                     />

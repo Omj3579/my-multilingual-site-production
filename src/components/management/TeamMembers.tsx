@@ -422,17 +422,17 @@ const TeamMembers = () => {
   // Enhanced team data with department information
   const teamData = [
     {
-      name: language === 'en' ? 'Peter Jekő' : 'Jekő Péter',
+      name: language === 'en' ? 'Péter Jekő' : 'Jekő Péter',
       title: language === 'en' ? 'Chief Executive Officer' : 'Vezérigazgató',
       department: 'ceo',
       relatedDepartments: ['finance', 'hr', 'production', 'sales', 'logistics', 'technology'],
-      image: 'https://flair-plastic.hu/wp-content/uploads/2024/09/J.Peter_-768x899.png',
+      image: 'https://flair-plastic.hu/wp-content/uploads/2024/09/J.Péter_-768x899.png',
       bio: language === 'en' 
-        ? 'Peter leads Flair-Plastic with a strategic vision, overseeing all departments and guiding our company toward continuous innovation and market expansion.'
+        ? 'Péter leads Flair-Plastic with a strategic vision, overseeing all departments and guiding our company toward continuous innovation and market expansion.'
         : 'Péter stratégiai jövőképpel vezeti a Flair-Plastic-et, felügyeli az összes osztályt, és folyamatos innováció és piaci terjeszkedés felé irányítja vállalatunkat.',
       color: '#FFAB77',
       language
-    },
+    },  
     {
       name: language === 'en' ? 'Miklóssyné Bertók Mónika' : 'Miklóssyné Bertók Mónika',
       title: language === 'en' ? 'Chief Financial Officer' : 'Pénzügyi igazgató',
@@ -474,7 +474,7 @@ const TeamMembers = () => {
       title: language === 'en' ? 'Logistics Manager' : 'Logisztikai vezető',
       department: 'logistics',
       relatedDepartments: ['production', 'sales'],
-      image: 'https://flair-plastic.hu/wp-content/uploads/2024/09/N.peter_.png',
+      image: 'https://flair-plastic.hu/wp-content/uploads/2024/09/N.Péter_.png',
       bio: language === 'en'
         ? 'Péter manages our supply chain operations and logistics optimization strategies.'
         : 'Péter kezeli ellátási láncunk működését és logisztikai optimalizálási stratégiáinkat.',

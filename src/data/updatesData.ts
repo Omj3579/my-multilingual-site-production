@@ -82,14 +82,14 @@ export const updateAuthors: Author[] = [
     avatar: '/images/team/julia-nagy.jpg'
   },
   {
-    id: 'peter-smith',
-    name: 'Peter Smith',
+    id: 'Péter-smith',
+    name: 'Péter Smith',
     role: {
       en: 'Engineering Manager',
       hu: 'Mérnöki menedzser',
       de: 'Engineering Manager'
     },
-    avatar: '/images/team/peter-smith.jpg'
+    avatar: '/images/team/Péter-smith.jpg'
   }
 ];
 
@@ -411,7 +411,7 @@ export const updateItems: UpdateItem[] = [
     image: '/images/updates/mobile-app-update.jpg',
     thumbnailImage: '/images/updates/mobile-app-update-thumb.jpg',
     date: '2024-04-05',
-    author: updateAuthors[3], // Peter Smith
+    author: updateAuthors[3], // Péter Smith
     readTime: 4,
     tags: ['mobile-app', 'performance', 'inventory', 'barcode-scanner'],
     featured: true,

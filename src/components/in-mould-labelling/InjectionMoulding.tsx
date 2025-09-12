@@ -201,7 +201,7 @@ export const InjectionMoulding = () => {
                 <div 
                   className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                   style={{
-                    backgroundImage: `url("https://flair-plastic.hu/wp-content/uploads/2024/05/pvc-conveyor.png.webp")`
+                    backgroundImage: `url("/images/imd_iml-creatives/IML3.webp")`
                   }}
                 />
                 

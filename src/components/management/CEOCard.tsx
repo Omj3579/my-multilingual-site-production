@@ -26,7 +26,7 @@ const CEOCard = () => {
   // Content for the three tabs
   const tabContent = {
     experience: {
-      en: "Peter joined Flair-Plastic as CEO in January 2024, from Alvelo Ltd, having demonstrated robust leadership in sales and operations management. His extensive knowledge in FMCG sales and years of strategic market expansion have been invaluable to the growth of Flair-Plastic.",
+      en: "Péter joined Flair-Plastic as CEO in January 2024, from Alvelo Ltd, having demonstrated robust leadership in sales and operations management. His extensive knowledge in FMCG sales and years of strategic market expansion have been invaluable to the growth of Flair-Plastic.",
       hu: "Péter 2024 januárjában csatlakozott a Flair-Plastic-hez vezérigazgatóként az Alvelo Ltd-től, ahol kiemelkedő vezetői képességeket mutatott az értékesítés és a működés irányításában. Az FMCG értékesítésben szerzett széles körű ismeretei és a stratégiai piaci terjeszkedésben szerzett több éves tapasztalata felbecsülhetetlen értéket jelentett a Flair-Plastic növekedésében."
     },
     vision: {
@@ -34,7 +34,7 @@ const CEOCard = () => {
       hu: "Vezetői pozíciói között jelentős szerepet töltött be a Reckittnél, ahol értékesítési üzletág vezetőként dolgozott, valamint a Well Done Kft-nél, ahol értékesítési és marketing igazgatóként felügyelte Magyarországot, Szlovákiát és Romániát, legutóbb pedig az Alvelo Ltd operatív igazgatójaként tevékenykedett."
     },
     achievements: {
-      en: "Under Peter's leadership, Flair-Plastic has enhanced operational efficiency by 24%, expanded into two new European markets, and implemented advanced quality control systems that have reduced defect rates to industry-leading levels.",
+      en: "Under Péter's leadership, Flair-Plastic has enhanced operational efficiency by 24%, expanded into two new European markets, and implemented advanced quality control systems that have reduced defect rates to industry-leading levels.",
       hu: "Péter vezetése alatt a Flair-Plastic 24%-kal javította működési hatékonyságát, két új európai piacra terjeszkedett ki, és olyan fejlett minőségellenőrzési rendszereket vezetett be, amelyek az iparági vezető szintre csökkentették a hibaarányt."
     }
   };
@@ -134,8 +134,8 @@ const CEOCard = () => {
               <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-transparent z-10"></div>
               
               <img
-                src="https://flair-plastic.hu/wp-content/uploads/2024/09/J.Peter_-768x899.png"
-                alt={language === 'en' ? "Peter Jekő" : "Jekő Péter"}
+                src="https://flair-plastic.hu/wp-content/uploads/2024/09/J.Péter_-768x899.png"
+                alt={language === 'en' ? "Péter Jekő" : "Jekő Péter"}
                 className="absolute inset-0 w-full h-full object-cover object-center"
               />
               
@@ -172,7 +172,7 @@ const CEOCard = () => {
                   </div>
                   
                   <h3 className="text-4xl md:text-5xl font-bold text-[#333] mb-2">
-                    {language === 'en' ? "Peter Jekő" : "Jekő Péter"}
+                    {language === 'en' ? "Péter Jekő" : "Jekő Péter"}
                   </h3>
                   
                   <div className="flex items-center">

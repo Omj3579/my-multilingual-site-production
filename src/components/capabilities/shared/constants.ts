@@ -1,4 +1,4 @@
-import { FeatureCard, ProcessStep, BilingualContent } from './types';
+import { FeatureCard, ProcessStep, BilingualContent, RelatedCapability } from './types';
 
 // Feature cards data for injection Moulding
 export const injectionMouldingFeatures: {
@@ -140,8 +140,59 @@ export const commitmentText: BilingualContent = {
   hu: "A Flair-Plastic kiterjeszti kiválóság iránti elkötelezettségét azáltal, hogy átfogó gyártási támogatást nyújt, beleértve a fejlett mérnöki és tervezési szolgáltatásokat, valamint az ügyfelek elégedettségére való kitartó összpontosítást az innovatív technológiák és az optimalizált termékteljesítmény révén."
 };
 
-// Related capabilities data
-export const relatedCapabilities = [
+// Dynamic image arrays for each capability
+export const capabilityImageArrays = {
+  plasticInjection: [
+    '/images/imd_iml-creatives/15.webp',
+    '/images/imd_iml-creatives/IMD1.webp',
+    '/images/imd_iml-creatives/IMD2.webp',
+    '/images/imd_iml-creatives/IMD16.webp'
+  ],
+  inMouldLabelling: [
+    '/images/imd_iml-creatives/IML2.webp',
+    '/images/imd_iml-creatives/IML3.webp',
+    '/images/imd_iml-creatives/IML4.webp',
+    '/images/imd_iml-creatives/IML5.webp'
+  ],
+  inMouldDecoration: [
+    '/images/imd_iml-creatives/IMD3.webp',
+    '/images/imd_iml-creatives/IMD4.webp',
+    '/images/imd_iml-creatives/IMD5.webp',
+    '/images/imd_iml-creatives/IMD6.webp'
+  ],
+  injectionBlow: [
+    '/images/imd_iml-creatives/IMD7.webp',
+    '/images/imd_iml-creatives/IMD8.webp',
+    '/images/imd_iml-creatives/IMD11.webp',
+    '/images/imd_iml-creatives/IMD57.webp'
+  ],
+  surfaceFinishing: [
+    '/images/imd_iml-creatives/IMD13.webp',
+    '/images/imd_iml-creatives/IMD16.webp',
+    '/images/imd_iml-creatives/15.webp',
+    '/images/imd_iml-creatives/IMD1.webp'
+  ]
+};
+
+// Helper function to get a random image from an array
+export const getRandomImage = (imageArray: string[]): string => {
+  return imageArray[Math.floor(Math.random() * imageArray.length)];
+};
+
+// Helper function to get image by index (for cycling)
+export const getImageByIndex = (imageArray: string[], index: number): string => {
+  return imageArray[index % imageArray.length];
+};
+
+// Helper function to get a time-based rotating image (changes every 5 seconds)
+export const getTimeBasedImage = (imageArray: string[]): string => {
+  const interval = 5000; // 5 seconds
+  const index = Math.floor(Date.now() / interval) % imageArray.length;
+  return imageArray[index];
+};
+
+// Related capabilities data with dynamic images
+export const relatedCapabilities: RelatedCapability[] = [
   {
     title: { en: 'Plastic Injection', hu: 'Műanyag Fröccsöntés' },
     summary: { 
@@ -149,7 +200,8 @@ export const relatedCapabilities = [
       hu: 'Fejlett műanyag fröccsöntési megoldások precíziós gyártáshoz'
     },
     path: '/capabilities/plastic-injection',
-    image: '/capabilities/injection-Moulding-excellence.webp'
+    image: getTimeBasedImage(capabilityImageArrays.plasticInjection), // Dynamic time-based image
+    imageArray: capabilityImageArrays.plasticInjection // Full array for dynamic switching
   },
   {
     title: { en: 'In-Mould Labelling', hu: 'Címkézés Fröccsöntés Közben' },
@@ -158,7 +210,8 @@ export const relatedCapabilities = [
       hu: 'Címkék zökkenőmentes integrálása a fröccsöntési folyamat során'
     },
     path: '/capabilities/in-mould-labelling',
-    image: '/creatives/webp_images/machine-performing-in-mould-decoration-on-white-plastic-parts-showcasing-the-process-of-1.webp'
+    image: getTimeBasedImage(capabilityImageArrays.inMouldLabelling),
+    imageArray: capabilityImageArrays.inMouldLabelling
   },
   {
     title: { en: 'In-Mould Decoration', hu: 'Dekoráció Fröccsöntés Közben' },
@@ -167,7 +220,8 @@ export const relatedCapabilities = [
       hu: 'Kiváló minőségű dekoratív felületek alkalmazása fröccsöntés közben'
     },
     path: '/capabilities/in-mould-decoration',
-    image: '/creatives/webp_images/ImgCreator.ai-Image-displays-the-before-after-of-in-mould-decoration-in-plastic-manufacturing.-On-the1-left-a-cl.webp'
+    image: getTimeBasedImage(capabilityImageArrays.inMouldDecoration),
+    imageArray: capabilityImageArrays.inMouldDecoration
   },
   {
     title: { en: 'Injection Blow', hu: 'Fröccsöntött Fújás' },
@@ -176,7 +230,8 @@ export const relatedCapabilities = [
       hu: 'Kombinált fröccsöntés és fúvás üreges műanyag termékekhez'
     },
     path: '/capabilities/injection-blow',
-    image: '/creatives/webp_images/Image-of-a-busy-injection-Moulding-tools-warehouse-in-a-manufacturing-company.-Workers-are-engaged-i.webp'
+    image: getTimeBasedImage(capabilityImageArrays.injectionBlow),
+    imageArray: capabilityImageArrays.injectionBlow
   },
   {
     title: { en: 'Surface Finishing', hu: 'Felületkezelés' },
@@ -185,7 +240,8 @@ export const relatedCapabilities = [
       hu: 'Szakértői felületkezelési és -kikészítési megoldások'
     },
     path: '/capabilities/surface-finishing',
-    image: '/creatives/webp_images/Surface_finishing.webp'
+    image: getTimeBasedImage(capabilityImageArrays.surfaceFinishing),
+    imageArray: capabilityImageArrays.surfaceFinishing
   }
 ];
 

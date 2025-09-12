@@ -1,14 +1,32 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ArrowRight, Play, Zap, LineChart, Shield, Factory } from 'lucide-react';
+import { ArrowRight, Zap, LineChart, Shield, Factory } from 'lucide-react';
 
 const IMDTechnologyShowcase = () => {
   const { language } = useLanguage();
   const containerRef = useRef(null);
-  const [showLightbox, setShowLightbox] = useState(false);
   const [activeSpec, setActiveSpec] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  // Featured section images - using landscape IMD images
+  const featuredImages = [
+    '/images/imd_iml-creatives/IMD1.webp', // Landscape
+    '/images/imd_iml-creatives/IMD2.webp', // Landscape
+    '/images/imd_iml-creatives/IMD4.webp', // Landscape
+    '/images/imd_iml-creatives/IMD7.webp', // Landscape
+  ];
+  
+  // Auto-cycle through featured images
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % featuredImages.length);
+    }, 5000); // Change image every 5 seconds
+    
+    return () => clearInterval(interval);
+  }, [featuredImages.length]);
   
   // Scroll-based animations
   const { scrollYProgress } = useScroll({
@@ -195,35 +213,71 @@ const IMDTechnologyShowcase = () => {
               transition={{ duration: 1, delay: 0.4 }}
             />
             
-            {/* Play button for expandable image/video */}
-            <motion.button
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-sm w-20 h-20 rounded-full flex items-center justify-center shadow-xl"
-              initial={{ scale: 0 }}
-              animate={{ scale: imageInView ? 1 : 0 }}
-              transition={{ type: "spring", duration: 0.8, delay: 0.5 }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setShowLightbox(true)}
-            >
-              <Play className="h-8 w-8 text-blue-600 ml-1" />
+            {/* Dynamic cycling main feature images - Fixed landscape aspect ratio */}
+            <div className="relative w-full h-[500px] md:h-[600px] lg:h-[650px] overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentImageIndex}
+                  className="absolute inset-0"
+                  initial={{ opacity: 0, scale: 1.02 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 1.2, ease: "easeInOut" }}
+                >
+                  <Image
+                    src={featuredImages[currentImageIndex]}
+                    alt={language === 'en' ? "IMD Technology" : "IMD Technológia"}
+                    fill
+                    className="object-cover object-center"
+                    priority
+                  />
+                </motion.div>
+              </AnimatePresence>
               
-              {/* Animated ring around play button */}
-              <motion.div 
-                className="absolute inset-0 rounded-full border-2 border-white"
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  opacity: [1, 0.5, 1]
-                }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
-            </motion.button>
-            
-            {/* Main image */}
-            <img
-              src="https://flair-plastic.hu/wp-content/uploads/2024/05/ty1562-1.png.webp"
-              alt={language === 'en' ? "IMD Technology" : "IMD Technológia"}
-              className="w-full h-auto object-cover"
-            />
+              {/* Multiple image preview thumbnails */}
+              <div className="absolute top-4 right-4 flex flex-col gap-2 z-15">
+                {featuredImages.slice(0, 3).map((image, index) => {
+                  const displayIndex = (currentImageIndex + index + 1) % featuredImages.length;
+                  return (
+                    <motion.div
+                      key={displayIndex}
+                      className="w-16 h-12 rounded-lg overflow-hidden border-2 border-white/80 shadow-lg cursor-pointer hover:scale-105 transition-transform"
+                      onClick={() => setCurrentImageIndex(displayIndex)}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: imageInView ? 0.9 : 0, x: imageInView ? 0 : 20 }}
+                      transition={{ duration: 0.5, delay: 0.8 + (index * 0.1) }}
+                      whileHover={{ opacity: 1, scale: 1.05 }}
+                    >
+                      <Image
+                        src={featuredImages[displayIndex]}
+                        alt={`Preview ${displayIndex + 1}`}
+                        width={400}
+                        height={300}
+                        className="w-full h-full object-cover"
+                      />
+                    </motion.div>
+                  );
+                })}
+              </div>
+              
+              {/* Image cycle indicators */}
+              <div className="absolute bottom-4 right-4 flex gap-2 z-15">
+                {featuredImages.map((_, index) => (
+                  <motion.button
+                    key={index}
+                    className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                      index === currentImageIndex ? 'bg-white shadow-lg' : 'bg-white/50 hover:bg-white/70'
+                    }`}
+                    onClick={() => setCurrentImageIndex(index)}
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.9 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: imageInView ? 1 : 0, y: imageInView ? 0 : 10 }}
+                    transition={{ duration: 0.5, delay: 1.2 + (index * 0.05) }}
+                  />
+                ))}
+              </div>
+            </div>
             
             {/* Corner accent lines */}
             {['top-left', 'top-right', 'bottom-left', 'bottom-right'].map((pos, i) => (
@@ -387,43 +441,6 @@ const IMDTechnologyShowcase = () => {
           </motion.div>
         </motion.div>
       </div>
-      
-      {/* Image lightbox */}
-      <AnimatePresence>
-        {showLightbox && (
-          <motion.div 
-            className="fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setShowLightbox(false)}
-          >
-            <motion.div
-              className="relative max-w-5xl w-full bg-transparent rounded-xl overflow-hidden"
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ type: "spring", damping: 20 }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                className="absolute top-4 right-4 z-10 bg-black/50 text-white p-2 rounded-full"
-                onClick={() => setShowLightbox(false)}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-              </button>
-              <img
-                src="https://flair-plastic.hu/wp-content/uploads/2024/05/ty1562-1.png.webp"
-                alt={language === 'en' ? "IMD Technology Closeup" : "IMD Technológia Közelről"}
-                className="w-full h-auto"
-              />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 };

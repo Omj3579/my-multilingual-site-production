@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -7,7 +8,25 @@ const HeroSection = () => {
   const { language } = useLanguage();
   const containerRef = useRef(null);
   const [activePoint, setActivePoint] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
+  
+  // Multiple background images - using our landscape images
+  const backgroundImages = [
+    '/images/imd_iml-creatives/IMD4.webp',
+    '/images/imd_iml-creatives/IMD5.webp', 
+    '/images/imd_iml-creatives/IMD6.webp',
+    '/images/imd_iml-creatives/IML5.webp'
+  ];
+  
+  // Auto-cycle through images
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
+    }, 6000); // Change image every 6 seconds
+    
+    return () => clearInterval(interval);
+  }, [backgroundImages.length]);
   
   // Reference for the mouse position
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -255,11 +274,66 @@ const HeroSection = () => {
                 transition={{ duration: 1, delay: 0.5 }}
               />
               
-              {/* Main image with higher-quality */}
-              <img
-                src="https://flair-plastic.hu/wp-content/uploads/2024/05/machine-performing-in-mould-decoration-on-white-plastic-parts-showcasing-the-process-of-1.png.webp"
-                alt={language === 'en' ? 'In-Mould Decoration Hero' : 'Szerszámon Belüli Dekoráció Főcím'}
-                className="w-full h-full object-cover"
+              {/* Dynamic cycling background images with smooth transitions */}
+              <div className="absolute inset-0">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentImageIndex}
+                    className="absolute inset-0"
+                    initial={{ opacity: 0, scale: 1.1 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 1.5, ease: "easeInOut" }}
+                  >
+                    <Image
+                      src={backgroundImages[currentImageIndex]}
+                      alt={language === 'en' ? 'IMD Process Showcase' : 'IMD Folyamat Bemutató'}
+                      width={1500}
+                      height={1000}
+                      className="w-full h-full object-cover"
+                      priority
+                    />
+                  </motion.div>
+                </AnimatePresence>
+                
+                {/* Secondary image overlay for depth */}
+                <motion.div 
+                  className="absolute bottom-0 right-0 w-1/3 h-1/3 rounded-tl-3xl overflow-hidden border-4 border-white shadow-xl"
+                  initial={{ opacity: 0, x: 50, y: 50 }}
+                  animate={{ opacity: inView ? 0.9 : 0, x: inView ? 0 : 50, y: inView ? 0 : 50 }}
+                  transition={{ duration: 1, delay: 1 }}
+                >
+                  <Image
+                    src={backgroundImages[(currentImageIndex + 1) % backgroundImages.length]}
+                    alt={language === 'en' ? 'IMD Technology Detail' : 'IMD Technológia Részlet'}
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+                
+                {/* Image progress indicators */}
+                <div className="absolute bottom-4 left-4 flex gap-2 z-20">
+                  {backgroundImages.map((_, index) => (
+                    <motion.button
+                      key={index}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === currentImageIndex ? 'bg-white' : 'bg-white/40'
+                      }`}
+                      onClick={() => setCurrentImageIndex(index)}
+                      whileHover={{ scale: 1.2 }}
+                      whileTap={{ scale: 0.9 }}
+                    />
+                  ))}
+                </div>
+              </div>
+              
+              {/* Overlay for better text readability */}
+              <motion.div 
+                className="absolute inset-0 bg-black/20 z-15" 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 0.3 }}
               />
               
               {/* Enhanced corner accents with animation */}

@@ -73,7 +73,7 @@ Sustainability is in Our DNA
 
 **Quote:**  
 "We believe manufacturing should be intelligent, beautiful, and responsible. That’s what we build every day."  
-– Peter Jekő, Managing Director
+– Péter Jekő, Managing Director
 
 ---
 

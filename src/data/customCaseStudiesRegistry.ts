@@ -133,7 +133,7 @@ export const customCaseStudies: Partial<CaseStudy>[] = [
     image: '/images/case-studies/smart-manufacturing-transformation.jpg',
     thumbnailImage: '/images/case-studies/smart-manufacturing-transformation-thumb.jpg',
     date: '2024-01-20',
-    author: caseStudyAuthors[3], // Peter Smith
+    author: caseStudyAuthors[3], // Péter Smith
     readTime: 15,
     tags: ['automation', 'industry-4.0', 'iot', 'smart-manufacturing', 'digital-twin', 'ai'],
     featured: true,
