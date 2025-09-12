@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion, useInView, useMotionValue, useTransform, AnimatePresence } from 'framer-motion';
 
@@ -132,11 +133,14 @@ const CEOCard = () => {
               transition={{ duration: 1, delay: 0.2 }}
             >
               <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-transparent z-10"></div>
-              
-              <img
-                src="https://flair-plastic.hu/wp-content/uploads/2024/09/J.Péter_-768x899.png"
+              <Image
+                src="/creatives/webp_images/J.Peter_-256x300-hq.webp"
                 alt={language === 'en' ? "Péter Jekő" : "Jekő Péter"}
-                className="absolute inset-0 w-full h-full object-cover object-center"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 42vw"
+                priority
+              />
               />
               
               {/* Vertical text along image */}

@@ -426,7 +426,7 @@ const TeamMembers = () => {
       title: language === 'en' ? 'Chief Executive Officer' : 'Vezérigazgató',
       department: 'ceo',
       relatedDepartments: ['finance', 'hr', 'production', 'sales', 'logistics', 'technology'],
-      image: 'https://flair-plastic.hu/wp-content/uploads/2024/09/J.Péter_-768x899.png',
+      image: '/creatives/webp_images/J.Peter_-256x300-hq.webp',
       bio: language === 'en' 
         ? 'Péter leads Flair-Plastic with a strategic vision, overseeing all departments and guiding our company toward continuous innovation and market expansion.'
         : 'Péter stratégiai jövőképpel vezeti a Flair-Plastic-et, felügyeli az összes osztályt, és folyamatos innováció és piaci terjeszkedés felé irányítja vállalatunkat.',
@@ -474,7 +474,7 @@ const TeamMembers = () => {
       title: language === 'en' ? 'Logistics Manager' : 'Logisztikai vezető',
       department: 'logistics',
       relatedDepartments: ['production', 'sales'],
-      image: 'https://flair-plastic.hu/wp-content/uploads/2024/09/N.Péter_.png',
+      image: '/creatives/webp_images/N.peter_-264x300-hq.webp',
       bio: language === 'en'
         ? 'Péter manages our supply chain operations and logistics optimization strategies.'
         : 'Péter kezeli ellátási láncunk működését és logisztikai optimalizálási stratégiáinkat.',
