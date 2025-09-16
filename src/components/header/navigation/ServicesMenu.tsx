@@ -9,10 +9,11 @@ import {
 import { 
   ArrowUpRight,
   Box,
-  Layers,
   Component,
   Tag,
-  Paintbrush
+  Paintbrush,
+  Settings,
+  Wrench
 } from "lucide-react";
 
 export const ServicesMenu = () => {
@@ -40,63 +41,6 @@ export const ServicesMenu = () => {
     }
   };
 
-  // Categories structure with enhanced descriptions and modern layout
-  const capabilityCategories = [
-    {
-      title: language === 'en' ? 'Advanced Injection Moulding' : 'Fejlett fröccsöntési technológia',
-      subtitle: language === 'en' ? 'Precision manufacturing solutions' : 'Precíziós gyártási megoldások',
-      icon: Component,
-      color: 'blue',
-      links: [
-        { 
-          label: language === 'en' ? 'Precision Injection Manufacturing' : 'Precíziós fröccsöntési gyártás',
-          description: language === 'en' ? 'State-of-the-art plastic injection Moulding with exceptional precision and quality control' : 'Csúcstechnológiás műanyag fröccsöntés kivételes pontossággal és minőségellenőrzéssel',
-          href: '/services/plastic-injection-moulding',
-          icon: Component
-        },
-        { 
-          label: language === 'en' ? 'In-Mould Labeling Technology' : 'Öntés közbeni címkézési technológia',
-          description: language === 'en' ? 'Integrated labeling solutions that enhance product durability and visual appeal' : 'Integrált címkézési megoldások, amelyek növelik a termék tartósságát és vizuális vonzerejét',
-          href: '/services/in-mould-labelling',
-          icon: Tag
-        },
-        { 
-          label: language === 'en' ? 'Surface Enhancement Solutions' : 'Felületjavítási megoldások',
-          description: language === 'en' ? 'Premium surface decoration techniques for exceptional product finishing' : 'Prémium felületi dekorációs technikák kivételes termékbefejezéshez',
-          href: '/services/in-mould-decoration',
-          icon: Paintbrush
-        },
-      ]
-    },
-    {
-      title: language === 'en' ? 'Manufacturing Partnership' : 'Gyártási partnerség',
-      subtitle: language === 'en' ? 'End-to-end production services' : 'Teljes körű gyártási szolgáltatások',
-      icon: Box,
-      color: 'orange',
-      links: [
-        { 
-          label: language === 'en' ? 'Strategic Manufacturing Solutions' : 'Stratégiai gyártási megoldások',
-          description: language === 'en' ? 'Comprehensive manufacturing partnerships from design to delivery with full quality assurance' : 'Átfogó gyártási partnerségek a tervezéstől a szállításig teljes minőségbiztosítással',
-          href: '/services/contract-manufacturing',
-          icon: Box
-        },
-      ]
-    },
-    {
-      title: language === 'en' ? 'Technical Excellence' : 'Műszaki kiválóság',
-      subtitle: language === 'en' ? 'Expert engineering support' : 'Szakértői mérnöki támogatás',
-      icon: Layers,
-      color: 'green',
-      links: [
-        { 
-          label: language === 'en' ? 'Professional Tooling Management' : 'Professzionális szerszámkezelés',
-          description: language === 'en' ? 'Expert tool design, manufacturing, and maintenance services for optimal production efficiency' : 'Szakértői szerszámtervezés, gyártás és karbantartási szolgáltatások az optimális gyártási hatékonyságért',
-          href: '/services/tooling-management',
-          icon: Layers
-        },
-      ]
-    }
-  ];
   return (
     <NavigationMenuItem>
       <NavigationMenuTrigger className="group bg-transparent border-none text-gray-800 hover:text-[#fa9b6b] transition-colors text-xl font-semibold data-[state=open]:text-[#fa9b6b] [&>svg]:h-6 [&>svg]:w-6">
@@ -104,95 +48,184 @@ export const ServicesMenu = () => {
         <div className="absolute -bottom-1 left-3 right-3 h-0.5 bg-[#fa9b6b] scale-x-0 group-hover:scale-x-100 group-data-[state=open]:scale-x-100 transition-transform origin-center" />
       </NavigationMenuTrigger>
       
-      <NavigationMenuContent asChild>
+      <NavigationMenuContent className="navigation-dropdown-container large mt-4">
         <motion.div
           initial="hidden"
           animate="visible"
           exit="hidden"
           variants={containerVariants}
-          className="navigation-dropdown-container p-4 md:p-5 lg:p-6 shadow-2xl bg-white rounded-xl border border-gray-100"
+          className="w-full p-6 bg-white/95 backdrop-blur-xl border border-white/30 rounded-2xl shadow-2xl"
+          style={{
+            background: 'linear-gradient(145deg, rgba(255,255,255,0.95), rgba(248,250,252,0.9))',
+            backdropFilter: 'blur(30px)',
+            boxShadow: `
+              0 32px 64px -12px rgba(0, 0, 0, 0.35),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2),
+              0 0 0 1px rgba(255, 255, 255, 0.1)
+            `,
+            marginTop: '8px',
+          }}
         >
-          {/* Header section */}
-          <div className="mb-3 pb-2 border-b border-gray-100">
-            <h3 className="text-base font-medium text-gray-800">
-              {language === 'en' ? 'Manufacturing Services' : 'Gyártási Szolgáltatások'}
-            </h3>
-            <p className="text-xs text-gray-600 mt-0.5">
-              {language === 'en' 
-                ? 'Our comprehensive manufacturing solutions and expertise'
-                : 'Átfogó gyártási megoldásaink és szakértelmünk'}
+          {/* Header Section */}
+          <div className="mb-6">
+            <div className="flex items-center mb-3">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#fa9b6b] to-[#e86e40] flex items-center justify-center mr-3 shadow-lg">
+                <Box className="w-4 h-4 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold text-gray-900">Manufacturing Excellence</h2>
+            </div>
+            <p className="text-gray-600 text-base leading-relaxed max-w-2xl">
+              Discover our comprehensive manufacturing solutions and cutting-edge expertise that powers industry innovation
             </p>
           </div>
 
-          {/* Optimized Grid Layout - All cards in a single unified grid */}
-          <div>
-            {/* Unified grid for all service cards with optimal column distribution */}
-            <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-1">{capabilityCategories.map((category) => 
-                category.links.map((link, linkIndex) => (
-                  <motion.div 
-                    key={`${category.title}-${linkIndex}`} 
-                    variants={itemVariants}
-                    className="group"
-                  >
-                    <Link 
-                      href={link.href}
-                      className="flex flex-col p-2 rounded-lg border border-gray-100 hover:border-[#fa9b6b]/30 hover:bg-gradient-to-br hover:from-[#fa9b6b]/5 hover:to-transparent transition-all duration-300 h-full min-h-[140px]"
-                    >
-                      {/* Icon */}
-                      <div className="flex items-center justify-end mb-2">
-                        <div className="w-6 h-6 flex items-center justify-center text-gray-400 group-hover:text-[#fa9b6b] transition-colors">
-                          <link.icon size={14} />
-                        </div>
-                      </div>
-
-                      {/* Category Title (Small) */}
-                      <div className={`text-xs font-medium mb-2 ${
-                        category.color === 'blue' ? 'text-blue-600' :
-                        category.color === 'orange' ? 'text-orange-600' :
-                        'text-green-600'
-                      }`}>
-                        {category.title}
-                      </div>
-
-                      {/* Service Title */}
-                      <h5 className="text-sm font-semibold text-gray-900 group-hover:text-[#fa9b6b] transition-colors mb-1.5 leading-tight">
-                        {link.label}
-                      </h5>
-                      
-                      {/* Enhanced Description */}
-                      <p className="text-xs text-gray-600 leading-relaxed line-clamp-2 flex-1 mb-1.5">
-                        {link.description}
-                      </p>
-
-                      {/* Hover Arrow */}
-                      <div className="mt-auto flex items-center text-xs text-gray-400 group-hover:text-[#fa9b6b] transition-colors">
-                        <span className="mr-1">Learn more</span>
-                        <ArrowUpRight size={11} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                      </div>
-                    </Link>
-                  </motion.div>
-                ))
-              )}
-            </div>
-          </div>
-          
-          {/* Footer section */}
-          <div className="mt-3 pt-2 border-t border-gray-100">
-            <Link 
-              href="/services" 
-              className="inline-flex items-center text-sm text-[#fa9b6b] font-medium group"
-            >
-              <span>
-                {language === 'en' ? 'View all services' : 'Összes szolgáltatás megtekintése'}
-              </span>
-              <motion.div
-                className="ml-2"
-                whileHover={{ x: 2, y: -2 }}
-                transition={{ type: "spring", stiffness: 300 }}
+          {/* Unified Grid Layout - All Cards Same Structure */}
+          <div className="grid grid-cols-3 gap-6 mb-8">
+            {/* Precision Injection Manufacturing */}
+            <motion.div variants={itemVariants}>
+              <Link 
+                href="/services/plastic-injection-moulding"
+                className="group block p-5 rounded-xl bg-white/80 backdrop-blur-sm border border-white/60 hover:bg-white/95 hover:border-[#fa9b6b]/30 hover:shadow-xl transition-all duration-300 h-full"
+                style={{
+                  boxShadow: '0 10px 20px rgba(0,0,0,0.08)',
+                }}
               >
-                <ArrowUpRight size={16} />
-              </motion.div>
-            </Link>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 text-white flex items-center justify-center shadow-md">
+                    <Component size={24} />
+                  </div>
+                  <ArrowUpRight className="w-5 h-5 text-gray-400 group-hover:text-[#fa9b6b] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-[#fa9b6b] transition-colors mb-3">
+                  {language === 'en' ? 'Precision Injection Manufacturing' : 'Precíziós fröccsöntési gyártás'}
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {language === 'en' ? 'State-of-the-art plastic injection moulding with exceptional precision and quality control' : 'Csúcstechnológiás műanyag fröccsöntés kivételes pontossággal és minőségellenőrzéssel'}
+                </p>
+              </Link>
+            </motion.div>
+
+            {/* In-Mould Labeling Technology */}
+            <motion.div variants={itemVariants}>
+              <Link 
+                href="/services/in-mould-labelling"
+                className="group block p-5 rounded-xl bg-white/80 backdrop-blur-sm border border-white/60 hover:bg-white/95 hover:border-[#fa9b6b]/30 hover:shadow-xl transition-all duration-300 h-full"
+                style={{
+                  boxShadow: '0 10px 20px rgba(0,0,0,0.08)',
+                }}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 text-white flex items-center justify-center shadow-md">
+                    <Tag size={24} />
+                  </div>
+                  <ArrowUpRight className="w-5 h-5 text-gray-400 group-hover:text-[#fa9b6b] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-[#fa9b6b] transition-colors mb-3">
+                  {language === 'en' ? 'In-Mould Labeling Technology' : 'Öntés közbeni címkézési technológia'}
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {language === 'en' ? 'Integrated labeling solutions that enhance product durability and visual appeal' : 'Integrált címkézési megoldások, amelyek növelik a termék tartósságát és vizuális vonzerejét'}
+                </p>
+              </Link>
+            </motion.div>
+
+            {/* Surface Enhancement Solutions */}
+            <motion.div variants={itemVariants}>
+              <Link 
+                href="/services/in-mould-decoration"
+                className="group block p-5 rounded-xl bg-white/80 backdrop-blur-sm border border-white/60 hover:bg-white/95 hover:border-[#fa9b6b]/30 hover:shadow-xl transition-all duration-300 h-full"
+                style={{
+                  boxShadow: '0 10px 20px rgba(0,0,0,0.08)',
+                }}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 text-white flex items-center justify-center shadow-md">
+                    <Paintbrush size={24} />
+                  </div>
+                  <ArrowUpRight className="w-5 h-5 text-gray-400 group-hover:text-[#fa9b6b] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-[#fa9b6b] transition-colors mb-3">
+                  {language === 'en' ? 'Surface Enhancement Solutions' : 'Felületjavítási megoldások'}
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {language === 'en' ? 'Premium surface decoration techniques for exceptional product finishing' : 'Prémium felületi dekorációs technikák kivételes termékbefejezéshez'}
+                </p>
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Second Row - Same Design */}
+          <div className="grid grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {/* Strategic Manufacturing Solutions */}
+            <motion.div variants={itemVariants}>
+              <Link 
+                href="/services/contract-manufacturing"
+                className="group block p-5 rounded-xl bg-white/80 backdrop-blur-sm border border-white/60 hover:bg-white/95 hover:border-[#fa9b6b]/30 hover:shadow-xl transition-all duration-300 h-full"
+                style={{
+                  boxShadow: '0 10px 20px rgba(0,0,0,0.08)',
+                }}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 text-white flex items-center justify-center shadow-md">
+                    <Settings size={24} />
+                  </div>
+                  <ArrowUpRight className="w-5 h-5 text-gray-400 group-hover:text-[#fa9b6b] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-[#fa9b6b] transition-colors mb-3">
+                  {language === 'en' ? 'Strategic Manufacturing Solutions' : 'Stratégiai gyártási megoldások'}
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {language === 'en' ? 'Comprehensive manufacturing partnerships from design to delivery with full quality assurance' : 'Átfogó gyártási partnerségek a tervezéstől a szállításig teljes minőségbiztosítással'}
+                </p>
+              </Link>
+            </motion.div>
+
+            {/* Professional Tooling Management */}
+            <motion.div variants={itemVariants}>
+              <Link 
+                href="/services/tooling-management"
+                className="group block p-5 rounded-xl bg-white/80 backdrop-blur-sm border border-white/60 hover:bg-white/95 hover:border-[#fa9b6b]/30 hover:shadow-xl transition-all duration-300 h-full"
+                style={{
+                  boxShadow: '0 10px 20px rgba(0,0,0,0.08)',
+                }}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-white flex items-center justify-center shadow-md">
+                    <Wrench size={24} />
+                  </div>
+                  <ArrowUpRight className="w-5 h-5 text-gray-400 group-hover:text-[#fa9b6b] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-[#fa9b6b] transition-colors mb-3">
+                  {language === 'en' ? 'Professional Tooling Management' : 'Professzionális szerszámkezelés'}
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {language === 'en' ? 'Expert tool design, manufacturing, and maintenance services for optimal production efficiency' : 'Szakértői szerszámtervezés, gyártás és karbantartási szolgáltatások az optimális gyártási hatékonyságért'}
+                </p>
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Clean Footer */}
+          <div className="mt-8 pt-6 border-t border-gray-200/40">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-6">
+                <div className="flex items-center text-sm text-gray-600">
+                  <span className="w-2 h-2 bg-[#fa9b6b] rounded-full mr-2"></span>
+                  ISO 9001 Certified Manufacturing
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                  35+ Years Experience
+                </div>
+              </div>
+              <Link 
+                href="/services" 
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#fa9b6b] to-[#e86e40] text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105"
+              >
+                <span>View All Services</span>
+                <ArrowUpRight className="w-4 h-4 ml-2" />
+              </Link>
+            </div>
           </div>
         </motion.div>
       </NavigationMenuContent>

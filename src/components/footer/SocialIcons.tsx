@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
 import { Linkedin, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
 
@@ -72,7 +73,10 @@ interface SocialIconsProps {
   className?: string;
 }
 
-const SocialIcons: React.FC<SocialIconsProps> = ({ className = "" }) => {  const socialLinks = [
+const SocialIcons: React.FC<SocialIconsProps> = ({ className = "" }) => {
+  const { language, translations } = useLanguage();
+  const t = (key: string, fallback: string) => translations?.[key]?.[language] || fallback;
+  const socialLinks = [
     {
       href: "https://www.linkedin.com/company/flairplastic",
       icon: <Linkedin className="w-3.5 h-3.5" />,
@@ -115,7 +119,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({ className = "" }) => {  const
       >
         <span className="inline-block border-b border-blue-200/50 pb-1">
           {/*Premium connect text*/}
-          Connect with us
+          {t('socialicons.connect', language === 'en' ? 'Connect with us' : language === 'hu' ? 'Kapcsolódjon velünk' : 'Vernetzen Sie sich mit uns')}
         </span>
       </motion.div>      <div className="flex flex-wrap gap-2">
         {socialLinks.map((social, index) => (

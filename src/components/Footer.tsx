@@ -75,73 +75,72 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
       ]
     },
     capabilities: {
-      title: getTranslation(translations, 'footer.capabilities', language, 
-        language === 'en' ? 'Production Services' : 'Termelési szolgáltatások'),
-      description: language === 'en' ? 'Specialized plastic manufacturing expertise' : 'Specializált műanyaggyártási szakértelem',
+  title: getTranslation(translations, 'footer.capabilities', language, language === 'en' ? 'Production Services' : 'Termelési szolgáltatások'),
+  description: getTranslation(translations, 'footer.capabilities.desc', language, language === 'en' ? 'Specialized plastic manufacturing expertise' : 'Specializált műanyaggyártási szakértelem'),
       links: [
         { 
           href: '/services/plastic-injection-moulding', 
-          label: language === 'en' ? 'Precision Injection Manufacturing' : 'Precíziós fröccsöntő gyártás',
-          description: language === 'en' ? 'State-of-the-art plastic injection Moulding with exceptional precision and quality control' : 'Legmodernebb műanyag fröccsöntés kivételes precizitással és minőségbiztosítással',
+          label: getTranslation(translations, 'footer.capabilities.precision', language, language === 'en' ? 'Precision Injection Manufacturing' : 'Precíziós fröccsöntő gyártás'),
+          description: getTranslation(translations, 'footer.capabilities.precision.desc', language, language === 'en' ? 'State-of-the-art plastic injection Moulding with exceptional precision and quality control' : 'Legmodernebb műanyag fröccsöntés kivételes precizitással és minőségbiztosítással'),
           icon: Component
         },
         { 
           href: '/services/in-mould-decoration', 
-          label: language === 'en' ? 'Surface Enhancement Solutions' : 'Felületjavító megoldások',
-          description: language === 'en' ? 'Premium surface decoration techniques for exceptional product finishing' : 'Prémium felületdíszítési technikák kivételes termékkészítéshez',
+          label: getTranslation(translations, 'footer.capabilities.surface', language, language === 'en' ? 'Surface Enhancement Solutions' : 'Felületjavító megoldások'),
+          description: getTranslation(translations, 'footer.capabilities.surface.desc', language, language === 'en' ? 'Premium surface decoration techniques for exceptional product finishing' : 'Prémium felületdíszítési technikák kivételes termékkészítéshez'),
           icon: Box
         },
         { 
           href: '/services/contract-manufacturing', 
-          label: language === 'en' ? 'Strategic Manufacturing Solutions' : 'Stratégiai gyártási megoldások',
-          description: language === 'en' ? 'Comprehensive manufacturing partnerships from design to delivery with full quality assurance' : 'Átfogó gyártási partnerségek a tervezéstől a szállításig teljes minőségbiztosítással',
+          label: getTranslation(translations, 'footer.capabilities.strategic', language, language === 'en' ? 'Strategic Manufacturing Solutions' : 'Stratégiai gyártási megoldások'),
+          description: getTranslation(translations, 'footer.capabilities.strategic.desc', language, language === 'en' ? 'Comprehensive manufacturing partnerships from design to delivery with full quality assurance' : 'Átfogó gyártási partnerségek a tervezéstől a szállításig teljes minőségbiztosítással'),
           icon: Package2
         },
         { 
           href: '/services/tooling-management', 
-          label: language === 'en' ? 'Tooling Management' : 'Szerszám kezelés',
-          description: language === 'en' ? 'Professional Mould design and maintenance services' : 'Professzionális forma tervezési és karbantartási szolgáltatások',
+          label: getTranslation(translations, 'footer.capabilities.tooling', language, language === 'en' ? 'Tooling Management' : 'Szerszám kezelés'),
+          description: getTranslation(translations, 'footer.capabilities.tooling.desc', language, language === 'en' ? 'Professional Mould design and maintenance services' : 'Professzionális forma tervezési és karbantartási szolgáltatások'),
           icon: Tag
         }
       ]    },    
     shop: {
-      title: language === 'en' ? 'Product Catalog' : 'Termékkatalógus',
-      description: language === 'en' ? 'Premium plastic solutions for various industries' : 'Prémium műanyag megoldások különböző iparágak számára',
+  title: getTranslation(translations, 'footer.shop', language, language === 'en' ? 'Product Catalog' : 'Termékkatalógus'),
+  description: getTranslation(translations, 'footer.shop.desc', language, language === 'en' ? 'Premium plastic solutions for various industries' : 'Prémium műanyag megoldások különböző iparágak számára'),
       links: [
         { 
           href: '/products/home', 
-          label: language === 'en' ? 'Home' : 'Otthon',
-          description: language === 'en' ? 'Residential plastic applications' : 'Lakossági műanyag alkalmazások',
+          label: getTranslation(translations, 'footer.shop.home', language, language === 'en' ? 'Home' : 'Otthon'),
+          description: getTranslation(translations, 'footer.shop.home.desc', language, language === 'en' ? 'Residential plastic applications' : 'Lakossági műanyag alkalmazások'),
           icon: Home
         },
         { 
           href: '/products/kitchen', 
-          label: language === 'en' ? 'Kitchen' : 'Konyha',
-          description: language === 'en' ? 'Food-grade plastic solutions' : 'Élelmiszeripari műanyag megoldások',
+          label: getTranslation(translations, 'footer.shop.kitchen', language, language === 'en' ? 'Kitchen' : 'Konyha'),
+          description: getTranslation(translations, 'footer.shop.kitchen.desc', language, language === 'en' ? 'Food-grade plastic solutions' : 'Élelmiszeripari műanyag megoldások'),
           icon: ChefHat
         },
         { 
           href: '/products/garden', 
-          label: language === 'en' ? 'Garden' : 'Kert',
-          description: language === 'en' ? 'Weather-resistant outdoor products' : 'Időjárásálló kültéri termékek',
+          label: getTranslation(translations, 'footer.shop.garden', language, language === 'en' ? 'Garden' : 'Kert'),
+          description: getTranslation(translations, 'footer.shop.garden.desc', language, language === 'en' ? 'Weather-resistant outdoor products' : 'Időjárásálló kültéri termékek'),
           icon: Flower
         },
         { 
           href: '/products/kids', 
-          label: language === 'en' ? 'Kids' : 'Gyerekek',
-          description: language === 'en' ? 'Child-safe plastic products' : 'Gyermekbiztos műanyag termékek',
+          label: getTranslation(translations, 'footer.shop.kids', language, language === 'en' ? 'Kids' : 'Gyerekek'),
+          description: getTranslation(translations, 'footer.shop.kids.desc', language, language === 'en' ? 'Child-safe plastic products' : 'Gyermekbiztos műanyag termékek'),
           icon: Baby
         },
         { 
           href: '/products/active', 
-          label: language === 'en' ? 'Active' : 'Aktív',
-          description: language === 'en' ? 'Durable recreational equipment' : 'Tartós rekreációs felszerelések',
+          label: getTranslation(translations, 'footer.shop.active', language, language === 'en' ? 'Active' : 'Aktív'),
+          description: getTranslation(translations, 'footer.shop.active.desc', language, language === 'en' ? 'Durable recreational equipment' : 'Tartós rekreációs felszerelések'),
           icon: Zap
         },
         { 
           href: '/products/pallets', 
-          label: language === 'en' ? 'Pallets' : 'Raklapok',
-          description: language === 'en' ? 'Heavy-duty logistics solutions' : 'Nagy teljesítményű logisztikai megoldások',
+          label: getTranslation(translations, 'footer.shop.pallets', language, language === 'en' ? 'Pallets' : 'Raklapok'),
+          description: getTranslation(translations, 'footer.shop.pallets.desc', language, language === 'en' ? 'Heavy-duty logistics solutions' : 'Nagy teljesítményű logisztikai megoldások'),
           icon: Paintbrush
         }
       ]    }  };  return (
@@ -226,9 +225,7 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
                 viewport={{ once: true }}
                 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-blue-900 via-blue-700 to-amber-600 bg-clip-text text-transparent"
               >
-                {language === 'en' 
-                  ? 'Stay Ahead with Industry Insights' 
-                  : 'Maradjon előrébb az iparági trendekkel'}
+                {getTranslation(translations, 'footer.newsletter.heading', language, language === 'en' ? 'Stay Ahead with Industry Insights' : 'Maradjon előrébb az iparági trendekkel')}
               </motion.h2>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -237,9 +234,7 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
                 viewport={{ once: true }}
                 className="text-gray-600 text-lg leading-relaxed max-w-xl"
               >
-                {language === 'en' 
-                  ? 'Get exclusive access to manufacturing innovations, sustainability updates, and expert insights delivered directly to your inbox.' 
-                  : 'Szerezzen kizárólagos hozzáférést a gyártási innovációkhoz, fenntarthatósági frissítésekhez és szakértői betekintésekhez.'}
+                {getTranslation(translations, 'footer.newsletter.desc', language, language === 'en' ? 'Get exclusive access to manufacturing innovations, sustainability updates, and expert insights delivered directly to your inbox.' : 'Szerezzen kizárólagos hozzáférést a gyártási innovációkhoz, fenntarthatósági frissítésekhez és szakértői betekintésekhez.')}
               </motion.p>
               
               {/* Trust indicators with premium styling */}
@@ -254,13 +249,13 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
                   <div className="p-1.5 rounded-full bg-green-100/70 backdrop-blur-sm">
                     <Shield className="w-3.5 h-3.5 text-green-600" />
                   </div>
-                  <span>{language === 'en' ? 'No spam' : 'Spam mentes'}</span>
+                  <span>{getTranslation(translations, 'footer.newsletter.nospam', language, language === 'en' ? 'No spam' : 'Spam mentes')}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="p-1.5 rounded-full bg-amber-100/70 backdrop-blur-sm">
                     <Lightbulb className="w-3.5 h-3.5 text-amber-600" />
                   </div>
-                  <span>{language === 'en' ? 'Monthly insights' : 'Havi betekintések'}</span>
+                  <span>{getTranslation(translations, 'footer.newsletter.monthly', language, language === 'en' ? 'Monthly insights' : 'Havi betekintések')}</span>
                 </div>
               </motion.div>
             </div>
@@ -290,10 +285,7 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
                       className="h-12 w-auto object-contain"
                     />
                   </Link>                  <p className="text-gray-500 leading-relaxed mb-6 text-sm">
-                    {language === 'hu' ? 
-                      'A Flair-Plastic Európa szívében stratégiailag elhelyezkedő vezető műanyaggyártó vállalat, amely fröccsöntésre és fröccsfúvásos formázásra specializálódott. Szerződéses gyártóként skálázható termelési megoldásokat kínálunk globális ügyfeleink számára, fejlett technológiákkal és modern berendezésekkel biztosítva a kiváló minőséget és innovációt. Elkötelezettek vagyunk a fenntarthatóság és a kiválóság iránt, minden komponens és folyamat esetében.' :
-                      'Flair-Plastic, strategically positioned at the heart of Europe, is a leading plastic manufacturing company specializing in injection and injection blow moulding. As a dedicated contract manufacturer, we deliver scalable production solutions with advanced technologies and modern equipment, ensuring exceptional quality and innovation for our global clientele. Committed to sustainability and excellence, we enhance performance and competitive advantage across diverse markets worldwide.'
-                    }
+                    {getTranslation(translations, 'footer.company.desc', language, language === 'en' ? 'Flair-Plastic, strategically positioned at the heart of Europe, is a leading plastic manufacturing company specializing in injection and injection blow moulding. As a dedicated contract manufacturer, we deliver scalable production solutions with advanced technologies and modern equipment, ensuring exceptional quality and innovation for our global clientele. Committed to sustainability and excellence, we enhance performance and competitive advantage across diverse markets worldwide.' : 'A Flair-Plastic Európa szívében stratégiailag elhelyezkedő vezető műanyaggyártó vállalat, amely fröccsöntésre és fröccsfúvásos formázásra specializálódott. Szerződéses gyártóként skálázható termelési megoldásokat kínálunk globális ügyfeleink számára, fejlett technológiákkal és modern berendezésekkel biztosítva a kiváló minőséget és innovációt. Elkötelezettek vagyunk a fenntarthatóság és a kiválóság iránt, minden komponens és folyamat esetében.')}
                   </p>
                     {/* Social media icons with premium animation */}
                   <div className="mb-6">
@@ -477,9 +469,7 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
               viewport={{ once: true }}
               className="text-sm text-gray-500"
             >
-              {getTranslation(translations, 'footer.rights', language, 
-                language === 'en' ? '© 2025 Flair-Plastic. All rights reserved.' : 
-                '© 2025 Flair-Plastic. Minden jog fenntartva.')}
+              {getTranslation(translations, 'footer.rights', language, language === 'en' ? '© 2025 Flair-Plastic. All rights reserved.' : '© 2025 Flair-Plastic. Minden jog fenntartva.')}
             </motion.p>
             
             <motion.div 
@@ -492,10 +482,10 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
               <button 
                 onClick={() => setCookieDialogOpen(true)}
                 className="text-sm text-gray-500 hover:text-blue-700 transition-colors group relative"
-                aria-label={language === 'en' ? 'Cookie settings' : 'Cookie beállítások'}
+                aria-label={getTranslation(translations, 'footer.cookies.settings', language, language === 'en' ? 'Cookie settings' : 'Cookie beállítások')}
               >
                 <span className="relative z-10">
-                  {language === 'en' ? 'Cookie settings' : 'Cookie beállítások'}
+                  {getTranslation(translations, 'footer.cookies.settings', language, language === 'en' ? 'Cookie settings' : 'Cookie beállítások')}
                 </span>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500/60 group-hover:w-full transition-all duration-300"></span>
               </button>
@@ -503,11 +493,10 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
               <Link 
                 href="/policies/cookiepolicy" 
                 className="text-sm text-gray-500 hover:text-blue-700 transition-colors group relative"
-                aria-label={language === 'en' ? 'Cookies Policy' : 'Cookie Szabályzat'}
+                aria-label={getTranslation(translations, 'footer.cookies.policy', language, language === 'en' ? 'Cookies Policy' : 'Cookie Szabályzat')}
               >
                 <span className="relative z-10">
-                  {getTranslation(translations, 'footer.cookies.policy', language, 
-                    language === 'en' ? 'Cookies Policy' : 'Cookie Szabályzat')}
+                  {getTranslation(translations, 'footer.cookies.policy', language, language === 'en' ? 'Cookies Policy' : 'Cookie Szabályzat')}
                 </span>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500/60 group-hover:w-full transition-all duration-300"></span>
               </Link>
@@ -515,11 +504,10 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
               <Link 
                 href="/policies/privacypolicy" 
                 className="text-sm text-gray-500 hover:text-blue-700 transition-colors group relative"
-                aria-label={language === 'en' ? 'Privacy Policy' : 'Adatvédelmi Szabályzat'}
+                aria-label={getTranslation(translations, 'footer.privacy', language, language === 'en' ? 'Privacy Policy' : 'Adatvédelmi Szabályzat')}
               >
                 <span className="relative z-10">
-                  {getTranslation(translations, 'footer.privacy', language, 
-                    language === 'en' ? 'Privacy Policy' : 'Adatvédelmi Szabályzat')}
+                  {getTranslation(translations, 'footer.privacy', language, language === 'en' ? 'Privacy Policy' : 'Adatvédelmi Szabályzat')}
                 </span>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500/60 group-hover:w-full transition-all duration-300"></span>
               </Link>
@@ -527,11 +515,10 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
               <Link 
                 href="/policies/termsconditions" 
                 className="text-sm text-gray-500 hover:text-blue-700 transition-colors group relative"
-                aria-label={language === 'en' ? 'Terms of Service' : 'Felhasználási Feltételek'}
+                aria-label={getTranslation(translations, 'footer.terms', language, language === 'en' ? 'Terms of Service' : 'Felhasználási Feltételek')}
               >
                 <span className="relative z-10">
-                  {getTranslation(translations, 'footer.terms', language, 
-                    language === 'en' ? 'Terms of Service' : 'Felhasználási Feltételek')}
+                  {getTranslation(translations, 'footer.terms', language, language === 'en' ? 'Terms of Service' : 'Felhasználási Feltételek')}
                 </span>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500/60 group-hover:w-full transition-all duration-300"></span>
               </Link>
@@ -578,7 +565,7 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
         {/* Tooltip */}
         <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 pointer-events-none">
           <div className="bg-white/90 backdrop-blur-md py-1 px-3 rounded-full shadow-md border border-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-            <span className="text-xs text-blue-700 font-medium">{language === 'en' ? 'Back to top' : 'Vissza a tetejére'}</span>
+            <span className="text-xs text-blue-700 font-medium">{getTranslation(translations, 'footer.backtotop', language, language === 'en' ? 'Back to top' : 'Vissza a tetejére')}</span>
           </div>
         </div>
       </motion.button>

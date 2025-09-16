@@ -9,15 +9,18 @@ interface Card {
   title: {
     en: string;
     hu: string;
+    de?: string;
   };
   link: string;
   description: {
     en: string;
     hu: string;
+    de?: string;
   };
   buttonText?: {
     en: string;
     hu: string;
+    de?: string;
   };
 }
 
@@ -197,7 +200,10 @@ const ServicesCards = () => {
                     whileHover={{ opacity: 1 }}
                   >
                     {/* Display first two sentences of description for better fit */}
-                    {card.description[language].split('.').slice(0, 2).join('.') + '.'}
+                    {(() => {
+                      const desc = card.description[language] || card.description['en'] || card.description['hu'] || '';
+                      return desc ? desc.split('.').slice(0, 2).join('.') + '.' : '';
+                    })()}
                   </motion.p>
                   
                   <Link href={card.link} className="w-full">
@@ -210,7 +216,7 @@ const ServicesCards = () => {
                       whileTap={{ scale: 0.98 }}
                     >
                       <span>
-                        {card.buttonText ? card.buttonText[language] : language === 'en' ? 'Explore Solution' : 'Megoldás Felfedezése'}
+                        {card.buttonText ? (card.buttonText[language] || card.buttonText['en'] || card.buttonText['hu']) : (language === 'en' ? 'Explore Solution' : language === 'de' ? 'Lösung entdecken' : 'Megoldás Felfedezése')}
                       </span>
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />

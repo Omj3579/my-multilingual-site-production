@@ -122,7 +122,7 @@ const ProductsMenu: React.FC = () => {
 
   return (
     <div 
-      className="relative"
+      className="relative hidden sm:block"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -141,15 +141,15 @@ const ProductsMenu: React.FC = () => {
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 mt-2 w-[800px] bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 overflow-hidden z-50">
+        <div className="absolute top-full left-0 mt-2 w-full max-w-[95vw] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px] xl:max-w-[900px] bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 overflow-hidden z-50">
           {/* Header */}
-          <div className="bg-gradient-to-r from-[#fa9b6b]/10 to-[#fa9b6b]/5 px-6 py-4 border-b border-white/10">
-            <h3 className="text-lg font-bold text-slate-800">
+          <div className="bg-gradient-to-r from-[#fa9b6b]/10 to-[#fa9b6b]/5 px-4 sm:px-6 py-3 sm:py-4 border-b border-white/10">
+            <h3 className="text-base sm:text-lg font-bold text-slate-800">
               {language === 'en' ? 'Product Categories' : 
                language === 'hu' ? 'Termékkategóriák' : 
                'Produktkategorien'}
             </h3>
-            <p className="text-sm text-slate-600 mt-1">
+            <p className="text-xs sm:text-sm text-slate-600 mt-1">
               {language === 'en' ? 'Explore our comprehensive range of premium products' : 
                language === 'hu' ? 'Fedezze fel prémium termékeink átfogó kínálatát' : 
                'Entdecken Sie unser umfassendes Sortiment an Premium-Produkten'}
@@ -157,8 +157,8 @@ const ProductsMenu: React.FC = () => {
           </div>
 
           {/* Categories Grid */}
-          <div className="p-6">
-            <div className="grid grid-cols-2 gap-4">
+          <div className="p-4 sm:p-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4">
               {categories.map((category) => {
                 const Icon = category.icon;
                 return (
@@ -175,15 +175,15 @@ const ProductsMenu: React.FC = () => {
                     />
                     
                     {/* Content */}
-                    <div className="relative p-4 flex items-center gap-3">
-                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-[#fa9b6b]/20 to-[#fa9b6b]/10 rounded-lg flex items-center justify-center group-hover:from-[#fa9b6b]/30 group-hover:to-[#fa9b6b]/20 transition-all duration-300">
-                        <Icon className="h-5 w-5 text-[#fa9b6b]" />
+                    <div className="relative p-3 sm:p-4 flex items-center gap-2 sm:gap-3">
+                      <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-[#fa9b6b]/20 to-[#fa9b6b]/10 rounded-lg flex items-center justify-center group-hover:from-[#fa9b6b]/30 group-hover:to-[#fa9b6b]/20 transition-all duration-300">
+                        <Icon className="h-4 w-4 sm:h-5 sm:w-5 text-[#fa9b6b]" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h4 className="font-semibold text-slate-800 group-hover:text-[#fa9b6b] transition-colors duration-200">
+                        <h4 className="font-semibold text-sm sm:text-base text-slate-800 group-hover:text-[#fa9b6b] transition-colors duration-200">
                           {category.name[language as Language]}
                         </h4>
-                        <p className="text-sm text-slate-600 line-clamp-1">
+                        <p className="text-xs sm:text-sm text-slate-600 line-clamp-1">
                           {category.description[language as Language]}
                         </p>
                       </div>
@@ -195,7 +195,7 @@ const ProductsMenu: React.FC = () => {
           </div>
 
           {/* Footer */}
-          <div className="bg-gradient-to-r from-slate-50/80 to-white/80 px-6 py-3 border-t border-white/10">
+          <div className="bg-gradient-to-r from-slate-50/80 to-white/80 px-4 sm:px-6 py-2 sm:py-3 border-t border-white/10">
             <p className="text-xs text-slate-500 text-center">
               {language === 'en' ? 'Precision quality solutions in plastic manufacturing with global reach and local expertise' : 
                language === 'hu' ? 'Precíziós minőségi megoldások műanyaggyártásban globális elérhetőséggel és helyi szakértelemmel' : 

@@ -6,7 +6,7 @@ import {
 import { ServicesMenu } from './navigation/ServicesMenu';
 import { SustainabilityMenu } from './navigation/SustainabilityMenu';
 import { CompanyMenu } from './navigation/CompanyMenu';
-import ProductsMenu from './navigation/ProductsMenu';
+import { ProductsMenu } from './navigation/ProductsMenu';
 
 const DesktopNavigation = () => {
 
@@ -56,10 +56,11 @@ const DesktopNavigation = () => {
           variants={itemVariants}
         >
           <CompanyMenu />
-        </motion.div>        {/* Products Portfolio - Dropdown Menu */}
+        </motion.div>
+
         <motion.div
           initial="hidden"
-          animate="visible" 
+          animate="visible"
           custom={3}
           variants={itemVariants}
         >
@@ -107,8 +108,8 @@ const DesktopNavigation = () => {
         
         /* Extra-large dropdown container for ProductsMenu */
         .navigation-dropdown-container.large {
-          width: 1500px;
-          max-width: min(98vw, 1500px);
+          width: 1400px;
+          max-width: min(90vw, 1400px);
           min-width: 1000px;
         }
         

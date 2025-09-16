@@ -1,6 +1,236 @@
- import { Language } from '@/contexts/LanguageContext';
+import { Language } from '@/contexts/LanguageContext';
 
 export const defaultTranslations: Record<string, Record<Language, string>> = {
+  // LanguageSwitcher
+  'languageswitcher.label': {
+    en: 'Language:',
+    hu: 'Nyelv:',
+    de: 'Sprache:',
+  },
+  // SocialIcons
+  'socialicons.connect': {
+    en: 'Connect with us',
+    hu: 'Kapcsolódjon velünk',
+    de: 'Vernetzen Sie sich mit uns',
+  },
+  // Footer section headers, descriptions, and contact info
+  'footer.capabilities': {
+    en: 'Production Services',
+    hu: 'Termelési szolgáltatások',
+    de: 'Produktionsdienstleistungen',
+  },
+  'footer.capabilities.desc': {
+    en: 'Specialized plastic manufacturing expertise',
+    hu: 'Specializált műanyaggyártási szakértelem',
+    de: 'Spezialisierte Kunststofffertigungskompetenz',
+  },
+  'footer.capabilities.precision': {
+    en: 'Precision Injection Manufacturing',
+    hu: 'Precíziós fröccsöntő gyártás',
+    de: 'Präzisions-Spritzgussfertigung',
+  },
+  'footer.capabilities.precision.desc': {
+    en: 'State-of-the-art plastic injection Moulding with exceptional precision and quality control',
+    hu: 'Legmodernebb műanyag fröccsöntés kivételes precizitással és minőségbiztosítással',
+    de: 'Modernste Spritzgusstechnik mit außergewöhnlicher Präzision und Qualitätskontrolle',
+  },
+  'footer.capabilities.surface': {
+    en: 'Surface Enhancement Solutions',
+    hu: 'Felületjavító megoldások',
+    de: 'Oberflächenveredelungslösungen',
+  },
+  'footer.capabilities.surface.desc': {
+    en: 'Premium surface decoration techniques for exceptional product finishing',
+    hu: 'Prémium felületdíszítési technikák kivételes termékkészítéshez',
+    de: 'Premium-Oberflächentechniken für außergewöhnliche Produktveredelung',
+  },
+  'footer.capabilities.strategic': {
+    en: 'Strategic Manufacturing Solutions',
+    hu: 'Stratégiai gyártási megoldások',
+    de: 'Strategische Fertigungslösungen',
+  },
+  'footer.capabilities.strategic.desc': {
+    en: 'Comprehensive manufacturing partnerships from design to delivery with full quality assurance',
+    hu: 'Átfogó gyártási partnerségek a tervezéstől a szállításig teljes minőségbiztosítással',
+    de: 'Umfassende Fertigungspartnerschaften von der Planung bis zur Lieferung mit voller Qualitätskontrolle',
+  },
+  'footer.capabilities.tooling': {
+    en: 'Tooling Management',
+    hu: 'Szerszám kezelés',
+    de: 'Werkzeugmanagement',
+  },
+  'footer.capabilities.tooling.desc': {
+    en: 'Professional Mould design and maintenance services',
+    hu: 'Professzionális forma tervezési és karbantartási szolgáltatások',
+    de: 'Professionelle Formenbau- und Wartungsdienstleistungen',
+  },
+  'footer.shop': {
+    en: 'Product Catalog',
+    hu: 'Termékkatalógus',
+    de: 'Produktkatalog',
+  },
+  'footer.shop.desc': {
+    en: 'Premium plastic solutions for various industries',
+    hu: 'Prémium műanyag megoldások különböző iparágak számára',
+    de: 'Premium-Kunststofflösungen für verschiedene Branchen',
+  },
+  'footer.shop.home': {
+    en: 'Home',
+    hu: 'Otthon',
+    de: 'Haushalt',
+  },
+  'footer.shop.home.desc': {
+    en: 'Residential plastic applications',
+    hu: 'Lakossági műanyag alkalmazások',
+    de: 'Kunststoffanwendungen für den Wohnbereich',
+  },
+  'footer.shop.kitchen': {
+    en: 'Kitchen',
+    hu: 'Konyha',
+    de: 'Küche',
+  },
+  'footer.shop.kitchen.desc': {
+    en: 'Food-grade plastic solutions',
+    hu: 'Élelmiszeripari műanyag megoldások',
+    de: 'Lebensmittelechte Kunststofflösungen',
+  },
+  'footer.shop.garden': {
+    en: 'Garden',
+    hu: 'Kert',
+    de: 'Garten',
+  },
+  'footer.shop.garden.desc': {
+    en: 'Weather-resistant outdoor products',
+    hu: 'Időjárásálló kültéri termékek',
+    de: 'Witterungsbeständige Outdoor-Produkte',
+  },
+  'footer.shop.kids': {
+    en: 'Kids',
+    hu: 'Gyerekek',
+    de: 'Kinder',
+  },
+  'footer.shop.kids.desc': {
+    en: 'Child-safe plastic products',
+    hu: 'Gyermekbiztos műanyag termékek',
+    de: 'Kindersichere Kunststoffprodukte',
+  },
+  'footer.shop.active': {
+    en: 'Active',
+    hu: 'Aktív',
+    de: 'Aktiv',
+  },
+  'footer.shop.active.desc': {
+    en: 'Durable recreational equipment',
+    hu: 'Tartós rekreációs felszerelések',
+    de: 'Langlebige Freizeitgeräte',
+  },
+  'footer.shop.pallets': {
+    en: 'Pallets',
+    hu: 'Raklapok',
+    de: 'Paletten',
+  },
+  'footer.shop.pallets.desc': {
+    en: 'Heavy-duty logistics solutions',
+    hu: 'Nagy teljesítményű logisztikai megoldások',
+    de: 'Hochleistungs-Logistiklösungen',
+  },
+  // Contact info
+  'contactinfo.heading': {
+    en: 'Contact Information',
+    hu: 'Kapcsolati Információk',
+    de: 'Kontaktinformationen',
+  },
+  'contactinfo.desc': {
+    en: 'Get in touch with our expert team',
+    hu: 'Vegye fel a kapcsolatot szakértő csapatunkkal',
+    de: 'Nehmen Sie Kontakt mit unserem Expertenteam auf',
+  },
+  'contactinfo.address': {
+    en: 'Address',
+    hu: 'Cím',
+    de: 'Adresse',
+  },
+  'contactinfo.address.sub': {
+    en: 'European Manufacturing Hub',
+    hu: 'Európai Gyártási Központ',
+    de: 'Europäisches Fertigungszentrum',
+  },
+  'contactinfo.phone': {
+    en: 'Phone',
+    hu: 'Telefon',
+    de: 'Telefon',
+  },
+  'contactinfo.phone.sub': {
+    en: 'Business Hours: Mon-Fri 8:00-17:00',
+    hu: 'Ügyfélfogadás: H-P 8:00-17:00',
+    de: 'Geschäftszeiten: Mo-Fr 8:00-17:00',
+  },
+  'contactinfo.enquiries': {
+    en: 'Enquiries',
+    hu: 'Érdeklődés',
+    de: 'Anfragen',
+  },
+  'contactinfo.enquiries.sub': {
+    en: 'Get a quote within 24 hours',
+    hu: '24 órán belüli árajánlat',
+    de: 'Angebot innerhalb von 24 Stunden',
+  },
+  'contactinfo.contactus': {
+    en: 'Contact Us',
+    hu: 'Kapcsolat',
+    de: 'Kontakt',
+  },
+  'contactinfo.ready': {
+    en: 'Ready to start your next project?',
+    hu: 'Készen áll a következő projektre?',
+    de: 'Bereit für Ihr nächstes Projekt?',
+  },
+  'contactinfo.cta': {
+    en: 'Request a Quote',
+    hu: 'Árajánlat Kérése',
+    de: 'Angebot anfordern',
+  },
+  // Footer
+  'footer.newsletter.heading': {
+    en: 'Stay Ahead with Industry Insights',
+    hu: 'Maradjon előrébb az iparági trendekkel',
+    de: 'Bleiben Sie den Branchentrends voraus',
+  },
+  'footer.newsletter.desc': {
+    en: 'Get exclusive access to manufacturing innovations, sustainability updates, and expert insights delivered directly to your inbox.',
+    hu: 'Szerezzen kizárólagos hozzáférést a gyártási innovációkhoz, fenntarthatósági frissítésekhez és szakértői betekintésekhez.',
+    de: 'Erhalten Sie exklusiven Zugang zu Innovationen, Nachhaltigkeits-Updates und Experteneinblicken direkt in Ihr Postfach.',
+  },
+  'footer.newsletter.nospam': {
+    en: 'No spam',
+    hu: 'Spam mentes',
+    de: 'Kein Spam',
+  },
+  'footer.newsletter.monthly': {
+    en: 'Monthly insights',
+    hu: 'Havi betekintések',
+    de: 'Monatliche Einblicke',
+  },
+  'footer.company.desc': {
+    en: 'Flair-Plastic, strategically positioned at the heart of Europe, is a leading plastic manufacturing company specializing in injection and injection blow moulding. As a dedicated contract manufacturer, we deliver scalable production solutions with advanced technologies and modern equipment, ensuring exceptional quality and innovation for our global clientele. Committed to sustainability and excellence, we enhance performance and competitive advantage across diverse markets worldwide.',
+    hu: 'A Flair-Plastic Európa szívében stratégiailag elhelyezkedő vezető műanyaggyártó vállalat, amely fröccsöntésre és fröccsfúvásos formázásra specializálódott. Szerződéses gyártóként skálázható termelési megoldásokat kínálunk globális ügyfeleink számára, fejlett technológiákkal és modern berendezésekkel biztosítva a kiváló minőséget és innovációt. Elkötelezettek vagyunk a fenntarthatóság és a kiválóság iránt, minden komponens és folyamat esetében.',
+    de: 'Flair-Plastic, strategisch im Herzen Europas positioniert, ist ein führender Kunststoffhersteller, spezialisiert auf Spritzguss und Spritzblasformen. Als engagierter Auftragsfertiger bieten wir skalierbare Produktionslösungen mit modernster Technologie und Ausrüstung, um höchste Qualität und Innovation für unsere weltweiten Kunden zu gewährleisten. Unser Engagement für Nachhaltigkeit und Exzellenz verschafft uns einen Wettbewerbsvorteil auf internationalen Märkten.',
+  },
+  'footer.rights': {
+    en: '© 2025 Flair-Plastic. All rights reserved.',
+    hu: '© 2025 Flair-Plastic. Minden jog fenntartva.',
+    de: '© 2025 Flair-Plastic. Alle Rechte vorbehalten.',
+  },
+  'footer.cookies.settings': {
+    en: 'Cookie settings',
+    hu: 'Cookie beállítások',
+    de: 'Cookie-Einstellungen',
+  },
+  'footer.backtotop': {
+    en: 'Back to top',
+    hu: 'Vissza a tetejére',
+    de: 'Zurück nach oben',
+  },
   // Navigation items
   'nav.home': {
     en: 'Home',
@@ -1259,50 +1489,10 @@ export const defaultTranslations: Record<string, Record<Language, string>> = {
     hu: 'Vállalati áttekintés',
     de: 'Firmenübersicht',
   },
-  'footer.services': {
-    en: 'Production Services',
-    hu: 'Termelési szolgáltatások',
-    de: 'Produktionsdienstleistungen',
-  },
-  'footer.services.injection': {
-    en: 'Precision Injection Manufacturing',
-    hu: 'Precíziós fröccsöntési gyártás',
-    de: 'Präzisions-Spritzguss-Fertigung',
-  },
-  'footer.services.contract': {
-    en: 'Custom Manufacturing Solutions',
-    hu: 'Egyedi gyártási megoldások',
-    de: 'Maßgeschneiderte Fertigungslösungen',
-  },
-  'footer.services.support': {
-    en: 'Production Excellence',
-    hu: 'Gyártási kiválóság',
-    de: 'Produktionsexzellenz',
-  },
   'footer.contact': {
     en: 'Contact',
     hu: 'Kapcsolat',
     de: 'Kontakt',
-  },
-  'footer.address': {
-    en: 'Miskolc, Sajószigeti utca 2, 3527',
-    hu: 'Miskolc, Sajószigeti utca 2, 3527',
-    de: 'Miskolc, Sajószigeti utca 2, 3527',
-  },
-  'footer.phone': {
-    en: 'Phone',
-    hu: 'Telefon',
-    de: 'Telefon',
-  },
-  'footer.enquiries': {
-    en: 'General enquiries',
-    hu: 'Általános érdeklődés',
-    de: 'Allgemeine Anfragen',
-  },
-  'footer.rights': {
-    en: '© Copyright 2024 – Flair-Plastic. All rights reserved.',
-    hu: '© Copyright 2024 – Flair-Plastic. Minden jog fenntartva.',
-    de: '© Copyright 2024 – Flair-Plastic. Alle Rechte vorbehalten.',
   },
   'footer.cookies': {
     en: 'My cookie settings',
@@ -2172,5 +2362,95 @@ export const defaultTranslations: Record<string, Record<Language, string>> = {
     en: 'Read more',
     hu: 'Tovább olvasás',
     de: 'Weiterlesen'
+  },
+
+  // Products page content
+  'products.premiumCategories': {
+    en: 'Premium Categories',
+    hu: 'Prémium Kategóriák',
+    de: 'Premium-Kategorien',
+  },
+  'products.precisionCrafted': {
+    en: 'Precision Crafted',
+    hu: 'Precízen Elkészített',
+    de: 'Präzise Gefertigt',
+  },
+  'products.productCollections': {
+    en: 'Product Collections',
+    hu: 'Termék Kollekciók',
+    de: 'Produktkollektionen',
+  },
+  'products.exploreCategories': {
+    en: 'Explore our comprehensive product categories designed to meet diverse industry requirements with exceptional quality and innovation.',
+    hu: 'Fedezze fel átfogó termékkategóriáinkat, amelyeket változatos ipari igények kielégítésére terveztünk kivételes minőséggel és innovációval.',
+    de: 'Entdecken Sie unsere umfassenden Produktkategorien, die entwickelt wurden, um vielfältige Branchenanforderungen mit außergewöhnlicher Qualität und Innovation zu erfüllen.',
+  },
+  'products.categories': {
+    en: 'Categories',
+    hu: 'Kategóriák',
+    de: 'Kategorien',
+  },
+  'products.products': {
+    en: 'Products',
+    hu: 'Termékek',
+    de: 'Produkte',
+  },
+  'products.years': {
+    en: 'Years',
+    hu: 'Év',
+    de: 'Jahre',
+  },
+
+  // Products menu
+  'products.menu.all': {
+    en: 'All',
+    hu: 'Összes',
+    de: 'Alle',
+  },
+  'products.menu.home': {
+    en: 'Home',
+    hu: 'Otthon',
+    de: 'Haushalt',
+  },
+  'products.menu.kitchen': {
+    en: 'Kitchen',
+    hu: 'Konyha',
+    de: 'Küche',
+  },
+  'products.menu.garden': {
+    en: 'Garden',
+    hu: 'Kert',
+    de: 'Garten',
+  },
+  'products.menu.kids': {
+    en: 'Kids',
+    hu: 'Gyerek',
+    de: 'Kinder',
+  },
+  'products.menu.active': {
+    en: 'Active',
+    hu: 'Aktív',
+    de: 'Aktiv',
+  },
+  'products.menu.pallets': {
+    en: 'Pallets',
+    hu: 'Raklapok',
+    de: 'Paletten',
+  },
+  // CTA for custom solutions
+  'products.needCustomSolutions': {
+    en: 'Need Custom Solutions?',
+    hu: 'Egyedi megoldásokra van szüksége?',
+    de: 'Benötigen Sie individuelle Lösungen?',
+  },
+  'products.customSolutionsDesc': {
+    en: 'Our experts can help you design and manufacture custom plastic products tailored to your needs.',
+    hu: 'Szakértőink segítenek Önnek egyedi műanyag termékek tervezésében és gyártásában.',
+    de: 'Unsere Experten helfen Ihnen bei der Entwicklung und Herstellung maßgeschneiderter Kunststoffprodukte.',
+  },
+  'products.contactExperts': {
+    en: 'Contact Our Experts',
+    hu: 'Lépjen kapcsolatba szakértőinkkel',
+    de: 'Kontaktieren Sie unsere Experten',
   },
 };

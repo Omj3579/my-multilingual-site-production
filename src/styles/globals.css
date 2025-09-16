@@ -1,3 +1,26 @@
+/* Force mobile menu header icons to a fixed size */
+.mobile-header-icon {
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  min-height: 28px !important;
+  max-width: 28px !important;
+  max-height: 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.mobile-header-icon img,
+.mobile-header-icon svg {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
 @import "tailwindcss";
 
 /* Custom animations for mosaic cards */
@@ -132,3 +155,49 @@ body {
   animation: shimmer 1.5s ease-in-out;
 }
 
+
+/* Mobile dropdown menu z-index fix */
+[data-radix-popper-content-wrapper] {
+  z-index: 9999 !important;
+}
+
+/* Ensure mobile dropdowns appear above other content */
+.mobile-dropdown-content {
+  z-index: 9999 !important;
+  position: fixed !important;
+}
+
+/* Override any conflicting z-index styles */
+[data-state="open"][data-radix-dropdown-menu-content] {
+  z-index: 9999 !important;
+}
+
+/* Mobile dropdown styling improvements */
+.mobile-dropdown-content {
+  min-width: 20rem !important;
+  max-width: 90vw !important;
+}
+
+.mobile-dropdown-content [data-radix-dropdown-menu-item] {
+  white-space: nowrap !important;
+  padding: 0.75rem 1rem !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+.mobile-dropdown-content a {
+  display: block !important;
+  width: 100% !important;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+/* Products page navigation scrollbar hiding */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

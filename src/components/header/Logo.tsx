@@ -2,40 +2,38 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const Logo = () => {
+interface LogoProps {
+  className?: string;
+}
+
+const Logo = ({ className = "" }: LogoProps) => {
   return (
     <Link 
       href="/" 
-      className="flex items-center space-x-2 border-0 outline-0 shadow-none"
-      style={{ 
-        border: 'none', 
-        outline: 'none', 
-        boxShadow: 'none',
-        textDecoration: 'none'
-      }}
+      className="flex items-center focus:outline-none focus:ring-2 focus:ring-[#fa9b6b] focus:ring-offset-2 rounded-lg transition-all duration-200"
+      aria-label="Flair-Plastic - Return to homepage"
     >
       <motion.div
-        whileHover={{ scale: 1.03 }}
-        transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        className="border-0 outline-0 shadow-none"
-        style={{ 
-          border: 'none', 
-          outline: 'none', 
-          boxShadow: 'none',
-          background: 'transparent'
+        whileHover={{ 
+          scale: 1.02,
+          transition: { type: "spring", stiffness: 400, damping: 15 }
         }}
+        whileTap={{ scale: 0.98 }}
+        className="relative flex items-center justify-center"
       >
+        {/* Main Logo */}
         <Image 
-          src="https://flair-plastic.hu/wp-content/uploads/2022/09/cropped-flair_plastic_logo_cmyk_full_-_MAIN.png.webp" 
-          alt="Flair-Plastic Logo" 
-          width={160}
-          height={48}
-          className="h-12 w-auto border-0 outline-0 shadow-none"
+          src="/logos/flair_plastic_logo_cmyk_full_-_MAIN.png"
+          alt="Flair-Plastic - Premium Injection Moulding Solutions" 
+          width={150}
+          height={42}
+          priority
+          className={`object-contain ${className}`}
           style={{ 
-            border: 'none !important', 
-            outline: 'none !important', 
-            boxShadow: 'none !important',
-            display: 'block'
+            width: 'auto',
+            height: 'auto',
+            maxWidth: '150px',
+            maxHeight: '42px'
           }}
         />
       </motion.div>

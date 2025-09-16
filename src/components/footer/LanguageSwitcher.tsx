@@ -8,19 +8,21 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { useLanguage } from '@/contexts/LanguageContext';
-import Link from "next/link";
+import { useLanguage, Language } from '@/contexts/LanguageContext';
+
 
 interface LanguageSwitcherProps {
   className?: string;
 }
 
 const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className = "" }) => {
-  const { language } = useLanguage();
+  const { language, translations, changeLanguage } = useLanguage();
+  const t = (key: string, fallback: string) => translations?.[key]?.[language] || fallback;
 
   const languages = [
     { code: 'en', name: 'English', flag: '🇬🇧', nativeName: 'English' },
-    { code: 'hu', name: 'Hungarian', flag: '🇭🇺', nativeName: 'Magyar' }
+    { code: 'hu', name: 'Hungarian', flag: '🇭🇺', nativeName: 'Magyar' },
+    { code: 'de', name: 'German', flag: '🇩🇪', nativeName: 'Deutsch' },
   ];
 
   const currentLanguage = languages.find(lang => lang.code === language);
@@ -47,7 +49,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className = "" }) =
         >
           <Globe className="w-4 h-4 text-blue-500" />
         </motion.div>
-        <span>{language === 'en' ? 'Language:' : 'Nyelv:'}</span>
+  <span>{t('languageswitcher.label', language === 'en' ? 'Language:' : language === 'hu' ? 'Nyelv:' : 'Sprache:')}</span>
       </motion.div>
 
       <DropdownMenu>
@@ -83,29 +85,24 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className = "" }) =
           className="min-w-[150px] border-blue-100/70 shadow-lg backdrop-blur-sm bg-white/90"
         >
           {languages.map((lang) => (
-            <DropdownMenuItem key={lang.code} asChild>
-              <Link 
-                href={lang.code === 'en' ? '/en' : '/hu'}
-                className={`flex items-center space-x-3 px-3 py-2 hover:bg-blue-50/90 transition-all duration-200 cursor-pointer ${
-                  lang.code === language ? 'bg-blue-50/90 text-blue-700' : 'text-gray-700'
-                }`}
+            <DropdownMenuItem key={lang.code} onClick={() => changeLanguage(lang.code as Language)} className={`flex items-center space-x-3 px-3 py-2 hover:bg-blue-50/90 transition-all duration-200 cursor-pointer ${
+              lang.code === language ? 'bg-blue-50/90 text-blue-700' : 'text-gray-700'
+            }`}>
+              <motion.span 
+                className="text-base"
+                whileHover={{ scale: 1.2, rotate: [0, 5, -5, 0] }}
+                transition={{ duration: 0.5 }}
               >
-                <motion.span 
-                  className="text-base"
-                  whileHover={{ scale: 1.2, rotate: [0, 5, -5, 0] }}
-                  transition={{ duration: 0.5 }}
-                >
-                  {lang.flag}
-                </motion.span>
-                <span className="font-medium">{lang.nativeName}</span>
-                {lang.code === language && (
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    className="w-2 h-2 bg-blue-500 rounded-full ml-auto"
-                  />
-                )}
-              </Link>
+                {lang.flag}
+              </motion.span>
+              <span className="font-medium">{lang.nativeName}</span>
+              {lang.code === language && (
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  className="w-2 h-2 bg-blue-500 rounded-full ml-auto"
+                />
+              )}
             </DropdownMenuItem>
           ))}
         </DropdownMenuContent>
@@ -119,16 +116,17 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className = "" }) =
         viewport={{ once: true }}
         className="text-sm"
       >
-        <Link 
-          href={otherLanguage?.code === 'en' ? '/en' : '/hu'}
-          className="relative text-blue-700 hover:text-blue-800 font-medium transition-all duration-200 group"
+        <button
+          type="button"
+          onClick={() => changeLanguage(otherLanguage?.code as Language)}
+          className="relative text-blue-700 hover:text-blue-800 font-medium transition-all duration-200 group bg-transparent border-none p-0 cursor-pointer"
         >
           <span className="relative z-10">{otherLanguage?.nativeName}</span>
           <motion.span 
             className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400/30 group-hover:w-full transition-all duration-300"
             whileHover={{ width: "100%" }}
           />
-        </Link>
+        </button>
       </motion.div>
     </div>
   );

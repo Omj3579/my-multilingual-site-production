@@ -97,100 +97,146 @@ export const SustainabilityMenu = () => {
         <div className="absolute -bottom-1 left-3 right-3 h-0.5 bg-[#fa9b6b] scale-x-0 group-hover:scale-x-100 group-data-[state=open]:scale-x-100 transition-transform origin-center" />
       </NavigationMenuTrigger>
       
-      <NavigationMenuContent asChild>
+      <NavigationMenuContent className="navigation-dropdown-container large mt-4">
         <motion.div
           initial="hidden"
           animate="visible"
           exit="hidden"
           variants={containerVariants}
-          className="navigation-dropdown-container p-4 md:p-5 lg:p-6 shadow-2xl bg-white rounded-xl border border-gray-100"
+          className="w-full h-full p-8 bg-white/95 backdrop-blur-xl border border-white/30 rounded-2xl shadow-2xl"
+          style={{
+            background: 'linear-gradient(145deg, rgba(255,255,255,0.95), rgba(248,250,252,0.9))',
+            backdropFilter: 'blur(30px)',
+            boxShadow: `
+              0 32px 64px -12px rgba(0, 0, 0, 0.35),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2),
+              0 0 0 1px rgba(255, 255, 255, 0.1)
+            `,
+            marginTop: '8px',
+          }}
         >
-          {/* Feature Header */}
-          <div className="mb-3 p-3 rounded-lg bg-gradient-to-r from-green-50 to-teal-50 border border-green-100">
-            <div className="flex items-center space-x-2.5">
-              <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
-                <Leaf size={18} className="text-white" />
-              </div>
-              <div>
-                <h3 className="text-base font-bold text-gray-900 mb-0.5">
-                  {language === 'en' ? "Green Innovation Initiative" : "Zöld Innovációs Kezdeményezés"}
-                </h3>
-                <p className="text-xs text-gray-600">
-                  {language === 'en' 
-                    ? "Leading the future of sustainable manufacturing"
-                    : "A fenntartható gyártás jövőjének vezetése"}
-                </p>
-              </div>
-              <div className="ml-auto flex items-center space-x-2">
-                <div className="flex items-center space-x-1 bg-green-100 px-2 py-1 rounded-full">
-                  <Leaf size={12} className="text-green-600" />
-                  <span className="text-xs font-medium text-green-700">ISO 14001</span>
+          {/* Enhanced Header */}
+          <div className="mb-8">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center mr-4 shadow-lg">
+                  <Leaf className="w-5 h-5 text-white" />
                 </div>
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900">Green Innovation Initiative</h2>
+                  <p className="text-base text-gray-600">Leading the future of sustainable manufacturing</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className="px-4 py-2 bg-green-100 rounded-full border border-green-200">
+                  <span className="text-sm font-semibold text-green-700">ISO 14001 Certified</span>
+                </div>
+                
               </div>
             </div>
           </div>
 
-          {/* Green Strategy Cards Grid */}
-          <div>
-            <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-1">
-            {greenStrategyInitiatives.map((initiative, index) => (
-              <motion.div key={index} variants={itemVariants}>
-                <Link 
-                  href={initiative.href}
-                  className="group flex flex-col p-2 rounded-lg border border-gray-100 hover:border-green-200 hover:bg-gradient-to-br hover:from-green-50/50 hover:to-transparent transition-all duration-300 h-full min-h-[140px]"
-                >
-                  {/* Icon */}
-                  <div className="flex items-center justify-end mb-2">
-                    <div className={`w-6 h-6 flex items-center justify-center transition-colors ${
-                      initiative.color === 'green' ? 'text-gray-400 group-hover:text-green-600' :
-                      initiative.color === 'teal' ? 'text-gray-400 group-hover:text-teal-600' :
-                      initiative.color === 'amber' ? 'text-gray-400 group-hover:text-amber-600' :
-                      initiative.color === 'emerald' ? 'text-gray-400 group-hover:text-emerald-600' :
-                      initiative.color === 'blue' ? 'text-gray-400 group-hover:text-blue-600' :
-                      'text-gray-400 group-hover:text-indigo-600'
-                    }`}>
-                      <initiative.icon size={14} />
+          {/* Balanced Grid - 2 rows, varying columns */}
+          <div className="space-y-6">
+            {/* First Row - 3 cards */}
+            <div className="grid grid-cols-3 gap-5">
+              {greenStrategyInitiatives.slice(0, 3).map((initiative, index) => (
+                <motion.div key={index} variants={itemVariants}>
+                  <Link 
+                    href={initiative.href}
+                    className="group block p-6 rounded-xl bg-white/70 backdrop-blur-sm border border-white/50 hover:bg-white/90 hover:border-green-200 hover:shadow-xl transition-all duration-300 h-full"
+                    style={{
+                      boxShadow: '0 8px 16px rgba(0,0,0,0.1)',
+                    }}
+                  >
+                    {/* Icon & Arrow */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-md ${
+                        initiative.color === 'green' ? 'bg-gradient-to-br from-green-400 to-green-500 text-white' :
+                        initiative.color === 'teal' ? 'bg-gradient-to-br from-teal-400 to-teal-500 text-white' :
+                        initiative.color === 'amber' ? 'bg-gradient-to-br from-amber-400 to-amber-500 text-white' :
+                        initiative.color === 'emerald' ? 'bg-gradient-to-br from-emerald-400 to-emerald-500 text-white' :
+                        'bg-gradient-to-br from-blue-400 to-blue-500 text-white'
+                      }`}>
+                        <initiative.icon size={24} />
+                      </div>
+                      <ArrowUpRight className="w-5 h-5 text-gray-400 group-hover:text-green-600 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
                     </div>
-                  </div>
 
-                  {/* Title */}
-                  <h5 className="text-sm font-semibold text-gray-900 group-hover:text-green-600 transition-colors mb-1.5 leading-tight">
-                    {initiative.title}
-                  </h5>
-                  
-                  {/* Description */}
-                  <p className="text-xs text-gray-600 leading-relaxed line-clamp-2 mb-2 flex-1">
-                    {initiative.description}
-                  </p>
+                    {/* Title */}
+                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-green-600 transition-colors mb-3 leading-tight">
+                      {initiative.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      {initiative.description}
+                    </p>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
 
-                  {/* Learn More Link */}
-                  <div className="flex items-center text-xs text-gray-400 group-hover:text-green-600 transition-colors mt-auto">
-                    <span className="mr-1">Learn more</span>
-                    <ArrowUpRight size={11} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
+            {/* Second Row - 2 cards (centered) */}
+            <div className="grid grid-cols-2 gap-5 max-w-4xl mx-auto">
+              {greenStrategyInitiatives.slice(3).map((initiative, index) => (
+                <motion.div key={index + 3} variants={itemVariants}>
+                  <Link 
+                    href={initiative.href}
+                    className="group block p-6 rounded-xl bg-white/70 backdrop-blur-sm border border-white/50 hover:bg-white/90 hover:border-green-200 hover:shadow-xl transition-all duration-300 h-full"
+                    style={{
+                      boxShadow: '0 8px 16px rgba(0,0,0,0.1)',
+                    }}
+                  >
+                    {/* Icon & Arrow */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-md ${
+                        initiative.color === 'green' ? 'bg-gradient-to-br from-green-400 to-green-500 text-white' :
+                        initiative.color === 'emerald' ? 'bg-gradient-to-br from-emerald-400 to-emerald-500 text-white' :
+                        'bg-gradient-to-br from-teal-400 to-teal-500 text-white'
+                      }`}>
+                        <initiative.icon size={24} />
+                      </div>
+                      <ArrowUpRight className="w-5 h-5 text-gray-400 group-hover:text-green-600 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-green-600 transition-colors mb-3 leading-tight">
+                      {initiative.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      {initiative.description}
+                    </p>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </div>
-          </div>
-          
-          {/* Footer with CTA */}
-          <div className="mt-3 pt-2 border-t border-gray-100 flex justify-between items-center">
-            <Link 
-              href="/sustainability/green-strategy" 
-              className="inline-flex items-center text-sm text-green-600 font-medium hover:text-green-700 transition-colors group"
-            >
-              <span>
-                {language === 'en' ? 'Explore Our Complete Green Strategy' : 'Fedezze Fel Teljes Zöld Stratégiánkat'}
-              </span>
-              <motion.div
-                className="ml-2"
-                whileHover={{ x: 2, y: -2 }}
-                transition={{ type: "spring", stiffness: 300 }}
+
+          {/* Enhanced Footer */}
+          <div className="mt-8 pt-6 border-t border-gray-200/50">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-6">
+                <div className="flex items-center text-sm text-gray-600">
+                  <Recycle className="w-4 h-4 text-green-500 mr-2" />
+                  Recyclable Materials
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <Zap className="w-4 h-4 text-yellow-500 mr-2" />
+                  Renewable Energy 
+                </div>
+                
+              </div>
+              <Link 
+                href="/sustainability/green-strategy" 
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105"
               >
-                <ArrowUpRight size={16} />
-              </motion.div>
-            </Link>
+                <span>Explore Green Strategy</span>
+                <ArrowUpRight className="w-4 h-4 ml-2" />
+              </Link>
+            </div>
           </div>
         </motion.div>
       </NavigationMenuContent>

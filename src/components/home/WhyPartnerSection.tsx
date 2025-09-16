@@ -170,7 +170,7 @@ const WhyPartnerSection = () => {
 
         {/* Premium Cards with 3D Effects */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
-          {partners[language].map((partner, index) => (
+          {(partners[language] ?? partners['en']).map((partner, index) => (
             <motion.div
               key={index}
               className="relative group"

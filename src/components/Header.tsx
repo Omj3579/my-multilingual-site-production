@@ -8,6 +8,8 @@ import Logo from './header/Logo';
 import LanguageSwitcher from './header/LanguageSwitcher';
 import MobileMenu from './header/MobileMenu';
 import DesktopNavigation from './header/DesktopNavigation';
+import ProductMobileMenu from './header/ProductMobileMenu';
+import ProductsNavigationBar from './header/navigation/ProductsNavigationBar';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,6 +24,16 @@ const Header = () => {
   
   // Check if we're on a products page
   const isProductsPage = router.pathname.startsWith('/products');
+  
+  // Define product categories for mobile menu
+  const productCategories = [
+    { label: 'Home', href: '/products/home' },
+    { label: 'Kitchen', href: '/products/kitchen' },
+    { label: 'Garden', href: '/products/garden' },
+    { label: 'Kids', href: '/products/kids' },
+    { label: 'Active', href: '/products/active' },
+    { label: 'Pallets', href: '/products/pallets' },
+  ];
   
   // Determine if we should show mobile menu (mobile + tablet only, not small laptop)
   const shouldShowMobileMenu = isMobile || isTablet;
@@ -63,10 +75,8 @@ const Header = () => {
     });
   };
 
-  // Don't render the main header on products pages
-  if (isProductsPage) {
-    return null;
-  }
+  // Don't render the main header on products pages - products pages will use unified header
+  // Removed: if (isProductsPage) { return null; }
 
   return (
     <>      <motion.header 
@@ -78,33 +88,57 @@ const Header = () => {
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className="fixed w-full top-0 z-[60] transition-all duration-300"
       >        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-3 md:py-4">
-          <div className="flex items-center justify-center h-16 sm:h-18 md:h-20 lg:h-28">            {/* Logo with clean white background - responsive sizing */}
+          <div className={`flex items-center h-16 sm:h-18 md:h-20 lg:h-28 ${isProductsPage ? 'gap-4 lg:gap-4 justify-center' : shouldShowMobileMenu ? 'justify-center gap-3' : 'justify-between'}`}>            {/* Logo with enhanced design and branding */}
             <motion.div
-              whileHover={{ scale: 1.08, y: -2 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              className="flex-none [&_*]:border-0 [&_*]:outline-0 [&_*]:shadow-none"
+              whileHover={{ scale: 1.05, y: -3 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              className="flex-none relative group"
               style={{
-                background: 'white',
-                borderRadius: isSmallLaptop ? '16px' : '20px',
-                padding: isSmallLaptop ? '12px 18px' : '16px 24px',
-                height: isSmallLaptop ? '52px' : '64px',
+                background: 'linear-gradient(145deg, #ffffff, #f8fafc)',
+                borderRadius: shouldShowMobileMenu ? '20px' : (isSmallLaptop ? '16px' : '20px'),
+                padding: shouldShowMobileMenu ? '16px 20px' : (isSmallLaptop ? '12px 16px' : '16px 20px'),
+                height: shouldShowMobileMenu ? '64px' : (isSmallLaptop ? '52px' : '64px'),
+                width: shouldShowMobileMenu ? '80px' : 'auto',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                border: '0 !important',
-                boxShadow: 'none !important',
-                outline: 'none !important',
-                WebkitBoxShadow: 'none !important',
-                MozBoxShadow: 'none !important',
+                boxShadow: `
+                  0 10px 25px -5px rgba(0, 0, 0, 0.1),
+                  0 8px 10px -6px rgba(0, 0, 0, 0.1),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.6)
+                `,
+                border: '1px solid rgba(255, 255, 255, 0.8)',
+                backdropFilter: 'blur(8px)',
               }}
             >
-              <Logo />
+              {/* Subtle background pattern */}
+              <div 
+                className="absolute inset-0 opacity-30 rounded-[inherit]" 
+                style={{
+                  background: 'radial-gradient(circle at 30% 30%, rgba(250, 155, 107, 0.1), transparent 50%)'
+                }}
+              />
+              
+              {/* Logo component */}
+              <div className="relative z-10">
+                <Logo />
+              </div>
+              
+              {/* Hover glow effect */}
+              <div 
+                className="absolute inset-0 rounded-[inherit] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{
+                  background: 'linear-gradient(145deg, rgba(250, 155, 107, 0.05), rgba(232, 110, 64, 0.05))',
+                  boxShadow: '0 0 20px rgba(250, 155, 107, 0.15)'
+                }}
+              />
             </motion.div>
 
-            {/* Desktop Navigation - show on medium screens and above (1024px+) */}
+            {/* Desktop Navigation - fit content size instead of full width */}
             {!shouldShowMobileMenu && (
               <motion.div 
-                className="flex items-center mx-2 md:mx-4 lg:mx-6 xl:mx-8"
+                className="flex items-center"
                 whileHover={{ y: -1 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 style={{
@@ -115,23 +149,25 @@ const Header = () => {
                     inset 0 0 15px rgba(255,255,255,0.1)
                   `,
                   borderRadius: '25px',
-                  padding: '16px 16px md:16px 20px lg:16px 24px xl:16px 32px',
+                  padding: '16px 24px',
                   backdropFilter: 'blur(8px)',
                   height: isSmallLaptop ? '56px' : '64px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
+                  width: 'fit-content',
                 }}
               >
                 <div className="text-lg md:text-xl xl:text-2xl font-semibold">
-                  <DesktopNavigation />
+                  {isProductsPage ? (
+                    <ProductsNavigationBar />
+                  ) : (
+                    <DesktopNavigation />
+                  )}
                 </div>
               </motion.div>
             )}
 
             {/* Right Section with responsive elements */}
-            <div className="flex-none flex items-center space-x-2 sm:space-x-3 md:space-x-4 lg:space-x-6">              {/* Contact button - responsive sizing and visibility */}
-              {!shouldShowMobileMenu && (
+            <div className={`flex-none flex items-center ${isProductsPage ? 'space-x-0' : 'space-x-2 sm:space-x-3 md:space-x-4 lg:space-x-6'}`}>              {/* Contact button - responsive sizing and visibility - hidden on products pages */}
+              {!shouldShowMobileMenu && !isProductsPage && (
                 <motion.a
                   href="/contact"                  whileHover={{ 
                     scale: 1.1, 
@@ -178,17 +214,18 @@ const Header = () => {
                     -15px -15px 30px rgba(255,255,255,0.8),
                     inset 0 0 15px rgba(255,255,255,0.2)
                   `,
-                  borderRadius: isSmallLaptop ? '16px' : '18px',
-                  padding: isSmallLaptop ? '0 18px' : '0 24px',
+                  borderRadius: shouldShowMobileMenu ? '20px' : (isSmallLaptop ? '16px' : '18px'),
+                  padding: shouldShowMobileMenu ? '0 16px' : (isSmallLaptop ? '0 18px' : '0 24px'),
                   backdropFilter: 'blur(8px)',
                   border: 'none',
-                  height: isSmallLaptop ? '52px' : '64px',
+                  height: shouldShowMobileMenu ? '64px' : (isSmallLaptop ? '52px' : '64px'),
+                  minWidth: shouldShowMobileMenu ? '72px' : 'auto',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}
               >
-                <div className="text-lg xl:text-xl font-semibold">
+                <div className={shouldShowMobileMenu ? "text-lg font-semibold" : "text-lg xl:text-xl font-semibold"}>
                   <LanguageSwitcher />
                 </div>
               </motion.div>              {/* Mobile menu toggle - show for mobile, tablet, and small laptop */}
@@ -203,7 +240,7 @@ const Header = () => {
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    className="focus:outline-none"
+                    className="focus:outline-none ml-2"
                     style={{
                       background: 'linear-gradient(145deg, rgba(255,255,255,0.9), rgba(240,240,240,0.8))',
                       boxShadow: `
@@ -211,11 +248,11 @@ const Header = () => {
                         -15px -15px 30px rgba(255,255,255,0.8),
                         inset 0 0 15px rgba(255,255,255,0.2)
                       `,
-                      borderRadius: isSmallLaptop ? '16px' : '18px',
+                      borderRadius: '20px',
                       backdropFilter: 'blur(8px)',
                       border: 'none',
-                      height: isSmallLaptop ? '52px' : '64px',
-                      width: isSmallLaptop ? '52px' : '64px',
+                      height: '64px',
+                      width: '64px',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -253,7 +290,11 @@ const Header = () => {
                   backdropFilter: 'blur(10px)',
                 }}
               ><div className="text-xl lg:text-2xl font-semibold">
-                  <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+                  {isProductsPage ? (
+                    <ProductMobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} categories={productCategories} />
+                  ) : (
+                    <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+                  )}
                 </div>
               </motion.div>
             )}

@@ -5,9 +5,9 @@ import { motion, useInView, useMotionValue, useTransform, AnimatePresence } from
 
 const CEOCard = () => {
   const { language } = useLanguage();
-  const cardRef = useRef(null);
+  const cardRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(cardRef, { once: false, amount: 0.2 });
-  const [activeTab, setActiveTab] = useState('experience'); // 'experience', 'vision', 'achievements'
+  const [activeTab, setActiveTab] = useState<'experience' | 'vision' | 'achievements'>('experience');
   
   // Mouse tracking for subtle 3D effects
   const mouseX = useMotionValue(0);
@@ -15,7 +15,7 @@ const CEOCard = () => {
   const rotateX = useTransform(mouseY, [-300, 300], [2, -2]);
   const rotateY = useTransform(mouseX, [-300, 300], [-2, 2]);
   
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
@@ -141,7 +141,6 @@ const CEOCard = () => {
                 sizes="(max-width: 768px) 100vw, 42vw"
                 priority
               />
-              />
               
               {/* Vertical text along image */}
               <div className="absolute bottom-10 -left-6 transform -rotate-90 origin-right z-20">
@@ -194,7 +193,7 @@ const CEOCard = () => {
                   animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
                 >
-                  {['experience', 'vision', 'achievements'].map((tab) => (
+                  {(['experience', 'vision', 'achievements'] as const).map((tab) => (
                     <button
                       key={tab}
                       onClick={() => setActiveTab(tab)}

@@ -9,32 +9,33 @@ interface ContactInfoProps {
 }
 
 const ContactInfo: React.FC<ContactInfoProps> = ({ className = "" }) => {
-  const { language } = useLanguage();
+  const { language, translations } = useLanguage();
+  const t = (key: string, fallback: string) => translations?.[key]?.[language] || fallback;
   const contactItems = [
     {
       icon: <MapPin className="w-5 h-5 text-blue-700" />,
-      label: language === 'en' ? 'Address' : 'Cím',
+      label: t('contactinfo.address', language === 'en' ? 'Address' : 'Cím'),
       content: 'Miskolc, Sajószigeti utca 2, 3527, Hungary',
-      subContent: language === 'en' ? 'European Manufacturing Hub' : 'Európai Gyártási Központ'
+      subContent: t('contactinfo.address.sub', language === 'en' ? 'European Manufacturing Hub' : 'Európai Gyártási Központ')
     },
     {
       icon: <Phone className="w-5 h-5 text-blue-700" />,
-      label: language === 'en' ? 'Phone' : 'Telefon',
+      label: t('contactinfo.phone', language === 'en' ? 'Phone' : 'Telefon'),
       content: '+ 36 (46) 584 060',
-      subContent: language === 'en' ? 'Business Hours: Mon-Fri 8:00-17:00' : 'Ügyfélfogadás: H-P 8:00-17:00'
+      subContent: t('contactinfo.phone.sub', language === 'en' ? 'Business Hours: Mon-Fri 8:00-17:00' : 'Ügyfélfogadás: H-P 8:00-17:00')
     },
     {
       icon: <Mail className="w-5 h-5 text-blue-700" />,
-      label: language === 'en' ? 'Enquiries' : 'Érdeklődés',
+      label: t('contactinfo.enquiries', language === 'en' ? 'Enquiries' : 'Érdeklődés'),
       content: (
         <Link 
           href="/contact" 
           className="text-blue-700 hover:text-blue-800 hover:underline transition-colors font-medium"
         >
-          {language === 'en' ? 'Contact Us' : 'Kapcsolat'}
+          {t('contactinfo.contactus', language === 'en' ? 'Contact Us' : 'Kapcsolat')}
         </Link>
       ),
-      subContent: language === 'en' ? 'Get a quote within 24 hours' : '24 órán belüli árajánlat'
+      subContent: t('contactinfo.enquiries.sub', language === 'en' ? 'Get a quote within 24 hours' : '24 órán belüli árajánlat')
     }
   ];return (
     <motion.div
@@ -92,10 +93,10 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ className = "" }) => {
             }}
           />          <div>
             <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600 font-semibold text-xl">
-              {language === 'en' ? 'Contact Information' : 'Kapcsolati Információk'}
+              {t('contactinfo.heading', language === 'en' ? 'Contact Information' : 'Kapcsolati Információk')}
             </h3>
             <p className="text-gray-600 text-sm mt-1">
-              {language === 'en' ? 'Get in touch with our expert team' : 'Vegye fel a kapcsolatot szakértő csapatunkkal'}
+              {t('contactinfo.desc', language === 'en' ? 'Get in touch with our expert team' : 'Vegye fel a kapcsolatot szakértő csapatunkkal')}
             </p>
           </div>
         </motion.div>
@@ -174,17 +175,14 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ className = "" }) => {
           />
           
           <p className="text-sm text-gray-600 mb-3">
-            {language === 'en' 
-              ? 'Ready to start your next project?' 
-              : 'Készen áll a következő projektre?'
-            }
+            {t('contactinfo.ready', language === 'en' ? 'Ready to start your next project?' : 'Készen áll a következő projektre?')}
           </p>
           <Link 
             href="/contact"
             className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-white font-medium text-sm transition-all duration-300 bg-gradient-to-r from-blue-600/90 to-blue-800/90 hover:from-blue-700/90 hover:to-blue-900/90 shadow-md hover:shadow-lg border border-blue-400/20 backdrop-blur-sm group relative overflow-hidden"
           >
             <span className="relative z-10">
-              {language === 'en' ? 'Request a Quote' : 'Árajánlat Kérése'}
+              {t('contactinfo.cta', language === 'en' ? 'Request a Quote' : 'Árajánlat Kérése')}
             </span>
             <motion.span
               animate={{ 

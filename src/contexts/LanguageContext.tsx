@@ -18,9 +18,20 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
 
   // Initialize from localStorage if available
   useEffect(() => {
-    const savedLanguage = localStorage.getItem('language') as Language;
-    if (savedLanguage && ['en', 'hu', 'de'].includes(savedLanguage)) {
-      setLanguage(savedLanguage);
+    // Always default to English on first load, regardless of browser/system or localStorage
+    let firstLoad = sessionStorage.getItem('firstLoad');
+    if (!firstLoad) {
+      setLanguage('en');
+      localStorage.setItem('language', 'en');
+      sessionStorage.setItem('firstLoad', 'true');
+    } else {
+      const savedLanguage = localStorage.getItem('language') as Language | null;
+      if (savedLanguage && ['en', 'hu', 'de'].includes(savedLanguage)) {
+        setLanguage(savedLanguage);
+      } else {
+        setLanguage('en');
+        localStorage.setItem('language', 'en');
+      }
     }
   }, []);
 

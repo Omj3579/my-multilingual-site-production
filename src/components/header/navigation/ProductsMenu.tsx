@@ -1,209 +1,218 @@
+
 import React from 'react';
 import Link from 'next/link';
+import { motion } from "framer-motion";
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Language } from '@/types/language';
 import {
   NavigationMenuItem,
   NavigationMenuTrigger,
   NavigationMenuContent,
-} from '@/components/ui/navigation-menu';
+} from "@/components/ui/navigation-menu";
+import { 
+  Home,
+  ChefHat,
+  Flower,
+  Baby,
+  Dumbbell,
+  Layers
+} from "lucide-react";
 
-const ProductsMenu: React.FC = () => {
-  const { language } = useLanguage();
+const categories = [
+  { 
+    id: 'home', 
+    labelKey: 'products.menu.home', 
+    href: '/products/home',
+    icon: Home,
+    title: 'Home',
+    description: 'Transform your living space with smart storage solutions, elegant containers, and innovative household essentials',
+    backgroundImage: '/products/categories/home.webp'
+  },
+  { 
+    id: 'kitchen', 
+    labelKey: 'products.menu.kitchen', 
+    href: '/products/kitchen',
+    icon: ChefHat,
+    title: 'Kitchen',
+    description: 'Elevate your culinary experience with premium food storage, measuring tools, and time-saving kitchen innovations',
+    backgroundImage: '/products/categories/kitchen.webp'
+  },
+  { 
+    id: 'garden', 
+    labelKey: 'products.menu.garden', 
+    href: '/products/garden',
+    icon: Flower,
+    title: 'Garden',
+    description: 'Create your outdoor paradise with weather-resistant planters, stylish furniture, and durable garden essentials',
+    backgroundImage: '/products/categories/garden.webp'
+  },
+  { 
+    id: 'kids', 
+    labelKey: 'products.menu.kids', 
+    href: '/products/kids',
+    icon: Baby,
+    title: 'Kids',
+    description: 'Spark imagination with colorful, BPA-free containers, lunch boxes, and playful designs that kids absolutely love',
+    backgroundImage: '/products/categories/kids.webp'
+  },
+  { 
+    id: 'active', 
+    labelKey: 'products.menu.active', 
+    href: '/products/active',
+    icon: Dumbbell,
+    title: 'Active',
+    description: 'Fuel your adventures with leak-proof water bottles, sports containers, and gear built for active lifestyles',
+    backgroundImage: '/products/categories/active.webp'
+  },
+  { 
+    id: 'pallets', 
+    labelKey: 'products.menu.pallets', 
+    href: '/products/pallets',
+    icon: Layers,
+    title: 'Pallets',
+    description: 'Optimize your logistics with industrial-grade pallets, crates, and heavy-duty storage solutions for maximum efficiency',
+    backgroundImage: '/products/categories/pallets.webp'
+  },
+];
 
-  const getMenuLabel = () => {
-    switch (language) {
-      case 'hu': return 'Termékportfólió';
-      case 'de': return 'Produktportfolio';
-      default: return 'Product Portfolio';
+export const ProductsMenu = () => {
+  const { language, translations } = useLanguage();
+  const t = (key: string) => translations[key]?.[language] || translations[key]?.en || key;
+
+  // Animation variants for dropdown content
+  const containerVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: -10,
+      scale: 0.95
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.3,
+        ease: [0.25, 0.46, 0.45, 0.94],
+        staggerChildren: 0.1
+      }
     }
   };
 
-  const categories = [
-    {
-      id: 'home',
-      name: {
-        en: 'Home',
-        hu: 'Otthon',
-        de: 'Zuhause'
-      },
-      description: {
-        en: '🏠 Transform your living space with smart storage solutions, elegant containers, and innovative household essentials',
-        hu: '🏠 Alakítsa át lakóterét okos tárolási megoldásokkal, elegáns tárolókkal és innovatív háztartási kellékekkel',
-        de: '🏠 Verwandeln Sie Ihren Wohnraum mit intelligenten Aufbewahrungslösungen und innovativen Haushaltsartikeln'
-      },
-      href: '/products/home',
-      image: '/products/categories/home.webp'
+  const itemVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 20,
+      scale: 0.9
     },
-    {
-      id: 'kitchen',
-      name: {
-        en: 'Kitchen',
-        hu: 'Konyha',
-        de: 'Küche'
-      },
-      description: {
-        en: '👨‍🍳 Elevate your culinary experience with premium food storage, measuring tools, and time-saving kitchen innovations',
-        hu: '👨‍🍳 Emelje új szintre gasztronómiai élményét prémium élelmiszer-tárolókkal és időtakarékos konyhai innovációkkal',
-        de: '👨‍🍳 Verbessern Sie Ihr kulinarisches Erlebnis mit Premium-Lebensmittellagerung und zeitsparenden Kücheninnovationen'
-      },
-      href: '/products/kitchen',
-      image: '/products/categories/kitchen.webp'
-    },
-    {
-      id: 'garden',
-      name: {
-        en: 'Garden',
-        hu: 'Kert',
-        de: 'Garten'
-      },
-      description: {
-        en: '🌱 Create your outdoor paradise with weather-resistant planters, stylish furniture, and durable garden essentials',
-        hu: '🌱 Alkossa meg kültéri paradicsomát időjárásálló ültetőedényekkel, stílusos bútorokkal és tartós kerti kellékekkel',
-        de: '🌱 Schaffen Sie Ihr Outdoor-Paradies mit wetterfesten Pflanzgefäßen, stilvollen Möbeln und langlebigen Gartenartikeln'
-      },
-      href: '/products/garden',
-      image: '/products/categories/garden.webp'
-    },
-    {
-      id: 'kids',
-      name: {
-        en: 'Kids',
-        hu: 'Gyerekek',
-        de: 'Kinder'
-      },
-      description: {
-        en: '🎨 Spark imagination with colorful, BPA-free containers, lunch boxes, and playful designs that kids absolutely love',
-        hu: '🎨 Gyújtsa be a fantáziát színes, BPA-mentes tárolókkal, uzsonnás dobozokkal és játékos dizájnokkal',
-        de: '🎨 Entfachen Sie die Fantasie mit farbenfrohen, BPA-freien Behältern und verspielten Designs, die Kinder lieben'
-      },
-      href: '/products/kids',
-      image: '/products/categories/kids.webp'
-    },
-    {
-      id: 'active',
-      name: {
-        en: 'Active',
-        hu: 'Aktív',
-        de: 'Aktiv'
-      },
-      description: {
-        en: '⚡ Fuel your adventures with leak-proof water bottles, sports containers, and gear built for active lifestyles',
-        hu: '⚡ Táplálja kalandjait szivárgásmentes kulaccsokkal, sport tárolókkal és aktív életmódra tervezett felszerelésekkel',
-        de: '⚡ Stärken Sie Ihre Abenteuer mit auslaufsicheren Wasserflaschen und Ausrüstung für aktive Lebensstile'
-      },
-      href: '/products/active',
-      image: '/products/categories/active.webp'
-    },
-    {
-      id: 'pallets',
-      name: {
-        en: 'Pallets',
-        hu: 'Raklapok',
-        de: 'Paletten'
-      },
-      description: {
-        en: '📦 Optimize your logistics with industrial-grade pallets, crates, and heavy-duty storage solutions for maximum efficiency',
-        hu: '📦 Optimalizálja logisztikáját ipari minőségű raklapokkal, ládákkal és nagy teherbírású tárolási megoldásokkal',
-        de: '📦 Optimieren Sie Ihre Logistik mit Industriepaletten, Kisten und Schwerlast-Lagerlösungen für maximale Effizienz'
-      },
-      href: '/products/pallets',
-      image: '/products/categories/pallets.webp'
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      transition: { 
+        duration: 0.4,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }
     }
-  ];
+  };
 
   return (
     <NavigationMenuItem>
-      <NavigationMenuTrigger className="group bg-transparent border-none text-gray-800 hover:text-[#fa9b6b] transition-colors text-xl font-semibold data-[state=open]:text-[#fa9b6b] [&>svg]:h-6 [&>svg]:w-6">
-        <span>{getMenuLabel()}</span>
-        <div className="absolute -bottom-1 left-3 right-3 h-0.5 bg-[#fa9b6b] scale-x-0 group-hover:scale-x-100 group-data-[state=open]:scale-x-100 transition-transform origin-center" />
+      <NavigationMenuTrigger className="text-lg xl:text-xl font-semibold text-gray-800 hover:text-[#fa9b6b] transition-colors duration-200 bg-transparent data-[state=open]:bg-transparent data-[active]:bg-transparent">
+        {language === 'en' ? 'Product Portfolio' : 'Termékportfólió'}
       </NavigationMenuTrigger>
       
-      <NavigationMenuContent className="navigation-dropdown-container large p-0">
-        <div className="bg-white/98 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/40 overflow-hidden animate-in fade-in-0 zoom-in-95 duration-200">
-          {/* Enhanced Header with gradient and better typography */}
-          <div className="bg-gradient-to-r from-[#fa9b6b]/20 via-[#fa9b6b]/15 to-[#fa9b6b]/10 px-6 py-4 border-b border-white/30 relative overflow-hidden">
-            {/* Decorative background pattern */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(250,155,107,0.1)_0%,transparent_50%)] opacity-70"></div>
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#fa9b6b]/20 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-[#fa9b6b]/15 to-transparent rounded-full translate-y-12 -translate-x-12"></div>
-            
-            <div className="relative z-10">
-              <h3 className="text-xl font-bold text-slate-800 mb-1.5 tracking-tight">
-                {language === 'en' ? '🎯 Product Categories' : 
-                 language === 'hu' ? '🎯 Termékkategóriák' : 
-                 '🎯 Produktkategorien'}
-              </h3>
-              <p className="text-sm text-slate-700 leading-relaxed font-medium">
-                {language === 'en' ? 'Discover premium plastic solutions designed for every aspect of modern life' : 
-                 language === 'hu' ? 'Fedezze fel a modern élet minden területére tervezett prémium műanyag megoldásokat' : 
-                 'Entdecken Sie Premium-Kunststofflösungen für jeden Bereich des modernen Lebens'}
-              </p>
+      <NavigationMenuContent className="navigation-dropdown-container large mt-4">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="w-full h-full p-8 bg-white/80 backdrop-blur-lg border border-white/20 rounded-2xl shadow-2xl"
+          style={{
+            background: 'linear-gradient(145deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7))',
+            backdropFilter: 'blur(20px)',
+            boxShadow: `
+              0 25px 50px -12px rgba(0, 0, 0, 0.25),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1),
+              0 0 0 1px rgba(255, 255, 255, 0.05)
+            `,
+            marginTop: '8px',
+          }}
+        >
+          {/* Header Section */}
+          <div className="mb-6">
+            <div className="flex items-center mb-2">
+              <div className="w-6 h-6 rounded-full bg-[#fa9b6b] flex items-center justify-center mr-2">
+                <Layers className="w-3 h-3 text-white" />
+              </div>
+              <h2 className="text-xl font-bold text-gray-900">Product Categories</h2>
             </div>
+            <p className="text-gray-600 text-sm">
+              Discover premium plastic solutions designed for every aspect of modern life
+            </p>
           </div>
 
-          {/* Categories Grid with optimized layout for better card distribution */}
-          <div className="p-6">
-            <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-3 lg:gap-4">
-              {categories.map((category, index) => {
-                const delayClass = `delay-[${index * 100}ms]`;
-                return (
+          {/* Product Categories Grid */}
+          <div className="grid grid-cols-3 gap-4">
+            {categories.map((category) => {
+              const IconComponent = category.icon;
+              return (
+                <motion.div key={category.id} variants={itemVariants}>
                   <Link
-                    key={category.id}
                     href={category.href}
-                    className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/95 via-white/90 to-white/85 hover:from-white/98 hover:via-white/95 hover:to-white/90 border border-white/60 hover:border-[#fa9b6b]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#fa9b6b]/20 hover:scale-[1.05] transform-gpu backdrop-blur-sm animate-in fade-in-0 slide-in-from-bottom-4 ${delayClass}`}
-                    style={{ '--bg-image': `url('${category.image}')` } as React.CSSProperties}
+                    className="group relative block rounded-2xl overflow-hidden h-48 bg-gradient-to-br from-gray-100 to-gray-200 hover:shadow-xl transition-all duration-300"
+                    style={{
+                      backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url(${category.backgroundImage})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                    }}
                   >
-                    {/* Enhanced Background Image with better visibility */}
-                    <div className="absolute inset-0 bg-[image:var(--bg-image)] bg-cover bg-center opacity-40 group-hover:opacity-60 transition-opacity duration-700 scale-110 group-hover:scale-105 brightness-110 contrast-125 saturate-125" />
-                    
-                    {/* Enhanced Gradient Overlay with more sophisticated blending */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-white/60 to-white/80 group-hover:from-[#fa9b6b]/10 group-hover:via-white/50 group-hover:to-white/70 transition-all duration-700" />
-                    
-                    {/* Subtle pattern overlay for texture */}
-                    <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500 bg-[radial-gradient(circle_at_2px_2px,rgba(250,155,107,0.3)_1px,transparent_0)] bg-[length:20px_20px]" />
-                    
-                    {/* Content - Now without icon, more space for text */}
-                    <div className="relative p-8 flex flex-col justify-center min-h-[130px]">
-                      <div className="space-y-3">
-                        <h4 className="font-bold text-2xl text-slate-800 group-hover:text-[#fa9b6b] transition-colors duration-300 leading-tight">
-                          {category.name[language as Language]}
-                        </h4>
-                        <p className="text-base text-slate-700 leading-relaxed group-hover:text-slate-800 transition-colors duration-300 font-medium">
-                          {category.description[language as Language]}
+                    {/* Content Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/80 transition-all duration-300">
+                      <div className="absolute bottom-0 left-0 right-0 p-4">
+                        {/* Icon */}
+                        <div className="flex items-center mb-2">
+                          <IconComponent className="w-5 h-5 text-[#fa9b6b] mr-2" />
+                          <h3 className="text-lg font-bold text-white group-hover:text-[#fa9b6b] transition-colors duration-200">
+                            {category.title}
+                          </h3>
+                        </div>
+                        
+                        {/* Description */}
+                        <p className="text-xs text-gray-200 leading-relaxed group-hover:text-white transition-colors duration-200">
+                          {category.description}
                         </p>
                       </div>
                     </div>
 
-                    {/* Enhanced Hover Effect Border with glow */}
-                    <div className="absolute inset-0 rounded-2xl ring-2 ring-transparent group-hover:ring-[#fa9b6b]/30 transition-all duration-500 group-hover:shadow-[0_0_20px_rgba(250,155,107,0.3)]" />
+                    {/* Hover Effect */}
+                    <div className="absolute inset-0 bg-[#fa9b6b]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </Link>
-                );
-              })}
-            </div>
+                </motion.div>
+              );
+            })}
           </div>
 
-          {/* Enhanced Footer */}
-          <div className="bg-gradient-to-r from-slate-50/95 via-white/95 to-slate-50/95 px-4 py-3 border-t border-white/30 relative">
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(250,155,107,0.05)_50%,transparent_100%)]"></div>
-            <div className="relative z-10 text-center">
-              <p className="text-xs text-slate-700 leading-relaxed font-medium">
-                ✨ {language === 'en' ? 'Precision quality solutions in plastic manufacturing with global reach and local expertise' : 
-                   language === 'hu' ? 'Precíziós minőségi megoldások műanyaggyártásban globális elérhetőséggel és helyi szakértelemmel' : 
-                   'Präzise Qualitätslösungen in der Kunststoffherstellung mit globaler Reichweite und lokaler Expertise'} ✨
-              </p>
-              <div className="mt-1.5 flex items-center justify-center gap-2">
-                <div className="w-2 h-2 bg-[#fa9b6b] rounded-full animate-pulse"></div>
-                <span className="text-xs text-slate-500 font-medium">
-                  {language === 'en' ? 'Quality • Innovation • Sustainability' : 
-                   language === 'hu' ? 'Minőség • Innováció • Fenntarthatóság' : 
-                   'Qualität • Innovation • Nachhaltigkeit'}
-                </span>
-                <div className="w-2 h-2 bg-[#fa9b6b] rounded-full animate-pulse"></div>
+          {/* Footer */}
+          <div className="mt-6 pt-6 border-t border-gray-200">
+            <div className="flex items-center justify-center">
+              <div className="flex items-center text-sm text-gray-600">
+                <span className="w-2 h-2 bg-[#fa9b6b] rounded-full mr-2"></span>
+                Precision quality solutions in plastic manufacturing with global reach and local expertise
+                <span className="w-2 h-2 bg-[#fa9b6b] rounded-full ml-2"></span>
+              </div>
+            </div>
+            <div className="flex items-center justify-center mt-2">
+              <div className="flex items-center text-sm text-gray-500 space-x-2">
+                <span className="w-1 h-1 bg-[#fa9b6b] rounded-full"></span>
+                <span>Quality</span>
+                <span>•</span>
+                <span>Innovation</span>
+                <span>•</span>
+                <span>Sustainability</span>
+                <span className="w-1 h-1 bg-[#fa9b6b] rounded-full"></span>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </NavigationMenuContent>
     </NavigationMenuItem>
   );

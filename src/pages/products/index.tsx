@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ProductLayout from '@/components/layouts/ProductLayout';
 import SimpleGrid from '@/components/products/SimpleGrid';
@@ -26,8 +27,8 @@ export async function getStaticProps() {
 }
 
 const Products: React.FC<ProductsPageProps> = ({ categories, productsPageContent }) => {
-  const { language } = useLanguage();
-  
+  const { language, translations } = useLanguage();
+
   // Debug: log categories to check if they're loaded
   if (typeof window !== "undefined") {
     // Only log on client
@@ -37,6 +38,9 @@ const Products: React.FC<ProductsPageProps> = ({ categories, productsPageContent
 
   // Get SEO data for current language
   const seoData = PRODUCTS_MAIN_SEO[language as keyof typeof PRODUCTS_MAIN_SEO] || PRODUCTS_MAIN_SEO.en;
+
+  // Helper for translation fallback
+  const t = (key: string) => translations[key]?.[language] || translations[key]?.en || key;
 
   return (
     <>
@@ -125,22 +129,20 @@ const Products: React.FC<ProductsPageProps> = ({ categories, productsPageContent
             <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 mb-6 shadow-lg">
               <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
               <span className="text-sm font-medium text-slate-600">
-                {language === 'en' ? 'Premium Manufacturing Categories' : 'Prémium Gyártási Kategóriák'}
+                {t('products.premiumCategories')}
               </span>
             </div>
-            
+
             <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-slate-800 via-slate-700 to-slate-900 bg-clip-text text-transparent mb-6 leading-tight">
-              {language === 'en' ? 'Precision Crafted' : 'Precíziós Kidolgozású'}
+              {t('products.precisionCrafted')}
               <br />
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                {language === 'en' ? 'Product Collections' : 'Termékkollekcíók'}
+                {t('products.productCollections')}
               </span>
             </h2>
-            
+
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              {language === 'en' 
-                ? 'Explore our expertly engineered product categories, each designed to meet the highest standards of quality, durability, and performance in modern manufacturing.'
-                : 'Fedezze fel szakértői módon megtervezett termékkategóriáinkat, amelyek mindegyike a minőség, tartósság és teljesítmény legmagasabb standardjainak megfelelően készült a modern gyártásban.'}
+              {t('products.exploreCategories')}
             </p>
 
             {/* Stats Bar */}
@@ -148,17 +150,17 @@ const Products: React.FC<ProductsPageProps> = ({ categories, productsPageContent
               <div className="flex items-center gap-8 bg-white/60 backdrop-blur-md border border-white/30 rounded-2xl px-8 py-4 shadow-xl">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-slate-800">{Object.keys(categories).length}</div>
-                  <div className="text-sm text-slate-600">{language === 'en' ? 'Categories' : 'Kategória'}</div>
+                  <div className="text-sm text-slate-600">{t('products.categories')}</div>
                 </div>
                 <div className="w-px h-8 bg-slate-300"></div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-slate-800">500+</div>
-                  <div className="text-sm text-slate-600">{language === 'en' ? 'Products' : 'Termék'}</div>
+                  <div className="text-2xl font-bold text-slate-800">1000+</div>
+                  <div className="text-sm text-slate-600">{t('products.products')}</div>
                 </div>
                 <div className="w-px h-8 bg-slate-300"></div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-slate-800">15+</div>
-                  <div className="text-sm text-slate-600">{language === 'en' ? 'Years' : 'Év'}</div>
+                  <div className="text-2xl font-bold text-slate-800">30+</div>
+                  <div className="text-sm text-slate-600">{t('products.years')}</div>
                 </div>
               </div>
             </div>
@@ -188,20 +190,18 @@ const Products: React.FC<ProductsPageProps> = ({ categories, productsPageContent
               </div>
               
               <div className="relative z-10">
-                <h3 className="text-3xl font-bold mb-4">
-                  {language === 'en' ? 'Need Custom Solutions?' : 'Egyedi Megoldásokra Van Szüksége?'}
+                <h3 className="text-4xl md:text-5xl font-extrabold mb-3 drop-shadow-sm">
+                  {t('products.needCustomSolutions')}
                 </h3>
-                <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-                  {language === 'en' 
-                    ? 'Our expert team specializes in creating tailored manufacturing solutions for your unique requirements.'
-                    : 'Szakértő csapatunk egyedi gyártási megoldások létrehozására specializálódott az Ön egyedi igényeihez.'}
+                <p className="text-lg md:text-2xl opacity-95 mb-10 max-w-2xl mx-auto font-medium">
+                  {t('products.customSolutionsDesc')}
                 </p>
-                <a
-                  href={language === 'en' ? '/contact' : '/contact'}
-                  className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 no-underline inline-block"
+                <Link
+                  href="/contact"
+                  className="bg-white text-blue-700 px-10 py-4 rounded-full font-bold text-xl shadow-xl hover:bg-blue-100 hover:text-blue-800 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300 inline-block"
                 >
-                  {language === 'en' ? 'Contact Our Experts' : 'Kapcsolatfelvétel Szakértőinkkel'}
-                </a>
+                  {t('products.contactExperts')}
+                </Link>
               </div>
             </div>
           </div>

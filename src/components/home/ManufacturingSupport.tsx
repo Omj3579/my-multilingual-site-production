@@ -144,7 +144,7 @@ export default function ManufacturingSupport() {
 
         {/* Advanced Feature Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {features[language as keyof typeof features].map((feature, index) => {
+          {(features[language as keyof typeof features] ?? features['en']).map((feature, index) => {
             const Icon = feature.icon;
             return (
               <Link
