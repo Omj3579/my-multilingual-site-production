@@ -56,24 +56,24 @@ const MobileMenu = ({ onClose }: MobileMenuProps) => {
   const servicesSubItems = [
     { href: '/services/plastic-injection-moulding', label: 'Precision Injection Manufacturing' },
     { href: '/services/in-mould-labelling', label: 'In-Mould Labeling Technology' },
-    { href: '/services/surface-enhancement', label: 'Surface Enhancement Solutions' },
-    { href: '/services/strategic-manufacturing', label: 'Strategic Manufacturing Solutions' },
+    { href: '/services/in-mould-decoration', label: 'Surface Enhancement Solutions' },
+    { href: '/services/contract-manufacturing', label: 'Strategic Manufacturing Solutions' },
     { href: '/services/tooling-management', label: 'Professional Tooling Management' },
   ];
 
   const sustainabilitySubItems = [
-    { href: '/sustainability/renewable-energy', label: 'Renewable Energy Integration' },
-    { href: '/sustainability/water-management', label: 'Advanced Water Management' },
-    { href: '/sustainability/circular-material-flow', label: 'Circular Material Flow' },
-    { href: '/sustainability/environmental-stewardship', label: 'Environmental Stewardship' },
-    { href: '/sustainability/process-optimization', label: 'Process Optimization' },
+    { href: '/sustainability/green-strategy#renewable-energy', label: 'Renewable Energy Integration' },
+    { href: '/sustainability/green-strategy#water-management', label: 'Advanced Water Management' },
+    { href: '/sustainability/green-strategy#material-recovery', label: 'Circular Material Flow' },
+    { href: '/sustainability/green-strategy#environmental-stewardship', label: 'Environmental Stewardship' },
   ];
 
   const aboutUsSubItems = [
-    { href: '/company/origins', label: 'Company Origins' },
-    { href: '/company/growth-milestones', label: 'Growth & Milestones' },
-    { href: '/company/innovation-legacy', label: 'Innovation Legacy' },
-    { href: '/company/executive-leadership', label: 'Executive Leadership' },
+    { href: '/company/history#origins', label: 'Company Origins' },
+    { href: '/company/history#milestones', label: 'Growth & Milestones' },
+    { href: '/company/history#innovation', label: 'Innovation Legacy' },
+    { href: '/company/management', label: 'Management Team' },
+    { href: '/company/management#executives', label: 'Executive Leadership' },
   ];
 
   return (
