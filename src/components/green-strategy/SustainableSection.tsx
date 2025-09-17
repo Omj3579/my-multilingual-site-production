@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
 import { Leaf, Globe, Recycle, TrendingUp } from 'lucide-react';
@@ -173,28 +174,31 @@ const SustainableSection = () => {
                 </svg>
               </div>
               
-              {/* Quote content */}
-              <div className="p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center">
-                {/* CEO image */}
-                <div className="w-full md:w-1/3 flex justify-center">
-                  <div className="relative">
-                    <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white/80 shadow-xl">
-                      <img
-                        src="/images/company/J.Peter_-1312x1536.webp"
-                        alt="CEO Jekó Péter"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="absolute top-0 right-0 bg-white rounded-full p-1 shadow-lg">
-                      <div className="bg-green-500 rounded-full p-1">
-                        <Globe className="w-5 h-5 text-white" />
+                {/* Quote content */}
+                <div className="p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center">
+                  {/* CEO image */}
+                  <div className="w-full md:w-1/3 flex justify-center">
+                    <div className="relative">
+                      <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white/80 shadow-xl flex items-center justify-center bg-gray-100">
+                        <Image
+                          src="/images/company/J.Peter_-1312x1536.webp"
+                          alt="CEO Jekő Péter"
+                          width={180}
+                          height={180}
+                          className="object-cover object-center rounded-full"
+                          style={{ objectPosition: 'center 20%', width: '180px', height: '180px' }}
+                        />
+                      </div>
+                      <div className="absolute top-2 right-2 bg-white rounded-full p-1.5 shadow-lg">
+                        <div className="bg-green-500 rounded-full p-1.5">
+                          <Globe className="w-5 h-5 text-white" />
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
                 
-                {/* Quote text */}
-                <div className="w-full md:w-2/3 text-white">
+                  {/* Quote text */}
+                  <div className="w-full md:w-2/3 text-white">
                   <div className="text-6xl font-serif text-green-300/60 leading-none mb-2">"</div>
                   <p className="text-xl md:text-2xl leading-relaxed mb-4">
                     <span className="text-green-200 font-medium">
