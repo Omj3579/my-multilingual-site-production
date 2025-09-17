@@ -429,7 +429,7 @@ const TeamMembers = () => {
       title: language === 'en' ? 'Chief Executive Officer' : 'Vezérigazgató',
       department: 'ceo',
       relatedDepartments: ['finance', 'hr', 'production', 'sales', 'logistics', 'technology'],
-      image: '/images/company/J.Peter_.webp',
+      image: '/images/company/J.Peter_-1312x1536.webp',
       bio: language === 'en' 
         ? 'Péter leads Flair-Plastic with a strategic vision, overseeing all departments and guiding our company toward continuous innovation and market expansion.'
         : 'Péter stratégiai jövőképpel vezeti a Flair-Plastic-et, felügyeli az összes osztályt, és folyamatos innováció és piaci terjeszkedés felé irányítja vállalatunkat.',
