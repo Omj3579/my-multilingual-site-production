@@ -8,7 +8,7 @@ import SustainableCycleSection from '@/components/green-strategy/SustainableCycl
 
 const GreenStrategy = () => {
   return (
-    <PageLayout>
+    <PageLayout className="pt-0">
       <HeroSection />
       <SustainableSection />
       <SustainabilityPathwaySection />

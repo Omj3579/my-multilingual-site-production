@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 // Page wrapper with animation effects
 const History = () => {
   return (
-    <PageLayout>
+    <PageLayout className="pt-0">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

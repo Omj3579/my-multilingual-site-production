@@ -23,7 +23,7 @@ const HeroSection = () => {
   return (
     <section 
       ref={sectionRef}
-      className="relative w-full h-screen overflow-hidden font-poppins"
+      className="relative w-full h-screen overflow-hidden font-poppins pt-20"
       onMouseMove={handleMouseMove}
     >
       {/* Background Image with subtle parallax */}

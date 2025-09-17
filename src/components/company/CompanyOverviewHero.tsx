@@ -36,7 +36,7 @@ const CompanyOverviewHero = () => {
   return (
     <section 
       ref={sectionRef}
-      className="relative w-full h-screen overflow-hidden font-poppins bg-black"
+      className="relative w-full h-screen overflow-hidden font-poppins bg-black pt-20"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

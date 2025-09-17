@@ -1,5 +1,4 @@
 
-import PageLayout from '@/components/layouts/PageLayout';
 import HeroSection from '@/components/green-strategy/HeroSection';
 import SustainableSection from '@/components/green-strategy/SustainableSection';
 import SustainabilityPathwaySection from '@/components/green-strategy/SustainabilityPathwaySection';
@@ -7,12 +6,12 @@ import SustainableCycleSection from '@/components/green-strategy/SustainableCycl
 
 const Sustainability = () => {
   return (
-    <PageLayout className="p-0">
+    <div className="min-h-screen">
       <HeroSection />
       <SustainableSection />      
       <SustainabilityPathwaySection />
       <SustainableCycleSection />      
-    </PageLayout>
+    </div>
   );
 };
 

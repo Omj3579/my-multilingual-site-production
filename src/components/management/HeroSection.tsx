@@ -83,7 +83,7 @@ const HeroSection = () => {
   return (
     <section 
       ref={sectionRef}
-      className="relative w-full h-screen overflow-hidden font-[Poppins]"
+      className="relative w-full h-screen overflow-hidden font-[Poppins] pt-20"
       onMouseMove={handleMouseMove}
     >
       {/* CSS-based flag distortion effect instead of WebGL */}

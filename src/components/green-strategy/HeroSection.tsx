@@ -22,7 +22,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-gradient-to-b from-green-900 via-green-800 to-emerald-800">
+    <section className="relative w-full h-screen overflow-hidden bg-gradient-to-b from-green-900 via-green-800 to-emerald-800 pt-20">
       {/* Floating particles - environmental icons */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {/* These are decorative SVG elements that float around to create visual interest */}

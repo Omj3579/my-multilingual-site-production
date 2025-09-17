@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 // Company overview page - serves as the main landing page for /company
 const CompanyOverview = () => {
   return (
-    <PageLayout>
+    <PageLayout className="pt-0">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

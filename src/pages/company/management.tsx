@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
-import PageLayout from '@/components/layouts/PageLayout';
 import LeadershipExcellenceCallout from '@/components/management/LeadershipExcellenceCallout';
 import CEOCard from '@/components/management/CEOCard';
 
@@ -26,7 +25,7 @@ const CommitmentCallout = dynamic(() => import('@/components/management/Commitme
 
 const Management = () => {
   return (
-    <PageLayout>
+    <div className="min-h-screen">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -59,7 +58,7 @@ const Management = () => {
           </section>
         </main>
       </motion.div>
-    </PageLayout>
+    </div>
   );
 };
 
