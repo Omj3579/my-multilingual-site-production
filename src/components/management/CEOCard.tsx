@@ -134,7 +134,7 @@ const CEOCard = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-transparent z-10"></div>
               <Image
-                src="/creatives/webp_images/J.Peter_-256x300-hq.webp"
+                src="/images/company/J.Peter_-1312x1536.webp"
                 alt={language === 'en' ? "Péter Jekő" : "Jekő Péter"}
                 fill
                 className="object-cover object-center"
