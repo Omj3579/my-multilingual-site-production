@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { motion, useInView, useMotionValue, useTransform, AnimatePresence } from 'framer-motion';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
 
 // Org chart connection lines component
 const ConnectionLines = ({ members, activeIndex, highlightedDepartment }) => {
@@ -268,10 +269,12 @@ const OrgChartCard = ({ member, index, level, isInView, mouseX, mouseY, active, 
               />
               
               {/* Person photo */}
-              <img 
+              <Image 
                 src={member.image} 
                 alt={member.name} 
-                className="absolute inset-0 w-full h-full object-cover object-top z-10"
+                fill
+                className="object-cover object-top z-10"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
               
               {/* Interactive pulse effect */}
@@ -426,7 +429,7 @@ const TeamMembers = () => {
       title: language === 'en' ? 'Chief Executive Officer' : 'Vezérigazgató',
       department: 'ceo',
       relatedDepartments: ['finance', 'hr', 'production', 'sales', 'logistics', 'technology'],
-      image: '/creatives/webp_images/J.Peter_-256x300-hq.webp',
+      image: '/images/company/J.Peter_.webp',
       bio: language === 'en' 
         ? 'Péter leads Flair-Plastic with a strategic vision, overseeing all departments and guiding our company toward continuous innovation and market expansion.'
         : 'Péter stratégiai jövőképpel vezeti a Flair-Plastic-et, felügyeli az összes osztályt, és folyamatos innováció és piaci terjeszkedés felé irányítja vállalatunkat.',
@@ -438,7 +441,7 @@ const TeamMembers = () => {
       title: language === 'en' ? 'Chief Financial Officer' : 'Pénzügyi igazgató',
       department: 'finance',
       relatedDepartments: ['ceo'],
-      image: 'https://flair-plastic.hu/wp-content/uploads/2024/09/D.Monika.png',
+      image: '/images/company/D.Monika.webp',
       bio: language === 'en' 
         ? 'With extensive experience in financial management and strategic planning, Mónika ensures sound fiscal policies and growth.'
         : 'Kiterjedt tapasztalattal a pénzügyi menedzsment és stratégiai tervezés területén, Mónika biztosítja a megfelelő pénzügyi politikát és növekedést.',
@@ -450,7 +453,7 @@ const TeamMembers = () => {
       title: language === 'en' ? 'HR Manager' : 'HR menedzser',
       department: 'hr',
       relatedDepartments: ['ceo'],
-      image: 'https://flair-plastic.hu/wp-content/uploads/2024/09/B.Dense_.png',
+      image: '/images/company/B.Dense_.webp',
       bio: language === 'en'
         ? 'Dénes leads our human resources initiatives, focusing on talent development and organizational culture.'
         : 'Dénes vezeti HR kezdeményezéseinket, a tehetségfejlesztésre és a szervezeti kultúrára összpontosítva.',
@@ -462,7 +465,7 @@ const TeamMembers = () => {
       title: language === 'en' ? 'Production Manager' : 'Termelési vezető',
       department: 'production',
       relatedDepartments: ['ceo', 'technology'],
-      image: 'https://flair-plastic.hu/wp-content/uploads/2024/09/G.Zsoli_.png',
+      image: '/images/company/G.Zsoli_.webp',
       bio: language === 'en'
         ? 'Zoltán oversees our production operations, ensuring optimal efficiency and quality standards.'
         : 'Zoltán felügyeli termelési műveleteinket, biztosítva az optimális hatékonyságot és minőségi szabványokat.',
@@ -474,7 +477,7 @@ const TeamMembers = () => {
       title: language === 'en' ? 'Logistics Manager' : 'Logisztikai vezető',
       department: 'logistics',
       relatedDepartments: ['production', 'sales'],
-      image: '/creatives/webp_images/N.peter_-264x300-hq.webp',
+      image: '/images/company/N.peter_.webp',
       bio: language === 'en'
         ? 'Péter manages our supply chain operations and logistics optimization strategies.'
         : 'Péter kezeli ellátási láncunk működését és logisztikai optimalizálási stratégiáinkat.',
@@ -486,7 +489,7 @@ const TeamMembers = () => {
       title: language === 'en' ? 'Sales Manager' : 'Értékesítési vezető',
       department: 'sales',
       relatedDepartments: ['production', 'logistics'],
-      image: 'https://flair-plastic.hu/wp-content/uploads/2024/09/K.Roland.png',
+      image: '/images/company/K.Roland.webp',
       bio: language === 'en'
         ? 'Roland leads our sales initiatives and client relationships across all markets.'
         : 'Roland vezeti értékesítési kezdeményezéseinket és ügyfélkapcsolatainkat minden piacon.',
@@ -498,7 +501,7 @@ const TeamMembers = () => {
       title: language === 'en' ? 'Production Technology Manager' : 'Gyártástechnológiai vezető',
       department: 'technology',
       relatedDepartments: ['production'],
-      image: 'https://flair-plastic.hu/wp-content/uploads/2024/09/S.Zsoli_.png',
+      image: '/images/company/S.Zsoli_.webp',
       bio: language === 'en'
         ? 'Zoltán leads our manufacturing technology initiatives and process improvements.'
         : 'Zoltán vezeti gyártástechnológiai kezdeményezéseinket és folyamatfejlesztéseinket.',

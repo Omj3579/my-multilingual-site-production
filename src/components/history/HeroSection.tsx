@@ -29,7 +29,7 @@ const HeroSection = () => {
       {/* Background Image with subtle parallax */}
       <motion.div className="absolute inset-0 z-0 overflow-hidden">
         <motion.img
-          src="https://flair-plastic.hu/wp-content/uploads/2024/09/Flag-min.webp"
+          src="/images/company/Flag-min.webp"
           alt="Flag Background"
           className="w-full h-full object-cover"
           style={{ 

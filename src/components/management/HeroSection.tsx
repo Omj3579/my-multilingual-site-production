@@ -97,7 +97,7 @@ const HeroSection = () => {
         {/* Flag background with CSS distortion effects */}
         <div className="relative w-full h-full">
           <img
-            src="https://flair-plastic.hu/wp-content/uploads/2024/09/Flag-min.webp"
+            src="/images/company/Flag-min.webp"
             alt={language === 'en' ? "Flag Background" : "Zászló háttér"}
             className="w-full h-full object-cover"
             style={{ 
@@ -109,7 +109,7 @@ const HeroSection = () => {
           {/* CSS-based chromatic aberration effect */}
           <div className="absolute inset-0 opacity-40 mix-blend-screen" 
             style={{
-              backgroundImage: `url(https://flair-plastic.hu/wp-content/uploads/2024/09/Flag-min.webp)`,
+              backgroundImage: `url(/images/company/Flag-min.webp)`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               filter: "hue-rotate(10deg) contrast(150%) blur(2px)",
@@ -119,7 +119,7 @@ const HeroSection = () => {
           
           <div className="absolute inset-0 opacity-30 mix-blend-screen" 
             style={{
-              backgroundImage: `url(https://flair-plastic.hu/wp-content/uploads/2024/09/Flag-min.webp)`,
+              backgroundImage: `url(/images/company/Flag-min.webp)`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               filter: "hue-rotate(-10deg) contrast(150%) blur(2px)",
