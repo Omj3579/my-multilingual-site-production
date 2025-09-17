@@ -1,11 +1,10 @@
-import PageLayout from '@/components/layouts/PageLayout';
 import OperationCleanSweepPage from '@/components/operation-clean-sweep';
 
 const CleanSweep = () => {
   return (
-    <PageLayout className="p-0">
+    <div className="min-h-screen">
       <OperationCleanSweepPage />
-    </PageLayout>
+    </div>
   );
 };
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import PageLayout from '@/components/layouts/PageLayout';
 import HeroSection from '@/components/history/HeroSection';
 import FlairPlasticLegacy from '@/components/history/FlairPlasticLegacy';
 import OurEvolution from '@/components/history/OurEvolution';
@@ -8,7 +7,7 @@ import { motion } from 'framer-motion';
 // Page wrapper with animation effects
 const History = () => {
   return (
-    <PageLayout className="pt-0">
+    <div className="min-h-screen">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -18,7 +17,7 @@ const History = () => {
         <FlairPlasticLegacy />
         <OurEvolution />
       </motion.div>
-    </PageLayout>
+    </div>
   );
 };
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import PageLayout from '@/components/layouts/PageLayout';
 import CompanyOverviewHero from '@/components/company/CompanyOverviewHero';
 import CompanyIntroSection from '@/components/company/CompanyIntroSection';
 import CompanyHighlights from '@/components/company/CompanyHighlights';
@@ -9,7 +8,7 @@ import { motion } from 'framer-motion';
 // Company overview page - serves as the main landing page for /company
 const CompanyOverview = () => {
   return (
-    <PageLayout className="pt-0">
+    <div className="min-h-screen">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -20,7 +19,7 @@ const CompanyOverview = () => {
         <CompanyHighlights />
         <CompanyNavigation />
       </motion.div>
-    </PageLayout>
+    </div>
   );
 };
 
