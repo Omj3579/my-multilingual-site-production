@@ -201,3 +201,18 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Modern Navigation Animations */
+@keyframes animate-gradient-x {
+  0%, 100% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-gradient-x {
+  animation: animate-gradient-x 6s ease-in-out infinite;
+  background-size: 200% 200%;
+}

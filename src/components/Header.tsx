@@ -88,7 +88,7 @@ const Header = () => {
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className="fixed w-full top-0 z-[60] transition-all duration-300"
       >        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-3 md:py-4">
-          <div className={`flex items-center h-16 sm:h-18 md:h-20 lg:h-28 ${isProductsPage ? 'gap-4 lg:gap-4 justify-center' : shouldShowMobileMenu ? 'justify-center gap-3' : 'justify-between'}`}>            {/* Logo with enhanced design and branding */}
+          <div className={`flex items-center ${isProductsPage ? 'h-16 sm:h-18 md:h-20 lg:h-24' : shouldShowMobileMenu ? 'h-16 sm:h-18 md:h-20 lg:h-24' : 'h-18 sm:h-20 md:h-22 lg:h-28'} ${isProductsPage ? 'gap-4 lg:gap-4 justify-center' : shouldShowMobileMenu ? 'justify-center gap-3' : 'justify-center gap-2 lg:gap-3'}`}>            {/* Logo with enhanced design and branding */}
             <motion.div
               whileHover={{ scale: 1.05, y: -3 }}
               whileTap={{ scale: 0.98 }}
@@ -149,7 +149,7 @@ const Header = () => {
                     inset 0 0 15px rgba(255,255,255,0.1)
                   `,
                   borderRadius: '25px',
-                  padding: '16px 24px',
+                  padding: '10px 12px',
                   backdropFilter: 'blur(8px)',
                   height: isSmallLaptop ? '56px' : '64px',
                   width: 'fit-content',
@@ -166,7 +166,7 @@ const Header = () => {
             )}
 
             {/* Right Section with responsive elements */}
-            <div className={`flex-none flex items-center ${isProductsPage ? 'space-x-0' : 'space-x-2 sm:space-x-3 md:space-x-4 lg:space-x-6'}`}>              {/* Contact button - responsive sizing and visibility - hidden on products pages */}
+            <div className={`flex-none flex items-center ${isProductsPage ? 'space-x-0' : 'space-x-2 sm:space-x-2 md:space-x-3 lg:space-x-4'}`}>              {/* Contact button - responsive sizing and visibility - hidden on products pages */}
               {!shouldShowMobileMenu && !isProductsPage && (
                 <motion.a
                   href="/contact"                  whileHover={{ 
@@ -191,8 +191,8 @@ const Header = () => {
                     borderRadius: '20px',
                     backdropFilter: 'blur(10px)',
                     height: '64px',
-                    padding: '0 32px',
-                    minWidth: '140px',
+                    padding: '0 24px',
+                    minWidth: '120px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -215,7 +215,7 @@ const Header = () => {
                     inset 0 0 15px rgba(255,255,255,0.2)
                   `,
                   borderRadius: shouldShowMobileMenu ? '20px' : (isSmallLaptop ? '16px' : '18px'),
-                  padding: shouldShowMobileMenu ? '0 16px' : (isSmallLaptop ? '0 18px' : '0 24px'),
+                  padding: shouldShowMobileMenu ? '0 16px' : (isSmallLaptop ? '0 14px' : '0 18px'),
                   backdropFilter: 'blur(8px)',
                   border: 'none',
                   height: shouldShowMobileMenu ? '64px' : (isSmallLaptop ? '52px' : '64px'),

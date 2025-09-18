@@ -22,15 +22,130 @@
   width: auto !important;
   max-width: calc(100vw - 32px) !important;
   min-width: 320px !important;
-  overflow: visible !important;
+  overflow: hidden !important;
+  max-height: calc(100vh - 120px) !important;
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* Internet Explorer 10+ */
+}
+
+/* Hide scrollbars for webkit browsers */
+[data-radix-navigation-menu-content]::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 /* Navigation Menu Viewport - Fix overflow and positioning */
 [data-radix-navigation-menu-viewport] {
   position: relative !important;
   z-index: 70 !important;
-  overflow: visible !important;
+  overflow: hidden !important;
   width: 100% !important;
+  max-height: calc(100vh - 120px) !important;
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* Internet Explorer 10+ */
+}
+
+/* Hide scrollbars for webkit browsers on viewport */
+[data-radix-navigation-menu-viewport]::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Navigation Menu Viewport Container */
+.navigation-menu-viewport-container {
+  position: absolute !important;
+  left: 0 !important;
+  top: 100% !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  z-index: 70 !important;
+}
+
+/* Dropdown container size constraints */
+.navigation-dropdown-container {
+  width: min(75vw, 800px) !important;
+  max-width: calc(100vw - 32px) !important;
+  max-height: calc(100vh - 180px) !important;
+  overflow: hidden !important;
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* Internet Explorer 10+ */
+}
+
+/* Hide scrollbars for webkit browsers on dropdown containers */
+.navigation-dropdown-container::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.navigation-dropdown-container.medium {
+  width: 580px !important;
+  max-width: calc(100vw - 32px) !important;
+  max-height: calc(100vh - 180px) !important;
+  overflow: hidden !important;
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* Internet Explorer 10+ */
+}
+
+/* Hide scrollbars for webkit browsers on medium containers */
+.navigation-dropdown-container.medium::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.navigation-dropdown-container.large {
+  width: 680px !important;
+  max-width: calc(100vw - 32px) !important;
+  max-height: calc(100vh - 180px) !important;
+  overflow: hidden !important;
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* Internet Explorer 10+ */
+}
+
+/* Hide scrollbars for webkit browsers on large containers */
+.navigation-dropdown-container.large::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.navigation-dropdown-container.xl {
+  width: min(95vw, 1600px) !important;
+  max-width: calc(100vw - 40px) !important;
+  max-height: calc(100vh - 180px) !important;
+  overflow: hidden !important;
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* Internet Explorer 10+ */
+}
+
+/* Responsive breakpoints for xl containers */
+@media (min-width: 1700px) {
+  .navigation-dropdown-container.xl {
+    width: 1600px !important;
+  }
+}
+
+@media (max-width: 1699px) and (min-width: 1400px) {
+  .navigation-dropdown-container.xl {
+    width: 95vw !important;
+  }
+}
+
+@media (max-width: 1399px) {
+  .navigation-dropdown-container.xl {
+    width: 98vw !important;
+  }
+}
+
+/* Hide scrollbars for webkit browsers on xl containers */
+.navigation-dropdown-container.xl::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 /* Navigation Menu Viewport Container */
@@ -93,4 +208,47 @@ html, body {
 [data-radix-navigation-menu-content][data-motion="from-start"],
 [data-radix-navigation-menu-content][data-motion="from-end"] {
   animation-duration: 200ms !important;
+}
+
+/* Ensure motion containers handle overflow properly */
+.navigation-dropdown-container .motion-div,
+.navigation-dropdown-container motion-div,
+[data-radix-navigation-menu-content] > div {
+  overflow: hidden !important;
+  max-height: inherit !important;
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* Internet Explorer 10+ */
+}
+
+/* Hide scrollbars for webkit browsers on motion containers */
+.navigation-dropdown-container .motion-div::-webkit-scrollbar,
+.navigation-dropdown-container motion-div::-webkit-scrollbar,
+[data-radix-navigation-menu-content] > div::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Comprehensive scrollbar hiding for all navigation elements */
+.navigation-dropdown-container *,
+[data-radix-navigation-menu-content] *,
+[data-radix-navigation-menu-viewport] *,
+.navigation-dropdown-container div,
+[data-radix-navigation-menu-content] div {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* Internet Explorer 10+ */
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+}
+
+/* Hide all webkit scrollbars in navigation */
+.navigation-dropdown-container *::-webkit-scrollbar,
+[data-radix-navigation-menu-content] *::-webkit-scrollbar,
+[data-radix-navigation-menu-viewport] *::-webkit-scrollbar,
+.navigation-dropdown-container div::-webkit-scrollbar,
+[data-radix-navigation-menu-content] div::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
 }

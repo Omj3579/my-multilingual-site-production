@@ -136,16 +136,16 @@ export const ServicesMenu = () => {
               >
                 {/* Category Header with Icon and Color */}
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
                     category.color === 'blue' ? 'bg-blue-100 text-blue-600' :
                     category.color === 'orange' ? 'bg-orange-100 text-orange-600' :
                     'bg-green-100 text-green-600'
                   }`}>
-                    <category.icon size={20} />
+                    <category.icon size={28} />
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-900">{category.title}</h4>
-                    <p className="text-sm text-gray-500">{category.subtitle}</p>
+                    <h4 className="text-xl font-semibold text-gray-900">{category.title}</h4>
+                    <p className="text-base text-gray-500">{category.subtitle}</p>
                   </div>
                 </div>
 
@@ -155,29 +155,29 @@ export const ServicesMenu = () => {
                     <motion.div key={linkIndex} variants={itemVariants}>
                       <Link 
                         href={link.href}
-                        className="group block p-4 rounded-xl border border-gray-100 hover:border-[#fa9b6b]/30 hover:bg-gradient-to-br hover:from-[#fa9b6b]/5 hover:to-transparent transition-all duration-300 h-full"
+                        className="group block h-16 p-2 rounded-xl border border-gray-100 hover:border-[#fa9b6b]/30 hover:bg-gradient-to-br hover:from-[#fa9b6b]/5 hover:to-transparent transition-all duration-300"
                       >
                         {/* Service Icon */}
-                        <div className="flex items-center justify-end mb-3">
-                          <div className="w-8 h-8 flex items-center justify-center text-gray-400 group-hover:text-[#fa9b6b] transition-colors">
-                            <link.icon size={18} />
+                        <div className="flex items-center justify-end mb-2">
+                          <div className="w-12 h-12 flex items-center justify-center text-gray-400 group-hover:text-[#fa9b6b] transition-colors">
+                            <link.icon size={24} />
                           </div>
                         </div>
 
                         {/* Service Title */}
-                        <h5 className="font-semibold text-gray-900 group-hover:text-[#fa9b6b] transition-colors mb-2 leading-tight">
+                        <h5 className="text-lg font-semibold text-gray-900 group-hover:text-[#fa9b6b] transition-colors mb-2 leading-tight">
                           {link.label}
                         </h5>
                         
                         {/* Enhanced Description */}
-                        <p className="text-xs text-gray-600 leading-relaxed line-clamp-3">
+                        <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">
                           {link.description}
                         </p>
 
                         {/* Hover Arrow */}
-                        <div className="mt-3 flex items-center text-xs text-gray-400 group-hover:text-[#fa9b6b] transition-colors">
+                        <div className="mt-2 flex items-center text-sm text-gray-400 group-hover:text-[#fa9b6b] transition-colors">
                           <span className="mr-1">Learn more</span>
-                          <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                          <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                         </div>
                       </Link>
                     </motion.div>
@@ -197,16 +197,16 @@ export const ServicesMenu = () => {
                   >
                     {/* Category Header with Icon and Color */}
                     <div className="flex items-center space-x-3 mb-4">
-                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
                         category.color === 'blue' ? 'bg-blue-100 text-blue-600' :
                         category.color === 'orange' ? 'bg-orange-100 text-orange-600' :
                         'bg-green-100 text-green-600'
                       }`}>
-                        <category.icon size={20} />
+                        <category.icon size={28} />
                       </div>
                       <div>
-                        <h4 className="text-lg font-semibold text-gray-900">{category.title}</h4>
-                        <p className="text-sm text-gray-500">{category.subtitle}</p>
+                        <h4 className="text-xl font-semibold text-gray-900">{category.title}</h4>
+                        <p className="text-base text-gray-500">{category.subtitle}</p>
                       </div>
                     </div>
 
@@ -216,29 +216,29 @@ export const ServicesMenu = () => {
                         <motion.div key={linkIndex} variants={itemVariants}>
                           <Link 
                             href={link.href}
-                            className="group block p-4 rounded-xl border border-gray-100 hover:border-[#fa9b6b]/30 hover:bg-gradient-to-br hover:from-[#fa9b6b]/5 hover:to-transparent transition-all duration-300 h-full"
+                            className="group block h-16 p-1 rounded-xl border border-gray-100 hover:border-[#fa9b6b]/30 hover:bg-gradient-to-br hover:from-[#fa9b6b]/5 hover:to-transparent transition-all duration-300"
                           >
                             {/* Service Icon */}
-                            <div className="flex items-center justify-end mb-3">
-                              <div className="w-8 h-8 flex items-center justify-center text-gray-400 group-hover:text-[#fa9b6b] transition-colors">
-                                <link.icon size={18} />
+                            <div className="flex items-center justify-end mb-2">
+                              <div className="w-12 h-12 flex items-center justify-center text-gray-400 group-hover:text-[#fa9b6b] transition-colors">
+                                <link.icon size={24} />
                               </div>
                             </div>
 
                             {/* Service Title */}
-                            <h5 className="font-semibold text-gray-900 group-hover:text-[#fa9b6b] transition-colors mb-2 leading-tight">
+                            <h5 className="text-lg font-semibold text-gray-900 group-hover:text-[#fa9b6b] transition-colors mb-2 leading-tight">
                               {link.label}
                             </h5>
                             
                             {/* Enhanced Description */}
-                            <p className="text-xs text-gray-600 leading-relaxed line-clamp-3">
+                            <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">
                               {link.description}
                             </p>
 
                             {/* Hover Arrow */}
-                            <div className="mt-3 flex items-center text-xs text-gray-400 group-hover:text-[#fa9b6b] transition-colors">
+                            <div className="mt-2 flex items-center text-sm text-gray-400 group-hover:text-[#fa9b6b] transition-colors">
                               <span className="mr-1">Learn more</span>
-                              <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                              <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                             </div>
                           </Link>
                         </motion.div>
