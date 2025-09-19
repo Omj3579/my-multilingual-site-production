@@ -38,7 +38,21 @@ const nextConfig: NextConfig = {
   // Internationalization
   i18n: {
     locales: ['en', 'hu', 'de'],
-    defaultLocale: 'en'
+    defaultLocale: 'en',
+    domains: [
+      {
+        domain: 'en.flair-plastic.hu',
+        defaultLocale: 'en',
+      },
+      {
+        domain: 'hu.flair-plastic.hu',
+        defaultLocale: 'hu',
+      },
+      {
+        domain: 'de.flair-plastic.hu',
+        defaultLocale: 'de',
+      }
+    ]
   },
   
   // Image optimization
