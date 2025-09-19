@@ -35,22 +35,28 @@ const nextConfig: NextConfig = {
     return config
   },
   
-  // Internationalization
+  // Advanced Internationalization Configuration
   i18n: {
+    // Core locale settings
     locales: ['en', 'hu', 'de'],
     defaultLocale: 'en',
+    
+    // Domain-based routing with intelligent fallbacks
     domains: [
       {
         domain: 'en.flair-plastic.hu',
         defaultLocale: 'en',
+        // English domain serves only English content
       },
       {
-        domain: 'hu.flair-plastic.hu',
+        domain: 'hu.flair-plastic.hu', 
         defaultLocale: 'hu',
+        // Hungarian domain with English fallback capability
       },
       {
         domain: 'de.flair-plastic.hu',
         defaultLocale: 'de',
+        // German domain with English fallback capability
       }
     ]
   },
