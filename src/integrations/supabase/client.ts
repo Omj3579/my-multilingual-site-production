@@ -1,14 +1,12 @@
-// Stub file to prevent build errors
-export const createClient = () => ({
-  auth: {
-    signInWithPassword: () => Promise.resolve({ error: null }),
-    signOut: () => Promise.resolve({ error: null }),
-  },
-  storage: {
-    from: () => ({
-      upload: () => Promise.resolve({ error: null, data: null }),
-    }),
-  },
-});
+import { createClient } from '@supabase/supabase-js'
 
-export default createClient;
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error('Missing Supabase environment variables')
+}
+
+export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+
+export default supabase

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Send, CheckCircle } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useFormAnalytics } from '@/hooks/useAnalytics';
 
 interface NewsletterFormProps {
   className?: string;
@@ -10,32 +11,79 @@ interface NewsletterFormProps {
 
 const NewsletterForm: React.FC<NewsletterFormProps> = ({ className = "" }) => {
   const { language } = useLanguage();
+  const { trackFormStart, trackFormSubmit, trackFormSuccess, trackFormError } = useFormAnalytics('newsletter');
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
+  const [hasStarted, setHasStarted] = useState(false);
+
+  // Track form view when component mounts
+  useEffect(() => {
+    // Track is handled by the useFormAnalytics hook automatically via form_view event
+  }, []);
+
+  const handleInputFocus = () => {
+    if (!hasStarted) {
+      setHasStarted(true);
+      trackFormStart();
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!email || !/\S+@\S+\.\S+/.test(email)) {
-      setError(language === 'en' ? 'Please enter a valid email address' : 'Kérjük, adjon meg egy érvényes email címet');
+      const errorMessage = language === 'en' ? 'Please enter a valid email address' : 'Kérjük, adjon meg egy érvényes email címet';
+      setError(errorMessage);
+      trackFormError(errorMessage, { email_invalid: true });
       return;
     }
 
     setIsSubmitting(true);
     setError('');
     
+    // Track form submission attempt
+    trackFormSubmit({ email: email });
+    
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          language: language,
+          source: 'footer'
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Failed to subscribe to newsletter');
+      }
       
       setIsSuccess(true);
       setEmail('');
       
+      // Track successful submission
+      trackFormSuccess({ 
+        email: email,
+        source: 'footer',
+        language: language 
+      });
+      
       // Reset success state after 3 seconds
-      setTimeout(() => setIsSuccess(false), 3000);    } catch {
-      setError(language === 'en' ? 'Something went wrong. Please try again.' : 'Valami hiba történt. Kérjük, próbálja újra.');
+      setTimeout(() => setIsSuccess(false), 3000);
+      
+    } catch (error) {
+      const errorMessage = language === 'en' ? 'Something went wrong. Please try again.' : 'Valami hiba történt. Kérjük, próbálja újra.';
+      setError(errorMessage);
+      trackFormError(errorMessage, { 
+        error: error instanceof Error ? error.message : 'Unknown error' 
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -58,6 +106,7 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className = "" }) => {
               setEmail(e.target.value);
               setError('');
             }}
+            onFocus={handleInputFocus}
             placeholder={language === 'en' ? "Enter your email address" : "Adja meg az email címét"}
             required
             disabled={isSubmitting || isSuccess}

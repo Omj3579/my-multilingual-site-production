@@ -1,0 +1,24 @@
+Name,TTL,Type,Record,Description,Category,Status
+"www.flairplastic.hu.flair-plastic.hu.",14400,A,"216.198.79.1","WWW subdomain","Web Services",EXISTING
+"default._domainkey.flairplastic.hu.flair-plastic.hu.",14400,TXT,"v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs...","DKIM email authentication","Email Security",EXISTING
+"flairplastic.hu.flair-plastic.hu.",14400,TXT,"v=spf1 ip4:79.172.249.237 +a +mx +ip4:217.144.56.49 ~all","SPF email authentication","Email Security",EXISTING
+"_carddav._tcp.flairplastic.hu.flair-plastic.hu.",14400,SRV,"Priority: 0, Weight: 0, Port: 2079, Target: flair-plastic.hu","CardDAV service discovery","Calendar/Contacts",EXISTING
+"_carddav._tcp.flairplastic.hu.flair-plastic.hu.",14400,TXT,"path=/","CardDAV path configuration","Calendar/Contacts",EXISTING
+"cpanel.flairplastic.hu.flair-plastic.hu.",14400,A,"216.198.79.1","cPanel access","Hosting Services",EXISTING
+"cpcontacts.flairplastic.hu.flair-plastic.hu.",14400,A,"216.198.79.1","cPanel contacts","Hosting Services",EXISTING
+"_carddavs._tcp.flairplastic.hu.flair-plastic.hu.",14400,SRV,"Priority: 0, Weight: 0, Port: 2080, Target: flair-plastic.hu","CardDAV SSL service","Calendar/Contacts",EXISTING
+"_carddavs._tcp.flairplastic.hu.flair-plastic.hu.",14400,TXT,"path=/","CardDAV SSL path","Calendar/Contacts",EXISTING
+"_autodiscover._tcp.flairplastic.hu.flair-plastic.hu.",14400,SRV,"Priority: 0, Weight: 0, Port: 443, Target: cpanelemaildiscovery.cpanel.net","Email autodiscovery","Email Services",EXISTING
+"whm.flairplastic.hu.flair-plastic.hu.",14400,A,"216.198.79.1","WHM (Web Host Manager)","Hosting Services",EXISTING
+"autodiscover.flairplastic.hu.flair-plastic.hu.",14400,A,"216.198.79.1","Email autodiscovery","Email Services",EXISTING
+"autoconfig.flairplastic.hu.flair-plastic.hu.",14400,A,"216.198.79.1","Email autoconfig","Email Services",EXISTING
+"webmail.flairplastic.hu.flair-plastic.hu.",14400,A,"216.198.79.1","Webmail access","Email Services",EXISTING
+"cpcalendars.flairplastic.hu.flair-plastic.hu.",14400,A,"216.198.79.1","cPanel calendars","Calendar/Contacts",EXISTING
+"_caldav._tcp.flairplastic.hu.flair-plastic.hu.",14400,SRV,"Priority: 0, Weight: 0, Port: 2079, Target: flair-plastic.hu","CalDAV service","Calendar/Contacts",EXISTING
+"_caldav._tcp.flairplastic.hu.flair-plastic.hu.",14400,TXT,"path=/","CalDAV path","Calendar/Contacts",EXISTING
+"_caldavs._tcp.flairplastic.hu.flair-plastic.hu.",14400,SRV,"Priority: 0, Weight: 0, Port: 2080, Target: flair-plastic.hu","CalDAV SSL service","Calendar/Contacts",EXISTING
+"_caldavs._tcp.flairplastic.hu.flair-plastic.hu.",14400,TXT,"path=/","CalDAV SSL path","Calendar/Contacts",EXISTING
+"webdisk.flairplastic.hu.flair-plastic.hu.",14400,A,"216.198.79.1","Web disk access","Hosting Services",EXISTING
+"en",14400,A,76.76.19.61,"English subdomain for Vercel","Vercel Subdomains",TO ADD
+"hu",14400,A,76.76.19.61,"Hungarian subdomain for Vercel","Vercel Subdomains",TO ADD
+"de",14400,A,76.76.19.61,"German subdomain for Vercel","Vercel Subdomains",TO ADD

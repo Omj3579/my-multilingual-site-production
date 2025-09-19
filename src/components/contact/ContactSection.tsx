@@ -4,18 +4,18 @@ import { useToast } from '@/hooks/use-toast';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Button } from '@/components/ui/button';
 import Link from "next/link";
 import { motion, useInView, useMotionValue, useTransform } from 'framer-motion';
-import { Send, MapPin, Phone, Mail, Building, ArrowRight, CheckCircle, Users } from 'lucide-react';
+import { Send, MapPin, Phone, Mail, Building, CheckCircle, Users } from 'lucide-react';
 import ReCaptcha from './ReCaptcha';
 import MapEmbed from './MapEmbed';
-import SubscribeBanner from './SubscribeBanner';
+import { ContactFormData, ApiResponse, FormSubmissionResponse } from '@/types/database';
 
 interface FormField {
   label: {
     en: string;
     hu: string;
+    de?: string;
   };
   name: string;
   type: string;
@@ -23,13 +23,32 @@ interface FormField {
   icon?: React.ReactNode;
 }
 
+interface Particle {
+  id: number;
+  x: number;
+  y: number;
+  size: number;
+  opacity: number;
+}
+
+interface ContactDetail {
+  icon: React.ReactNode;
+  title: {
+    en: string;
+    hu: string;
+    de?: string;
+  };
+  info: string;
+  link: string;
+}
+
 const ContactSection = () => {
   const { language } = useLanguage();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSuccess, setFormSuccess] = useState(false);
-  const sectionRef = useRef(null);
-  const formRef = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const isInView = useInView(sectionRef, { once: false, amount: 0.2 });
   
   // Mouse tracking for 3D effects
@@ -42,7 +61,7 @@ const ContactSection = () => {
   const formRotateX = useTransform(mouseY, [-300, 300], [1, -1]);
   const formRotateY = useTransform(mouseX, [-300, 300], [-1, 1]);
   
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent) => {
     if (!sectionRef.current) return;
     const { clientX, clientY } = e;
     const rect = sectionRef.current.getBoundingClientRect();
@@ -89,29 +108,77 @@ const ContactSection = () => {
     },
   ];
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call with delay
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setFormSuccess(true);
-    
-    toast({
-      title: language === 'en' ? 'Message sent successfully!' : 'Üzenet sikeresen elküldve!',
-      description: language === 'en'
-        ? 'Thank you for reaching out. Our team will contact you shortly.'
-        : 'Köszönjük, hogy kapcsolatba lépett velünk. Csapatunk hamarosan felveszi Önnel a kapcsolatot.',
-      variant: "default",
-    });
-    
-    // Reset success status after a while
-    setTimeout(() => setFormSuccess(false), 5000);
+    try {
+      // Get form data
+      const formData = new FormData(e.currentTarget);
+      const data: ContactFormData = {
+        firstName: formData.get('firstName') as string || undefined,
+        lastName: formData.get('lastName') as string || undefined,
+        email: formData.get('email') as string,
+        company: formData.get('company') as string,
+        country: formData.get('country') as string,
+        message: formData.get('message') as string,
+        language: language,
+      };
+
+      // Debug logging
+      console.log('Form data being sent:', data);
+      console.log('Message content:', data.message);
+      console.log('Message length:', data.message?.length || 0);
+
+      // Submit to API
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result: ApiResponse<FormSubmissionResponse> = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Failed to send message');
+      }
+
+      setFormSuccess(true);
+      
+      toast({
+        title: language === 'en' ? 'Message sent successfully!' : 'Üzenet sikeresen elküldve!',
+        description: result.message || (language === 'en'
+          ? 'Thank you for reaching out. Our team will contact you shortly.'
+          : 'Köszönjük, hogy kapcsolatba lépett velünk. Csapatunk hamarosan felveszi Önnel a kapcsolatot.'),
+        variant: "default",
+      });
+
+      // Reset form
+      formRef.current?.reset();
+      
+      // Reset success status after a while
+      setTimeout(() => setFormSuccess(false), 5000);
+      
+    } catch (error) {
+      console.error('Form submission error:', error);
+      
+      toast({
+        title: language === 'en' ? 'Error sending message' : 'Hiba az üzenet küldésekor',
+        description: error instanceof Error 
+          ? error.message 
+          : (language === 'en'
+            ? 'Please check your connection and try again.'
+            : 'Kérjük, ellenőrizze a kapcsolatot és próbálja újra.'),
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const contactDetails = [
+  const contactDetails: ContactDetail[] = [
     {
       icon: <Phone className="h-5 w-5" />,
       title: { en: 'Phone', hu: 'Telefonszám' },
@@ -133,10 +200,10 @@ const ContactSection = () => {
   ];
 
   // Generate particles for background effect
-  const [particles, setParticles] = useState([]);
+  const [particles, setParticles] = useState<Particle[]>([]);
   
   useEffect(() => {
-    const generateParticles = () => {
+    const generateParticles = (): Particle[] => {
       return Array.from({ length: 20 }, (_, i) => ({
         id: i,
         x: Math.random() * 100,
@@ -267,17 +334,17 @@ const ContactSection = () => {
                   <div key={i} className="relative group">
                     <label
                       htmlFor={name}
-                      className="block text-sm font-medium text-gray-700 mb-1 flex items-center"
+                      className="text-sm font-medium text-gray-700 mb-1 flex items-center"
                     >
                       {icon && <span className="mr-2">{icon}</span>}
-                      {label[language]} {required && <span className="text-[#f39e74] ml-1">*</span>}
+                      {label[language as keyof typeof label] || label.en} {required && <span className="text-[#f39e74] ml-1">*</span>}
                     </label>
                     <div className="relative">
                       <Input
                         id={name}
                         name={name}
                         type={type}
-                        placeholder={label[language]}
+                        placeholder={label[language as keyof typeof label] || label.en}
                         required={required}
                         className="bg-white/50 border-gray-200 focus:border-[#f39e74] focus:ring focus:ring-[#f39e74]/20 transition-all shadow-sm"
                       />
@@ -290,7 +357,7 @@ const ContactSection = () => {
               
               {/* Message Textarea with Elegant Design */}
               <div className="mt-5 relative group">
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+                <label htmlFor="message" className="text-sm font-medium text-gray-700 mb-1 flex items-center">
                   <span className="mr-2 text-blue-400 opacity-60">06</span>
                   {language === 'en' ? 'Message' : 'Üzenet'} <span className="text-[#f39e74] ml-1">*</span>
                 </label>

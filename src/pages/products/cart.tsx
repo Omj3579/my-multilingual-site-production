@@ -2,20 +2,81 @@ import React, { useState } from 'react';
 import Link from "next/link";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCart } from "@/contexts/CartContext";
+import { useToast } from '@/hooks/use-toast';
 import { Trash2, ChevronLeft } from 'lucide-react';
 import ProductLayout from '@/components/layouts/ProductLayout';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { QuoteFormData, ApiResponse } from '@/types/database';
 
 const CartPage = () => {
   const { language } = useLanguage();
-  const { cartItems, removeFromCart, updateQuantity } = useCart();
+  const { cartItems, removeFromCart, updateQuantity, clearCart } = useCart();
+  const { toast } = useToast();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
-  const handleSubmitQuote = (e) => {
+  const handleSubmitQuote = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsDialogOpen(true);
-    // This would send the form data to a backend API in a real app
+    setIsSubmitting(true);
+    
+    const formData = new FormData(e.currentTarget);
+    const quoteData: QuoteFormData = {
+      fullName: formData.get('name') as string,
+      email: formData.get('email') as string,
+      phone: formData.get('phone') as string || undefined,
+      company: formData.get('company') as string,
+      message: formData.get('message') as string || undefined,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      cartItems: cartItems.map((item: any) => ({
+        id: item.id,
+        name: item.name,
+        code: item.code || '',
+        quantity: item.quantity,
+        image: item.image,
+        specifications: item.specifications
+      })),
+      language: language as 'en' | 'hu' | 'de'
+    };
+
+    try {
+      const response = await fetch('/api/quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(quoteData),
+      });
+
+      const result: ApiResponse = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to submit quote request');
+      }
+
+      // Success
+      toast({
+        title: language === 'en' ? 'Quote Request Submitted' : 'Árajánlatkérés elküldve',
+        description: language === 'en' 
+          ? 'Thank you for your quote request. We will contact you shortly.'
+          : 'Köszönjük árajánlatkérését. Hamarosan felvesszük Önnel a kapcsolatot.',
+      });
+
+      setIsDialogOpen(true);
+      clearCart(); // Clear cart after successful submission
+      
+    } catch (error) {
+      console.error('Quote submission error:', error);
+      toast({
+        title: language === 'en' ? 'Submission Failed' : 'Küldés sikertelen',
+        description: language === 'en' 
+          ? 'There was an error submitting your quote request. Please try again.'
+          : 'Hiba történt az árajánlatkérés küldésekor. Kérjük próbálja újra.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
   return (
@@ -67,7 +128,8 @@ const CartPage = () => {
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                  {cartItems.map((item) => (
+                  {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+                  {cartItems.map((item: any) => (
                     <tr key={item.id}>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
@@ -198,9 +260,12 @@ const CartPage = () => {
                   <Button 
                     type="submit" 
                     className="w-full bg-blue-600 hover:bg-blue-700"
-                    disabled={cartItems.length === 0}
+                    disabled={cartItems.length === 0 || isSubmitting}
                   >
-                    {language === 'en' ? 'Request Quote' : 'Árajánlat kérése'}
+                    {isSubmitting 
+                      ? (language === 'en' ? 'Submitting...' : 'Küldés...')
+                      : (language === 'en' ? 'Request Quote' : 'Árajánlat kérése')
+                    }
                   </Button>
                 </div>
               </div>
