@@ -29,8 +29,9 @@ function AnalyticsWrapper({ children }: { children: ReactNode }) {
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const router = useRouter();
   
-  // Check if current page is a resources page
+  // Check if current page is a resources page or admin page
   const isResourcesPage = router.pathname.startsWith('/resources');
+  const isAdminPage = router.pathname.startsWith('/admin');
   
   // Use the layout defined at the page level, or fall back to the default layout
   const getLayout = Component.getLayout ?? ((page) => page);
@@ -40,9 +41,9 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
       <CartProvider>
         <AnalyticsWrapper>
           <DefaultSeo {...SEO} />
-          {!isResourcesPage && <Header />}
+          {!isResourcesPage && !isAdminPage && <Header />}
           {getLayout(<Component {...pageProps} />)}
-          {!isResourcesPage && <Footer />}
+          {!isResourcesPage && !isAdminPage && <Footer />}
           <Analytics />
           <SpeedInsights />
         </AnalyticsWrapper>

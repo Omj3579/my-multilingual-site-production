@@ -66,109 +66,28 @@ export default function FuturisticAdminDashboard() {
   const fetchData = useCallback(async () => {
     try {
       setLoading(true)
-      console.log('Starting dashboard data fetch...')
       
-      const token = localStorage.getItem('admin-token')
-      if (!token) {
-        console.error('No admin token found')
-        return
-      }
-
-      const headers = {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json'
-      }
-
-      // Fetch all data in parallel
-      const [contactsRes, quotesRes, newslettersRes] = await Promise.all([
-        fetch('/api/admin/contacts', { headers }),
-        fetch('/api/admin/quotes', { headers }),
-        fetch('/api/admin/newsletters', { headers })
-      ])
-
-      console.log('API responses received')
-
-      // Parse responses
-      const contactsData = contactsRes.ok ? await contactsRes.json() : null
-      const quotesData = quotesRes.ok ? await quotesRes.json() : null
-      const newslettersData = newslettersRes.ok ? await newslettersRes.json() : null
-
-      console.log('Parsed responses:', { contactsData, quotesData, newslettersData })
-
-      // Extract actual data from API responses
-      const contacts = contactsData?.success ? contactsData.data : []
-      const quotes = quotesData?.success ? quotesData.data : []
-      const newsletters = newslettersData?.success ? newslettersData.data : []
-
-      console.log('Extracted data:', { 
-        contacts: contacts?.length || 0, 
-        quotes: quotes?.length || 0, 
-        newsletters: newsletters?.length || 0 
-      })
-
-      // Combine all submissions into a single array (even with errors)
-      const allSubmissions: FormSubmission[] = []
-
-      // Add contacts if successful
-      if (contacts) {
-        allSubmissions.push(...contacts.map(contact => ({
-          id: contact.id,
-          name: `${contact.first_name || ''} ${contact.last_name || ''}`.trim() || 'Unknown',
-          email: contact.email,
-          phone: '', // Not stored in contact submissions
-          service_type: contact.company || 'Contact',
-          message: contact.message,
-          created_at: contact.created_at,
-          form_type: 'contact' as const,
-          device_type: 'desktop' as const,
-          browser: 'unknown',
+      // Mock data for demonstration (replace with actual Supabase calls)
+      const mockSubmissions: FormSubmission[] = [
+        {
+          id: '1',
+          name: 'John Doe',
+          email: 'john@example.com',
+          phone: '+1234567890',
+          service_type: 'Contact',
+          message: 'Hello world',
+          created_at: new Date().toISOString(),
+          form_type: 'contact',
+          device_type: 'desktop',
+          browser: 'chrome',
           referrer: ''
-        })))
-      }
+        }
+      ]
 
-      // Add quotes if successful
-      if (quotes) {
-        allSubmissions.push(...quotes.map(quote => ({
-          id: quote.id,
-          name: quote.full_name || 'Unknown',
-          email: quote.email,
-          phone: quote.phone || '',
-          service_type: 'Quote Request',
-          message: `Company: ${quote.company || 'Not specified'}, Items: ${Array.isArray(quote.cart_items) ? quote.cart_items.length : 0}`,
-          created_at: quote.created_at,
-          form_type: 'quote' as const,
-          device_type: 'desktop' as const,
-          browser: 'unknown',
-          referrer: ''
-        })))
-      }
-
-      // Add newsletters if successful
-      if (newsletters) {
-        allSubmissions.push(...newsletters.map(newsletter => ({
-          id: newsletter.id,
-          name: 'Newsletter Subscriber',
-          email: newsletter.email,
-          phone: '',
-          service_type: 'Newsletter',
-          message: `Language: ${newsletter.language}`,
-          created_at: newsletter.created_at,
-          form_type: 'newsletter' as const,
-          device_type: 'desktop' as const,
-          browser: 'unknown',
-          referrer: ''
-        })))
-      }
-
-      console.log('Total combined submissions:', allSubmissions.length)
-
-      // Sort by created_at descending
-      allSubmissions.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
-
-      setSubmissions(allSubmissions)
+      setSubmissions(mockSubmissions)
       
       // Process analytics data
-      const processedAnalytics = processAnalyticsData(allSubmissions)
+      const processedAnalytics = processAnalyticsData(mockSubmissions)
       setAnalytics(processedAnalytics)
       
     } catch (error) {
