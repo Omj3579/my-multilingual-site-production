@@ -10,8 +10,7 @@ const Contact = () => {
   const { language } = useLanguage();
 
   // Get professional SEO configuration for contact page
-  const contactSEO = CompleteSiteSEO.contact;
-  const seoConfig = language === 'hu' && contactSEO.hu ? contactSEO.hu : contactSEO.en;
+  const seoConfig = CompleteSiteSEO.contact;
 
   return (
     <>

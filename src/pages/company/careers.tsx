@@ -36,8 +36,7 @@ export default function CareersPage() {
   const { language, translations } = useLanguage();
   
   // Get professional SEO configuration for careers page
-  const careersSEO = CompleteSiteSEO.careers;
-  const seoConfig = language === 'hu' && careersSEO.hu ? careersSEO.hu : careersSEO.en;
+  const seoConfig = CompleteSiteSEO.careers;
   
   // Translate function for convenience
   const t = (key: string) => {

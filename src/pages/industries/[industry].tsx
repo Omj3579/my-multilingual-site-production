@@ -49,11 +49,9 @@ export default function IndustryPage({ industry }: IndustryPageProps) {
   // Get professional SEO for industry pages
   let seoConfig = null;
   if (industry === 'automotive' || industry.includes('automotive')) {
-    const automotiveSEO = IndustrySpecificSEO.automotive;
-    seoConfig = language === 'hu' && automotiveSEO.hu ? automotiveSEO.hu : automotiveSEO.en;
+    seoConfig = IndustrySpecificSEO.automotive;
   } else if (industry === 'medical' || industry.includes('medical') || industry.includes('healthcare')) {
-    const medicalSEO = IndustrySpecificSEO.medical;
-    seoConfig = language === 'hu' && medicalSEO.hu ? medicalSEO.hu : medicalSEO.en;
+    seoConfig = IndustrySpecificSEO.medical;
   } else {
     // Fallback to original data for other industries
     seoConfig = {

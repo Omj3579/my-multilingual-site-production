@@ -21,7 +21,7 @@ export interface CompleteProfessionalSEO {
 /**
  * PROFESSIONAL SEO FOR ALL WEBSITE PAGES
  */
-export const CompleteSiteSEO = {
+const CompleteSiteSEO = {
 
   // ===== MAIN PAGES =====
 
@@ -405,7 +405,7 @@ export const CompleteSiteSEO = {
 /**
  * PROFESSIONAL URL STRUCTURE FOR ALL PAGES
  */
-export const ProfessionalSiteURLs = {
+const ProfessionalSiteURLs = {
   main: {
     // Current → Professional URLs
     "/": "/",
@@ -438,7 +438,7 @@ export const ProfessionalSiteURLs = {
 /**
  * INDUSTRY-SPECIFIC PROFESSIONAL PAGES
  */
-export const IndustrySpecificSEO = {
+const IndustrySpecificSEO = {
   automotive: {
     en: {
       title: "Automotive Manufacturing Excellence | OEM Certified Partner | ISO/TS 16949 | Flair Plastic",

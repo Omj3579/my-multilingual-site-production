@@ -13,8 +13,7 @@ const CompanyOverview = () => {
   const { language } = useLanguage();
 
   // Get professional SEO configuration for about/company page
-  const aboutSEO = CompleteSiteSEO.about;
-  const seoConfig = language === 'hu' && aboutSEO.hu ? aboutSEO.hu : aboutSEO.en;
+  const seoConfig = CompleteSiteSEO.about;
 
   return (
     <>

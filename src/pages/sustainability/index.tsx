@@ -11,8 +11,7 @@ const Sustainability = () => {
   const { language } = useLanguage();
 
   // Get professional SEO configuration for sustainability page
-  const sustainabilitySEO = CompleteSiteSEO.sustainability;
-  const seoConfig = language === 'hu' && sustainabilitySEO.hu ? sustainabilitySEO.hu : sustainabilitySEO.en;
+  const seoConfig = CompleteSiteSEO.sustainability;
 
   return (
     <>

@@ -10,8 +10,7 @@ export default function Home() {
   const { language } = useLanguage();
 
   // Get professional SEO configuration for homepage
-  const homepageSEO = CompleteSiteSEO.homepage;
-  const seoConfig = language === 'hu' && homepageSEO.hu ? homepageSEO.hu : homepageSEO.en;
+  const seoConfig = CompleteSiteSEO.homepage;
 
   return (
     <>
