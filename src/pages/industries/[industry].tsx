@@ -2,9 +2,9 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { SEOHead } from '@/lib/seo/SEOHead';
-import { generateSEOData } from '@/lib/seo/utils';
+import { CompleteSiteSEO, IndustrySpecificSEO } from "@/lib/seo/CompleteSiteSEO";
 import { INDUSTRIES_SEO_DATA } from '@/lib/seo/industries-seo';
+import Head from "next/head";
 
 interface IndustryPageProps {
   industry: string;
@@ -46,15 +46,23 @@ export default function IndustryPage({ industry }: IndustryPageProps) {
     return <div>Industry not found</div>;
   }
 
-  const seoData = generateSEOData({
-    pageType: 'services',
-    language,
-    customTitle: industryData.title[language],
-    customDescription: industryData.description[language],
-    customKeywords: industryData.keywords[language],
-    image: `https://flair-plastic.hu/images/og/${industry}-og.jpg`,
-    slug: `/industries/${industry}`
-  });
+  // Get professional SEO for industry pages
+  let seoConfig = null;
+  if (industry === 'automotive' || industry.includes('automotive')) {
+    const automotiveSEO = IndustrySpecificSEO.automotive;
+    seoConfig = language === 'hu' && automotiveSEO.hu ? automotiveSEO.hu : automotiveSEO.en;
+  } else if (industry === 'medical' || industry.includes('medical') || industry.includes('healthcare')) {
+    const medicalSEO = IndustrySpecificSEO.medical;
+    seoConfig = language === 'hu' && medicalSEO.hu ? medicalSEO.hu : medicalSEO.en;
+  } else {
+    // Fallback to original data for other industries
+    seoConfig = {
+      title: industryData.title[language],
+      description: industryData.description[language],
+      keywords: industryData.keywords[language],
+      structuredData: []
+    };
+  }
 
   const formatIndustryName = (slug: string) => {
     return slug.split('-').map(word => 
@@ -64,7 +72,34 @@ export default function IndustryPage({ industry }: IndustryPageProps) {
 
   return (
     <>
-      <SEOHead seoData={seoData} />
+      <Head>
+        <title>{seoConfig.title}</title>
+        <meta name="description" content={seoConfig.description} />
+        <meta name="keywords" content={Array.isArray(seoConfig.keywords) ? seoConfig.keywords.join(', ') : seoConfig.keywords} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={seoConfig.title} />
+        <meta property="og:description" content={seoConfig.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://flairplastic.com/industries/${industry}`} />
+        <meta property="og:image" content={`https://flair-plastic.hu/images/og/${industry}-og.jpg`} />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:title" content={seoConfig.title} />
+        <meta name="twitter:description" content={seoConfig.description} />
+        <meta name="twitter:card" content="summary_large_image" />
+        
+        {/* Structured Data */}
+        {seoConfig.structuredData && seoConfig.structuredData.map((schema: Record<string, unknown>, index: number) => (
+          <script
+            key={index}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        ))}
+        
+        <link rel="canonical" href={`https://flairplastic.com/industries/${industry}`} />
+      </Head>
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">

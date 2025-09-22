@@ -439,6 +439,96 @@ export const ProfessionalSiteURLs = {
  * INDUSTRY-SPECIFIC PROFESSIONAL PAGES
  */
 export const IndustrySpecificSEO = {
+  automotive: {
+    en: {
+      title: "Automotive Manufacturing Excellence | OEM Certified Partner | ISO/TS 16949 | Flair Plastic",
+      description: "OEM certified automotive manufacturing partner. ISO/TS 16949 quality systems, precision plastic components, advanced tooling capabilities. Trusted by automotive industry leaders across Europe.",
+      keywords: [
+        "automotive manufacturing excellence",
+        "OEM certified automotive partner", 
+        "ISO TS 16949 automotive quality",
+        "precision automotive components",
+        "automotive plastic injection",
+        "automotive manufacturing solutions"
+      ],
+      structuredData: [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Flair Plastic - Automotive Manufacturing Division",
+          "description": "OEM certified automotive manufacturing partner with ISO/TS 16949 compliance and precision component expertise.",
+          "certifications": ["ISO/TS 16949", "ISO 9001:2015"],
+          "serviceArea": "European Automotive Industry"
+        }
+      ]
+    },
+    hu: {
+      title: "Autóipari Gyártási Kiválóság | OEM Minősített Partner | ISO/TS 16949 | Flair Plastic",
+      description: "OEM minősített autóipari gyártási partner. ISO/TS 16949 minőségbiztosítás, precíziós műanyag alkatrészek, fejlett szerszámozási képességek. Megbízható európai autóipari vezető.",
+      keywords: [
+        "autóipari gyártási kiválóság",
+        "OEM minősített autóipari partner",
+        "ISO TS 16949 autóipari minőség",
+        "precíziós autóipari alkatrészek",
+        "autóipari műanyag fröccsöntés",
+        "autóipari gyártási megoldások"
+      ],
+      structuredData: [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Flair Plastic - Autóipari Gyártási Részleg",
+          "description": "OEM minősített autóipari gyártási partner ISO/TS 16949 megfelelőséggel és precíziós alkatrész szakértelemmel."
+        }
+      ]
+    }
+  },
+  
+  medical: {
+    en: {
+      title: "Medical Device Manufacturing | FDA Approved Facility | ISO 13485 Certified | Flair Plastic", 
+      description: "FDA approved medical device manufacturing facility. ISO 13485 certified cleanroom production, regulatory compliance expertise, precision medical components. Trusted healthcare partner.",
+      keywords: [
+        "medical device manufacturing",
+        "FDA approved medical facility",
+        "ISO 13485 medical certification",
+        "cleanroom medical production",
+        "regulatory compliance manufacturing",
+        "precision medical components"
+      ],
+      structuredData: [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization", 
+          "name": "Flair Plastic - Medical Device Division",
+          "description": "FDA approved and ISO 13485 certified medical device manufacturing with cleanroom capabilities and regulatory expertise.",
+          "certifications": ["ISO 13485", "FDA Approved", "ISO 9001:2015"],
+          "serviceArea": "European Medical Device Industry"
+        }
+      ]
+    },
+    hu: {
+      title: "Orvosi Eszköz Gyártás | FDA Jóváhagyott Létesítmény | ISO 13485 Minősített | Flair Plastic",
+      description: "FDA jóváhagyott orvosi eszköz gyártó létesítmény. ISO 13485 minősített tisztatér gyártás, szabályozási megfelelőségi szakértelem, precíziós orvosi alkatrészek.",
+      keywords: [
+        "orvosi eszköz gyártás",
+        "FDA jóváhagyott orvosi létesítmény",
+        "ISO 13485 orvosi minősítés",
+        "tisztatér orvosi gyártás",
+        "szabályozási megfelelőségi gyártás",
+        "precíziós orvosi alkatrészek"
+      ],
+      structuredData: [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Flair Plastic - Orvosi Eszköz Részleg", 
+          "description": "FDA jóváhagyott és ISO 13485 minősített orvosi eszköz gyártás tisztatér képességekkel és szabályozási szakértelemmel."
+        }
+      ]
+    }
+  },
+  
   consumerProducts: {
     title: "Premium Consumer Product Manufacturing | Luxury Brand Solutions | Flair Plastic",
     description: "Premium consumer product manufacturing for luxury brands. Advanced decoration technologies, sustainable materials, innovative design solutions. Trusted by leading consumer brands across Europe.",
@@ -456,7 +546,7 @@ export const IndustrySpecificSEO = {
   packaging: {
     title: "Advanced Packaging Solutions | Sustainable Packaging Manufacturing | Flair Plastic",
     description: "Advanced packaging manufacturing solutions with sustainability focus. Innovative packaging designs, lightweight solutions, circular economy materials. Premium packaging for leading brands.",
-    url: "/industries/packaging",
+    url: "/industries/packaging", 
     keywords: [
       "advanced packaging solutions",
       "sustainable packaging manufacturing",

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { CompleteSiteSEO } from "@/lib/seo/CompleteSiteSEO";
 import { Briefcase, Heart, Clock, MapPin, Zap, Send, ChevronRight, Users, Coffee, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -33,6 +34,10 @@ const staggerContainer = {
 
 export default function CareersPage() {
   const { language, translations } = useLanguage();
+  
+  // Get professional SEO configuration for careers page
+  const careersSEO = CompleteSiteSEO.careers;
+  const seoConfig = language === 'hu' && careersSEO.hu ? careersSEO.hu : careersSEO.en;
   
   // Translate function for convenience
   const t = (key: string) => {
@@ -262,8 +267,31 @@ export default function CareersPage() {
   return (
     <>
       <Head>
-        <title>{t('careers.meta.title')} | Flair Plastic</title>
-        <meta name="description" content={t('careers.meta.description')} />
+        <title>{seoConfig.title}</title>
+        <meta name="description" content={seoConfig.description} />
+        <meta name="keywords" content={seoConfig.keywords.join(', ')} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={seoConfig.title} />
+        <meta property="og:description" content={seoConfig.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://flairplastic.com/company/careers" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:title" content={seoConfig.title} />
+        <meta name="twitter:description" content={seoConfig.description} />
+        <meta name="twitter:card" content="summary_large_image" />
+        
+        {/* Structured Data */}
+        {seoConfig.structuredData.map((schema, index) => (
+          <script
+            key={index}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        ))}
+        
+        <link rel="canonical" href="https://flairplastic.com/company/careers" />
       </Head>
       
       {/* Hero Section */}
