@@ -16,26 +16,48 @@ interface SitemapUrl {
 const STATIC_PAGES = [
   { path: '/', changefreq: 'weekly', priority: '1.0' },
   { path: '/contact', changefreq: 'monthly', priority: '0.8' },
+  
+  // Company pages
+  { path: '/company', changefreq: 'monthly', priority: '0.8' },
+  { path: '/company/careers', changefreq: 'monthly', priority: '0.7' },
+  { path: '/company/history', changefreq: 'yearly', priority: '0.6' },
+  { path: '/company/management', changefreq: 'yearly', priority: '0.6' },
+  
+  // Services pages
   { path: '/services', changefreq: 'monthly', priority: '0.9' },
   { path: '/services/plastic-injection-moulding', changefreq: 'monthly', priority: '0.8' },
   { path: '/services/in-mould-labelling', changefreq: 'monthly', priority: '0.8' },
   { path: '/services/in-mould-decoration', changefreq: 'monthly', priority: '0.8' },
-  { path: '/services/injection-blow-moulding', changefreq: 'monthly', priority: '0.8' },
+  { path: '/services/injection-blow', changefreq: 'monthly', priority: '0.8' },
   { path: '/services/surface-finishing', changefreq: 'monthly', priority: '0.8' },
-  { path: '/services/assembly-automation', changefreq: 'monthly', priority: '0.8' },
+  { path: '/services/assembly', changefreq: 'monthly', priority: '0.8' },
   { path: '/services/tooling-management', changefreq: 'monthly', priority: '0.8' },
   { path: '/services/material-selection', changefreq: 'monthly', priority: '0.8' },
-  { path: '/services/quality-assurance', changefreq: 'monthly', priority: '0.8' },
+  { path: '/services/precision-quality', changefreq: 'monthly', priority: '0.8' },
   { path: '/services/contract-manufacturing', changefreq: 'monthly', priority: '0.8' },
+  
+  // Products pages
   { path: '/products', changefreq: 'monthly', priority: '0.9' },
+  { path: '/products/cart', changefreq: 'weekly', priority: '0.4' },
+  { path: '/products/searchresultspage', changefreq: 'weekly', priority: '0.5' },
+  
+  // Sustainability pages
   { path: '/sustainability', changefreq: 'monthly', priority: '0.8' },
+  { path: '/sustainability/clean-sweep', changefreq: 'monthly', priority: '0.7' },
+  { path: '/sustainability/green-strategy', changefreq: 'monthly', priority: '0.7' },
+  
+  // Resources pages
   { path: '/resources', changefreq: 'weekly', priority: '0.8' },
   { path: '/resources/blog', changefreq: 'weekly', priority: '0.7' },
   { path: '/resources/case-studies', changefreq: 'monthly', priority: '0.8' },
   { path: '/resources/news', changefreq: 'weekly', priority: '0.6' },
   { path: '/resources/updates', changefreq: 'weekly', priority: '0.6' },
+  
+  // Policy pages
   { path: '/policies/termsconditions', changefreq: 'yearly', priority: '0.3' },
-  { path: '/policies/mycookiesettings', changefreq: 'yearly', priority: '0.3' },
+  { path: '/policies/cookiesettings', changefreq: 'yearly', priority: '0.3' },
+  { path: '/policies/privacypolicy', changefreq: 'yearly', priority: '0.3' },
+  { path: '/policies/cookiepolicy', changefreq: 'yearly', priority: '0.3' },
   
   // Industry pages
   { path: '/industries/power-tools', changefreq: 'monthly', priority: '0.9' },
@@ -72,17 +94,28 @@ const DYNAMIC_CONTENT = {
     'medical-device-manufacturing-standards'
   ],
   caseStudies: [
+    'a-decade-of-innovation-collaboration',
     'aerospace-lightweight-durable-components',
-    'automotive-interior-components-precision',
-    'household-product-manufacturing-excellence',
+    'automotive-lightweight-components',
+    'circular-economy-implementation-showcase',
+    'consumer-electronics-heat-management',
+    'medical-device-sterilization-packaging',
+    'packaging-breakthrough-interactive',
+    'smart-manufacturing-transformation',
+    'sustainable-packaging-innovation',
+    'data-driven-manufacturing-excellence',
+    'interactive-manufacturing-experience',
     'sustainable-future-strategy'
   ],
   news: [
+    'annual-sustainability-report-interactive-dashboard',
+    'ceo-keynote-plastic-future-summit',
+    'european-expansion-interactive-announcement',
     'flair-plastic-announces-major-expansion',
-    'sustainability-award-green-manufacturing-excellence',
-    'strategic-partnership-tech-innovation-lab',
+    'innovation-award-interactive-showcase',
     'million-tons-recycled-milestone',
-    'ceo-keynote-plastic-future-summit'
+    'strategic-partnership-tech-innovation-lab',
+    'sustainability-award-green-manufacturing-excellence'
   ],
   updates: [
     'new-injection-Moulding-machine-installation',
