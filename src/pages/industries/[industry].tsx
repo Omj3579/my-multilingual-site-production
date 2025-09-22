@@ -81,7 +81,7 @@ export default function IndustryPage({ industry }: IndustryPageProps) {
         <meta property="og:title" content={seoConfig.title} />
         <meta property="og:description" content={seoConfig.description} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://flairplastic.com/industries/${industry}`} />
+        <meta property="og:url" content={`https://flair-plastic.hu/industries/${industry}`} />
         <meta property="og:image" content={`https://flair-plastic.hu/images/og/${industry}-og.jpg`} />
         
         {/* Twitter Card */}
@@ -98,7 +98,7 @@ export default function IndustryPage({ industry }: IndustryPageProps) {
           />
         ))}
         
-        <link rel="canonical" href={`https://flairplastic.com/industries/${industry}`} />
+        <link rel="canonical" href={`https://flair-plastic.hu/industries/${industry}`} />
       </Head>
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
         {/* Animated Background Elements */}

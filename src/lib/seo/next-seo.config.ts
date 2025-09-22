@@ -4,24 +4,24 @@ const config: DefaultSeoProps = {
   titleTemplate: '%s | Flair Plastic Manufacturing',
   defaultTitle: 'Flair Plastic - Advanced Injection Moulding & Contract Manufacturing',
   description: 'Leading plastic injection Moulding and contract manufacturing company specializing in sustainable manufacturing solutions with global reach and local expertise.',
-  canonical: 'https://flairplastic.com',
+  canonical: 'https://flair-plastic.hu',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://flairplastic.com',
+    url: 'https://flair-plastic.hu',
     siteName: 'Flair Plastic Manufacturing',
     title: 'Flair Plastic - Advanced Injection Moulding & Contract Manufacturing',
     description: 'Leading plastic injection Moulding and contract manufacturing company specializing in sustainable manufacturing solutions with global reach and local expertise.',
     images: [
       {
-        url: 'https://flairplastic.com/images/og-image-main.jpg',
+        url: 'https://flair-plastic.hu/images/og-image-main.jpg',
         width: 1200,
         height: 630,
         alt: 'Flair Plastic Manufacturing - Advanced Injection Moulding Solutions',
         type: 'image/jpeg',
       },
       {
-        url: 'https://flairplastic.com/images/og-image-square.jpg',
+        url: 'https://flair-plastic.hu/images/og-image-square.jpg',
         width: 1200,
         height: 1200,
         alt: 'Flair Plastic Manufacturing Logo',
@@ -82,15 +82,15 @@ const config: DefaultSeoProps = {
   languageAlternates: [
     {
       hrefLang: 'en',
-      href: 'https://flairplastic.com/en',
+      href: 'https://flair-plastic.hu/en',
     },
     {
       hrefLang: 'hu',
-      href: 'https://flairplastic.com/hu',
+      href: 'https://flair-plastic.hu/hu',
     },
     {
       hrefLang: 'x-default',
-      href: 'https://flairplastic.com',
+      href: 'https://flair-plastic.hu',
     },
   ],
 };

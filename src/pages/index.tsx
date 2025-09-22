@@ -24,7 +24,7 @@ export default function Home() {
         <meta property="og:title" content={seoConfig.title} />
         <meta property="og:description" content={seoConfig.description} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://flairplastic.com/" />
+        <meta property="og:url" content="https://flair-plastic.hu/" />
         
         {/* Twitter Card */}
         <meta name="twitter:title" content={seoConfig.title} />
@@ -40,7 +40,7 @@ export default function Home() {
           />
         ))}
         
-        <link rel="canonical" href="https://flairplastic.com/" />
+        <link rel="canonical" href="https://flair-plastic.hu/" />
       </Head>
       <div className="min-h-screen">
         <div className="relative">

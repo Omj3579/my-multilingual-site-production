@@ -275,7 +275,7 @@ export default function CareersPage() {
         <meta property="og:title" content={seoConfig.title} />
         <meta property="og:description" content={seoConfig.description} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://flairplastic.com/company/careers" />
+        <meta property="og:url" content="https://flair-plastic.hu/company/careers" />
         
         {/* Twitter Card */}
         <meta name="twitter:title" content={seoConfig.title} />
@@ -291,7 +291,7 @@ export default function CareersPage() {
           />
         ))}
         
-        <link rel="canonical" href="https://flairplastic.com/company/careers" />
+        <link rel="canonical" href="https://flair-plastic.hu/company/careers" />
       </Head>
       
       {/* Hero Section */}

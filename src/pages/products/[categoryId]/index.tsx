@@ -91,10 +91,10 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ categoryId, categoryData })
         <meta property="og:title" content={categorySEO?.openGraph.title[language] || categorySEO?.openGraph.title.en || seoTitle} />
         <meta property="og:description" content={categorySEO?.openGraph.description[language] || categorySEO?.openGraph.description.en || seoDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://flairplastic.com/products/${categoryId}`} />
+        <meta property="og:url" content={`https://flair-plastic.hu/products/${categoryId}`} />
         {categorySEO?.openGraph.images[0] && (
           <>
-            <meta property="og:image" content={`https://flairplastic.com${categorySEO.openGraph.images[0].url}`} />
+            <meta property="og:image" content={`https://flair-plastic.hu${categorySEO.openGraph.images[0].url}`} />
             <meta property="og:image:width" content={categorySEO.openGraph.images[0].width.toString()} />
             <meta property="og:image:height" content={categorySEO.openGraph.images[0].height.toString()} />
             <meta property="og:image:alt" content={categorySEO.openGraph.images[0].alt[language] || categorySEO.openGraph.images[0].alt.en} />
@@ -106,16 +106,16 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ categoryId, categoryData })
         <meta name="twitter:title" content={categorySEO?.openGraph.title[language] || categorySEO?.openGraph.title.en || seoTitle} />
         <meta name="twitter:description" content={categorySEO?.openGraph.description[language] || categorySEO?.openGraph.description.en || seoDescription} />
         {categorySEO?.openGraph.images[0] && (
-          <meta name="twitter:image" content={`https://flairplastic.com${categorySEO.openGraph.images[0].url}`} />
+          <meta name="twitter:image" content={`https://flair-plastic.hu${categorySEO.openGraph.images[0].url}`} />
         )}
         
         {/* Canonical URL */}
-        <link rel="canonical" href={`https://flairplastic.com/products/${categoryId}`} />
+        <link rel="canonical" href={`https://flair-plastic.hu/products/${categoryId}`} />
         
         {/* Alternate languages */}
-        <link rel="alternate" hrefLang="en" href={`https://flairplastic.com/en/products/${categoryId}`} />
-        <link rel="alternate" hrefLang="hu" href={`https://flairplastic.com/hu/products/${categoryId}`} />
-        <link rel="alternate" hrefLang="x-default" href={`https://flairplastic.com/products/${categoryId}`} />
+        <link rel="alternate" hrefLang="en" href={`https://flair-plastic.hu/en/products/${categoryId}`} />
+        <link rel="alternate" hrefLang="hu" href={`https://flair-plastic.hu/hu/products/${categoryId}`} />
+        <link rel="alternate" hrefLang="x-default" href={`https://flair-plastic.hu/products/${categoryId}`} />
         
         {/* Structured Data */}
         {structuredData && (

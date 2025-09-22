@@ -85,10 +85,10 @@ export const PRODUCT_SEO_TEMPLATES: ProductSEO = {
       "manufacturer": {
         "@type": "Organization",
         "name": "Flair Plastic Manufacturing",
-        "url": "https://flairplastic.com"
+        "url": "https://flair-plastic.hu"
       },
-      "url": `https://flairplastic.com/products/${categoryId}/${product.id}`,
-      "image": product.images?.[0] ? `https://flairplastic.com${product.images[0]}` : undefined,
+      "url": `https://flair-plastic.hu/products/${categoryId}/${product.id}`,
+      "image": product.images?.[0] ? `https://flair-plastic.hu${product.images[0]}` : undefined,
       "offers": {
         "@type": "Offer",
         "availability": "https://schema.org/InStock",
@@ -122,25 +122,25 @@ export const PRODUCT_SEO_TEMPLATES: ProductSEO = {
             "@type": "ListItem",
             "position": 1,
             "name": language === 'hu' ? "Kezdőlap" : "Home",
-            "item": "https://flairplastic.com"
+            "item": "https://flair-plastic.hu"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": language === 'hu' ? "Termékek" : "Products",
-            "item": "https://flairplastic.com/products"
+            "item": "https://flair-plastic.hu/products"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": categoryName,
-            "item": `https://flairplastic.com/products/${categoryId}`
+            "item": `https://flair-plastic.hu/products/${categoryId}`
           },
           {
             "@type": "ListItem",
             "position": 4,
             "name": productName,
-            "item": `https://flairplastic.com/products/${categoryId}/${product.id}`
+            "item": `https://flair-plastic.hu/products/${categoryId}/${product.id}`
           }
         ]
       }

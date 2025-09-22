@@ -25,7 +25,7 @@ const Sustainability = () => {
         <meta property="og:title" content={seoConfig.title} />
         <meta property="og:description" content={seoConfig.description} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://flairplastic.com/sustainability" />
+        <meta property="og:url" content="https://flair-plastic.hu/sustainability" />
         
         {/* Twitter Card */}
         <meta name="twitter:title" content={seoConfig.title} />
@@ -41,7 +41,7 @@ const Sustainability = () => {
           />
         ))}
         
-        <link rel="canonical" href="https://flairplastic.com/sustainability" />
+        <link rel="canonical" href="https://flair-plastic.hu/sustainability" />
       </Head>
       <div className="min-h-screen">
         <HeroSection />

@@ -27,7 +27,7 @@ const CompanyOverview = () => {
         <meta property="og:title" content={seoConfig.title} />
         <meta property="og:description" content={seoConfig.description} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://flairplastic.com/company" />
+        <meta property="og:url" content="https://flair-plastic.hu/company" />
         
         {/* Twitter Card */}
         <meta name="twitter:title" content={seoConfig.title} />
@@ -43,7 +43,7 @@ const CompanyOverview = () => {
           />
         ))}
         
-        <link rel="canonical" href="https://flairplastic.com/company" />
+        <link rel="canonical" href="https://flair-plastic.hu/company" />
       </Head>
       <div className="min-h-screen">
         <motion.div

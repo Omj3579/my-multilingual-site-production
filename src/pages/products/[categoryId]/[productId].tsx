@@ -109,10 +109,10 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ product, category
         <meta property="og:title" content={seoTitle} />
         <meta property="og:description" content={seoDescription} />
         <meta property="og:type" content="product" />
-        <meta property="og:url" content={`https://flairplastic.com/products/${categoryId}/${product.id}`} />
+        <meta property="og:url" content={`https://flair-plastic.hu/products/${categoryId}/${product.id}`} />
         {product.images?.[0] && (
           <>
-            <meta property="og:image" content={`https://flairplastic.com${product.images[0]}`} />
+            <meta property="og:image" content={`https://flair-plastic.hu${product.images[0]}`} />
             <meta property="og:image:width" content="800" />
             <meta property="og:image:height" content="600" />
             <meta property="og:image:alt" content={product.name?.[language] || product.name?.en || 'Flair Plastic Product'} />
@@ -124,16 +124,16 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ product, category
         <meta name="twitter:title" content={seoTitle} />
         <meta name="twitter:description" content={seoDescription} />
         {product.images?.[0] && (
-          <meta name="twitter:image" content={`https://flairplastic.com${product.images[0]}`} />
+          <meta name="twitter:image" content={`https://flair-plastic.hu${product.images[0]}`} />
         )}
         
         {/* Canonical URL */}
-        <link rel="canonical" href={`https://flairplastic.com/products/${categoryId}/${product.id}`} />
+        <link rel="canonical" href={`https://flair-plastic.hu/products/${categoryId}/${product.id}`} />
         
         {/* Alternate languages */}
-        <link rel="alternate" hrefLang="en" href={`https://flairplastic.com/en/products/${categoryId}/${product.id}`} />
-        <link rel="alternate" hrefLang="hu" href={`https://flairplastic.com/hu/products/${categoryId}/${product.id}`} />
-        <link rel="alternate" hrefLang="x-default" href={`https://flairplastic.com/products/${categoryId}/${product.id}`} />
+        <link rel="alternate" hrefLang="en" href={`https://flair-plastic.hu/en/products/${categoryId}/${product.id}`} />
+        <link rel="alternate" hrefLang="hu" href={`https://flair-plastic.hu/hu/products/${categoryId}/${product.id}`} />
+        <link rel="alternate" hrefLang="x-default" href={`https://flair-plastic.hu/products/${categoryId}/${product.id}`} />
         
         {/* Structured Data */}
         <script

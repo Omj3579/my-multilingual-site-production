@@ -317,7 +317,7 @@ export const generateCategoryStructuredData = (categoryId: string, language: str
     "@type": "CollectionPage",
     "name": categorySEO.structuredData.name[language] || categorySEO.structuredData.name.en,
     "description": categorySEO.structuredData.description[language] || categorySEO.structuredData.description.en,
-    "url": `https://flairplastic.com/products/${categoryId}`,
+    "url": `https://flair-plastic.hu/products/${categoryId}`,
     "mainEntity": {
       "@type": "ItemList",
       "name": categorySEO.structuredData.name[language] || categorySEO.structuredData.name.en,
@@ -329,7 +329,7 @@ export const generateCategoryStructuredData = (categoryId: string, language: str
       "manufacturer": {
         "@type": "Organization",
         "name": categorySEO.structuredData.manufacturer,
-        "url": "https://flairplastic.com"
+        "url": "https://flair-plastic.hu"
       }
     },
     "breadcrumb": {
@@ -339,19 +339,19 @@ export const generateCategoryStructuredData = (categoryId: string, language: str
           "@type": "ListItem",
           "position": 1,
           "name": language === 'hu' ? "Kezdőlap" : "Home",
-          "item": "https://flairplastic.com"
+          "item": "https://flair-plastic.hu"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": language === 'hu' ? "Termékek" : "Products",
-          "item": "https://flairplastic.com/products"
+          "item": "https://flair-plastic.hu/products"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": categorySEO.structuredData.name[language] || categorySEO.structuredData.name.en,
-          "item": `https://flairplastic.com/products/${categoryId}`
+          "item": `https://flair-plastic.hu/products/${categoryId}`
         }
       ]
     }
