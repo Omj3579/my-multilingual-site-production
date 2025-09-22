@@ -18,8 +18,16 @@ const nextConfig: NextConfig = {
   
   // SEO and Performance optimizations
   experimental: {
-    scrollRestoration: true
+    scrollRestoration: true,
+    optimizeCss: true,
+    gzipSize: true
   },
+  
+  // Advanced SEO Configuration for Plastic Injection Moulding Services
+  generateEtags: false, // Better for caching
+  
+  // Enable trailing slashes for better SEO consistency
+  trailingSlash: false,
   
   // Memory optimization
   webpack: (config, { dev, isServer }) => {
@@ -61,7 +69,7 @@ const nextConfig: NextConfig = {
     ]
   },
   
-  // Image optimization
+  // Image optimization for manufacturing services
   images: {
     remotePatterns: [
       {
@@ -83,16 +91,16 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
-    // Optimize images for production
-    formats: ['image/webp', 'image/avif'],
-    minimumCacheTTL: 60,
+    // Optimized for manufacturing service images
+    formats: ['image/avif', 'image/webp'], // AVIF first for better compression
+    minimumCacheTTL: 31536000, // 1 year for service images
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 512],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   
-  // Headers for security and SEO
+  // Headers for security and SEO optimization
   async headers() {
     return [
       {
@@ -113,6 +121,15 @@ const nextConfig: NextConfig = {
           {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()'
+          },
+          // Additional SEO and performance headers
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on'
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload'
           }
         ]
       },
@@ -131,20 +148,69 @@ const nextConfig: NextConfig = {
           {
             key: 'Content-Type',
             value: 'application/xml'
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, s-maxage=3600'
+          }
+        ]
+      },
+      // Service page specific headers for better SEO
+      {
+        source: '/services/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, s-maxage=7200, stale-while-revalidate=86400'
+          },
+          {
+            key: 'X-Robots-Tag',
+            value: 'index, follow, max-image-preview:large, max-snippet:-1'
+          }
+        ]
+      },
+      // Manufacturing service images optimization
+      {
+        source: '/images/services/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable'
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff'
           }
         ]
       }
     ]
   },
   
-  // Redirects for SEO
+  // Redirects for SEO - Enhanced for manufacturing services
   async redirects() {
     return [
+      // Legacy service page redirects
       {
         source: '/capabilities/plastic-injection',
         destination: '/services/plastic-injection-moulding',
         permanent: true,
       },
+      {
+        source: '/capabilities/injection-molding',
+        destination: '/services/plastic-injection-moulding', 
+        permanent: true,
+      },
+      {
+        source: '/capabilities/imd',
+        destination: '/services/in-mould-decoration',
+        permanent: true,
+      },
+      {
+        source: '/capabilities/iml',
+        destination: '/services/in-mould-labelling',
+        permanent: true,
+      },
+      // Content redirects
       {
         source: '/blog/:slug*',
         destination: '/resources/blog/:slug*',
@@ -160,6 +226,12 @@ const nextConfig: NextConfig = {
         destination: '/resources/case-studies/:slug*',
         permanent: true,
       },
+      // Old service structure redirects
+      {
+        source: '/manufacturing/:slug*',
+        destination: '/services/:slug*',
+        permanent: true,
+      },
       // Redirect old sitemap locations
       {
         source: '/sitemap.xml',
@@ -170,11 +242,22 @@ const nextConfig: NextConfig = {
         source: '/robots.txt',
         destination: '/api/robots.txt',
         permanent: true,
+      },
+      // Service-specific SEO redirects
+      {
+        source: '/plastic-injection',
+        destination: '/services/plastic-injection-moulding',
+        permanent: true,
+      },
+      {
+        source: '/contract-manufacturing-services',
+        destination: '/services/contract-manufacturing',
+        permanent: true,
       }
     ];
   },
   
-  // Rewrites for SEO-friendly URLs
+  // Rewrites for SEO-friendly URLs and manufacturing services
   async rewrites() {
     return [
       {
@@ -188,6 +271,53 @@ const nextConfig: NextConfig = {
       {
         source: '/site.webmanifest',
         destination: '/api/site.webmanifest'
+      },
+      // Service-specific sitemap rewrites
+      {
+        source: '/services-sitemap.xml',
+        destination: '/api/services-sitemap.xml'
+      },
+      {
+        source: '/manufacturing-sitemap.xml', 
+        destination: '/api/services-sitemap.xml'
+      },
+      // Professional SEO-friendly service URLs
+      {
+        source: '/services/precision-plastic-injection-moulding',
+        destination: '/services/plastic-injection-moulding'
+      },
+      {
+        source: '/services/advanced-in-mould-labelling-iml',
+        destination: '/services/in-mould-labelling'
+      },
+      {
+        source: '/services/luxury-in-mould-decoration-imd', 
+        destination: '/services/in-mould-decoration'
+      },
+      {
+        source: '/services/professional-contract-manufacturing',
+        destination: '/services/contract-manufacturing'
+      },
+      {
+        source: '/services/advanced-surface-finishing-solutions',
+        destination: '/services/surface-finishing'
+      },
+      {
+        source: '/services/professional-assembly-integration',
+        destination: '/services/assembly'
+      },
+      // Legacy SEO redirects maintained for compatibility
+      {
+        source: '/injection-molding',
+        destination: '/services/plastic-injection-moulding'
+      },
+      {
+        source: '/imd-services',
+        destination: '/services/in-mould-decoration'
+      },
+      {
+        source: '/iml-services', 
+        destination: '/services/in-mould-labelling'
       }
     ];
   }
