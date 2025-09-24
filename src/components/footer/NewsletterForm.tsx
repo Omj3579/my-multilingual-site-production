@@ -11,7 +11,8 @@ interface NewsletterFormProps {
 
 const NewsletterForm: React.FC<NewsletterFormProps> = ({ className = "" }) => {
   const { language } = useLanguage();
-  const { trackFormStart, trackFormSubmit, trackFormSuccess, trackFormError } = useFormAnalytics('newsletter');
+  // Temporarily disable analytics - keeping only trackFormStart for focus event
+  const { trackFormStart } = useFormAnalytics('newsletter');
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -36,15 +37,16 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className = "" }) => {
     if (!email || !/\S+@\S+\.\S+/.test(email)) {
       const errorMessage = language === 'en' ? 'Please enter a valid email address' : 'Kérjük, adjon meg egy érvényes email címet';
       setError(errorMessage);
-      trackFormError(errorMessage, { email_invalid: true });
+      // Temporarily disable analytics tracking
+      // trackFormError(errorMessage, { email_invalid: true });
       return;
     }
 
     setIsSubmitting(true);
     setError('');
     
-    // Track form submission attempt
-    trackFormSubmit({ email: email });
+    // Track form submission attempt - temporarily disabled
+    // trackFormSubmit({ email: email });
     
     try {
       const response = await fetch('/api/newsletter', {
@@ -59,7 +61,14 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className = "" }) => {
         }),
       });
 
-      const result = await response.json();
+      let result;
+      try {
+        const responseText = await response.text();
+        result = responseText ? JSON.parse(responseText) : {};
+      } catch (jsonError) {
+        console.error('Failed to parse JSON response:', jsonError);
+        throw new Error('Invalid response from server');
+      }
 
       if (!response.ok || !result.success) {
         // Use the specific error message from the API
@@ -69,12 +78,12 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className = "" }) => {
       setIsSuccess(true);
       setEmail('');
       
-      // Track successful submission
-      trackFormSuccess({ 
-        email: email,
-        source: 'footer',
-        language: language 
-      });
+      // Track successful submission - temporarily disabled
+      // trackFormSuccess({ 
+      //   email: email,
+      //   source: 'footer',
+      //   language: language 
+      // });
       
       // Reset success state after 3 seconds
       setTimeout(() => setIsSuccess(false), 3000);
@@ -90,9 +99,10 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className = "" }) => {
       }
       
       setError(errorMessage);
-      trackFormError(errorMessage, { 
-        error: error instanceof Error ? error.message : 'Unknown error' 
-      });
+      // Temporarily disable analytics tracking
+      // trackFormError(errorMessage, { 
+      //   error: error instanceof Error ? error.message : 'Unknown error' 
+      // });
     } finally {
       setIsSubmitting(false);
     }

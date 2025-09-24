@@ -100,7 +100,7 @@ export default async function handler(
       message: 'This endpoint accepts POST (subscribe) and DELETE (unsubscribe) requests'
     })
   }
-  
+
   try {
     // Rate limiting
     const rateLimitKey = getRateLimitKey(req)
