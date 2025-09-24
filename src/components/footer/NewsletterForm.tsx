@@ -62,6 +62,7 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className = "" }) => {
       const result = await response.json();
 
       if (!response.ok || !result.success) {
+        // Use the specific error message from the API
         throw new Error(result.message || 'Failed to subscribe to newsletter');
       }
       
@@ -79,7 +80,15 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className = "" }) => {
       setTimeout(() => setIsSuccess(false), 3000);
       
     } catch (error) {
-      const errorMessage = language === 'en' ? 'Something went wrong. Please try again.' : 'Valami hiba történt. Kérjük, próbálja újra.';
+      // Use the specific error message if it's an API error, otherwise use generic message
+      let errorMessage: string;
+      
+      if (error instanceof Error && error.message && error.message !== 'Failed to subscribe to newsletter') {
+        errorMessage = error.message;
+      } else {
+        errorMessage = language === 'en' ? 'Something went wrong. Please try again.' : 'Valami hiba történt. Kérjük, próbálja újra.';
+      }
+      
       setError(errorMessage);
       trackFormError(errorMessage, { 
         error: error instanceof Error ? error.message : 'Unknown error' 
