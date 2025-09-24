@@ -21,22 +21,34 @@ interface CategoryPageProps {
 export async function getStaticPaths() {
   const data = fetchCategoryDescriptions();
   const categoryIds = Object.keys(data.categories || {});
+  const locales = ['en', 'hu', 'de']; // All supported locales
+  
+  // Generate paths for all locales and categories
+  const paths = locales.flatMap((locale) =>
+    categoryIds.map((categoryId) => ({
+      params: { categoryId },
+      locale,
+    }))
+  );
+  
   return {
-    paths: categoryIds.map((categoryId) => ({ params: { categoryId } })),
+    paths,
     fallback: false,
   };
 }
 
-export async function getStaticProps({ params }: { params: { categoryId: string } }) {
+export async function getStaticProps({ params, locale }: { params: { categoryId: string }, locale: string }) {
   const { categoryId } = params;
   const products = fetchProductsByCategory(categoryId);
   const data = fetchCategoryDescriptions();
   const categoryData = data.categories?.[categoryId] || {};
+  
   return {
     props: {
       categoryId,
       products,
       categoryData,
+      locale, // Pass locale to component if needed
     },
   };
 }

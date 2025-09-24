@@ -21,19 +21,26 @@ interface ProductDetailPageProps {
 export async function getStaticPaths() {
   const { categories } = fetchCategoryDescriptions();
   const categoryIds = Object.keys(categories || {});
-  let paths: { params: { categoryId: string; productId: string } }[] = [];
+  const locales = ['en', 'hu', 'de']; // All supported locales
+  
+  let paths: { params: { categoryId: string; productId: string }, locale: string }[] = [];
+  
   for (const categoryId of categoryIds) {
     const products = fetchProductsByCategory(categoryId);
-    paths = paths.concat(
-      products.map((product: Product) => ({
-        params: { categoryId, productId: product.id },
-      }))
-    );
+    for (const locale of locales) {
+      paths = paths.concat(
+        products.map((product: Product) => ({
+          params: { categoryId, productId: product.id },
+          locale,
+        }))
+      );
+    }
   }
+  
   return { paths, fallback: false };
 }
 
-export async function getStaticProps({ params }: { params: { categoryId: string; productId: string } }) {
+export async function getStaticProps({ params, locale }: { params: { categoryId: string; productId: string }, locale: string }) {
   const { categoryId, productId } = params;
   const product = fetchProductById(categoryId, productId);
   const data = fetchCategoryDescriptions();
@@ -44,6 +51,7 @@ export async function getStaticProps({ params }: { params: { categoryId: string;
       product,
       categoryId,
       categoryData,
+      locale, // Pass locale to component if needed
     },
   };
 }
