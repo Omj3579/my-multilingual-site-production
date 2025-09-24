@@ -43,30 +43,15 @@ const nextConfig: NextConfig = {
     return config
   },
   
-  // Advanced Internationalization Configuration
+  // Advanced Internationalization Configuration - Path-based routing
   i18n: {
-    // Core locale settings
+    // Core locale settings for path-based routing
     locales: ['en', 'hu', 'de'],
     defaultLocale: 'en',
     
-    // Domain-based routing with intelligent fallbacks
-    domains: [
-      {
-        domain: 'en.flair-plastic.hu',
-        defaultLocale: 'en',
-        // English domain serves only English content
-      },
-      {
-        domain: 'hu.flair-plastic.hu', 
-        defaultLocale: 'hu',
-        // Hungarian domain with English fallback capability
-      },
-      {
-        domain: 'de.flair-plastic.hu',
-        defaultLocale: 'de',
-        // German domain with English fallback capability
-      }
-    ]
+    // Using single domain with path-based routing (/en/, /hu/, /de/)
+    // Language switching handled through header/navigation
+    // URLs: flair-plastic.hu/en/page, flair-plastic.hu/hu/page, flair-plastic.hu/de/page
   },
   
   // Image optimization for manufacturing services
