@@ -1,33 +1,21 @@
 /**
- * Advanced i18n Middleware
- * Handles intelligent locale detection, redirects, and performance optimizations
+ * Path-based i18n Middleware
+ * Handles locale detection and redirects for single domain with path prefixes
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import { LOCALE_CONFIG, SupportedLocale } from './src/utils/advanced-i18n';
 
-// Configuration for middleware
-const MIDDLEWARE_CONFIG = {
-  // Enable intelligent redirects based on Accept-Language header
-  enableSmartRedirects: true,
-  
-  // Enable geolocation-based suggestions (requires additional service)
-  enableGeolocation: false,
-  
-  // Cache headers for static assets
-  staticAssetsCacheTTL: 31536000, // 1 year
-  
-  // API rate limiting
-  enableRateLimit: true,
-  rateLimitWindow: 60000, // 1 minute
-  rateLimitMaxRequests: 100
-};
+// Configuration
+const SUPPORTED_LOCALES = ['en', 'hu', 'de'] as const;
+const DEFAULT_LOCALE = 'en';
+
+type SupportedLocale = typeof SUPPORTED_LOCALES[number];
 
 /**
  * Extract preferred locale from Accept-Language header
  */
 function getPreferredLocaleFromHeader(acceptLanguage: string | null): SupportedLocale {
-  if (!acceptLanguage) return 'en';
+  if (!acceptLanguage) return DEFAULT_LOCALE;
   
   // Parse Accept-Language header
   const languages = acceptLanguage
@@ -43,43 +31,32 @@ function getPreferredLocaleFromHeader(acceptLanguage: string | null): SupportedL
 
   // Find first supported language
   for (const { code } of languages) {
-    if (code in LOCALE_CONFIG) {
+    if (SUPPORTED_LOCALES.includes(code as SupportedLocale)) {
       return code as SupportedLocale;
     }
   }
   
-  return 'en';
+  return DEFAULT_LOCALE;
 }
 
 /**
- * Check if the current hostname matches the expected locale domain
+ * Check if pathname has locale prefix
  */
-function validateDomainLocale(hostname: string, locale: SupportedLocale): boolean {
-  const expectedDomain = LOCALE_CONFIG[locale].domain;
-  return hostname === expectedDomain.replace(/^https?:\/\//, '');
-}
-
-/**
- * Generate redirect response to appropriate locale domain
- */
-function createLocaleRedirect(
-  request: NextRequest, 
-  targetLocale: SupportedLocale
-): NextResponse {
-  const targetDomain = LOCALE_CONFIG[targetLocale].domain;
-  const protocol = request.nextUrl.protocol;
-  const pathname = request.nextUrl.pathname;
-  const search = request.nextUrl.search;
+function getLocaleFromPathname(pathname: string): { locale: SupportedLocale | null; pathnameWithoutLocale: string } {
+  const segments = pathname.split('/');
+  const maybeLocale = segments[1];
   
-  const redirectUrl = `${protocol}//${targetDomain}${pathname}${search}`;
+  if (SUPPORTED_LOCALES.includes(maybeLocale as SupportedLocale)) {
+    return {
+      locale: maybeLocale as SupportedLocale,
+      pathnameWithoutLocale: '/' + segments.slice(2).join('/')
+    };
+  }
   
-  return NextResponse.redirect(redirectUrl, {
-    status: 302, // Temporary redirect to allow for future changes
-    headers: {
-      'Cache-Control': 'no-cache, no-store, must-revalidate',
-      'Vary': 'Accept-Language'
-    }
-  });
+  return {
+    locale: null,
+    pathnameWithoutLocale: pathname
+  };
 }
 
 /**
@@ -93,9 +70,6 @@ function addSecurityHeaders(response: NextResponse): NextResponse {
   response.headers.set('X-Content-Type-Options', 'nosniff');
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
   
-  // Performance headers
-  response.headers.set('X-Powered-By', ''); // Remove default Next.js header
-  
   return response;
 }
 
@@ -105,13 +79,6 @@ function addSecurityHeaders(response: NextResponse): NextResponse {
 function addI18nHeaders(response: NextResponse, locale: SupportedLocale): NextResponse {
   response.headers.set('Content-Language', locale);
   response.headers.set('Vary', 'Accept-Language');
-  
-  // Add alternate language hints
-  const alternateLinks = Object.entries(LOCALE_CONFIG)
-    .map(([loc, config]) => `<https://${config.domain}>; rel="alternate"; hreflang="${loc}"`)
-    .join(', ');
-    
-  response.headers.set('Link', alternateLinks);
   
   return response;
 }
@@ -123,18 +90,20 @@ function handleStaticAssets(request: NextRequest): NextResponse | null {
   const pathname = request.nextUrl.pathname;
   
   // Check for static assets
-  const isStaticAsset = /\\.(js|css|png|jpg|jpeg|gif|ico|svg|webp|woff|woff2|ttf|eot)$/.test(pathname);
+  const isStaticAsset = /\.(js|css|png|jpg|jpeg|gif|ico|svg|webp|woff|woff2|ttf|eot)$/.test(pathname);
   const isNextAsset = pathname.startsWith('/_next/');
-  const isPublicAsset = pathname.startsWith('/public/');
+  const isApiRoute = pathname.startsWith('/api/');
   
-  if (isStaticAsset || isNextAsset || isPublicAsset) {
+  if (isStaticAsset || isNextAsset || isApiRoute) {
     const response = NextResponse.next();
     
-    // Add aggressive caching for static assets
-    response.headers.set(
-      'Cache-Control', 
-      `public, max-age=${MIDDLEWARE_CONFIG.staticAssetsCacheTTL}, immutable`
-    );
+    // Add caching for static assets
+    if (isStaticAsset) {
+      response.headers.set(
+        'Cache-Control', 
+        'public, max-age=31536000, immutable'
+      );
+    }
     
     return response;
   }
@@ -142,116 +111,52 @@ function handleStaticAssets(request: NextRequest): NextResponse | null {
   return null;
 }
 
-/**
- * Simple rate limiting implementation
- */
-const rateLimit = new Map<string, { count: number; resetTime: number }>();
-
-function checkRateLimit(clientId: string): boolean {
-  if (!MIDDLEWARE_CONFIG.enableRateLimit) return true;
-  
-  const now = Date.now();
-  const windowStart = now - MIDDLEWARE_CONFIG.rateLimitWindow;
-  
-  // Clean up old entries
-  for (const [id, data] of rateLimit) {
-    if (data.resetTime < windowStart) {
-      rateLimit.delete(id);
-    }
-  }
-  
-  const current = rateLimit.get(clientId) || { count: 0, resetTime: now + MIDDLEWARE_CONFIG.rateLimitWindow };
-  
-  if (current.count >= MIDDLEWARE_CONFIG.rateLimitMaxRequests) {
-    return false;
-  }
-  
-  current.count++;
-  rateLimit.set(clientId, current);
-  
-  return true;
-}
-
-/**
- * Main middleware function
- */
 export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-  
-  // Skip middleware for API routes, _next, and other system paths
-  if (
-    pathname.startsWith('/api/') ||
-    pathname.startsWith('/_next/') ||
-    pathname.startsWith('/favicon') ||
-    pathname.includes('.')
-  ) {
-    return handleStaticAssets(request) || NextResponse.next();
+  // Handle static assets first
+  const staticResponse = handleStaticAssets(request);
+  if (staticResponse) {
+    return staticResponse;
   }
+
+  const pathname = request.nextUrl.pathname;
   
-  // Rate limiting
-  const forwardedFor = request.headers.get('x-forwarded-for');
-  const clientId = forwardedFor?.split(',')[0] || 'anonymous';
-  if (!checkRateLimit(clientId)) {
-    return new NextResponse('Too Many Requests', {
-      status: 429,
-      headers: {
-        'Retry-After': String(Math.ceil(MIDDLEWARE_CONFIG.rateLimitWindow / 1000))
-      }
-    });
+  // Skip middleware for specific paths
+  if (pathname.startsWith('/_next') || 
+      pathname.startsWith('/api/') || 
+      pathname.includes('.')) {
+    return NextResponse.next();
   }
+
+  // Check if pathname already has locale prefix
+  const { locale: currentLocale } = getLocaleFromPathname(pathname);
   
-  // Get current domain and determine locale
-  const hostname = request.headers.get('host') || '';
-  const localeEntry = Object.entries(LOCALE_CONFIG).find(([, config]) => 
-    hostname === config.domain.replace(/^https?:\/\//, '')
-  );
-  const currentLocale = (localeEntry?.[0] as SupportedLocale) || 'en';
-  
-  // Smart locale detection for new visitors
-  if (MIDDLEWARE_CONFIG.enableSmartRedirects) {
-    const hasUserPreference = request.cookies.get('user-selected-locale');
+  // If no locale in path, redirect to default locale path
+  if (!currentLocale) {
+    // Get preferred locale from Accept-Language header
     const acceptLanguage = request.headers.get('accept-language');
+    const preferredLocale = getPreferredLocaleFromHeader(acceptLanguage);
     
-    // Only redirect if:
-    // 1. User hasn't manually selected a language
-    // 2. Current domain doesn't match their preferred language
-    // 3. It's not a bot (has accept-language header)
-    if (!hasUserPreference && acceptLanguage) {
-      const preferredLocale = getPreferredLocaleFromHeader(acceptLanguage);
-      
-      if (preferredLocale !== currentLocale && preferredLocale in LOCALE_CONFIG) {
-        return createLocaleRedirect(request, preferredLocale);
-      }
+    // Only redirect to non-default locale if it's not English
+    if (preferredLocale !== DEFAULT_LOCALE) {
+      const redirectUrl = new URL(`/${preferredLocale}${pathname}`, request.url);
+      return NextResponse.redirect(redirectUrl);
     }
+    
+    // For default locale (English), don't redirect - let Next.js handle it naturally
+    const response = NextResponse.next();
+    addI18nHeaders(response, DEFAULT_LOCALE);
+    addSecurityHeaders(response);
+    return response;
   }
-  
-  // Validate domain-locale consistency
-  if (!validateDomainLocale(hostname, currentLocale)) {
-    // If domain doesn't match expected locale, redirect to correct domain
-    const correctDomain = LOCALE_CONFIG[currentLocale].domain;
-    if (correctDomain !== `https://${hostname}`) {
-      return createLocaleRedirect(request, currentLocale);
-    }
-  }
-  
-  // Continue with request and add headers
+
+  // If locale is in path, continue normally
   const response = NextResponse.next();
-  
-  // Add security headers
-  addSecurityHeaders(response);
-  
-  // Add i18n headers
   addI18nHeaders(response, currentLocale);
-  
-  // Add performance monitoring headers
-  response.headers.set('X-Locale', currentLocale);
-  const hasUserPreference = request.cookies.get('user-selected-locale');
-  response.headers.set('X-Locale-Detection', hasUserPreference ? 'user-preference' : 'auto-detected');
+  addSecurityHeaders(response);
   
   return response;
 }
 
-// Configure which paths the middleware should run on
 export const config = {
   matcher: [
     /*
@@ -260,9 +165,8 @@ export const config = {
      * - _next/static (static files)
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
+     * - public files with extensions
      */
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+    '/((?!api|_next/static|_next/image|favicon.ico|.*\\.).*)',
   ],
 };
-
-export default middleware;
