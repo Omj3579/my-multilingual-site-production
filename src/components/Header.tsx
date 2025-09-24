@@ -5,7 +5,8 @@ import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Logo from './header/Logo';
-import LanguageSwitcher from './header/LanguageSwitcher';
+import MainLanguageSwitcher from './header/MainLanguageSwitcher';
+import ProductLanguageSwitcher from './header/ProductLanguageSwitcher';
 import MobileMenu from './header/MobileMenu';
 import DesktopNavigation from './header/DesktopNavigation';
 import ProductMobileMenu from './header/ProductMobileMenu';
@@ -226,7 +227,7 @@ const Header = () => {
                 }}
               >
                 <div className={shouldShowMobileMenu ? "text-lg font-semibold" : "text-lg xl:text-xl font-semibold"}>
-                  <LanguageSwitcher />
+                  {isProductsPage ? <ProductLanguageSwitcher /> : <MainLanguageSwitcher />}
                 </div>
               </motion.div>              {/* Mobile menu toggle - show for mobile, tablet, and small laptop */}
               {shouldShowMobileMenu && (

@@ -1,36 +1,29 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { useLanguage, Language } from '@/contexts/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import Image from 'next/image';
 
-// All supported languages for backward compatibility
-const ALL_LANGUAGES = [
+// Main site only supports EN and HU
+const MAIN_LANGUAGES = [
   { code: 'en', label: 'English', flag: '/flags/en.svg', shortLabel: 'EN' },
   { code: 'hu', label: 'Hungarian', flag: '/flags/hu.svg', shortLabel: 'HU' },
-  { code: 'de', label: 'German', flag: '/flags/de.svg', shortLabel: 'DE' },
 ] as const;
 
-interface LanguageSwitcherProps {
+interface MainLanguageSwitcherProps {
   className?: string;
-  showAllLanguages?: boolean; // Option to control which languages to show
 }
 
-const LanguageSwitcher = ({ className = '', showAllLanguages = true }: LanguageSwitcherProps) => {
+const MainLanguageSwitcher = ({ className = '' }: MainLanguageSwitcherProps) => {
   const { language, changeLanguage } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Choose languages based on prop
-  const availableLanguages = showAllLanguages 
-    ? ALL_LANGUAGES 
-    : ALL_LANGUAGES.filter(lang => lang.code !== 'de'); // Exclude German for main site
-
-  // For the main button, show the next language to switch to (fixes the original issue)
-  const currentIndex = availableLanguages.findIndex(lang => lang.code === language);
-  const nextIndex = (currentIndex + 1) % availableLanguages.length;
-  const nextLang = availableLanguages[nextIndex];
+  // Get the other language (the one to switch to)
+  const otherLanguage = MAIN_LANGUAGES.find(lang => lang.code !== language);
+  
+  // If current language is not EN or HU, default to switching to HU
+  const switchToLang = otherLanguage || MAIN_LANGUAGES[1];
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -51,7 +44,7 @@ const LanguageSwitcher = ({ className = '', showAllLanguages = true }: LanguageS
 
   return (
     <div ref={dropdownRef} className={`relative ${className}`}>
-      {/* Main button showing the language we can switch TO (fixes the original problem) */}
+      {/* Main button showing the language we can switch TO */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
         onMouseEnter={() => setIsOpen(true)}
@@ -59,16 +52,16 @@ const LanguageSwitcher = ({ className = '', showAllLanguages = true }: LanguageS
         whileTap={{ scale: 0.95 }}
         className="flex items-center space-x-2 transition-colors bg-transparent border-none p-0"
       >
-        {/* Show the flag and label of the NEXT language (what we can switch to) */}
+        {/* Show the flag and label of the language we can switch TO */}
         <Image
-          src={nextLang.flag}
-          alt={nextLang.label}
+          src={switchToLang.flag}
+          alt={switchToLang.label}
           width={32}
           height={24}
           className="object-cover rounded"
         />
         <span className="text-lg font-semibold text-gray-700">
-          {nextLang.shortLabel}
+          {switchToLang.shortLabel}
         </span>
         <ChevronDown 
           className={`h-4 w-4 text-gray-500 transition-transform duration-200 ${
@@ -97,11 +90,11 @@ const LanguageSwitcher = ({ className = '', showAllLanguages = true }: LanguageS
               padding: '8px',
               backdropFilter: 'blur(10px)',
               border: '1px solid rgba(255,255,255,0.5)',
-              minWidth: '160px',
+              minWidth: '150px',
             }}
             onMouseLeave={() => setIsOpen(false)}
           >
-            {availableLanguages.map((lang) => (
+            {MAIN_LANGUAGES.map((lang) => (
               <motion.button
                 key={lang.code}
                 onClick={() => handleLanguageSelect(lang.code)}
@@ -136,4 +129,4 @@ const LanguageSwitcher = ({ className = '', showAllLanguages = true }: LanguageS
   );
 };
 
-export default LanguageSwitcher;
+export default MainLanguageSwitcher;

@@ -1,36 +1,27 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { useLanguage, Language } from '@/contexts/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import Image from 'next/image';
 
-// All supported languages for backward compatibility
-const ALL_LANGUAGES = [
+// Products page supports all three languages
+const PRODUCT_LANGUAGES = [
   { code: 'en', label: 'English', flag: '/flags/en.svg', shortLabel: 'EN' },
   { code: 'hu', label: 'Hungarian', flag: '/flags/hu.svg', shortLabel: 'HU' },
   { code: 'de', label: 'German', flag: '/flags/de.svg', shortLabel: 'DE' },
 ] as const;
 
-interface LanguageSwitcherProps {
+interface ProductLanguageSwitcherProps {
   className?: string;
-  showAllLanguages?: boolean; // Option to control which languages to show
 }
 
-const LanguageSwitcher = ({ className = '', showAllLanguages = true }: LanguageSwitcherProps) => {
+const ProductLanguageSwitcher = ({ className = '' }: ProductLanguageSwitcherProps) => {
   const { language, changeLanguage } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Choose languages based on prop
-  const availableLanguages = showAllLanguages 
-    ? ALL_LANGUAGES 
-    : ALL_LANGUAGES.filter(lang => lang.code !== 'de'); // Exclude German for main site
-
-  // For the main button, show the next language to switch to (fixes the original issue)
-  const currentIndex = availableLanguages.findIndex(lang => lang.code === language);
-  const nextIndex = (currentIndex + 1) % availableLanguages.length;
-  const nextLang = availableLanguages[nextIndex];
+  const currentLang = PRODUCT_LANGUAGES.find(lang => lang.code === language) || PRODUCT_LANGUAGES[0];
+  const otherLanguages = PRODUCT_LANGUAGES.filter(lang => lang.code !== language);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -51,7 +42,7 @@ const LanguageSwitcher = ({ className = '', showAllLanguages = true }: LanguageS
 
   return (
     <div ref={dropdownRef} className={`relative ${className}`}>
-      {/* Main button showing the language we can switch TO (fixes the original problem) */}
+      {/* Main button - for products, show all available options more prominently */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
         onMouseEnter={() => setIsOpen(true)}
@@ -59,17 +50,29 @@ const LanguageSwitcher = ({ className = '', showAllLanguages = true }: LanguageS
         whileTap={{ scale: 0.95 }}
         className="flex items-center space-x-2 transition-colors bg-transparent border-none p-0"
       >
-        {/* Show the flag and label of the NEXT language (what we can switch to) */}
+        {/* Show current language with indicator that more options are available */}
         <Image
-          src={nextLang.flag}
-          alt={nextLang.label}
+          src={currentLang.flag}
+          alt={currentLang.label}
           width={32}
           height={24}
           className="object-cover rounded"
         />
         <span className="text-lg font-semibold text-gray-700">
-          {nextLang.shortLabel}
+          {currentLang.shortLabel}
         </span>
+        <div className="flex space-x-1">
+          {otherLanguages.map((lang) => (
+            <Image
+              key={lang.code}
+              src={lang.flag}
+              alt={lang.label}
+              width={20}
+              height={15}
+              className="object-cover rounded opacity-60"
+            />
+          ))}
+        </div>
         <ChevronDown 
           className={`h-4 w-4 text-gray-500 transition-transform duration-200 ${
             isOpen ? 'rotate-180' : ''
@@ -101,7 +104,7 @@ const LanguageSwitcher = ({ className = '', showAllLanguages = true }: LanguageS
             }}
             onMouseLeave={() => setIsOpen(false)}
           >
-            {availableLanguages.map((lang) => (
+            {PRODUCT_LANGUAGES.map((lang) => (
               <motion.button
                 key={lang.code}
                 onClick={() => handleLanguageSelect(lang.code)}
@@ -136,4 +139,4 @@ const LanguageSwitcher = ({ className = '', showAllLanguages = true }: LanguageS
   );
 };
 
-export default LanguageSwitcher;
+export default ProductLanguageSwitcher;
