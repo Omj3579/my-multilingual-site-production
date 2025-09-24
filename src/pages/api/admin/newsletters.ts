@@ -47,17 +47,53 @@ export default async function handler(
   }
 
   try {
+    console.log('Admin newsletters API - Starting query...')
+    console.log('Supabase URL:', process.env.NEXT_PUBLIC_SUPABASE_URL)
+    console.log('Service Key exists:', !!process.env.SUPABASE_SERVICE_ROLE_KEY)
+    console.log('Service Key prefix:', process.env.SUPABASE_SERVICE_ROLE_KEY?.substring(0, 20) || 'MISSING')
+    
+    // First, try to get just one record to see what columns exist
+    const { data: sampleData, error: sampleError } = await supabaseAdmin
+      .from('newsletter_subscriptions')
+      .select('*')
+      .limit(1)
+
+    console.log('Sample data:', sampleData)
+    console.log('Sample error:', sampleError)
+
+    if (sampleError) {
+      console.error('Sample query error:', sampleError)
+      return res.status(500).json({
+        success: false,
+        error: 'Database error',
+        message: `Failed to fetch newsletter subscriptions: ${sampleError.message}`,
+        debug: {
+          supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL,
+          errorCode: sampleError.code,
+          errorDetails: sampleError.details,
+          errorHint: sampleError.hint
+        }
+      })
+    }
+
+    // If sample worked, get all data without ordering for now
     const { data, error } = await supabaseAdmin
       .from('newsletter_subscriptions')
       .select('*')
-      .order('created_at', { ascending: false })
+
+    console.log('Admin newsletters API - Query result:', { 
+      dataCount: data?.length || 0, 
+      error: error?.message || 'No error',
+      errorCode: error?.code,
+      errorDetails: error?.details 
+    })
 
     if (error) {
       console.error('Supabase error:', error)
       return res.status(500).json({
         success: false,
         error: 'Database error',
-        message: 'Failed to fetch newsletter subscriptions'
+        message: `Failed to fetch newsletter subscriptions: ${error.message}`
       })
     }
 
