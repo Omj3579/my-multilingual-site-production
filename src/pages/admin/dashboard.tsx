@@ -19,6 +19,17 @@ interface FormSubmission {
   referrer?: string
 }
 
+interface NewsletterSubscription {
+  id: string
+  email: string
+  language: string
+  subscribed_at: string
+  status?: string
+  unsubscribed_at?: string | null
+  preferences?: Record<string, unknown>
+  source?: string
+}
+
 interface AnalyticsData {
   total_submissions: number
   today_submissions: number
@@ -152,7 +163,7 @@ export default function FuturisticAdminDashboard() {
           phone: '',
           service_type: 'Newsletter',
           message: `Language: ${newsletter.language}`,
-          created_at: newsletter.created_at,
+          created_at: newsletter.subscribed_at,
           form_type: 'newsletter' as const,
           device_type: 'desktop' as const,
           browser: 'unknown',

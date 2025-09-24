@@ -8,8 +8,11 @@ interface NewsletterSubscription {
   id: string
   email: string
   language: string
-  created_at: string
-  is_active?: boolean
+  subscribed_at: string
+  status?: string
+  unsubscribed_at?: string | null
+  preferences?: Record<string, unknown>
+  source?: string
 }
 
 export default function NewslettersPage() {
@@ -84,7 +87,7 @@ export default function NewslettersPage() {
       value: newsletters.filter(n => {
         const weekAgo = new Date()
         weekAgo.setDate(weekAgo.getDate() - 7)
-        return new Date(n.created_at) > weekAgo
+        return new Date(n.subscribed_at) > weekAgo
       }).length,
       change: 18,
       changeType: 'increase' as const,
@@ -215,7 +218,7 @@ export default function NewslettersPage() {
                       </span>
                     </td>
                     <td className="py-4 px-4 text-gray-400">
-                      {new Date(newsletter.created_at).toLocaleDateString()}
+                      {new Date(newsletter.subscribed_at).toLocaleDateString()}
                     </td>
                     <td className="py-4 px-4">
                       <button 
