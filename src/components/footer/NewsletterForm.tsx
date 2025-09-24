@@ -34,6 +34,12 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className = "" }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Prevent double submissions
+    if (isSubmitting) {
+      console.log('Newsletter form - Submission already in progress, ignoring');
+      return;
+    }
+    
     if (!email || !/\S+@\S+\.\S+/.test(email)) {
       const errorMessage = language === 'en' ? 'Please enter a valid email address' : 'Kérjük, adjon meg egy érvényes email címet';
       setError(errorMessage);
@@ -44,6 +50,7 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className = "" }) => {
 
     setIsSubmitting(true);
     setError('');
+    console.log('Newsletter form - Starting submission for:', email);
     
     // Track form submission attempt - temporarily disabled
     // trackFormSubmit({ email: email });
@@ -72,10 +79,13 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className = "" }) => {
         throw new Error('Invalid response from server');
       }
 
-      console.log('Newsletter form - Response ok:', response.ok, 'Result success:', result.success);
+      console.log('Newsletter form - Response ok:', response.ok, 'Status:', response.status);
+      console.log('Newsletter form - Result success:', result.success, 'Type:', typeof result.success);
+      console.log('Newsletter form - Full result keys:', Object.keys(result));
 
       if (!response.ok || !result.success) {
         console.error('Newsletter form - API error detected');
+        console.error('Newsletter form - Condition details: !response.ok =', !response.ok, '!result.success =', !result.success);
         // Use the specific error message from the API
         throw new Error(result.message || 'Failed to subscribe to newsletter');
       }
