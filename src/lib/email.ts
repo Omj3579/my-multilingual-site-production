@@ -1,7 +1,15 @@
 import { Resend } from 'resend'
 import { ContactFormData, QuoteFormData, NewsletterFormData } from '@/types/database'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Initialize Resend client safely
+const getResendClient = () => {
+  const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey) {
+    console.warn('RESEND_API_KEY not found - email notifications will be disabled')
+    return null
+  }
+  return new Resend(apiKey)
+}
 
 const FROM_EMAIL = process.env.FROM_EMAIL || 'noreply@yourdomain.com'
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@yourdomain.com'
@@ -15,6 +23,12 @@ export interface EmailNotificationService {
 class ResendEmailService implements EmailNotificationService {
   async sendContactNotification(data: ContactFormData): Promise<void> {
     try {
+      const resend = getResendClient()
+      if (!resend) {
+        console.warn('Contact notification skipped - Resend API key not configured')
+        return
+      }
+
       const subject = `New Contact Form Submission from ${data.firstName} ${data.lastName}`
       const htmlContent = `
         <!DOCTYPE html>
@@ -87,6 +101,12 @@ class ResendEmailService implements EmailNotificationService {
 
   async sendQuoteNotification(data: QuoteFormData): Promise<void> {
     try {
+      const resend = getResendClient()
+      if (!resend) {
+        console.warn('Quote notification skipped - Resend API key not configured')
+        return
+      }
+
       const subject = `New Quote Request from ${data.fullName}`
       const cartItemsHtml = data.cartItems?.map(item => `
         <li>
@@ -176,6 +196,12 @@ class ResendEmailService implements EmailNotificationService {
 
   async sendNewsletterNotification(data: NewsletterFormData): Promise<void> {
     try {
+      const resend = getResendClient()
+      if (!resend) {
+        console.warn('Newsletter notification skipped - Resend API key not configured')
+        return
+      }
+
       const subject = `New Newsletter Subscription: ${data.email}`
       const htmlContent = `
         <!DOCTYPE html>
