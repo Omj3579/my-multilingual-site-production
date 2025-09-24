@@ -64,17 +64,23 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className = "" }) => {
       let result;
       try {
         const responseText = await response.text();
+        console.log('Newsletter form - Raw response:', responseText);
         result = responseText ? JSON.parse(responseText) : {};
+        console.log('Newsletter form - Parsed result:', result);
       } catch (jsonError) {
         console.error('Failed to parse JSON response:', jsonError);
         throw new Error('Invalid response from server');
       }
 
+      console.log('Newsletter form - Response ok:', response.ok, 'Result success:', result.success);
+
       if (!response.ok || !result.success) {
+        console.error('Newsletter form - API error detected');
         // Use the specific error message from the API
         throw new Error(result.message || 'Failed to subscribe to newsletter');
       }
       
+      console.log('Newsletter form - Success path reached');
       setIsSuccess(true);
       setEmail('');
       
@@ -89,15 +95,18 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className = "" }) => {
       setTimeout(() => setIsSuccess(false), 3000);
       
     } catch (error) {
-      // Use the specific error message if it's an API error, otherwise use generic message
+      console.error('Newsletter form - Error caught:', error);
+      
+      // Always try to use the specific error message from the thrown error
       let errorMessage: string;
       
-      if (error instanceof Error && error.message && error.message !== 'Failed to subscribe to newsletter') {
+      if (error instanceof Error && error.message) {
         errorMessage = error.message;
       } else {
         errorMessage = language === 'en' ? 'Something went wrong. Please try again.' : 'Valami hiba történt. Kérjük, próbálja újra.';
       }
       
+      console.log('Newsletter form - Final error message:', errorMessage);
       setError(errorMessage);
       // Temporarily disable analytics tracking
       // trackFormError(errorMessage, { 
