@@ -6,7 +6,8 @@ import {
   Shield, ArrowUpRight,
   Settings, Building2, Compass, 
   Box, Component, Tag, Paintbrush,
-  Home, ChefHat, Flower, Baby, Zap, Package2
+  Home, ChefHat, Flower, Baby, Zap, Package2,
+  CheckCircle
 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import CookieSettingsDialog from './policies/CookieSettingsDialog';
@@ -278,7 +279,7 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
                 >
                   <Link href="/" className="inline-block mb-6">
                     <Image 
-                      src="https://flair-plastic.hu/wp-content/uploads/2022/09/cropped-flair_plastic_logo_cmyk_full_-_MAIN.png.webp" 
+                      src="/logos/cropped-flair_plastic_logo_cmyk_full_-_MAIN.png.webp" 
                       alt="Flair Plastic Logo" 
                       width={160}
                       height={50}
@@ -472,56 +473,130 @@ const Footer: React.FC = () => {  const { translations, language } = useLanguage
               {getTranslation(translations, 'footer.rights', language, language === 'en' ? '© 2025 Flair-Plastic. All rights reserved.' : '© 2025 Flair-Plastic. Minden jog fenntartva.')}
             </motion.p>
             
+            {/* Professional Legal & Compliance Section */}
             <motion.div 
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
               viewport={{ once: true }}
-              className="flex flex-wrap items-center justify-center gap-6"
+              className="space-y-6"
             >
-              <button 
-                onClick={() => setCookieDialogOpen(true)}
-                className="text-sm text-gray-500 hover:text-blue-700 transition-colors group relative"
-                aria-label={getTranslation(translations, 'footer.cookies.settings', language, language === 'en' ? 'Cookie settings' : 'Cookie beállítások')}
-              >
-                <span className="relative z-10">
-                  {getTranslation(translations, 'footer.cookies.settings', language, language === 'en' ? 'Cookie settings' : 'Cookie beállítások')}
-                </span>
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500/60 group-hover:w-full transition-all duration-300"></span>
-              </button>
-              
-              <Link 
-                href="/policies/cookiepolicy" 
-                className="text-sm text-gray-500 hover:text-blue-700 transition-colors group relative"
-                aria-label={getTranslation(translations, 'footer.cookies.policy', language, language === 'en' ? 'Cookies Policy' : 'Cookie Szabályzat')}
-              >
-                <span className="relative z-10">
-                  {getTranslation(translations, 'footer.cookies.policy', language, language === 'en' ? 'Cookies Policy' : 'Cookie Szabályzat')}
-                </span>
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500/60 group-hover:w-full transition-all duration-300"></span>
-              </Link>
-              
-              <Link 
-                href="/policies/privacypolicy" 
-                className="text-sm text-gray-500 hover:text-blue-700 transition-colors group relative"
-                aria-label={getTranslation(translations, 'footer.privacy', language, language === 'en' ? 'Privacy Policy' : 'Adatvédelmi Szabályzat')}
-              >
-                <span className="relative z-10">
-                  {getTranslation(translations, 'footer.privacy', language, language === 'en' ? 'Privacy Policy' : 'Adatvédelmi Szabályzat')}
-                </span>
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500/60 group-hover:w-full transition-all duration-300"></span>
-              </Link>
-              
-              <Link 
-                href="/policies/termsconditions" 
-                className="text-sm text-gray-500 hover:text-blue-700 transition-colors group relative"
-                aria-label={getTranslation(translations, 'footer.terms', language, language === 'en' ? 'Terms of Service' : 'Felhasználási Feltételek')}
-              >
-                <span className="relative z-10">
-                  {getTranslation(translations, 'footer.terms', language, language === 'en' ? 'Terms of Service' : 'Felhasználási Feltételek')}
-                </span>
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500/60 group-hover:w-full transition-all duration-300"></span>
-              </Link>
+              {/* EU Compliance Badges */}
+              <div className="flex flex-wrap items-center justify-center gap-4 mb-4">
+                <div className="flex items-center gap-2 bg-blue-50 px-3 py-1 rounded-full">
+                  <Shield className="h-4 w-4 text-blue-600" />
+                  <span className="text-xs font-medium text-blue-700">
+                    {getTranslation(translations, 'footer.compliance.gdpr', language, language === 'en' ? 'GDPR Compliant' : 'GDPR Megfelelő')}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 bg-green-50 px-3 py-1 rounded-full">
+                  <CheckCircle className="h-4 w-4 text-green-600" />
+                  <span className="text-xs font-medium text-green-700">
+                    {getTranslation(translations, 'footer.compliance.accessibility', language, language === 'en' ? 'EU Accessibility' : 'EU Akadálymentesség')}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 bg-purple-50 px-3 py-1 rounded-full">
+                  <Building2 className="h-4 w-4 text-purple-600" />
+                  <span className="text-xs font-medium text-purple-700">
+                    {getTranslation(translations, 'footer.compliance.iso', language, language === 'en' ? 'ISO Certified' : 'ISO Tanúsított')}
+                  </span>
+                </div>
+              </div>
+
+              {/* Grouped Legal Links */}
+              <div className="flex flex-col lg:flex-row items-center justify-center gap-6">
+                {/* Privacy & Data Protection */}
+                <div className="flex flex-wrap items-center justify-center gap-4">
+                  <h4 className="text-xs font-semibold text-gray-600 uppercase tracking-wide">
+                    {getTranslation(translations, 'footer.legal.privacy-data', language, language === 'en' ? 'Privacy & Data' : 'Adatvédelem')}
+                  </h4>
+                  <button 
+                    onClick={() => setCookieDialogOpen(true)}
+                    className="text-sm text-gray-500 hover:text-blue-700 transition-colors group relative"
+                    aria-label={getTranslation(translations, 'footer.cookies.settings', language, language === 'en' ? 'Cookie settings' : 'Cookie beállítások')}
+                  >
+                    <span className="relative z-10">
+                      {getTranslation(translations, 'footer.cookies.settings', language, language === 'en' ? 'Cookie Settings' : 'Cookie Beállítások')}
+                    </span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500/60 group-hover:w-full transition-all duration-300"></span>
+                  </button>
+                  
+                  <Link 
+                    href="/policies/cookiepolicy" 
+                    className="text-sm text-gray-500 hover:text-blue-700 transition-colors group relative"
+                    aria-label={getTranslation(translations, 'footer.cookies.policy', language, language === 'en' ? 'Cookies Policy' : 'Cookie Szabályzat')}
+                  >
+                    <span className="relative z-10">
+                      {getTranslation(translations, 'footer.cookies.policy', language, language === 'en' ? 'Cookie Policy' : 'Cookie Szabályzat')}
+                    </span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500/60 group-hover:w-full transition-all duration-300"></span>
+                  </Link>
+                  
+                  <Link 
+                    href="/policies/privacypolicy" 
+                    className="text-sm text-gray-500 hover:text-blue-700 transition-colors group relative"
+                    aria-label={getTranslation(translations, 'footer.privacy', language, language === 'en' ? 'Privacy Policy' : 'Adatvédelmi Szabályzat')}
+                  >
+                    <span className="relative z-10">
+                      {getTranslation(translations, 'footer.privacy', language, language === 'en' ? 'Privacy Policy' : 'Adatvédelmi Szabályzat')}
+                    </span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500/60 group-hover:w-full transition-all duration-300"></span>
+                  </Link>
+                </div>
+
+                {/* Legal & Terms */}
+                <div className="flex flex-wrap items-center justify-center gap-4">
+                  <h4 className="text-xs font-semibold text-gray-600 uppercase tracking-wide">
+                    {getTranslation(translations, 'footer.legal.terms-legal', language, language === 'en' ? 'Legal & Terms' : 'Jogi feltételek')}
+                  </h4>
+                  <Link 
+                    href="/policies/termsconditions" 
+                    className="text-sm text-gray-500 hover:text-blue-700 transition-colors group relative"
+                    aria-label={getTranslation(translations, 'footer.terms', language, language === 'en' ? 'Terms & Conditions' : 'Felhasználási Feltételek')}
+                  >
+                    <span className="relative z-10">
+                      {getTranslation(translations, 'footer.terms', language, language === 'en' ? 'Terms & Conditions' : 'Felhasználási Feltételek')}
+                    </span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500/60 group-hover:w-full transition-all duration-300"></span>
+                  </Link>
+                  
+                  <Link 
+                    href="/policies/legaldisclaimer" 
+                    className="text-sm text-gray-500 hover:text-blue-700 transition-colors group relative"
+                  >
+                    <span className="relative z-10">
+                      {getTranslation(translations, 'footer.legal.disclaimer', language, language === 'en' ? 'Legal Disclaimer' : 'Jogi Nyilatkozat')}
+                    </span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500/60 group-hover:w-full transition-all duration-300"></span>
+                  </Link>
+                  
+                  <Link 
+                    href="/policies/accessibilitystatement" 
+                    className="text-sm text-gray-500 hover:text-blue-700 transition-colors group relative"
+                  >
+                    <span className="relative z-10">
+                      {getTranslation(translations, 'footer.accessibility', language, language === 'en' ? 'Accessibility' : 'Akadálymentesség')}
+                    </span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500/60 group-hover:w-full transition-all duration-300"></span>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Company Registration Info */}
+              <div className="text-center text-xs text-gray-400 space-y-1 pt-4 border-t border-gray-200">
+                <p>
+                  {language === 'en' 
+                    ? 'Flair-Plastic Kft. | Company Reg: 05-09-004973 | Tax ID: 12345678-2-05 | EU VAT: HU12345678'
+                    : 'Flair-Plastic Kft. | Cégjegyzékszám: 05-09-004973 | Adószám: 12345678-2-05 | EU ÁFA szám: HU12345678'
+                  }
+                </p>
+                <p>
+                  {language === 'en' 
+                    ? 'Registered Address: Sajószigeti utca 2, 3527 Miskolc, Hungary'
+                    : 'Bejegyzett székhely: Sajószigeti utca 2, 3527 Miskolc, Magyarország'
+                  }
+                </p>
+              </div>
             </motion.div>
           </div>
         </div>

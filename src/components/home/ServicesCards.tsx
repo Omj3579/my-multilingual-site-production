@@ -26,7 +26,7 @@ interface Card {
 
 const cards: Card[] = [
   {
-    img: 'https://flair-plastic.hu/wp-content/uploads/2024/09/2.png.webp',
+    img: '/images/homepage/2.png.webp',
     title: {
       en: 'Strategic Manufacturing Partnerships',
       hu: 'Stratégiai Gyártási Partnerségek'
@@ -42,7 +42,7 @@ const cards: Card[] = [
     }
   },
   {
-    img: 'https://flair-plastic.hu/wp-content/uploads/2024/09/1.png.webp',
+    img: '/images/homepage/1.png.webp',
     title: {
       en: 'Advanced Injection Moulding Technology',
       hu: 'Fejlett Fröccsöntési Technológia'
@@ -58,7 +58,7 @@ const cards: Card[] = [
     }
   },
   {
-    img: 'https://flair-plastic.hu/wp-content/uploads/2024/09/household-products.png.webp',
+    img: '/images/homepage/household-products.png.webp',
     title: {
       en: 'Household Products Manufacturing',
       hu: 'Háztartási Termékek Gyártása'

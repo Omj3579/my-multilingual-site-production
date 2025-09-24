@@ -10,7 +10,7 @@ const CookiePolicy = () => {
     <PageLayout>
       <div className="max-w-4xl mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-6">
-          {language === 'en' ? 'Cookies Policy' : 'Cookie szabályzat'}
+          {language === 'en' ? 'Cookie Policy' : 'Cookie Szabályzat'}
         </h1>
         
         <div className="prose prose-lg max-w-none">
@@ -29,61 +29,61 @@ const CookiePolicy = () => {
             </p>
 
             <h3 className="text-xl font-semibold mt-6 mb-3">
-              {language === 'en' ? 'What are cookies?' : 'Mik azok a cookie-k?'}
+              {language === 'en' ? 'What Personal Data We Collect' : 'Milyen személyes adatokat gyűjtünk'}
             </h3>
             <p className="mb-4">
               {language === 'en'
-                ? "Cookies are small text files sent to your computer or mobile device when you visit a website. They are unique to your account or your browser. Cookies are sent back to the originating website on each subsequent visit, or to another website that recognizes that cookie, to develop a record of the user's online activity."
-                : "A cookie-k kis szöveges fájlok, amelyeket a számítógépére vagy mobileszközére küldünk, amikor meglátogat egy weboldalt. Ezek egyediek az Ön fiókjához vagy böngészőjéhez. A cookie-kat minden következő látogatáskor visszaküldjük az eredeti weboldalra, vagy egy másik olyan weboldalra, amely felismeri azt a cookie-t, hogy nyomon kövessük a felhasználó online tevékenységét."}
+                ? "We collect personal data that you provide directly to us through our website, such as when you use contact forms, subscribe to newsletters, or interact with our web content. This may include your name, email address, company information, phone number, and any messages or feedback you provide through our website contact forms."
+                : "Olyan személyes adatokat gyűjtünk, amelyeket Ön közvetlenül ad meg nekünk weboldalunkon keresztül, például amikor kapcsolati űrlapokat használ, hírlevélre iratkozik fel, vagy interakcióba lép webes tartalmunkkal. Ez magában foglalhatja a nevét, e-mail címét, céges adatait, telefonszámát és bármilyen üzenetet vagy visszajelzést, amelyet weboldalunk kapcsolati űrlapjain keresztül nyújt."}
             </p>
 
             <h3 className="text-xl font-semibold mt-6 mb-3">
-              {language === 'en' ? 'How do we use cookies?' : 'Hogyan használjuk a cookie-kat?'}
+              {language === 'en' ? 'How We Use Your Personal Data' : 'Hogyan használjuk személyes adatait'}
             </h3>
             <p className="mb-4">
               {language === 'en'
-                ? "We use cookies to enhance your experience on our website in the following ways:"
-                : "A cookie-kat a következő módokon használjuk a weboldal élményének javítása érdekében:"}
+                ? "We use your personal data for legitimate website and communication purposes:"
+                : "Személyes adatait jogos weboldal és kommunikációs célokra használjuk:"}
             </p>
             <ul className="list-disc pl-6 mb-6">
               <li className="mb-2">
                 {language === 'en'
-                  ? "Preferences: To remember information about your browser and your preferences"
-                  : "Preferenciák: A böngészőjével és beállításaival kapcsolatos információk megjegyzéséhez"}
+                  ? "Website Operations: To process and respond to your website inquiries and contact form submissions"
+                  : "Weboldal működés: Weboldali megkereséseinek és kapcsolatfelvételi űrlap beküldéseinek feldolgozása és megválaszolása"}
               </li>
               <li className="mb-2">
                 {language === 'en'
-                  ? "Security: To help us detect and fight spam, abuse, and other activities that violate Flair-Plastic's policies"
-                  : "Biztonság: Segít észlelni és megakadályozni a spam-et, visszaéléseket és egyéb, a Flair-Plastic szabályzatait sértő tevékenységeket"}
+                  ? "Communication: To send responses to your inquiries and provide information about our company"
+                  : "Kommunikáció: Válaszok küldése megkereséseiére és információ nyújtása vállalatunkról"}
               </li>
               <li className="mb-2">
                 {language === 'en'
-                  ? "Performance And Analytics: To analyze how the Services are being accessed and used"
-                  : "Teljesítmény és analitika: A szolgáltatások használatának elemzéséhez"}
+                  ? "Website Analytics: To analyze website usage patterns and improve user experience"
+                  : "Weboldal elemzés: Weboldal használati minták elemzése és felhasználói élmény javítása"}
               </li>
               <li>
                 {language === 'en'
-                  ? "Advertising: To show relevant advertising both on and off the Flair-Plastic site"
-                  : "Hirdetések: Releváns hirdetések megjelenítéséhez a Flair-Plastic oldalon és azon kívül"}
+                  ? "Legal Compliance: To meet our legal obligations and regulatory requirements"
+                  : "Jogi megfelelés: Jogi kötelezettségeink és szabályozási követelményeink teljesítése"}
               </li>
             </ul>
 
             <h2 className="text-2xl font-semibold mt-8 mb-4">
-              {language === 'en' ? 'Third-party cookies' : 'Harmadik féltől származó cookie-k'}
+              {language === 'en' ? 'Data Sharing and Third Parties' : 'Adatmegosztás és harmadik felek'}
             </h2>
             <p className="mb-4">
               {language === 'en'
-                ? "In addition to the cookies we set when you visit the Flair-Plastic website, we also utilize third-party cookies from our trusted partners for analytics, security, and functionality purposes."
-                : "A Flair-Plastic weboldal által beállított cookie-k mellett harmadik féltől származó cookie-kat is használunk megbízható partnereinktől analitikai, biztonsági és funkcionalitási célokból."}
+                ? "We do not sell, trade, or otherwise transfer your personal data to third parties without your consent, except as outlined in this policy. We may share data with trusted service providers who assist us in operating our website, conducting our business, or serving you, as long as those parties agree to keep this information confidential."
+                : "Személyes adatait nem adjuk el, nem cseréljük vagy más módon nem továbbítjuk harmadik félnek az Ön beleegyezése nélkül, kivéve az ebben a szabályzatban leírtakat. Adatokat oszthatunk meg megbízható szolgáltatókkal, akik segítenek weboldalunk működtetésében, üzletünk vezetésében vagy az Ön kiszolgálásában, amennyiben ezek a felek válalják, hogy bizalmasan kezelik ezeket az információkat."}
             </p>
 
             <h2 className="text-2xl font-semibold mt-8 mb-4">
-              {language === 'en' ? 'Your Cookie Choices' : 'Az Ön cookie választásai'}
+              {language === 'en' ? 'Your Data Protection Rights' : 'Az Ön adatvédelmi jogai'}
             </h2>
             <p className="mb-4">
               {language === 'en'
-                ? "You can manage your cookie preferences through your browser settings. Please note that disabling certain cookies may impact website functionality."
-                : "Cookie beállításait a böngészője beállításain keresztül kezelheti. Kérjük, vegye figyelembe, hogy bizonyos cookie-k letiltása befolyásolhatja a weboldal funkcionalitását."}
+                ? "Under GDPR and applicable data protection laws, you have several rights regarding your personal data, including the right to access, rectify, erase, restrict processing, object to processing, and data portability. To exercise these rights or if you have any privacy-related questions, please contact us at legal@flair-plastic.hu or +36 (46) 584 06 00."
+                : "A GDPR és az alkalmazandó adatvédelmi jogszabályok értelmében számos joggal rendelkezik személyes adataival kapcsolatban, beleértve a hozzáférés, helyesbítés, törlés, feldolgozás korlátozása, feldolgozás elleni kifogás és az adathordozhatóság jogát. Ezen jogok gyakorlásához vagy adatvédelemmel kapcsolatos kérdéseivel forduljon hozzánk a legal@flair-plastic.hu címen vagy a +36 (46) 584 06 00 telefonszámon."}
             </p>
           </section>
         </div>

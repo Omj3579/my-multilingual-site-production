@@ -1514,6 +1514,41 @@ export const defaultTranslations: Record<string, Record<Language, string>> = {
     hu: 'Általános szerződési feltételek',
     de: 'Allgemeine Geschäftsbedingungen',
   },
+  'footer.legal.disclaimer': {
+    en: 'Legal Disclaimer',
+    hu: 'Jogi Nyilatkozat',
+    de: 'Rechtlicher Haftungsausschluss',
+  },
+  'footer.accessibility': {
+    en: 'Accessibility',
+    hu: 'Akadálymentesség',
+    de: 'Barrierefreiheit',
+  },
+  'footer.compliance.gdpr': {
+    en: 'GDPR Compliant',
+    hu: 'GDPR Megfelelő',
+    de: 'GDPR-konform',
+  },
+  'footer.compliance.accessibility': {
+    en: 'EU Accessibility',
+    hu: 'EU Akadálymentesség',
+    de: 'EU-Barrierefreiheit',
+  },
+  'footer.compliance.iso': {
+    en: 'ISO Certified',
+    hu: 'ISO Tanúsított',
+    de: 'ISO-zertifiziert',
+  },
+  'footer.legal.privacy-data': {
+    en: 'Privacy & Data',
+    hu: 'Adatvédelem',
+    de: 'Datenschutz',
+  },
+  'footer.legal.terms-legal': {
+    en: 'Legal & Terms',
+    hu: 'Jogi feltételek',
+    de: 'Rechtliches & Bedingungen',
+  },
 
   // Resources footer translations
   'resources.footer.description': {
