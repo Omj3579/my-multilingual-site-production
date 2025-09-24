@@ -50,7 +50,7 @@ interface NewsletterSubscription {
   language: string
   status: string
   source: string
-  created_at: string
+  subscribed_at: string
 }
 
 interface AnalyticsData {
@@ -146,7 +146,7 @@ const AdminDashboard = () => {
         const todaySubmissions = [
           ...newContacts.filter(c => c.created_at.startsWith(today)),
           ...newQuotes.filter(q => q.created_at.startsWith(today)),
-          ...newNewsletters.filter(n => n.created_at.startsWith(today))
+          ...newNewsletters.filter(n => n.subscribed_at.startsWith(today))
         ].length
 
         setStats({
@@ -233,7 +233,7 @@ const AdminDashboard = () => {
       const todaySubmissions = [
         ...newContacts.filter(c => c.created_at.startsWith(today)),
         ...newQuotes.filter(q => q.created_at.startsWith(today)),
-        ...newNewsletters.filter(n => n.created_at.startsWith(today))
+        ...newNewsletters.filter(n => n.subscribed_at.startsWith(today))
       ].length
 
       setStats({
@@ -587,7 +587,7 @@ const AdminDashboard = () => {
                               {newsletter.status}
                             </Badge>
                             <Badge variant="outline">{newsletter.language.toUpperCase()}</Badge>
-                            <span className="text-xs text-gray-500">{formatDate(newsletter.created_at)}</span>
+                            <span className="text-xs text-gray-500">{formatDate(newsletter.subscribed_at)}</span>
                           </div>
                         </div>
                       </motion.div>

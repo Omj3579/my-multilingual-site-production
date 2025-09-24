@@ -6,7 +6,6 @@ interface ApiResponse {
   message: string
   error?: string
   data?: Record<string, unknown>[]
-  debug?: any
 }
 
 function validateAdminAuth(req: NextApiRequest): boolean {
@@ -50,12 +49,6 @@ export default async function handler(
   try {
     console.log('Admin newsletters API - Starting query...')
     
-    // Debug info to see what environment we're using
-    console.log('Environment debug info:')
-    console.log('- Supabase URL:', process.env.NEXT_PUBLIC_SUPABASE_URL)
-    console.log('- Service Key exists:', !!process.env.SUPABASE_SERVICE_ROLE_KEY)
-    console.log('- Service Key prefix:', process.env.SUPABASE_SERVICE_ROLE_KEY?.substring(0, 30) || 'MISSING')
-    
     // First, try to get just one record to see what columns exist
     const { data: sampleData, error: sampleError } = await supabaseAdmin
       .from('newsletter_subscriptions')
@@ -70,14 +63,7 @@ export default async function handler(
       return res.status(500).json({
         success: false,
         error: 'Database error',
-        message: `Failed to fetch newsletter subscriptions: ${sampleError.message}`,
-        debug: {
-          supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL,
-          serviceKeyExists: !!process.env.SUPABASE_SERVICE_ROLE_KEY,
-          serviceKeyPrefix: process.env.SUPABASE_SERVICE_ROLE_KEY?.substring(0, 30),
-          errorCode: sampleError.code,
-          errorDetails: sampleError.details
-        }
+        message: `Failed to fetch newsletter subscriptions: ${sampleError.message}`
       })
     }
 
