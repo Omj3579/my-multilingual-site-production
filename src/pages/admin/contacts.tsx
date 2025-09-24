@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import AdminLayout from '@/components/admin/AdminLayout'
 import { MetricGrid } from '@/components/admin/StatsCards'
-import { MagnifyingGlassIcon, EyeIcon } from '@heroicons/react/24/outline'
+import { MagnifyingGlassIcon, EyeIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 interface ContactSubmission {
   id: string
@@ -20,6 +20,8 @@ export default function ContactsPage() {
   const [contacts, setContacts] = useState<ContactSubmission[]>([])
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
+  const [selectedContact, setSelectedContact] = useState<ContactSubmission | null>(null)
+  const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
     fetchContacts()
@@ -198,7 +200,13 @@ export default function ContactsPage() {
                       {new Date(contact.created_at).toLocaleDateString()}
                     </td>
                     <td className="py-4 px-4">
-                      <button className="text-blue-400 hover:text-blue-300 transition-colors duration-200 flex items-center space-x-2">
+                      <button 
+                        onClick={() => {
+                          setSelectedContact(contact)
+                          setShowModal(true)
+                        }}
+                        className="text-blue-400 hover:text-blue-300 transition-colors duration-200 flex items-center space-x-2"
+                      >
                         <EyeIcon className="w-4 h-4" />
                         <span>View</span>
                       </button>
@@ -215,6 +223,105 @@ export default function ContactsPage() {
             </div>
           )}
         </motion.div>
+
+        {/* Contact Detail Modal */}
+        <AnimatePresence>
+          {showModal && selectedContact && (
+            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-white/20"
+              >
+                {/* Modal Header */}
+                <div className="flex justify-between items-start mb-6">
+                  <div>
+                    <h2 className="text-2xl font-bold text-white">Contact Details</h2>
+                    <p className="text-gray-400 mt-1">Submission from {selectedContact.first_name} {selectedContact.last_name}</p>
+                  </div>
+                  <button
+                    onClick={() => setShowModal(false)}
+                    className="text-gray-400 hover:text-white transition-colors"
+                    aria-label="Close modal"
+                  >
+                    <XMarkIcon className="w-6 h-6" />
+                  </button>
+                </div>
+
+                {/* Contact Information */}
+                <div className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="bg-white/5 rounded-lg p-4">
+                      <label className="text-sm text-gray-400">First Name</label>
+                      <p className="text-white font-medium mt-1">{selectedContact.first_name || 'N/A'}</p>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-4">
+                      <label className="text-sm text-gray-400">Last Name</label>
+                      <p className="text-white font-medium mt-1">{selectedContact.last_name || 'N/A'}</p>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-4">
+                      <label className="text-sm text-gray-400">Email</label>
+                      <p className="text-white font-medium mt-1">{selectedContact.email}</p>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-4">
+                      <label className="text-sm text-gray-400">Company</label>
+                      <p className="text-white font-medium mt-1">{selectedContact.company || 'N/A'}</p>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-4">
+                      <label className="text-sm text-gray-400">Country</label>
+                      <p className="text-white font-medium mt-1">{selectedContact.country || 'N/A'}</p>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-4">
+                      <label className="text-sm text-gray-400">Language</label>
+                      <p className="text-white font-medium mt-1">{selectedContact.language?.toUpperCase() || 'N/A'}</p>
+                    </div>
+                  </div>
+
+                  {/* Message */}
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <label className="text-sm text-gray-400">Message</label>
+                    <div className="text-white mt-2 whitespace-pre-wrap leading-relaxed">
+                      {selectedContact.message || 'No message provided'}
+                    </div>
+                  </div>
+
+                  {/* Metadata */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="bg-white/5 rounded-lg p-4">
+                      <label className="text-sm text-gray-400">Submission Date</label>
+                      <p className="text-white font-medium mt-1">
+                        {new Date(selectedContact.created_at).toLocaleString()}
+                      </p>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-4">
+                      <label className="text-sm text-gray-400">Contact ID</label>
+                      <p className="text-white font-medium mt-1 font-mono text-sm">
+                        {selectedContact.id}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Modal Actions */}
+                <div className="flex justify-end space-x-3 mt-6 pt-6 border-t border-white/20">
+                  <button
+                    onClick={() => setShowModal(false)}
+                    className="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors"
+                  >
+                    Close
+                  </button>
+                  <a
+                    href={`mailto:${selectedContact.email}?subject=Re: Your inquiry&body=Hi ${selectedContact.first_name},`}
+                    className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+                  >
+                    Reply via Email
+                  </a>
+                </div>
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>
       </div>
     </AdminLayout>
   )
