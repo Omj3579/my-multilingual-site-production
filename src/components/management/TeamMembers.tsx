@@ -461,7 +461,7 @@ const TeamMembers = () => {
       language
     },
     {
-      name: language === 'en' ? 'Zoltán Gályás' : 'Gályás Zoltán',
+      name: language === 'en' ? 'Gályász Zoltán' : 'Gályász Zoltán',
       title: language === 'en' ? 'Production Manager' : 'Termelési vezető',
       department: 'production',
       relatedDepartments: ['ceo', 'technology'],
